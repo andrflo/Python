@@ -10,4 +10,5 @@ response=requests.get("https://itunes.apple.com/search?entity=song&limit=50&term
 
 o=response.json()
 for result in o["results"]:
+    # o["results"] es una lista de dicc. y result es un dicc.
     print(result["trackName"])
