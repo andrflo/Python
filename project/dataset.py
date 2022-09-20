@@ -321,8 +321,10 @@ class Dataset:
                 if j+1 < len(data):
                     j=j+1
                 else:
-                    ok = False    
-                
+                    ok = False  
+
+            if not ok:
+                j=j+1    
             n_el.append(j-i) 
             print(machine_id, n_el[k])   
             k += 1
