@@ -416,8 +416,7 @@ class Dataset:
                                             k += 1
                                             machine_id1 = machine_id
                                             first_done = True
-                                            l += 1
-                                            print(row[a], nop)
+                                            l += 1                                            
                                 # if l < k, first_done should be false and it would not go through the following elif
                                 elif not second_done:
                                     if not ("Einfülltage" in self.keys):
@@ -470,7 +469,7 @@ class Dataset:
                                 # s increases even if the point is not going to be plotted         
                                 s += 1        
                             i += s
-                            #print(i)
+                            print(i)
                             while (data[i])[a] == machine_id:                            
                                 i += 1
                         # If 2 series have already been added or there are not enough points for a series,
