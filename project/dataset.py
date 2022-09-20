@@ -321,15 +321,17 @@ class Dataset:
 
                 if j + 1 < len(data):
                     if self.keys_exist("Einfülltage"):
-                        if not (len((data[j])["Einfülltage"]) > 0):
+                        if (not (len((data[j])["Einfülltage"]) > 0)) or (not (self.origin_sample(
+                            (data[j])["Probe aus"], "wind", "wea", "wka", "éolienne"))):
                             k += 1
                     elif self.keys_exist(
                         "Datum letzter Ölwechsel", "Datum Probenentnahme"
                     ):
 
-                        if not (
+                        if (not (
                             (len((data[j])["Datum letzter Ölwechsel"]) > 0)
-                            and (len((data[j])["Datum Probenentnahme"]) > 0)
+                            and (len((data[j])["Datum Probenentnahme"]) > 0)) or (not (self.origin_sample(
+                            (data[j])["Probe aus"], "wind", "wea", "wka", "éolienne")))
                         ):
                             k += 1
 
