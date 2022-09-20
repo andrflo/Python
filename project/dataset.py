@@ -346,9 +346,9 @@ class Dataset:
             x3 = []
             y3 = []  
 
-            n_pl = 1
+            n_sa = 1
             k=0
-            while k < n_pl:
+            while k < n_sa:
                 l=0
                 i=0            
                 ok = True 
