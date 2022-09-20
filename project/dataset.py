@@ -288,9 +288,18 @@ class Dataset:
 
     def sort_by_param(self, param):
         
-        if self.keys_exist(param):
-            with open(self.filename) as csvfile:
-                reader = csv.DictReader(csvfile, delimiter=";")
-                return sorted(reader, key = lambda row: (row[param]))
+        with open(self.filename) as csvfile:
+            reader = csv.DictReader(csvfile, delimiter=";")
+            return sorted(reader, key = lambda row: (row[param]))
+
+
+def plot_data_machine(self, param):
+    a="Anlagennummer"
+    if self.keys_exist(a):
+        data = self.sort_by_param(a)
+        for row in data:
+            print(row[a])
+
+
 
                 
