@@ -310,6 +310,7 @@ class Dataset:
             set_of_ids.add(row[a])         
 
         n_el = [] 
+        list_of_ids = []
         i=0
         k=0
         ok = True 
@@ -326,16 +327,18 @@ class Dataset:
             if not ok:
                 j=j+1    
             n_el.append(j-i) 
+            list_of_ids.append(machine_id)
             #print(machine_id, n_el[k])   
             k += 1
             i=j 
-
+        
+        res = dict(zip(list_of_ids, n_el))
                  
 
        
 
             
-        """for oil_name in oil_names:
+        for oil_name in oil_names:
             x1 = []
             y1 = []
             x2 = []
@@ -345,11 +348,12 @@ class Dataset:
 
             machine_id = ""
             for row in data:
-                machine_id = row[a]    
-                while 
+                if row["Ölbezeichnung"] == oil_name:
+                    machine_id = row[a]    
+                
                 
             
-           """         
+                   
 
                    
 
