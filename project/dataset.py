@@ -293,6 +293,6 @@ class Dataset:
             with open(self.filename) as csvfile:
                 reader = csv.DictReader(csvfile, delimiter=";")
                 data = sorted(reader, key = lambda row: (row[a]))
-
+                print(data)
 
                 
