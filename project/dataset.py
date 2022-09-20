@@ -356,15 +356,17 @@ class Dataset:
                 n_sa += 1
 
         for oil_name in oil_names:
-            x1 = []
-            y1 = []
-            x2 = []
-            y2 = []
-            x3 = []
-            y3 = []
+            
             # k: data series that have been included in plots already
             k = 0
             while k < n_sa:
+                x1 = []
+                y1 = []
+                x2 = []
+                y2 = []
+                x3 = []
+                y3 = []
+
                 # l counts the next data series to be plotted
                 l = 1
                 i = 0
