@@ -463,6 +463,7 @@ class Dataset:
                             # s increases even if the point is not going to be plotted         
                             s += 1        
                         i += s
+                        print(i)
                         while (data[i])[a] == machine_id:                            
                             i += 1
                     # If 2 series have already been added or there are not enough points for a series,
