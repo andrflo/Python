@@ -435,7 +435,7 @@ class Dataset:
                                         l += 1
                                         machine_id2 = machine_id
                                         second_done = True
-                                if l < k:
+                                if l <= k:
                                     # add to x1, y1, increase j, if it is the case l but not k 
                                     if not ("Einfülltage" in self.keys):
                                         if (
