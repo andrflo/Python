@@ -482,7 +482,7 @@ class Dataset:
                                         (data[i])["Datum Probenentnahme"],
                                         (data[i])["Datum letzter Ölwechsel"],
                                     )
-                                    if days_service > 0 and len(row[param]) > 0:
+                                    if days_service > 0 and len((data[i])[param]) > 0:
                                         x1.append(days_service)
                                         y1.append(float((data[i])[param]))
                             elif len(row["Einfülltage"]) > 0:
