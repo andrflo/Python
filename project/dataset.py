@@ -348,6 +348,7 @@ class Dataset:
 
             n_el = [] 
             list_of_ids = []
+            k=0
             i=0            
             ok = True 
             first_done = False
@@ -363,12 +364,14 @@ class Dataset:
                             y2.append((data[i+j])[param])
                             j += 1
                             if j == nop:
+                                k += 1
                                 first_done = True
                         elif not second_done:
                             x3.append(1)
                             y3.append((data[i+j])[param])
                             j += 1
                             if j == nop:
+                                k += 1
                                 second_done = True                        
                     i += j 
                 else:
