@@ -487,6 +487,7 @@ class Dataset:
                         
                 # plot
                 fig, ax = plt.subplots()
+                ax.plot(x1, y1, "ko")
                 ax.plot(x2, y2, "go")
                 ax.plot(x3, y3, "mo")
                 plt.title(f"{oil_name}, {len(x1)+len(x2)+len(x3)} points")
