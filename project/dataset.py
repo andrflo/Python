@@ -346,7 +346,7 @@ class Dataset:
 
         res = dict(zip(list_of_ids, n_el))
 
-        print(res)
+        #print(res)
 
         n_sa = 0
         for el in n_el:
@@ -464,6 +464,7 @@ class Dataset:
                             s += 1        
                         i += s
                         while (data[i])[a] == machine_id:
+                            print((data[i])[a])
                             i += 1
                     # If 2 series have already been added or there are not enough points for a series,
                     # the rest of points are plotted black
@@ -472,9 +473,7 @@ class Dataset:
                             if (
                                 len((data[i])["Datum letzter Ölwechsel"]) > 0
                                 and len((data[i])["Datum Probenentnahme"]) > 0
-                            ):
-                                print((data[i])["Datum Probenentnahme"])
-                                print((data[i])["Datum letzter Ölwechsel"])
+                            ):                                
                                 days_service = self.compute_days_in_service(
                                     (data[i])["Datum Probenentnahme"],
                                     (data[i])["Datum letzter Ölwechsel"],
