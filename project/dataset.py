@@ -349,7 +349,7 @@ class Dataset:
             n_sa = 1
             k=0
             while k < n_sa:
-                l=0
+                l=1
                 i=0            
                 ok = True 
                 first_done = False
