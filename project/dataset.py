@@ -409,14 +409,16 @@ class Dataset:
                                 if not ("Einfülltage" in self.keys):
                                     if len(row["Datum letzter Ölwechsel"]) > 0 and len(row["Datum Probenentnahme"]) > 0:
                                         days_service = self.compute_days_in_service(
-                                        (data[i + j])["Datum Probenentnahme"],
-                                        (data[i + j])["Datum letzter Ölwechsel"],
+                                        row["Datum Probenentnahme"],
+                                        row["Datum letzter Ölwechsel"],
                                         )
                                         x3.append(days_service)
-                                        y3.append(float((data[i + j])[param]))
-                                else:
-                                    x3.append(int((data[i + j])["Einfülltage"]))
-                                    y3.append(float((data[i + j])[param]))
+                                        y3.append(float(row[param]))
+                                        j+=1
+                                elif len(row["Einfülltage"]) > 0:
+                                    x3.append(int(row["Einfülltage"]))
+                                    y3.append(float(row[param]))
+                                    j += 1
                                 s += 1
                                 if j == nop:
                                     k += 1
