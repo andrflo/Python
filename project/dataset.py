@@ -358,7 +358,7 @@ class Dataset:
             y2 = []
             x3 = []
             y3 = []
-
+            # Number of sample series
             k = 0
             while k < n_sa:
                 l = 1
@@ -424,6 +424,9 @@ class Dataset:
                                     machine_id2 = machine_id
                                     second_done = True
                         i += s
+                        while (data[i])[a] == machine_id:
+                            i += s1
+                            # plot black and advance to next machine_id
                     else:
                         if not ("Einfülltage" in self.keys):
                             if len(row["Datum letzter Ölwechsel"]) > 0 and len(row["Datum Probenentnahme"]) > 0:
