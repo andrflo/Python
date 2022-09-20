@@ -328,7 +328,7 @@ class Dataset:
                         #print((data[j])["Datum Probenentnahme"])
                         if not ((len((data[j])["Datum letzter Ölwechsel"]) > 0) and (len((data[j])["Datum Probenentnahme"]) > 0)):
                             k += 1        
-                            print((data[j])[a])
+                            #print((data[j])[a])
                     j = j + 1        
                 else:
                     ok = False
@@ -343,14 +343,14 @@ class Dataset:
 
         res = dict(zip(list_of_ids, n_el))
 
-        #print(res)
+        print(res)
 
         n_sa = 0
         for el in n_el:
             if el > 3:
                 n_sa += 1
 
-        #print(n_sa)        
+        print(n_sa)        
               
 """
         for oil_name in oil_names:
