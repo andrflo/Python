@@ -326,7 +326,7 @@ class Dataset:
                     elif self.keys_exist("Datum letzter Ölwechsel", "Datum Probenentnahme"):
                         if not (len((data[j])["Datum letzter Ölwechsel"]) > 0) and not (len((data[j])["Datum Probenentnahme"]) > 0):
                             k += 1        
-                            print(machine_id)
+                            print((data[j])[a])
                     j = j + 1        
                 else:
                     ok = False
