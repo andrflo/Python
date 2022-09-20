@@ -6,9 +6,8 @@ from pdf import PDF
 fn1 = "dataset1.csv"
 fn2 = "dataset2.csv"
 fn3 = "dataset3.csv"
-fn4 = "dataset4.csv"
-fn5 = "dataset5.csv"
-fn_list = [fn4, fn5]
+
+fn_list = [fn3, fn1, fn2]
 #fn_list = [fn3, fn1, fn2]
 
 
