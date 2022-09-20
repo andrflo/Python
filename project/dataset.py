@@ -460,12 +460,14 @@ class Dataset:
                                 # s increases even if the point is not going to be plotted         
                                 s += 1        
                             i += s
-                            print(i)
+                            #print(i)
                             while (data[i])[a] == machine_id:                            
                                 i += 1
                         # If 2 series have already been added or there are not enough points for a series,
                         # the rest of points are plotted black
                         else:
+                            print(i)
+                            print((data[i])[a])
                             if not ("Einfülltage" in self.keys):
                                 if (
                                     len((data[i])["Datum letzter Ölwechsel"]) > 0
