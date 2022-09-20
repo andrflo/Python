@@ -311,32 +311,37 @@ class Dataset:
         n_el = []
         list_of_ids = []
         i = 0
-       
+
         ok = True
         while i < len(data) and ok:
             machine_id = (data[i])[a]
             j = i
             k = 0
             while (data[j])[a] == machine_id and ok:
-                
-                if j + 1 < len(data):                    
+
+                if j + 1 < len(data):
                     if self.keys_exist("Einfülltage"):
                         if not (len((data[j])["Einfülltage"]) > 0):
                             k += 1
-                    elif self.keys_exist("Datum letzter Ölwechsel", "Datum Probenentnahme"):
-                        
-                        if not ((len((data[j])["Datum letzter Ölwechsel"]) > 0) and (len((data[j])["Datum Probenentnahme"]) > 0)):
-                            k += 1        
-                           
-                    j = j + 1        
+                    elif self.keys_exist(
+                        "Datum letzter Ölwechsel", "Datum Probenentnahme"
+                    ):
+
+                        if not (
+                            (len((data[j])["Datum letzter Ölwechsel"]) > 0)
+                            and (len((data[j])["Datum Probenentnahme"]) > 0)
+                        ):
+                            k += 1
+
+                    j = j + 1
                 else:
                     ok = False
 
             if not ok:
                 j = j + 1
-            n_el.append(j-i-k)
+            n_el.append(j - i - k)
             list_of_ids.append(machine_id)
-           
+
             i = j
 
         res = dict(zip(list_of_ids, n_el))
@@ -348,9 +353,6 @@ class Dataset:
             if el > 3:
                 n_sa += 1
 
-              
-              
-
         for oil_name in oil_names:
             x1 = []
             y1 = []
@@ -358,10 +360,10 @@ class Dataset:
             y2 = []
             x3 = []
             y3 = []
-            # k counts data series that have been included in plots already
+            # k: data series that have been included in plots already
             k = 0
             while k < n_sa:
-                # l counts data series as it goes through the rows
+                # l counts the next data series to be plotted
                 l = 1
                 i = 0
 
@@ -369,6 +371,7 @@ class Dataset:
                 second_done = False
                 machine_id1 = ""
                 machine_id2 = ""
+                # Go through all rows
                 while (
                     i < len(data)
                     and (data[i])["Ölbezeichnung"] == oil_name
@@ -382,14 +385,17 @@ class Dataset:
                         j = 0
                         s = 0
                         while j < nop:
-                            row = (data[i + s])
+                            row = data[i + s]
                             if not first_done:
                                 if l > k:
                                     if not ("Einfülltage" in self.keys):
-                                        if len(row["Datum letzter Ölwechsel"]) > 0 and len(row["Datum Probenentnahme"]) > 0:
+                                        if (
+                                            len(row["Datum letzter Ölwechsel"]) > 0
+                                            and len(row["Datum Probenentnahme"]) > 0
+                                        ):
                                             days_service = self.compute_days_in_service(
-                                            row["Datum Probenentnahme"],
-                                            row["Datum letzter Ölwechsel"],
+                                                row["Datum Probenentnahme"],
+                                                row["Datum letzter Ölwechsel"],
                                             )
                                             x2.append(days_service)
                                             y2.append(float(row[param]))
@@ -409,14 +415,17 @@ class Dataset:
 
                             elif not second_done:
                                 if not ("Einfülltage" in self.keys):
-                                    if len(row["Datum letzter Ölwechsel"]) > 0 and len(row["Datum Probenentnahme"]) > 0:
+                                    if (
+                                        len(row["Datum letzter Ölwechsel"]) > 0
+                                        and len(row["Datum Probenentnahme"]) > 0
+                                    ):
                                         days_service = self.compute_days_in_service(
-                                        row["Datum Probenentnahme"],
-                                        row["Datum letzter Ölwechsel"],
+                                            row["Datum Probenentnahme"],
+                                            row["Datum letzter Ölwechsel"],
                                         )
                                         x3.append(days_service)
                                         y3.append(float(row[param]))
-                                        j+=1
+                                        j += 1
                                 elif len(row["Einfülltage"]) > 0:
                                     x3.append(int(row["Einfülltage"]))
                                     y3.append(float(row[param]))
@@ -431,13 +440,16 @@ class Dataset:
                         while (data[i])[a] == machine_id:
                             i += 1
                     # If 2 series have already been added or there are not enough points for a series,
-                    # the rest of points are plotted black        
+                    # the rest of points are plotted black
                     else:
                         if not ("Einfülltage" in self.keys):
-                            if len(row["Datum letzter Ölwechsel"]) > 0 and len(row["Datum Probenentnahme"]) > 0:
+                            if (
+                                len(row["Datum letzter Ölwechsel"]) > 0
+                                and len(row["Datum Probenentnahme"]) > 0
+                            ):
                                 days_service = self.compute_days_in_service(
-                                (data[i])["Datum Probenentnahme"],
-                                (data[i])["Datum letzter Ölwechsel"],
+                                    (data[i])["Datum Probenentnahme"],
+                                    (data[i])["Datum letzter Ölwechsel"],
                                 )
                                 x1.append(days_service)
                                 y1.append(float((data[i])[param]))
@@ -453,7 +465,9 @@ class Dataset:
                 plt.title(f"{oil_name}, {len(x1)+len(x2)+len(x3)} points")
                 if param == "Wasser K. F.":
                     plt.ylabel("Water K.F. in ppm")
-                    save_name = f"H2O_vs_days_{machine_id1}_{machine_id2}_{oil_name}.png"
+                    save_name = (
+                        f"H2O_vs_days_{machine_id1}_{machine_id2}_{oil_name}.png"
+                    )
                 elif param == "Neutralisationszahl":
                     plt.ylabel("Acid number in mgkOH/gOil")
                     save_name = f"AN_vs_days_{machine_id1}_{machine_id2}_{oil_name}.png"
@@ -470,5 +484,3 @@ class Dataset:
                 elif param == "Oxidation":
                     plt.savefig(f"data/ox/ind_samples/{save_name}")
                 plt.close(fig)
-
-                
