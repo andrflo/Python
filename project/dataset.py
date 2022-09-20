@@ -403,7 +403,7 @@ class Dataset:
                                                     row["Datum letzter Ölwechsel"],
                                                 )
                                                 if days_service > 0 and len(row[param]) > 0:
-                                                    print(row[a])
+                                                    print(row[a], nop)
                                                     x2.append(days_service)
                                                     y2.append(float(row[param]))
                                                     j += 1
