@@ -322,11 +322,11 @@ class Dataset:
                     j=j+1
                 else:
                     ok = False    
-            if ok:     
-                n_el.append(j-i) 
-                print(machine_id, n_el[k])   
-                k += 1
-                i=j 
+                
+            n_el.append(j-i) 
+            print(machine_id, n_el[k])   
+            k += 1
+            i=j 
 
                  
 
