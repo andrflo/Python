@@ -293,12 +293,12 @@ class Dataset:
             return sorted(reader, key = lambda row: (row[param]))
 
 
-def plot_data_machine(self, param):
-    a="Anlagennummer"
-    if self.keys_exist(a):
-        data = self.sort_by_param(a)
-        for row in data:
-            print(row[a], row[param])
+    def plot_data_machine(self, param):
+        a="Anlagennummer"
+        if self.keys_exist(a):
+            data = self.sort_by_param(a)
+            for row in data:
+                print(row[a], row[param])
 
 
 
