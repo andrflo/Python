@@ -333,12 +333,12 @@ class Dataset:
             i=j 
         
         res = dict(zip(list_of_ids, n_el))
-                 
+        print(res)                 
 
        
 
             
-        for oil_name in oil_names:
+        """for oil_name in oil_names:
             x1 = []
             y1 = []
             x2 = []
@@ -352,7 +352,7 @@ class Dataset:
                     machine_id = row[a]    
                 
                 
-            
+            """
                    
 
                    
