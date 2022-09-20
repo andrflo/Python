@@ -368,10 +368,14 @@ class Dataset:
                             if not first_done:
                                 if l > k:
                                     if not ("Einfülltage" in self.keys):
-                                        x2.append(1)
+                                        days_service = self.compute_days_in_service(
+                                        (data[i + j])["Datum Probenentnahme"],
+                                        (data[i + j])["Datum letzter Ölwechsel"],
+                                        )
+                                        x2.append(days_service)
                                     else:
-                                        x2.append((data[i + j])["Einfülltage"])
-                                    y2.append((data[i + j])[param])
+                                        x2.append(int((data[i + j])["Einfülltage"]))
+                                    y2.append(float((data[i + j])[param]))
                                 j += 1
                                 if j == nop:
                                     if l > k:
@@ -381,10 +385,14 @@ class Dataset:
 
                             elif not second_done:
                                 if not ("Einfülltage" in self.keys):
-                                    x3.append(1)
+                                    days_service = self.compute_days_in_service(
+                                    (data[i + j])["Datum Probenentnahme"],
+                                    (data[i + j])["Datum letzter Ölwechsel"],
+                                    )
+                                    x3.append(days_service)
                                 else:
-                                    x3.append((data[i + j])["Einfülltage"])
-                                y3.append((data[i + j])[param])
+                                    x3.append(int((data[i + j])["Einfülltage"]))
+                                y3.append(float((data[i + j])[param]))
                                 j += 1
                                 if j == nop:
                                     k += 1
@@ -393,10 +401,12 @@ class Dataset:
                         i += j
                     else:
                         x1.append(1)
-                        y1.append((data[i])[param])
+                        y1.append(float((data[i])[param]))
                         i += 1
                         if l <= k:
                             l += 1
                 # plot
-                print(x2, y2)
-                print(x3, y3)
+                fig, ax = plt.subplots()
+                ax.plot(x1, y1, "go")
+
+                
