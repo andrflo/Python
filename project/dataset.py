@@ -380,7 +380,9 @@ class Dataset:
                     else:
                         x1.append(1)
                         y1.append((data[i])[param]) 
-                        i += 1              
+                        i += 1           
+                        if l <= k:
+                            l += 1   
                 #plot                 
            
 
