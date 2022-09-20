@@ -49,7 +49,7 @@ class Dataset:
                 with open(self.filename) as csvfile:
                     reader = csv.DictReader(csvfile, delimiter=";")
                     for row in reader:
-                        if ("Einfülltage" in self.keys) == False:
+                        if not ("Einfülltage" in self.keys):
 
                             if (
                                 self.validate_season(
@@ -362,7 +362,10 @@ class Dataset:
                         while j < nop:
                             if not first_done:
                                 if l > k:
-                                    x2.append(1)
+                                    if not ("Einfülltage" in self.keys):
+                                        x2.append(1)
+                                    else:    
+                                        x2.append((data[i+j])["Einfülltage"])
                                     y2.append((data[i+j])[param])
                                 j += 1
                                 if j == nop:
@@ -372,7 +375,10 @@ class Dataset:
                                     l += 1
                                     
                             elif not second_done:
-                                x3.append(1)
+                                if not ("Einfülltage" in self.keys):
+                                    x3.append(1)
+                                else:
+                                    x3.append((data[i+j])["Einfülltage"])
                                 y3.append((data[i+j])[param])
                                 j += 1
                                 if j == nop:
