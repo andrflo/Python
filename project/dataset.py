@@ -387,7 +387,7 @@ class Dataset:
                             j = 0
                             s = 0
                             while j < nop:
-                                print(i+s, l, k)
+                                #print(i+s, l, k)
                                 row = data[i + s]
                                 if not first_done:
                                     # Fill up x2 y2 only if the data has not been plotted before
@@ -403,6 +403,7 @@ class Dataset:
                                                     row["Datum letzter Ölwechsel"],
                                                 )
                                                 if days_service > 0 and len(row[param]) > 0:
+                                                    print(row[a])
                                                     x2.append(days_service)
                                                     y2.append(float(row[param]))
                                                     j += 1
