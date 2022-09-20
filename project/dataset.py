@@ -301,17 +301,50 @@ class Dataset:
     def plot_data_machine(self, param):
 
         oil_names = self.set_of_oils("wind turbine", "all_seasons", param)      
-
-            
-        for oil_name in oil_names:
-            x1 = []
-            y1 = []
-
         a="Anlagennummer"
         if self.keys_exist(a):
             data = self.sort_by_param(a)
+
+        set_of_ids = set()
+        for row in data:
+            set_of_ids.add(row[a])         
+
+        n_el = [] 
+        i=0
+        k=0
+        while i <len(data):
+            machine_id = (data[i])[a] 
+            j=i            
+            while (data[j])[a] == machine_id:                
+                j=j+1
+            n_el[k] = j-i 
+            print(machine_id, n_el[k])   
+            k += 1
+            i=j 
+
+                 
+
+       
+
+            
+        """for oil_name in oil_names:
+            x1 = []
+            y1 = []
+            x2 = []
+            y2 = []
+            x3 = []
+            y3 = []     
+
+            machine_id = ""
             for row in data:
-                print(row[a], row[param])
+                machine_id = row[a]    
+                while 
+                
+            
+           """         
+
+                   
+
 
 
 
