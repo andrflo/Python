@@ -291,7 +291,6 @@ class Dataset:
         if self.keys_exist(param):
             with open(self.filename) as csvfile:
                 reader = csv.DictReader(csvfile, delimiter=";")
-                data = sorted(reader, key = lambda row: (row[param]))
-                print(data)
+                return sorted(reader, key = lambda row: (row[param]))
 
                 
