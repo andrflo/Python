@@ -7,35 +7,42 @@ fn1 = "dataset1.csv"
 fn2 = "dataset2.csv"
 fn3 = "dataset3.csv"
 
-fn_list = [fn3, fn1, fn2]
+fn_list = [fn1, fn2]
 
 def main():
     ds_list = []
     for fn in fn_list:
         ds = Dataset(fn)
         ds_list.append(ds)
-        ds.plot_param_t_all_seasons("Wasser K. F.")
-        ds.plot_param_t_all_seasons("Neutralisationszahl")
-        ds.plot_param_t_all_seasons("Oxidation")
+        #ds.plot_param_t_all_seasons("Wasser K. F.")
+        #ds.plot_param_t_all_seasons("Neutralisationszahl")
+        #ds.plot_param_t_all_seasons("Oxidation")
+        ds.plot_param_t("all_seasons", "Wasser K. F.")
+
+
+    p1 = "H2O_vs_days_all"
+    p2 = "AN_vs_days_all"
+    p3 = "Ox_vs_days_all"    
     generate_PDFreport()
 
 
-def generate_PDFreport():
-    p1 = "H2O_vs_days_all"
-    p2 = "AN_vs_days_all"
-    p3 = "Ox_vs_days_all"
+def generate_PDFreport(p):
+    
+    match p:
+        case "H2O_vs_days_all":
+            l = list_files_pattern("data/water_KF", p)
+            if len(l) > 0:
+                generate_report_param(p, l)
 
-    l1 = list_files_pattern("data/water_KF", p1)
-    if len(l1) > 0:
-        generate_report_param(p1, l1)
+        case "AN_vs_days_all":
+            l = list_files_pattern("data/AN", p)
+            if len(l) > 0:
+                generate_report_param(p, l)
 
-    l2 = list_files_pattern("data/AN", p2)
-    if len(l2) > 0:
-        generate_report_param(p2, l2)
-
-    l3 = list_files_pattern("data/ox", p3)
-    if len(l3) > 0:
-        generate_report_param(p3, l3)
+        case "Ox_vs_days_all":
+            l = list_files_pattern("data/ox", p)
+            if len(l) > 0:
+                generate_report_param(p, l)
 
 
 def list_files_pattern(dir, pattern):
