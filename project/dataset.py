@@ -319,8 +319,7 @@ class Dataset:
             k = 0
             while (data[j])[a] == machine_id and ok:
                 
-                if j + 1 < len(data):
-                    j = j + 1
+                if j + 1 < len(data):                    
                     if self.keys_exist("Einfülltage"):
                         if not (len((data[j])["Einfülltage"]) > 0):
                             k += 1
@@ -328,6 +327,7 @@ class Dataset:
                         if not (len((data[j])["Datum letzter Ölwechsel"]) > 0) and not (len((data[j])["Datum Probenentnahme"]) > 0):
                             k += 1        
                             print(machine_id)
+                    j = j + 1        
                 else:
                     ok = False
 
