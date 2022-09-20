@@ -24,7 +24,7 @@ def main():
     p2 = "AN_vs_days_all"
     p3 = "Ox_vs_days_all"  
     p4 = "H2O_vs_days_all_seasons"  
-    generate_PDFreport()
+    generate_PDFreport(p4)
 
 
 def generate_PDFreport(p):
