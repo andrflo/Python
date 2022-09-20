@@ -402,8 +402,7 @@ class Dataset:
                                                     row["Datum Probenentnahme"],
                                                     row["Datum letzter Ölwechsel"],
                                                 )
-                                                if days_service > 0 and len(row[param]) > 0:
-                                                    print(row[a], nop)
+                                                if days_service > 0 and len(row[param]) > 0:                                                    
                                                     x2.append(days_service)
                                                     y2.append(float(row[param]))
                                                     j += 1
@@ -418,6 +417,7 @@ class Dataset:
                                             machine_id1 = machine_id
                                             first_done = True
                                             l += 1
+                                            print(row[a], nop)
                                 # if l < k, first_done should be false and it would not go through the following elif
                                 elif not second_done:
                                     if not ("Einfülltage" in self.keys):
