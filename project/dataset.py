@@ -375,23 +375,46 @@ class Dataset:
                 machine_id2 = ""
                 # Go through all rows
                 while (
-                    i < len(data)
-                    and (data[i])["Ölbezeichnung"] == oil_name
-                    and self.origin_sample(
-                        (data[i])["Probe aus"], "wind", "wea", "wka", "éolienne"
-                    )
+                    i < len(data)                    
+                    
                 ):
-                    machine_id = (data[i])[a]
-                    nop = res[machine_id]
-                    if nop > 3 and (not first_done or not second_done):
-                        j = 0
-                        s = 0
-                        while j < nop:
-                            row = data[i + s]
-                            if not first_done:
-                                # Fill up x2 y2 only if the data has not been plotted before
-                                if l > k:
-                                    # j increases only when the point is included to be plotted
+                    if (data[i])["Ölbezeichnung"] == oil_name and self.origin_sample((data[i])["Probe aus"], "wind", "wea", "wka", "éolienne"):
+                        machine_id = (data[i])[a]
+                        nop = res[machine_id]
+                        if nop > 3 and (not first_done or not second_done):
+                            j = 0
+                            s = 0
+                            while j < nop:
+                                row = data[i + s]
+                                if not first_done:
+                                    # Fill up x2 y2 only if the data has not been plotted before
+                                    if l > k:
+                                        # j increases only when the point is included to be plotted
+                                        if not ("Einfülltage" in self.keys):
+                                            if (
+                                                len(row["Datum letzter Ölwechsel"]) > 0
+                                                and len(row["Datum Probenentnahme"]) > 0
+                                            ):
+                                                days_service = self.compute_days_in_service(
+                                                    row["Datum Probenentnahme"],
+                                                    row["Datum letzter Ölwechsel"],
+                                                )
+                                                x2.append(days_service)
+                                                y2.append(float(row[param]))
+                                                j += 1
+                                        elif len(row["Einfülltage"]) > 0:
+                                            x2.append(int(row["Einfülltage"]))
+                                            y2.append(float(row[param]))
+                                            j += 1                    
+                                        # if all of the points of the series have been already included                                      
+                                        if j == nop:
+                                            # increase the number of series k and the next series to be plotted l                                       
+                                            k += 1
+                                            machine_id1 = machine_id
+                                            first_done = True
+                                            l += 1
+                                # if l < k, first_done should be false and it would not go through the following elif
+                                elif not second_done:
                                     if not ("Einfülltage" in self.keys):
                                         if (
                                             len(row["Datum letzter Ölwechsel"]) > 0
@@ -401,92 +424,67 @@ class Dataset:
                                                 row["Datum Probenentnahme"],
                                                 row["Datum letzter Ölwechsel"],
                                             )
-                                            x2.append(days_service)
-                                            y2.append(float(row[param]))
+                                            x3.append(days_service)
+                                            y3.append(float(row[param]))
                                             j += 1
                                     elif len(row["Einfülltage"]) > 0:
-                                        x2.append(int(row["Einfülltage"]))
-                                        y2.append(float(row[param]))
-                                        j += 1                    
-                                    # if all of the points of the series have been already included                                      
-                                    if j == nop:
-                                        # increase the number of series k and the next series to be plotted l                                       
-                                        k += 1
-                                        machine_id1 = machine_id
-                                        first_done = True
-                                        l += 1
-                            # if l < k, first_done should be false and it would not go through the following elif
-                            elif not second_done:
-                                if not ("Einfülltage" in self.keys):
-                                    if (
-                                        len(row["Datum letzter Ölwechsel"]) > 0
-                                        and len(row["Datum Probenentnahme"]) > 0
-                                    ):
-                                        days_service = self.compute_days_in_service(
-                                            row["Datum Probenentnahme"],
-                                            row["Datum letzter Ölwechsel"],
-                                        )
-                                        x3.append(days_service)
+                                        x3.append(int(row["Einfülltage"]))
                                         y3.append(float(row[param]))
-                                        j += 1
-                                elif len(row["Einfülltage"]) > 0:
-                                    x3.append(int(row["Einfülltage"]))
-                                    y3.append(float(row[param]))
-                                    j += 1                                
-                                if j == nop:
-                                    k += 1
-                                    l += 1
-                                    machine_id2 = machine_id
-                                    second_done = True
-                            if l < k:
-                                # add to x1, y1, increase j, if it is the case l but not k 
-                                if not ("Einfülltage" in self.keys):
-                                    if (
-                                        len(row["Datum letzter Ölwechsel"]) > 0
-                                        and len(row["Datum Probenentnahme"]) > 0
-                                    ):
-                                        days_service = self.compute_days_in_service(
-                                            (data[i])["Datum Probenentnahme"],
-                                            (data[i])["Datum letzter Ölwechsel"],
-                                        )
-                                        x1.append(days_service)
+                                        j += 1                                
+                                    if j == nop:
+                                        k += 1
+                                        l += 1
+                                        machine_id2 = machine_id
+                                        second_done = True
+                                if l < k:
+                                    # add to x1, y1, increase j, if it is the case l but not k 
+                                    if not ("Einfülltage" in self.keys):
+                                        if (
+                                            len(row["Datum letzter Ölwechsel"]) > 0
+                                            and len(row["Datum Probenentnahme"]) > 0
+                                        ):
+                                            days_service = self.compute_days_in_service(
+                                                (data[i])["Datum Probenentnahme"],
+                                                (data[i])["Datum letzter Ölwechsel"],
+                                            )
+                                            x1.append(days_service)
+                                            y1.append(float(row[param]))
+                                            j += 1
+                                    elif len(row["Einfülltage"]) > 0:
+                                        x1.append(int(row["Einfülltage"]))
                                         y1.append(float(row[param]))
                                         j += 1
-                                elif len(row["Einfülltage"]) > 0:
-                                    x1.append(int(row["Einfülltage"]))
-                                    y1.append(float(row[param]))
-                                    j += 1
-                                if j == nop:                                    
-                                    l += 1
-                                      
-                                
-                                
+                                    if j == nop:                                    
+                                        l += 1
+                                        
+                                    
+                                    
 
-                            # s increases even if the point is not going to be plotted         
-                            s += 1        
-                        i += s
-                        print(i)
-                        while (data[i])[a] == machine_id:                            
-                            i += 1
-                    # If 2 series have already been added or there are not enough points for a series,
-                    # the rest of points are plotted black
-                    else:
-                        if not ("Einfülltage" in self.keys):
-                            if (
-                                len((data[i])["Datum letzter Ölwechsel"]) > 0
-                                and len((data[i])["Datum Probenentnahme"]) > 0
-                            ):                                
-                                days_service = self.compute_days_in_service(
-                                    (data[i])["Datum Probenentnahme"],
-                                    (data[i])["Datum letzter Ölwechsel"],
-                                )
-                                x1.append(days_service)
+                                # s increases even if the point is not going to be plotted         
+                                s += 1        
+                            i += s
+                            print(i)
+                            while (data[i])[a] == machine_id:                            
+                                i += 1
+                        # If 2 series have already been added or there are not enough points for a series,
+                        # the rest of points are plotted black
+                        else:
+                            if not ("Einfülltage" in self.keys):
+                                if (
+                                    len((data[i])["Datum letzter Ölwechsel"]) > 0
+                                    and len((data[i])["Datum Probenentnahme"]) > 0
+                                ):                                
+                                    days_service = self.compute_days_in_service(
+                                        (data[i])["Datum Probenentnahme"],
+                                        (data[i])["Datum letzter Ölwechsel"],
+                                    )
+                                    x1.append(days_service)
+                                    y1.append(float((data[i])[param]))
+                            elif len(row["Einfülltage"]) > 0:
+                                x1.append(int((data[i])["Einfülltage"]))
                                 y1.append(float((data[i])[param]))
-                        elif len(row["Einfülltage"]) > 0:
-                            x1.append(int((data[i])["Einfülltage"]))
-                            y1.append(float((data[i])[param]))
-                        i += 1
-                        
+                            i += 1
+                            
                 # plot
                 fig, ax = plt.subplots()
                 ax.plot(x1, y1, "ko")
