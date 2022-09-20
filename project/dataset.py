@@ -346,8 +346,7 @@ class Dataset:
             x3 = []
             y3 = []  
 
-            n_el = [] 
-            list_of_ids = []
+           
             k=0
             while k < n_pl:
                 l=0
