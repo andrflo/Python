@@ -35,17 +35,9 @@ class Dataset:
             raise ValueError
 
     def plot_param_t(self, season, param):
-        if (
-            param in self.keys
-            and (
-                (
-                    "Datum letzter Ölwechsel" in self.keys
-                    and "Datum Probenentnahme" in self.keys
-                )
-                or "Einfülltage" in self.keys
-            )
-            and "Probe aus" in self.keys
-        ):
+        if self.keys_exist(
+            param, "Probe aus", "Datum letzter Ölwechsel", "Datum Probenentnahme"
+        ) or self.keys_exist(param, "Probe aus", "Einfülltage"):
 
             oil_names = set()
             with open(self.filename) as csvfile:
@@ -260,7 +252,7 @@ class Dataset:
     def origin_sample(*arg):
         read_txt = arg[1]
         for t in range(len(arg) - 2):
-            if arg[t+2] in read_txt.lower():
+            if arg[t + 2] in read_txt.lower():
                 return True
         return False
 
@@ -289,13 +281,11 @@ class Dataset:
             return False
 
     def keys_exist(*arg):
-        for t in range(len(arg)-1):
-            if not (arg[t+1] in arg[0].keys):
+        for t in range(len(arg) - 1):
+            if not (arg[t + 1] in arg[0].keys):
                 return False
-        return True    
+        return True
 
-    
     def sort_by_machine_number(self, param):
         if self.keys_exist("Anlagennummer", param):
             print("Yes, they exist")
-            
