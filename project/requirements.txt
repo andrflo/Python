@@ -1,0 +1,5 @@
+pip install numpy
+pip install matplotlib
+pip install fpdf2
+
+input files dataset4.csv and dataset5.csv required to test the program

@@ -1,0 +1,583 @@
+﻿Proben-ID;Anlagennummer;Probe aus;Ölmenge im System;Dimension;Ölbezeichnung;Datum Probenentnahme;Datum letzter Ölwechsel;Nachfüllmenge seit Wechsel;Dimension;Laufzeit seit Wechsel;Dimension;Laufzeit gesamt;Dimension;Wasser K. F.;Dimension
+1728946;384340;WEA-Hauptgetriebe;305;;Mobil Mobilgear XMP 320;2013-04-17;2011-03-02;;;;;77562;h;31;ppm
+1725419;672135;Wind turbine - main gear;310;;Mobil Mobilgear XMP 320;2013-04-04;;;;29106;h;29106;h;36;ppm
+2037637;717899;Wind turbine - main gear;470;;Mobil Mobilgear XMP 320;2014-10-13;2013-05-10;;;;;;;39;ppm
+2049064;726493;Wind turbine - main gear;340;;Mobil Mobilgear XMP 320;2014-11-04;2014-05-22;;;;;;;39;ppm
+1987539;634990;Wind turbine - main gear;500;;Mobil Mobilgear XMP 320;2014-07-24;;;;12263000;kWh;12727;;41;ppm
+1862880;446931;Wind turbine - main gear;500;;Mobil Mobilgear XMP 320;;2006-12-06;;;;;;;42;ppm
+2018189;132700;WKA-Hauptgetriebe;310;;Mobil Mobilgear XMP 320;2014-09-15;2011-07-11;;;;;;;51;ppm
+2044305;549070;Wind turbine - main gear;500;;Mobil Mobilgear XMP 320;2014-10-21;2013-04-30;;;;;;;56;ppm
+2091446;392025;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;2015-01-06;2013-05-02;;;40177000;kWh;40543;;56;ppm
+2037612;474031;Wind turbine - main gear;500;;Mobil Mobilgear XMP 320;2014-10-13;2013-05-08;;;;;;;57;ppm
+1920463;644880;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;2014-03-21;;;;14686;h;14686;h;58;ppm
+2018966;328273;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;2014-08-30;2013-10-23;;;;;;;60;ppm
+1995442;634988;Wind turbine - main gear;500;;Mobil Mobilgear XMP 320;2014-08-08;;;;14630000;kWh;13154;;60;ppm
+1829947;210035;Wind turbine - main gear;210;l;Mobil Mobilgear XMP 320;2013-10-07;2009-02-16;;l;8325058;kWh;8325058;kWh;61;ppm
+2091444;392012;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;2015-01-06;2013-05-05;;;41720000;kWh;40869;;61;ppm
+1868860;336324;WKA-Hauptgetriebe;500;;Mobil Mobilgear XMP 320;2013-12-13;2013-04-17;;;;;;;62;ppm
+1995441;638019;Wind turbine - main gear;500;;Mobil Mobilgear XMP 320;2014-08-08;;;;13891000;kWh;13276;;62;ppm
+1927457;672135;Wind turbine - main gear;310;;Mobil Mobilgear XMP 320;2014-04-01;;;;37800;h;37800;h;62;ppm
+2018965;328276;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;2014-08-28;2013-10-24;;;;;;;63;ppm
+1821748;672135;Wind turbine - main gear;310;l;Mobil Mobilgear XMP 320;2013-10-01;;;l;31983;h;33430;h;63;ppm
+2091333;392030;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;2015-01-15;2013-05-01;;;45605000;kWh;44693;;64;ppm
+2057306;387941;Wind turbine - main gear;500;l;Mobil Mobilgear XMP 320;2014-11-18;2011-06-16;;l;24846;h;45762;h;66;ppm
+2091327;392006;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;2015-01-15;2013-08-01;;;40858000;kWh;40296;;66;ppm
+2018960;328274;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;2014-08-25;2013-10-23;;;;;;;67;ppm
+2091334;392016;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;2015-01-15;2013-05-01;;;7955000;kWh;7035;h;68;ppm
+1995444;609474;Wind turbine - main gear;340;;Mobil Mobilgear XMP 320;2014-08-07;;;;13972000;kWh;15374;h;68;ppm
+2024439;701763;WKA-Hauptgetriebe;500;;Mobil Mobilgear XMP 320;2014-09-15;;;;8223000;kWh;12069;h;68;ppm
+2063375;441304;Wind turbine - main gear;340;;Mobil Mobilgear XMP 320;2014-11-06;2012-06-06;;;;;;;69;ppm
+2024485;299608;Énergie éolienne ligne - engrenage principale;500;;Mobil Mobilgear XMP 320;2014-07-23;;;;37668;h;48958;h;69;ppm
+2060637;672135;Wind turbine - main gear;360;l;Mobil Mobilgear XMP 320;2014-09-09;;;l;40077;h;41661;h;69;ppm
+1839562;421302;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;2012-08-01;;;;19274;h;19274;h;70;ppm
+2049089;609474;Wind turbine - main gear;500;;Mobil Mobilgear XMP 320;2014-11-06;2014-10-15;;;207979;kWh;312;h;71;ppm
+2091436;392029;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;2015-01-06;2013-05-13;;;3888300;kWh;38295;;72;ppm
+2104314;681429;WKA-Hauptgetriebe;500;l;Mobil Mobilgear XMP 320;2015-01-12;2013-02-20;;l;13617000;kWh;15372;kWh;73;ppm
+2008848;438305;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;2014-09-01;2014-06-01;;;;;;;73;ppm
+2091448;392022;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;2015-01-15;2013-05-01;;;44478000;kWh;38859;;75;ppm
+2091326;431445;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;2015-01-15;2013-05-01;;;22170000;kWh;21844;;75;ppm
+1979800;431445;Wind turbine - main gear;320;;Mobil Mobilgear XMP 320;2014-06-23;2012-06-01;;;;;;;76;ppm
+1919531;474031;Wind turbine - main gear;500;;Mobil Mobilgear XMP 320;2014-03-17;2013-05-08;;;;;;;76;ppm
+2019427;409694;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;2014-08-08;2013-07-04;;;;;;;76;ppm
+1849871;534221;WKA-Hauptgetriebe;400;;Mobil Mobilgear XMP 320;2013-11-19;;;;17008000;kWh;22164.48;h;76;ppm
+2091434;392024;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;2015-01-15;2013-05-01;;;40858000;kWh;40296;;77;ppm
+2091321;392028;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;2015-01-08;2013-05-01;;;40171000;kWh;55066;;77;ppm
+2024491;299606;Énergie éolienne ligne - engrenage principale;500;;Mobil Mobilgear XMP 320;2014-08-06;;;;39368;;49803;;77;ppm
+1710755;210035;Wind turbine - main gear;210;l;Mobil Mobilgear XMP 320;2013-03-05;2009-02-16;10;l;9300854;kWh;9300854;kWh;78;ppm
+1919519;717899;Wind turbine - main gear;470;;Mobil Mobilgear XMP 320;2014-03-17;2013-05-10;;;;;;;78;ppm
+2019429;409687;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;2014-09-08;2013-07-02;;;;;;;79;ppm
+1849868;534214;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;2013-11-14;;;;21939.78;h;21939.78;h;79;ppm
+2090074;428273;WKA-Hauptgetriebe;500;l;Mobil Mobilgear XMP 320;2015-01-14;2012-09-12;20;l;;;;;80;ppm
+2018961;328275;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;2014-08-27;2013-10-24;;;43716000;kWh;57679;h;80;ppm
+2036190;396894;Wind turbine - main gear;500;;Mobil Mobilgear XMP 320;2014-10-17;2014-04-10;;;;;;;80;ppm
+868916;265817;WEA-Hauptgetriebe;170;;Mobil Mobilgear XMP 320;2007-11-20;2003-01-01;;;;;28883;h;81;ppm
+2049098;609473;Wind turbine - main gear;500;;Mobil Mobilgear XMP 320;2014-11-06;2014-10-16;;;198983;kWh;304;h;81;ppm
+2091439;392007;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;2015-01-15;2013-05-01;;;44193000;kWh;39233;;82;ppm
+1860182;726494;Wind turbine - main gear;500;;Mobil Mobilgear XMP 320;2013-12-06;2013-05-16;;;;;;;82;ppm
+2019424;409689;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;2014-09-08;2013-07-01;;;;;;;82;ppm
+2019425;410597;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;2014-09-08;2013-07-03;;;;;;;82;ppm
+2091440;392015;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;2015-01-15;2013-05-01;;;44810000;kWh;40909;;83;ppm
+2044300;549082;Wind turbine - main gear;500;;Mobil Mobilgear XMP 320;2014-10-21;2014-04-04;;;;;;;83;ppm
+2091443;392018;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;2015-01-15;2013-05-01;;;28336000;kWh;16362;;84;ppm
+2091335;392007;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;2015-01-15;2013-05-01;;;40563000;kWh;39870;;85;ppm
+1975128;217477;Wind turbine - main gear;425;;Mobil Mobilgear XMP 320;2014-06-23;2012-11-13;;;460620;kWh;61715.1;;87;ppm
+2019423;409696;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;2014-08-08;2014-03-07;;;;;;;87;ppm
+2104370;706145;Wind turbine - main gear;500;l;Mobil Mobilgear XMP 320;2015-01-24;2013-04-24;;l;10269000;kWh;14560;h;88;ppm
+2091332;392009;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;2015-01-15;2013-05-01;;;5435000;kWh;5473;;88;ppm
+2066196;717899;Wind turbine - main gear;470;;Mobil Mobilgear XMP 320;2014-11-28;2013-05-10;;;;;;;88;ppm
+2094945;428273;WKA-Hauptgetriebe;500;l;Mobil Mobilgear XMP 320;2015-01-29;2012-09-12;;l;;;;;89;ppm
+2066189;717899;Wind turbine - main gear;470;;Mobil Mobilgear XMP 320;2014-11-28;2013-05-10;;;;;;;89;ppm
+2049094;609464;Wind turbine - main gear;500;;Mobil Mobilgear XMP 320;2014-11-05;2014-10-24;;;96005;kWh;150;h;89;ppm
+2104373;729281;WKA-Hauptgetriebe;500;l;Mobil Mobilgear XMP 320;2015-02-02;;20;l;13703000;kWh;12200;h;89;ppm
+2104227;154936;Wind turbine - main gear;390;;Mobil Mobilgear XMP 320;2014-02-18;;;;;;;;90;ppm
+1909549;253017;Wind turbine - main gear;;;Mobil Mobilgear XMP 320;2014-02-26;;;;46673;;;;90;ppm
+1987542;634989;Wind turbine - main gear;500;;Mobil Mobilgear XMP 320;2014-07-16;;;;11658000;kWh;12152;;90;ppm
+2028303;644880;Wind turbine - main gear;500;;Mobil Mobilgear XMP 320;2014-09-25;;;;13450000;kWh;14740;h;90;ppm
+2096351;590212;WKA-Hauptgetriebe;400;;Mobil Mobilgear XMP 320;2015-01-28;;;;25132;h;25132;h;91;ppm
+1862883;477894;Wind turbine - main gear;500;;Mobil Mobilgear XMP 320;2013-10-12;2012-07-11;;;;;;;92;ppm
+2045467;634988;Wind turbine - main gear;500;;Mobil Mobilgear XMP 320;2014-10-29;2014-10-14;;;202643;kWh;14577;h;92;ppm
+2101671;132700;WKA-Hauptgetriebe;310;;Mobil Mobilgear XMP 320;2015-01-21;2011-07-20;;;;;31464178;kWh;93;ppm
+2019419;409695;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;2014-08-08;2013-07-03;;;;;;;93;ppm
+2019420;409693;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;2014-08-08;2013-07-04;;;;;;;93;ppm
+2063368;431445;Wind turbine - main gear;320;;Mobil Mobilgear XMP 320;2014-11-19;2012-06-01;;;;;;;94;ppm
+1832868;431451;Wind turbine - main gear;330;;Mobil Mobilgear XMP 320;2013-10-15;2012-06-01;;;7447000;kWh;27295;kWh;95;ppm
+2091323;392021;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;2015-01-14;2013-05-06;;;42099000;kWh;38631;h;95;ppm
+2008836;428252;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;2014-08-29;2014-06-01;;;;;;;95;ppm
+2006107;428273;WKA-Hauptgetriebe;500;;Mobil Mobilgear XMP 320;2014-08-29;2012-09-12;;;;;44300;h;97;ppm
+2103683;670829;WKA-Hauptgetriebe;600;;Mobil Mobilgear XMP 320;2015-02-05;;;;16426;h;16426;h;98;ppm
+2020791;210035;Wind turbine - main gear;260;l;Mobil Mobilgear XMP 320;2014-09-15;2009-02-16;10;l;87392;h;87392;h;99;ppm
+1989971;387941;Wind turbine - main gear;500;;Mobil Mobilgear XMP 320;2014-07-04;2012-06-01;;;;;;;99;ppm
+1989972;441222;Wind turbine - main gear;340;;Mobil Mobilgear XMP 320;2014-07-10;2012-06-01;;;;;;;100;ppm
+1835631;716524;WKA-Hauptgetriebe;;l;Mobil Mobilgear XMP 320;2013-09-25;2013-01-28;400;l;291947;kWh;719.53;;100;ppm
+1832861;444963;Wind turbine - main gear;330;;Mobil Mobilgear XMP 320;2013-10-08;2013-08-22;;;424036;kWh;8631;kWh;100;ppm
+1967712;441304;Wind turbine - main gear;340;;Mobil Mobilgear XMP 320;2014-05-27;2012-06-01;;;11637000;kWh;4380;;101;ppm
+2104368;713799;Wind turbine - main gear;500;l;Mobil Mobilgear XMP 320;2015-02-03;2013-04-24;;l;9482000;kWh;14104;h;101;ppm
+2008841;428253;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;2014-08-29;2014-06-01;;;;;;;102;ppm
+2049109;609468;Wind turbine - main gear;360;;Mobil Mobilgear XMP 320;2014-11-04;2014-10-23;;;100657;kWh;16090;h;102;ppm
+2085939;428273;WKA-Hauptgetriebe;500;l;Mobil Mobilgear XMP 320;2015-01-14;2012-09-12;20;l;;;;;103;ppm
+2016059;253018;Wind turbine - main gear;340;;Mobil Mobilgear XMP 320;2014-09-11;2014-09-10;;;;;48236;;103;ppm
+2001336;132700;WKA-Hauptgetriebe;310;;Mobil Mobilgear XMP 320;2014-08-05;2011-07-20;;;;;108578;h;104;ppm
+1967798;415776;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;2014-06-16;2013-05-01;;;40369000;kWh;35508;;104;ppm
+2019422;409691;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;2014-08-08;2013-07-04;;;;;;;104;ppm
+1994753;132515;Wind turbine - main gear;300;;Mobil Mobilgear XMP 320;2014-07-15;2014-06-12;;;25814;kWh;71024;kWh;104;ppm
+2057068;428257;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;2014-11-18;2012-04-08;;;;;;;105;ppm
+1993799;124139;Wind turbine - main gear;390;;Mobil Mobilgear XMP 320;2014-08-02;2013-07-01;;;;;;;105;ppm
+1886199;441304;Wind turbine - main gear;330;;Mobil Mobilgear XMP 320;2014-01-21;2012-06-01;;;90230000;;40420;;106;ppm
+2054541;444963;Wind turbine - main gear;500;;Mobil Mobilgear XMP 320;2014-10-31;2012-06-01;;;;;;;106;ppm
+2082059;437424;Wind turbine - main gear;500;l;Mobil Mobilgear XMP 320;2014-12-29;2012-06-20;20;l;11205000;kWh;16940000;kWh;106;ppm
+2060642;196651;WKA-Hauptgetriebe;60;;Mobil Mobilgear XMP 320;2014-11-25;2013-10-29;;;;;103064;h;106;ppm
+1860221;726520;Wind turbine - main gear;500;;Mobil Mobilgear XMP 320;2013-12-06;2013-06-14;;;;;;;107;ppm
+1986311;415776;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;2014-07-18;2013-06-15;;;40799000;kWh;36047;;107;ppm
+1914329;634989;Wind turbine - main gear;500;;Mobil Mobilgear XMP 320;2014-03-18;;;;9272000;kWh;9850;h;107;ppm
+1963048;101683;WKA-Hauptgetriebe;210;l;Mobil Mobilgear XMP 320;2014-06-02;2013-04-17;;l;;;126762;h;108;ppm
+1940101;392029;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;2014-04-08;;;;34721;kWh;33808;kWh;108;ppm
+1907967;387941;Wind turbine - main gear;500;l;Mobil Mobilgear XMP 320;2014-02-25;2011-06-16;20;l;23486.25;h;50125.42;h;109;ppm
+2057069;428257;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;2014-11-18;2012-04-18;;;;;;;109;ppm
+1439202;100089;WKA-Hauptgetriebe;300;;Mobil Mobilgear XMP 320;2011-09-20;;;;;;;;109;ppm
+2093172;100089;WKA-Hauptgetriebe;300;;Mobil Mobilgear XMP 320;2015-01-26;2011-01-01;;;;;111073;kWh;110;ppm
+2091435;560962;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;2015-01-15;2013-05-01;;;22394000;kWh;22789;;110;ppm
+2091324;553004;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;2015-01-07;2013-05-10;;;22560000;kWh;22185;;111;ppm
+2008851;428253;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;2014-08-25;2014-06-01;;;;;;;111;ppm
+1986310;392029;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;2014-07-18;2013-06-20;;;35947000;kWh;35399;;113;ppm
+2045305;421282;Énergie éolienne ligne - engrenage principale;500;l;Mobil Mobilgear XMP 320;;2014-10-30;500;l;;;;;113;ppm
+1952514;438296;Wind turbine - main gear;360;;Mobil Mobilgear XMP 320;2014-05-22;2012-04-01;;;;;;;114;ppm
+1828815;405582;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;2013-09-30;2013-03-01;;;4000;h;39391.84;h;114;ppm
+2054543;431451;Wind turbine - main gear;320;;Mobil Mobilgear XMP 320;2014-10-27;2012-06-01;;;;;;;115;ppm
+2082058;437424;Wind turbine - main gear;500;l;Mobil Mobilgear XMP 320;2015-01-02;2012-06-20;60;l;11211000;kWh;16964000;kWh;115;ppm
+1967714;392006;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;2014-06-16;2013-05-01;;;43751000;kWh;39556;;115;ppm
+2066496;123598;WKA-Hauptgetriebe;60;;Mobil Mobilgear XMP 320;2014-12-02;2013-10-29;;;;;;;116;ppm
+1837213;196651;WKA-Hauptgetriebe;60;l;Mobil Mobilgear XMP 320;2013-10-29;2013-10-29;60;l;;;;;116;ppm
+2082011;229176;Énergie éolienne ligne - engrenage principale;425;l;Mobil Mobilgear XMP 320;2014-11-13;2013-11-25;;l;;;;;116;ppm
+2081999;299607;Énergie éolienne ligne - engrenage principale;500;l;Mobil Mobilgear XMP 320;2014-12-16;2013-04-09;500;l;;;;;117;ppm
+1842899;319018;Wind turbine - main gear;425;l;Mobil Mobilgear XMP 320;2013-11-04;2013-11-01;425;l;;;38041;h;117;ppm
+2108798;724355;Wind turbine - main gear;500;l;Mobil Mobilgear XMP 320;2015-02-13;2013-12-19;;l;6877000;kWh;8806;h;117;ppm
+1884738;437427;Wind turbine - main gear;340;l;Mobil Mobilgear XMP 320;2014-01-10;2012-04-16;20;l;;;29979.29;h;118;ppm
+1936416;405593;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;2014-03-05;2013-02-02;;;8426;h;43440.51;h;119;ppm
+2082014;229174;Énergie éolienne ligne - engrenage principale;425;;Mobil Mobilgear XMP 320;2014-10-05;2013-11-25;;;;;;;119;ppm
+2082015;229175;Énergie éolienne ligne - engrenage principale;425;l;Mobil Mobilgear XMP 320;2014-11-12;2013-11-25;;l;;;;;119;ppm
+1999772;534217;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;2014-08-09;2014-08-08;;;24;h;28803.04;h;119;ppm
+2045468;637978;Wind turbine - main gear;500;;Mobil Mobilgear XMP 320;2014-10-29;2014-10-14;;;197080;kWh;14170;h;119;ppm
+1886158;441222;Wind turbine - main gear;340;;Mobil Mobilgear XMP 320;2014-01-22;2012-06-01;;;10133000;kWh;39123;;120;ppm
+1964225;431441;Wind turbine - main gear;360;;Mobil Mobilgear XMP 320;2014-06-09;2012-06-25;;;;;13556;h;120;ppm
+1854723;208223;Wind turbine - main gear;280;;Mobil Mobilgear XMP 320;2013-12-02;2013-04-15;;;;;;;120;ppm
+1952135;387941;Wind turbine - main gear;500;;Mobil Mobilgear XMP 320;2014-05-02;2011-06-16;;;23706;h;50537;h;121;ppm
+2097341;328273;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;2015-01-23;2013-10-23;;;;;61157.1;;121;ppm
+2081998;299608;Énergie éolienne ligne - engrenage principale;500;;Mobil Mobilgear XMP 320;2014-12-15;2013-04-09;;;;;;;122;ppm
+2048749;208213;Wind turbine - main gear;280;;Mobil Mobilgear XMP 320;2014-11-06;2014-08-20;;;;;;;122;ppm
+1914328;634990;Wind turbine - main gear;500;;Mobil Mobilgear XMP 320;2014-03-18;;;;9590000;kWh;10229;h;122;ppm
+1981512;437424;Wind turbine - main gear;500;l;Mobil Mobilgear XMP 320;2014-06-25;2012-06-20;;l;9093000;kWh;13434000;kWh;123;ppm
+1967725;392007;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;2014-06-16;2013-05-01;;;41778000;kWh;40600;;123;ppm
+1967720;392016;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;2014-06-16;2013-05-01;;;4049000;;3394;h;123;ppm
+2082010;229177;Énergie éolienne ligne - engrenage principale;425;;Mobil Mobilgear XMP 320;2014-11-06;2013-11-26;;;;;;;123;ppm
+2094198;428253;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;2015-01-28;;;;;;;;123;ppm
+1849884;405587;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;2013-11-04;2012-03-11;;;798600;kWh;24247000;kWh;124;ppm
+1981509;437427;Wind turbine - main gear;340;l;Mobil Mobilgear XMP 320;2014-06-17;2012-04-16;;l;10650000;kWh;14909000;kWh;124;ppm
+1952508;428257;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;2014-05-22;2012-04-22;;;;;;;125;ppm
+1967719;392029;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;2014-06-16;2013-05-01;;;35624000;kWh;34871;;125;ppm
+1999761;405584;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;2014-08-06;2014-08-05;;;24;h;46735.39;h;125;ppm
+2050168;396884;Wind turbine - main gear;500;;Mobil Mobilgear XMP 320;2014-11-04;;;;;;;;125;ppm
+1917863;208200;Wind turbine - main gear;320;l;Mobil Mobilgear XMP 320;2014-03-17;2012-03-14;20;l;;;44531;h;126;ppm
+1999765;405593;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;2014-08-05;2014-08-04;;;24;h;46547.38;h;126;ppm
+1979815;534221;WKA-Hauptgetriebe;400;;Mobil Mobilgear XMP 320;2014-06-10;;;;21518000;kWh;27266;h;126;ppm
+1952511;438305;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;2014-05-22;2012-04-01;;;;;;;127;ppm
+2106912;208223;Wind turbine - main gear;280;l;Mobil Mobilgear XMP 320;2015-02-11;2013-04-15;20;l;;;;;127;ppm
+2097342;328274;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;2015-01-19;2013-10-23;;;;;61899.3;;127;ppm
+1999762;405587;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;2014-08-06;2014-08-05;;;24;h;47091.67;h;127;ppm
+2082007;299606;Énergie éolienne ligne - engrenage principale;500;l;Mobil Mobilgear XMP 320;2014-12-15;;;l;;;;;127;ppm
+1963951;430668;Wind turbine - main gear;350;l;Mobil Mobilgear XMP 320;2014-05-26;;20;l;;;41197;h;127;ppm
+1952506;428254;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;2014-05-22;2012-04-01;;;;;;;128;ppm
+1952510;428259;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;2014-05-22;2012-04-01;;;;;;;128;ppm
+1970998;336324;WKA-Hauptgetriebe;470;;Mobil Mobilgear XMP 320;2014-06-11;;;;;;;;128;ppm
+2057070;428253;Wind turbine - main gear;340;;Mobil Mobilgear XMP 320;2014-11-18;;;;;;;;128;ppm
+1964001;430684;Wind turbine - main gear;350;;Mobil Mobilgear XMP 320;2014-05-29;;;;;;40729;h;128;ppm
+2108843;695966;Wind turbine - main gear;400;l;Mobil Mobilgear XMP 320;2015-02-13;;20;l;13519000;kWh;14524;h;128;ppm
+2052823;722060;Wind turbine - main gear;340;;Mobil Mobilgear XMP 320;2014-11-05;;;;;;;;128;ppm
+1952507;428258;Wind turbine - main gear;360;;Mobil Mobilgear XMP 320;2014-05-22;2012-04-01;;;;;;;129;ppm
+1993800;125162;Wind turbine - main gear;390;;Mobil Mobilgear XMP 320;2014-07-03;2013-06-01;;;;;;;129;ppm
+1983987;100089;WKA-Hauptgetriebe;300;;Mobil Mobilgear XMP 320;2014-07-09;;;;;;;;129;ppm
+1989822;590211;WKA-Hauptgetriebe;400;;Mobil Mobilgear XMP 320;2014-07-22;;;;21796;h;21796;h;129;ppm
+1936412;405587;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;2014-03-16;2013-02-04;;;8452;h;43985.41;h;130;ppm
+1872232;487866;Wind turbine - main gear;40;;Mobil Mobilgear XMP 320;2014-01-09;2014-01-09;;;;;;;130;ppm
+2049072;726487;Wind turbine - main gear;500;;Mobil Mobilgear XMP 320;2014-11-05;2014-05-28;;;;;;;130;ppm
+2063404;428229;Wind turbine - main gear;400;l;Mobil Mobilgear XMP 320;2014-11-19;2014-06-12;;l;2779;h;37337;h;130;ppm
+2045470;638019;Wind turbine - main gear;500;;Mobil Mobilgear XMP 320;2014-10-29;2014-10-09;;;232174;kWh;14614;h;130;ppm
+2066075;568663;Wind turbine - main gear;425;l;Mobil Mobilgear XMP 320;2014-11-17;2013-06-28;15;l;29031;kWh;;;131;ppm
+2074801;428252;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;2014-12-16;;;;;;;;131;ppm
+1986536;477894;Wind turbine - main gear;500;;Mobil Mobilgear XMP 320;2014-07-14;2013-07-01;;;30592;kWh;35920000;kWh;132;ppm
+1963999;430669;Wind turbine - main gear;350;l;Mobil Mobilgear XMP 320;2014-05-19;;20;l;;;30157;h;132;ppm
+1839062;474031;Wind turbine - main gear;500;;Mobil Mobilgear XMP 320;2013-10-30;2013-05-08;;;;;;;133;ppm
+2108797;724352;Wind turbine - main gear;500;l;Mobil Mobilgear XMP 320;2015-02-13;2013-12-16;20;l;8452000;kWh;9825;h;133;ppm
+1991628;487866;Wind turbine - main gear;365;l;Mobil Mobilgear XMP 320;2014-07-16;2014-03-20;20;l;;;27497;h;133;ppm
+1999767;405582;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;2014-08-07;2014-08-06;;;24;h;46478.92;h;133;ppm
+1999770;534214;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;2014-08-08;2014-08-07;;;24;h;28128.24;h;133;ppm
+1999773;534221;WKA-Hauptgetriebe;400;;Mobil Mobilgear XMP 320;2014-08-09;2014-08-08;;;24;h;28380.3;h;133;ppm
+2062729;431441;Wind turbine - main gear;360;;Mobil Mobilgear XMP 320;2014-11-20;2014-09-26;;;1064;h;33390;h;133;ppm
+1855473;724591;Wind turbine - main gear;;;Mobil Mobilgear XMP 320;2013-11-25;2009-01-01;;;;h;;;134;ppm
+2024359;229174;Énergie éolienne ligne - engrenage principale;425;;Mobil Mobilgear XMP 320;2014-05-05;2013-11-25;;;;;;;134;ppm
+2063406;428227;Wind turbine - main gear;400;l;Mobil Mobilgear XMP 320;2014-11-22;2014-06-12;;l;3238;h;38640;h;134;ppm
+1999763;405588;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;2014-08-05;2014-08-04;;;24;h;47011.74;h;134;ppm
+1999768;405583;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;2014-08-07;2014-08-06;;;24;h;46608.96;h;134;ppm
+2019682;409688;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;2014-09-08;2013-07-01;;;;;;;135;ppm
+2097339;328276;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;2015-01-18;2013-10-24;;;;;61435.8;;135;ppm
+2107607;549091;WKA-Hauptgetriebe;320;;Mobil Mobilgear XMP 320;2015-02-18;2013-10-29;;;;;;;135;ppm
+2037927;422057;Wind turbine - main gear;360;;Mobil Mobilgear XMP 320;2014-10-13;2014-05-15;;;;;38368;h;135;ppm
+2049062;726520;Wind turbine - main gear;500;;Mobil Mobilgear XMP 320;2014-11-05;2013-06-14;;;;;;;136;ppm
+2039493;716524;WKA-Hauptgetriebe;500;;Mobil Mobilgear XMP 320;2014-10-21;2013-07-01;;;;;;;136;ppm
+2054379;713798;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;2014-09-30;;;;5542000;kWh;10374.85;h;136;ppm
+2054377;713799;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;2014-09-19;;;;6678000;kWh;10868;h;136;ppm
+2024360;229176;Énergie éolienne ligne - engrenage principale;425;l;Mobil Mobilgear XMP 320;2014-05-06;2013-01-25;;l;;;;;137;ppm
+2049070;726500;Wind turbine - main gear;500;;Mobil Mobilgear XMP 320;2014-11-05;2014-05-31;;;;;;;137;ppm
+2063401;428228;Wind turbine - main gear;400;l;Mobil Mobilgear XMP 320;2014-11-21;2014-06-11;;l;3318;h;37912;h;137;ppm
+2049056;726513;Wind turbine - main gear;340;;Mobil Mobilgear XMP 320;2014-11-05;2014-05-29;;;;;;;138;ppm
+1967717;431451;Wind turbine - main gear;320;;Mobil Mobilgear XMP 320;2014-05-21;2012-06-01;;;11843000;kWh;32401;;139;ppm
+2017454;477894;Wind turbine - main gear;500;l;Mobil Mobilgear XMP 320;2014-09-01;2013-07-11;20;l;306420;kWh;54020.5;h;139;ppm
+1890527;392015;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;;2013-08-27;;;14427;kWh;;;139;ppm
+2073572;289846;WKA-Hauptgetriebe;425;;Mobil Mobilgear XMP 320;2014-12-03;2013-10-15;;;;;;;139;ppm
+1974959;328273;Wind turbine - main gear;340;l;Mobil Mobilgear XMP 320;2014-06-26;2013-10-23;60;l;;;;;139;ppm
+1979263;198840;Wind turbine - main gear;425;;Mobil Mobilgear XMP 320;2014-07-03;2014-06-12;;;671090;kWh;65247.4;;140;ppm
+2027645;208206;Wind turbine - main gear;300;;Mobil Mobilgear XMP 320;2014-09-24;2014-06-13;;;199709;kWh;62970.5;h;140;ppm
+1999771;534211;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;2014-08-08;2014-08-07;;;24;h;28894.82;h;140;ppm
+2064597;609474;Wind turbine - main gear;380;;Mobil Mobilgear XMP 320;2014-12-01;;;;15304000;kWh;17139;h;140;ppm
+2054378;718598;WKA-Hauptgetriebe;400;;Mobil Mobilgear XMP 320;2014-09-29;;;;8023000;kWh;10422.71;h;140;ppm
+1885059;549082;Wind turbine - main gear;500;;Mobil Mobilgear XMP 320;2014-01-14;2012-04-23;;;;;;;141;ppm
+2071841;522098;Wind turbine - main gear;400;l;Mobil Mobilgear XMP 320;2014-12-05;2012-12-10;;l;28384;;38750.54;h;141;ppm
+1941340;208223;Wind turbine - main gear;280;;Mobil Mobilgear XMP 320;2014-04-23;2013-04-15;;;;;;;141;ppm
+2024356;229175;Énergie éolienne ligne - engrenage principale;425;l;Mobil Mobilgear XMP 320;2014-05-07;2013-11-25;;l;;;;;141;ppm
+2049063;726494;Wind turbine - main gear;340;;Mobil Mobilgear XMP 320;2014-11-05;2014-05-27;;;;;;;141;ppm
+2063400;428230;Wind turbine - main gear;400;l;Mobil Mobilgear XMP 320;2014-11-19;2014-06-12;;l;2367;h;37979;h;141;ppm
+2019681;409686;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;2014-08-08;2013-07-02;;;;;;;142;ppm
+2054343;409688;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;2014-11-07;2013-07-17;;;;;;;142;ppm
+1855018;328273;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;2013-11-25;2013-10-24;;;;;51058;h;142;ppm
+2049058;726511;Wind turbine - main gear;340;;Mobil Mobilgear XMP 320;2014-11-05;2014-05-27;;;;;;;142;ppm
+2068096;198840;Wind turbine - main gear;425;l;Mobil Mobilgear XMP 320;2014-11-27;2014-06-12;20;l;700530;kWh;68297.8;h;142;ppm
+1837215;123598;WKA-Hauptgetriebe;60;;Mobil Mobilgear XMP 320;2013-10-29;2013-10-29;;;;;;;143;ppm
+1934011;396894;Wind turbine - main gear;500;;Mobil Mobilgear XMP 320;2014-04-10;2014-04-10;;;;;;;143;ppm
+2074977;726508;Wind turbine - main gear;500;;Mobil Mobilgear XMP 320;2014-12-15;2014-05-29;;;;;;;143;ppm
+2022782;217477;Wind turbine - main gear;425;;Mobil Mobilgear XMP 320;2014-09-12;2014-09-08;;;652100;kWh;63448.9;h;143;ppm
+2038276;608187;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;2014-10-13;;;;14853000;kWh;14853000;kWh;143;ppm
+2105281;740193;WKA-Hauptgetriebe;340;;Mobil Mobilgear XMP 320;2015-02-09;;;;12006;;12006;;143;ppm
+2054346;409687;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;2014-11-07;2013-07-17;;;;;;;144;ppm
+2024358;229177;Énergie éolienne ligne - engrenage principale;425;;Mobil Mobilgear XMP 320;2014-04-30;2013-11-26;;;;;;;144;ppm
+2049059;726495;Wind turbine - main gear;340;;Mobil Mobilgear XMP 320;2014-11-05;2014-05-31;;;;;;;144;ppm
+2006883;430684;Wind turbine - main gear;400;l;Mobil Mobilgear XMP 320;2014-08-25;2014-08-22;365;l;;;42827;h;144;ppm
+1861857;154933;Wind turbine - main gear;390;;Mobil Mobilgear XMP 320;2013-11-27;2011-02-01;;;;;;;145;ppm
+1990739;522098;Wind turbine - main gear;400;l;Mobil Mobilgear XMP 320;2014-07-23;2012-12-10;20;l;;;23875000;kWh;145;ppm
+1936413;405583;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;2014-03-19;2013-02-06;;;4486;h;43469.48;h;145;ppm
+1974837;568663;Wind turbine - main gear;425;;Mobil Mobilgear XMP 320;2014-06-26;2013-06-27;;;27100;h;32746;h;145;ppm
+2054332;405583;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;2014-10-14;2014-01-01;;;28528000;kWh;48513;;145;ppm
+1972730;132515;Wind turbine - main gear;300;;Mobil Mobilgear XMP 320;2014-06-11;2014-06-11;;;18831000;kWh;70232000;kWh;145;ppm
+1983124;229176;Énergie éolienne ligne - engrenage principale;425;;Mobil Mobilgear XMP 320;2014-05-27;;;;48145;kWh;58770;kWh;145;ppm
+2003561;549091;WKA-Hauptgetriebe;400;;Mobil Mobilgear XMP 320;2014-08-25;2010-08-29;;;;;;;146;ppm
+2054338;409693;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;2014-11-07;2013-02-14;;;;;;;146;ppm
+1967721;392015;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;2014-06-16;2013-05-01;;;40755000;kWh;37038;;146;ppm
+1983123;229174;Énergie éolienne ligne - engrenage principale;425;;Mobil Mobilgear XMP 320;2014-06-02;;;;11409;kWh;13593;kWh;146;ppm
+1983121;229175;Énergie éolienne ligne - engrenage principale;425;;Mobil Mobilgear XMP 320;2014-05-28;;;;10473;kWh;12877;kWh;146;ppm
+2031803;695966;Wind turbine - main gear;400;l;Mobil Mobilgear XMP 320;2014-09-22;;;l;11208;h;11208;h;146;ppm
+1849885;405583;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;2013-11-04;2012-03-12;;;7454000;kWh;23350000;kWh;147;ppm
+1967793;392009;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;2014-06-16;2013-05-01;;;1406000;kWh;1526;;147;ppm
+1967718;392021;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;2014-06-16;2013-05-01;;;14238000;;12531;;147;ppm
+2016465;609464;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;2014-09-15;2014-03-28;;;2890000;kWh;3095;h;147;ppm
+2074978;726490;Wind turbine - main gear;500;;Mobil Mobilgear XMP 320;2014-12-15;2014-05-28;;;;;;;147;ppm
+2027644;208211;Wind turbine - main gear;300;;Mobil Mobilgear XMP 320;2014-09-30;2014-06-13;;;161935;kWh;8107.4;h;147;ppm
+2007092;208213;Wind turbine - main gear;280;;Mobil Mobilgear XMP 320;2014-08-21;2014-08-20;;;;;;;147;ppm
+1844822;399993;Wind turbine - main gear;400;l;Mobil Mobilgear XMP 320;2013-11-09;;20;l;16625;;16747;;147;ppm
+1952513;428252;Wind turbine - main gear;360;;Mobil Mobilgear XMP 320;2014-05-22;2012-04-01;;;;;;;148;ppm
+1936415;405582;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;2014-03-21;2013-02-06;;;4786;h;43343.4;h;148;ppm
+2097340;328275;Wind turbine - main gear;400;l;Mobil Mobilgear XMP 320;2015-01-21;2013-10-24;10;l;;;61172;h;148;ppm
+2049046;726490;Wind turbine - main gear;500;;Mobil Mobilgear XMP 320;2014-11-05;2014-05-28;;;;;;;148;ppm
+2049048;726508;Wind turbine - main gear;500;;Mobil Mobilgear XMP 320;2014-11-05;2014-05-29;;;;;;;148;ppm
+1844613;441304;Wind turbine - main gear;320;;Mobil Mobilgear XMP 320;2013-10-21;2012-06-01;;;12089;h;38342;h;149;ppm
+1967797;392012;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;2014-06-16;2013-05-01;;;38479000;kWh;37327;;149;ppm
+1936986;100452;WKA-Hauptgetriebe;300;;Mobil Mobilgear XMP 320;2014-04-25;2014-02-25;;;1440;h;125165;h;149;ppm
+2049060;726518;Wind turbine - main gear;340;;Mobil Mobilgear XMP 320;2014-11-04;2014-05-23;;;;;;;149;ppm
+2041055;431441;Wind turbine - main gear;360;;Mobil Mobilgear XMP 320;2014-10-15;2014-09-25;;;308;h;32634;h;149;ppm
+1983125;229177;Énergie éolienne ligne - engrenage principale;425;;Mobil Mobilgear XMP 320;2014-06-03;;;;10494;kWh;12948;kWh;149;ppm
+1911686;334358;Wind turbine - main gear;300;;Mobil Mobilgear XMP 320;2014-03-13;;;;23219;kWh;47892;kWh;149;ppm
+1849870;534211;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;2013-11-18;;;;18561000;kWh;22735.75;kWh;149;ppm
+1948491;706145;Wind turbine - main gear;500;l;Mobil Mobilgear XMP 320;2014-05-09;;;l;3949;;3949;;149;ppm
+1967726;392018;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;2014-06-16;2013-05-01;;;38917000;kWh;34895;h;150;ppm
+2044010;549070;Wind turbine - main gear;500;;Mobil Mobilgear XMP 320;2014-10-21;2014-04-03;;;;;;;150;ppm
+2078518;534211;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;2014-11-20;2014-08-12;;;2535000;kWh;28313.93;h;151;ppm
+1886198;737065;WKA-Hauptgetriebe;500;l;Mobil Mobilgear XMP 320;2013-11-02;;20;l;4477;h;4477;h;151;ppm
+2006367;752911;WKA-Hauptgetriebe;400;;Mobil Mobilgear XMP 320;2014-08-13;;320;;7204;kWh;;;151;ppm
+1926809;210035;Wind turbine - main gear;240;l;Mobil Mobilgear XMP 320;2014-03-17;2009-02-23;10;l;9654988;kWh;9654988;kWh;152;ppm
+1829094;132700;WKA-Hauptgetriebe;310;;Mobil Mobilgear XMP 320;2013-09-19;2011-07-20;;;26;M;101364;;152;ppm
+1954208;208253;Wind turbine - main gear;425;;Mobil Mobilgear XMP 320;2014-05-21;2012-11-13;;;464060;h;60886.4;h;152;ppm
+1971236;123598;WKA-Hauptgetriebe;60;;Mobil Mobilgear XMP 320;2014-06-26;2013-10-29;;;;;;;152;ppm
+2054333;405582;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;2014-10-08;2014-01-01;;;71809000;kWh;41958;;152;ppm
+1960019;726518;Wind turbine - main gear;340;;Mobil Mobilgear XMP 320;2014-05-23;2014-05-23;;;25784000;kWh;22436000;kWh;152;ppm
+2078490;534217;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;2014-11-20;2014-08-11;;;22789000;kWh;27907.86;h;152;ppm
+1936315;444963;Wind turbine - main gear;340;;Mobil Mobilgear XMP 320;2014-04-11;2012-06-01;;;9968000;kWh;12931;;153;ppm
+1858968;313263;WKA-Hauptgetriebe;370;;Mobil Mobilgear XMP 320;2013-11-20;2013-05-30;;;;;49524;h;153;ppm
+1960020;726490;Wind turbine - main gear;500;;Mobil Mobilgear XMP 320;2014-05-28;2014-05-28;;;22068000;kWh;21770000;kWh;153;ppm
+1985564;428229;Wind turbine - main gear;450;;Mobil Mobilgear XMP 320;2014-07-16;2014-06-11;;;;;36000;;153;ppm
+2007093;208200;Wind turbine - main gear;280;;Mobil Mobilgear XMP 320;2014-08-21;2014-08-20;;;;;;;153;ppm
+1844609;431445;Wind turbine - main gear;330;;Mobil Mobilgear XMP 320;2013-10-24;2012-06-01;;;7487000;kWh;40906;kWh;154;ppm
+2049049;726501;Wind turbine - main gear;340;;Mobil Mobilgear XMP 320;2014-11-04;2014-05-26;;;;;;;154;ppm
+2049055;726519;Wind turbine - main gear;340;;Mobil Mobilgear XMP 320;2014-11-04;2014-05-26;;;;;;;154;ppm
+1960023;726487;Wind turbine - main gear;500;;Mobil Mobilgear XMP 320;2014-05-28;2014-05-28;;;22068000;kWh;21770;kWh;154;ppm
+2054390;405587;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;2014-10-15;2014-07-01;;;28659000;kWh;48762;h;154;ppm
+1885070;549070;Wind turbine - main gear;500;;Mobil Mobilgear XMP 320;2014-01-14;2012-04-23;;;;;;;155;ppm
+1884740;437424;Wind turbine - main gear;500;l;Mobil Mobilgear XMP 320;2013-12-10;2012-06-20;40;l;;;9742.96;h;155;ppm
+1990738;522098;Wind turbine - main gear;400;l;Mobil Mobilgear XMP 320;2014-07-26;2012-12-08;20;l;;;36397.8;;155;ppm
+1918055;328275;Wind turbine - main gear;400;l;Mobil Mobilgear XMP 320;2014-03-18;2013-10-24;400;l;;;;;155;ppm
+1960028;726513;Wind turbine - main gear;340;;Mobil Mobilgear XMP 320;2014-05-29;2014-05-29;;;21487000;kWh;21191000;kWh;155;ppm
+2037916;634989;Wind turbine - main gear;500;;Mobil Mobilgear XMP 320;2014-10-16;2014-10-13;;;6111;kWh;30;h;155;ppm
+1960032;726508;Wind turbine - main gear;500;;Mobil Mobilgear XMP 320;2014-05-29;2014-05-29;;;21889000;kWh;21585000;kWh;156;ppm
+1979264;208253;Wind turbine - main gear;425;;Mobil Mobilgear XMP 320;2014-07-03;2014-06-12;;;470160;kWh;61810.1;;156;ppm
+2042602;208200;Wind turbine - main gear;280;;Mobil Mobilgear XMP 320;2014-10-18;2014-08-28;;;;;;;156;ppm
+2091535;446913;Wind turbine - main gear;500;l;Mobil Mobilgear XMP 320;2015-01-16;2015-01-14;500;l;;;41084;h;156;ppm
+1965503;289846;WKA-Hauptgetriebe;425;;Mobil Mobilgear XMP 320;2014-05-21;2013-10-15;;;;;;;157;ppm
+2074807;208253;Wind turbine - main gear;425;l;Mobil Mobilgear XMP 320;2014-12-15;2014-06-12;20;l;492950;kWh;65112.7;h;157;ppm
+2037923;446939;Wind turbine - main gear;360;;Mobil Mobilgear XMP 320;2014-10-08;2014-09-04;;;;;37715;h;157;ppm
+1844604;441222;Wind turbine - main gear;330;;Mobil Mobilgear XMP 320;2013-11-01;2012-06-01;;;8345000;kWh;37378;kWh;158;ppm
+1834589;100452;WKA-Hauptgetriebe;300;;Mobil Mobilgear XMP 320;2013-10-16;2012-09-11;;;;;;;158;ppm
+2049054;726514;Wind turbine - main gear;340;;Mobil Mobilgear XMP 320;;2014-05-23;;;;;;;158;ppm
+1828747;405593;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;2013-10-06;2013-03-01;;;4000;;39459.23;;159;ppm
+2069329;313263;WKA-Hauptgetriebe;370;;Mobil Mobilgear XMP 320;2014-11-19;2013-05-30;;;;;57841;h;159;ppm
+1992742;516372;WKA-Hauptgetriebe;330;;Mobil Mobilgear XMP 320;2014-07-08;2013-10-07;;;;;;;159;ppm
+2049052;726488;Wind turbine - main gear;340;;Mobil Mobilgear XMP 320;2014-11-04;2014-05-24;;;;;;;159;ppm
+2083834;217477;Wind turbine - main gear;425;;Mobil Mobilgear XMP 320;2015-01-08;2014-09-08;;;48864000;kWh;65681.98;h;159;ppm
+2054331;319018;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;2014-10-03;2014-04-01;;;31303000;kWh;48214;kWh;160;ppm
+2037925;422054;Wind turbine - main gear;360;;Mobil Mobilgear XMP 320;2014-09-14;2014-09-04;;;;;36431;h;160;ppm
+1828751;405588;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;2013-10-04;2013-03-01;;;4000;h;39974.47;h;161;ppm
+2092555;609473;Wind turbine - main gear;380;;Mobil Mobilgear XMP 320;2015-01-23;2014-10-16;;;15850;;;;161;ppm
+1936679;733780;Wind turbine - main gear;340;l;Mobil Mobilgear XMP 320;2014-04-09;;400;l;2080000;kW;4290;h;161;ppm
+1936699;733796;Wind turbine - main gear;340;l;Mobil Mobilgear XMP 320;2014-04-22;;60;l;2529000;kWh;4271;h;161;ppm
+1855017;328275;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;2013-11-25;2013-10-24;;;;;51122;h;162;ppm
+1895058;328276;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;2014-01-27;2013-10-24;;;;;;;162;ppm
+1934012;396884;Wind turbine - main gear;500;;Mobil Mobilgear XMP 320;2014-04-11;2014-04-11;;;;;;;162;ppm
+2036000;132515;Wind turbine - main gear;300;;Mobil Mobilgear XMP 320;2014-10-10;2014-06-12;;;19445;kWh;73170;kWh;162;ppm
+1926421;446913;Wind turbine - main gear;500;;Mobil Mobilgear XMP 320;2014-03-27;;;;;;35396;h;162;ppm
+1954199;733797;Wind turbine - main gear;360;l;Mobil Mobilgear XMP 320;2014-05-23;;40;l;2863000;kWh;5175;h;162;ppm
+1829817;590212;WKA-Hauptgetriebe;400;;Mobil Mobilgear XMP 320;2013-10-07;2011-12-31;;;13954;h;13954;h;163;ppm
+1935783;258644;Énergie éolienne ligne - engrenage principale;425;;Mobil Mobilgear XMP 320;2014-03-07;2013-11-28;;;;;;;163;ppm
+1858565;217477;Wind turbine - main gear;425;l;Mobil Mobilgear XMP 320;2013-12-03;2012-11-13;20;l;5774000;kWh;7501.42;;164;ppm
+1895055;328273;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;2014-02-12;2013-10-23;;;;;52948;h;164;ppm
+2054340;409686;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;2014-11-07;2014-10-24;;;;;;;164;ppm
+2048176;430656;Wind turbine - main gear;350;l;Mobil Mobilgear XMP 320;2014-10-31;2014-10-30;380;l;;;47175;;164;ppm
+1967724;415776;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;2014-06-16;2013-05-01;;;36626000;kWh;35072;;165;ppm
+1834204;590211;WKA-Hauptgetriebe;400;l;Mobil Mobilgear XMP 320;2013-10-02;2012-01-10;;l;1;h;12722;h;166;ppm
+1960017;726493;Wind turbine - main gear;340;;Mobil Mobilgear XMP 320;2014-05-22;2014-05-22;;;22170000;kWh;21818000;kWh;166;ppm
+1960016;726500;Wind turbine - main gear;500;;Mobil Mobilgear XMP 320;2014-05-31;2014-05-31;;;27763000;kWh;21539000;kWh;166;ppm
+2072844;405584;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;2014-11-29;2014-06-01;;;2047000;kWh;49559;h;166;ppm
+1952509;428253;Wind turbine - main gear;360;;Mobil Mobilgear XMP 320;2014-05-22;2012-04-01;;;;;;;167;ppm
+1828753;405584;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;2013-10-02;2013-03-01;;;4000;h;39692.98;h;167;ppm
+2054389;405588;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;2014-10-02;2014-07-01;;;38325000;kWh;48491;h;167;ppm
+2054385;405593;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;2014-09-29;2014-07-01;;;32545000;kWh;47760;h;167;ppm
+2092554;609474;Wind turbine - main gear;380;;Mobil Mobilgear XMP 320;2015-01-23;2014-10-15;;;15822;;;;167;ppm
+1967728;392024;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;2014-06-16;2013-05-01;;;36848000;kWh;36264;;168;ppm
+1995219;516372;WKA-Hauptgetriebe;330;;Mobil Mobilgear XMP 320;2014-08-01;2013-04-15;;;;;;;169;ppm
+1967730;553004;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;2014-06-16;2013-05-01;;;19237000;kWh;18534;;169;ppm
+1967729;560962;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;2014-06-16;2013-05-01;;;18947000;kWh;18967;h;169;ppm
+1960012;726488;Wind turbine - main gear;340;;Mobil Mobilgear XMP 320;2014-05-24;2014-05-24;;;24308000;kWh;21843000;kWh;169;ppm
+1960018;726501;Wind turbine - main gear;340;;Mobil Mobilgear XMP 320;2014-05-26;2014-05-26;;;22584000;kWh;22286;kWh;169;ppm
+1960015;726494;Wind turbine - main gear;340;;Mobil Mobilgear XMP 320;2014-05-27;2014-05-27;;;21046000;kWh;21756000;kWh;169;ppm
+1960021;726511;Wind turbine - main gear;340;;Mobil Mobilgear XMP 320;2014-05-27;2014-05-27;;;22046000;kWh;21756000;kWh;169;ppm
+1985565;428228;Wind turbine - main gear;450;;Mobil Mobilgear XMP 320;2014-07-16;2014-06-11;;;;;36000;;169;ppm
+1979261;208206;Wind turbine - main gear;300;;Mobil Mobilgear XMP 320;2014-07-04;2014-06-13;;;194417;kWh;61172;;169;ppm
+2016164;253017;Wind turbine - main gear;340;;Mobil Mobilgear XMP 320;2014-09-11;2014-09-10;;;;;53306;h;169;ppm
+2054540;409691;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;2014-11-07;2014-10-23;;;;;;;169;ppm
+2054539;409689;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;2014-11-07;2014-10-24;;;;;;;169;ppm
+1967731;392025;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;2014-06-16;2013-05-01;;;36917000;kWh;36802;;170;ppm
+2079289;208206;Wind turbine - main gear;300;;Mobil Mobilgear XMP 320;2014-12-26;2014-06-13;;;209773;kWh;6499.7;kWh;170;ppm
+1851616;421282;Énergie éolienne ligne - engrenage principale;500;;Mobil Mobilgear XMP 320;2013-11-04;2012-06-28;;;;;;;171;ppm
+1936450;405584;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;2014-04-07;2013-02-21;;;5218;h;42367.8;h;171;ppm
+1895057;328274;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;2014-02-04;2013-10-23;;;42539000;kWh;53544;h;171;ppm
+1890528;392016;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;;2013-10-25;;;30006;kWh;26342;kWh;171;ppm
+2078512;534214;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;2014-12-01;2014-08-11;;;18521000;kWh;26724.45;h;171;ppm
+1880924;590211;WKA-Hauptgetriebe;400;;Mobil Mobilgear XMP 320;2014-01-21;;;;17418;h;17418;h;171;ppm
+1880926;670829;WKA-Hauptgetriebe;600;;Mobil Mobilgear XMP 320;2014-01-15;;;;8428;h;8428;h;171;ppm
+2097185;740193;WKA-Hauptgetriebe;400;;Mobil Mobilgear XMP 320;2013-08-26;;;;540;h;540;h;171;ppm
+1936451;405588;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;2014-03-13;2013-02-03;;;8476;h;43908.98;h;172;ppm
+1838963;717899;Wind turbine - main gear;470;;Mobil Mobilgear XMP 320;2013-10-30;2013-05-10;;;;;;;172;ppm
+1985566;428230;Wind turbine - main gear;450;;Mobil Mobilgear XMP 320;2014-07-17;2014-06-11;;;;;36000;;172;ppm
+2078515;534221;WKA-Hauptgetriebe;400;;Mobil Mobilgear XMP 320;2014-11-19;2014-08-01;;;23367000;kWh;26048.04;h;172;ppm
+2082056;437427;Wind turbine - main gear;340;l;Mobil Mobilgear XMP 320;2014-12-22;2014-09-09;20;l;1245000;kWh;1983000;kWh;172;ppm
+2048179;430655;Wind turbine - main gear;350;l;Mobil Mobilgear XMP 320;2014-10-31;2014-10-30;380;l;;;47020;;172;ppm
+1890470;681429;WKA-Hauptgetriebe;500;;Mobil Mobilgear XMP 320;2014-01-13;;;;6252000;kWh;6908;kWh;172;ppm
+1935325;313263;WKA-Hauptgetriebe;370;;Mobil Mobilgear XMP 320;2014-04-24;2013-05-30;;;;;53009;h;173;ppm
+2011210;430686;Wind turbine - main gear;400;l;Mobil Mobilgear XMP 320;2014-09-02;2014-09-01;365;l;;;42727;h;173;ppm
+2028604;437427;Wind turbine - main gear;340;l;Mobil Mobilgear XMP 320;2014-09-23;2014-09-09;340;l;121;;244;;173;ppm
+1838213;334359;Wind turbine - main gear;320;;Mobil Mobilgear XMP 320;2013-11-05;;;;20523;h;50216;h;173;ppm
+1967795;392030;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;2014-06-16;2013-05-01;;;36696000;kWh;35941;;174;ppm
+1960030;726495;Wind turbine - main gear;340;;Mobil Mobilgear XMP 320;2014-05-31;2014-05-31;;;21368000;kWh;20940000;kWh;174;ppm
+2048162;430659;Wind turbine - main gear;400;l;Mobil Mobilgear XMP 320;2014-10-29;2014-10-28;380;l;;;46909;h;174;ppm
+2048165;430658;Wind turbine - main gear;350;l;Mobil Mobilgear XMP 320;2014-10-30;2014-10-30;380;l;;;46983;;174;ppm
+2090068;431441;Wind turbine - main gear;360;;Mobil Mobilgear XMP 320;2015-01-19;2015-01-13;;;146871;kWh;34527;h;174;ppm
+1939174;421282;Énergie éolienne ligne - engrenage principale;500;;Mobil Mobilgear XMP 320;2014-04-03;2012-06-28;;;;;;;175;ppm
+1828752;405587;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;2013-10-03;2013-03-01;;;4000;h;40018.08;h;175;ppm
+1927572;726520;Wind turbine - main gear;500;;Mobil Mobilgear XMP 320;2014-03-31;2013-06-14;;;;;;;175;ppm
+1912680;208206;Wind turbine - main gear;300;;Mobil Mobilgear XMP 320;2014-03-11;2013-07-12;;;187327;kWh;58668.2;kWh;175;ppm
+1945042;431451;Wind turbine - main gear;330;;Mobil Mobilgear XMP 320;2014-05-01;2012-06-01;;;;;;;177;ppm
+1958653;422057;Wind turbine - main gear;350;;Mobil Mobilgear XMP 320;2014-05-29;2014-05-14;;;;;35787;h;177;ppm
+1960031;726519;Wind turbine - main gear;340;;Mobil Mobilgear XMP 320;2014-05-26;2014-05-26;;;22286000;kWh;22584000;kWh;177;ppm
+1985563;428227;Wind turbine - main gear;450;;Mobil Mobilgear XMP 320;2014-07-16;2014-06-11;;;;;36000;;177;ppm
+2093139;208200;Wind turbine - main gear;280;l;Mobil Mobilgear XMP 320;2014-12-12;2014-08-20;20;l;;;;;177;ppm
+2054344;409694;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;2014-11-07;2014-10-23;;;;;;;177;ppm
+1840522;154936;Wind turbine - main gear;320;;Mobil Mobilgear XMP 320;2013-10-23;;;;1850500;kWh;18380;;177;ppm
+1960804;568663;Wind turbine - main gear;425;;Mobil Mobilgear XMP 320;2014-06-02;2013-06-27;;;27017000;kWh;32745;h;178;ppm
+1895056;328275;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;2014-02-06;2013-10-24;;;40755000;kWh;42316;;178;ppm
+1960029;726514;Wind turbine - main gear;500;;Mobil Mobilgear XMP 320;2014-05-23;2014-05-23;;;26764000;kWh;22885000;kWh;178;ppm
+2037917;422059;Wind turbine - main gear;360;;Mobil Mobilgear XMP 320;2014-10-14;2014-09-23;;;;;37126;;178;ppm
+2048163;430675;Wind turbine - main gear;400;l;Mobil Mobilgear XMP 320;2014-10-29;2014-10-29;380;l;;;46264;;178;ppm
+1828784;405583;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;2013-01-01;2013-03-01;;;4000;h;39519.76;h;179;ppm
+1895929;132515;Wind turbine - main gear;300;;Mobil Mobilgear XMP 320;2014-01-21;2013-06-18;;;17624;;66827;;179;ppm
+2011206;430685;Wind turbine - main gear;400;l;Mobil Mobilgear XMP 320;2014-09-02;2014-09-01;363;l;;;43163;h;179;ppm
+2054350;410597;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;2014-11-07;2014-10-24;;;;;;;179;ppm
+1861851;430668;Wind turbine - main gear;350;l;Mobil Mobilgear XMP 320;2013-12-02;;5;l;3591800;kWh;37257;h;179;ppm
+1893685;740193;WKA-Hauptgetriebe;400;;Mobil Mobilgear XMP 320;2014-02-10;;;;4247;h;4247;h;179;ppm
+1899113;441222;Wind turbine - main gear;340;;Mobil Mobilgear XMP 320;2014-02-11;2012-06-01;;;10768000;kWh;39575;;180;ppm
+1836377;409686;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;2013-10-24;2013-07-02;;;;;;;180;ppm
+1836380;409695;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;2013-10-22;2013-07-03;;;;;;;180;ppm
+1972070;535146;Wind turbine - main gear;500;;Mobil Mobilgear XMP 320;;2014-06-06;;;;;;;180;ppm
+2048177;430664;Wind turbine - main gear;400;l;Mobil Mobilgear XMP 320;2014-10-29;2014-10-28;376;l;;;46453;;180;ppm
+1947099;208213;Wind turbine - main gear;320;;Mobil Mobilgear XMP 320;2014-05-12;2011-12-09;;;;;;;181;ppm
+1936318;444963;Wind turbine - main gear;340;;Mobil Mobilgear XMP 320;2014-04-09;2013-06-19;;;7965000;kWh;6042;h;181;ppm
+1836381;409689;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;2013-10-23;2013-07-01;;;;;;;181;ppm
+1937111;609464;Wind turbine - main gear;360;;Mobil Mobilgear XMP 320;2014-04-23;2014-03-28;;;500;h;11927;h;181;ppm
+1979262;208211;Wind turbine - main gear;300;;Mobil Mobilgear XMP 320;2014-07-04;2014-06-13;;;196728;kWh;55811.6;h;181;ppm
+2048184;430676;Wind turbine - main gear;350;l;Mobil Mobilgear XMP 320;2014-10-29;2014-10-29;380;l;;;46226;;181;ppm
+1877473;123598;WKA-Hauptgetriebe;60;;Mobil Mobilgear XMP 320;2014-01-09;2013-10-29;;;1683;h;94909;h;182;ppm
+1833199;334359;Wind turbine - main gear;320;;Mobil Mobilgear XMP 320;2013-10-23;;;;20986;h;49952;h;182;ppm
+1936309;409695;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;2014-04-10;2013-07-04;;;;;;;183;ppm
+1871773;196651;WKA-Hauptgetriebe;60;;Mobil Mobilgear XMP 320;2014-01-07;2013-10-29;;;;;;;183;ppm
+2011211;430668;Wind turbine - main gear;400;l;Mobil Mobilgear XMP 320;2014-09-03;2014-09-02;383;l;;;43714;;183;ppm
+1898014;428273;WKA-Hauptgetriebe;400;;Mobil Mobilgear XMP 320;2014-02-05;2012-09-12;;;;;;;184;ppm
+2048167;430657;Wind turbine - main gear;400;l;Mobil Mobilgear XMP 320;2014-10-29;2014-10-28;380;l;;;47124;;184;ppm
+1836375;410597;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;2013-10-24;2013-07-03;;;;;;;185;ppm
+2054337;409696;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;2014-11-07;2014-10-22;;;;;;;185;ppm
+2048173;430667;Wind turbine - main gear;400;l;Mobil Mobilgear XMP 320;2014-10-28;2014-10-27;380;l;;;46219;;185;ppm
+1912686;208211;Wind turbine - main gear;300;;Mobil Mobilgear XMP 320;2014-03-13;2013-07-12;;;150255;kWh;53304.1;kWh;186;ppm
+2048166;430660;Wind turbine - main gear;400;l;Mobil Mobilgear XMP 320;2014-10-28;2014-10-27;381;l;;;46107;;186;ppm
+2048182;430677;Wind turbine - main gear;400;l;Mobil Mobilgear XMP 320;2014-10-30;2014-10-29;380;l;;;45605;;186;ppm
+1851206;101683;WKA-Hauptgetriebe;210;;Mobil Mobilgear XMP 320;2013-10-16;2013-04-17;;;4820;h;;;187;ppm
+1967803;392022;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;2014-06-16;2013-05-01;;;40288000;kWh;34690;;187;ppm
+1882799;258644;Énergie éolienne ligne - engrenage principale;350;;Mobil Mobilgear XMP 320;2013-12-03;2013-11-27;;;;;;;187;ppm
+1861859;125162;Wind turbine - main gear;390;;Mobil Mobilgear XMP 320;2013-11-27;2013-05-01;;;;;;;188;ppm
+1936316;409694;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;2014-04-07;2013-07-03;;;;;;;188;ppm
+1887436;477894;Wind turbine - main gear;500;;Mobil Mobilgear XMP 320;2014-01-14;2013-07-01;;;;;;;189;ppm
+2037918;422059;Wind turbine - main gear;360;;Mobil Mobilgear XMP 320;2014-10-14;2014-09-03;;;;;37126;h;189;ppm
+2054542;409695;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;2014-11-07;2014-10-22;;;;;;;189;ppm
+2048168;430669;Wind turbine - main gear;400;l;Mobil Mobilgear XMP 320;2014-10-28;2014-10-27;380;l;;;34488;h;189;ppm
+1932366;701780;WKA-Hauptgetriebe;500;;Mobil Mobilgear XMP 320;2014-04-11;;;;7108000;kWh;8281.06;h;189;ppm
+1840525;718599;Wind turbine - main gear;500;;Mobil Mobilgear XMP 320;2013-10-23;;;;1475000;kWh;2622;;189;ppm
+1850220;428252;Wind turbine - main gear;360;;Mobil Mobilgear XMP 320;2013-11-21;;;;;;;;190;ppm
+1946453;430657;Wind turbine - main gear;350;;Mobil Mobilgear XMP 320;2014-04-23;;;;;;41075;h;190;ppm
+1861845;430669;Wind turbine - main gear;350;;Mobil Mobilgear XMP 320;;;;;18907006;kWh;26090;h;190;ppm
+1867158;729274;WKA-Hauptgetriebe;500;l;Mobil Mobilgear XMP 320;2013-08-13;;5;l;1591000;kWh;2821;h;190;ppm
+1882801;229176;Énergie éolienne ligne - engrenage principale;425;;Mobil Mobilgear XMP 320;2013-12-10;;;;;;;;191;ppm
+1873120;701763;WKA-Hauptgetriebe;500;l;Mobil Mobilgear XMP 320;2013-11-27;;20;l;3084000;kWh;4285;kWh;191;ppm
+1873119;701780;WKA-Hauptgetriebe;500;;Mobil Mobilgear XMP 320;2013-12-02;;;;3308000;kWh;4250;h;191;ppm
+1847015;721242;WKA-Hauptgetriebe;400;l;Mobil Mobilgear XMP 320;2013-11-13;;;l;4679;h;4679;h;191;ppm
+1927574;726511;Wind turbine - main gear;500;;Mobil Mobilgear XMP 320;2014-03-31;;;;;;;;191;ppm
+1836378;409696;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;2013-10-22;2013-07-03;;;;;;;192;ppm
+1882804;229175;Énergie éolienne ligne - engrenage principale;425;;Mobil Mobilgear XMP 320;2013-12-10;;;;;;;;192;ppm
+1852026;299607;Énergie éolienne ligne - engrenage principale;500;;Mobil Mobilgear XMP 320;2013-09-30;;;;;;;;192;ppm
+1861846;430658;Wind turbine - main gear;350;l;Mobil Mobilgear XMP 320;2013-11-20;;5;l;28477000;kWh;37229;h;192;ppm
+1946450;430685;Wind turbine - main gear;355;;Mobil Mobilgear XMP 320;2014-04-09;;;;;;39687;h;192;ppm
+1867155;729281;WKA-Hauptgetriebe;500;l;Mobil Mobilgear XMP 320;2013-09-11;;9;l;2046000;kWh;2725;;192;ppm
+1899449;132700;WKA-Hauptgetriebe;310;l;Mobil Mobilgear XMP 320;2014-02-25;2011-07-20;;l;;;104758;h;193;ppm
+1890524;392024;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;;2013-08-30;;;25676;kWh;23892;kWh;193;ppm
+1873266;100452;WKA-Hauptgetriebe;300;;Mobil Mobilgear XMP 320;2014-01-10;2012-09-11;;;15;M;27175787;kWh;194;ppm
+2011209;430683;Wind turbine - main gear;400;l;Mobil Mobilgear XMP 320;2014-09-02;2014-09-01;375;l;;;42774;h;194;ppm
+1890536;392009;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;2014-01-29;;;;;;;;194;ppm
+1861850;430686;Wind turbine - main gear;350;l;Mobil Mobilgear XMP 320;2013-12-04;;20;l;27167000;kWh;36300;h;194;ppm
+1890481;560962;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;2013-08-07;;;;;;;;194;ppm
+1836458;409694;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;2013-10-22;2013-07-04;;;;;;;195;ppm
+1946451;430676;Wind turbine - main gear;350;l;Mobil Mobilgear XMP 320;2014-04-10;;20;l;;;40154;h;195;ppm
+1946447;430683;Wind turbine - main gear;350;l;Mobil Mobilgear XMP 320;2014-05-02;;20;l;;;39817;;195;ppm
+1972068;530836;Wind turbine - main gear;500;;Mobil Mobilgear XMP 320;2014-06-06;;;;;;;;195;ppm
+1836376;409688;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;2013-10-23;2013-07-01;;;;;;;196;ppm
+1936307;409696;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;2014-04-14;2013-07-04;;;;;;;196;ppm
+1890614;392009;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;2013-10-08;;;;;;;;196;ppm
+1946454;430667;Wind turbine - main gear;350;;Mobil Mobilgear XMP 320;2014-04-15;;;;;;40245;h;196;ppm
+1849991;706145;Wind turbine - main gear;500;;Mobil Mobilgear XMP 320;2013-11-15;;;;;;1220;;196;ppm
+1967801;392028;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;2014-06-16;2013-05-01;;;36959000;kWh;3707;;197;ppm
+1851273;289846;WKA-Hauptgetriebe;425;;Mobil Mobilgear XMP 320;2013-11-18;2013-10-15;;;;;;;197;ppm
+1882902;535146;Wind turbine - main gear;500;;Mobil Mobilgear XMP 320;2014-01-13;;;;;;;;197;ppm
+1858571;208253;Wind turbine - main gear;425;;Mobil Mobilgear XMP 320;2013-11-20;2012-11-13;;;5738000;kWh;7375.98;;198;ppm
+1836374;409687;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;2013-10-23;2013-07-02;;;;;;;198;ppm
+1836379;409693;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;2013-10-22;2013-07-04;;;;;;;198;ppm
+1946448;430655;Wind turbine - main gear;350;;Mobil Mobilgear XMP 320;2014-05-06;;;;;;41136;h;198;ppm
+1911389;662814;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;2014-03-11;;;;10307;h;12609;h;198;ppm
+1890482;392022;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;2013-11-11;;;;32147;kWh;130013;kWh;199;ppm
+1890615;392030;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;2013-10-11;;;;;;;;199;ppm
+1946444;430664;Wind turbine - main gear;350;l;Mobil Mobilgear XMP 320;2014-04-11;;20;l;;;40743;h;199;ppm
+1836457;409691;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;2013-10-22;2013-07-04;;;;;;;200;ppm
+1916108;409694;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;2014-03-11;2013-07-04;;;;;;;200;ppm
+1942955;100452;WKA-Hauptgetriebe;300;;Mobil Mobilgear XMP 320;2014-05-05;2014-02-23;;;;;125398;;200;ppm
+1927473;430681;Wind turbine - main gear;400;l;Mobil Mobilgear XMP 320;2014-03-19;2014-03-18;373;l;;;39571;;200;ppm
+1844813;198840;Wind turbine - main gear;425;;Mobil Mobilgear XMP 320;2013-10-29;;;;572900;kWh;59981.4;;200;ppm
+1932499;328276;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;2014-04-11;2013-10-24;;;;;;;201;ppm
+1955010;334359;Wind turbine - main gear;340;;Mobil Mobilgear XMP 320;2014-05-28;2014-05-07;;;417;h;;;201;ppm
+1850222;428253;Wind turbine - main gear;360;;Mobil Mobilgear XMP 320;2013-11-21;;;;;;;;201;ppm
+1900032;609474;Wind turbine - main gear;360;;Mobil Mobilgear XMP 320;2014-02-18;;;;11006000;kWh;12247;;201;ppm
+1840521;718598;WKA-Hauptgetriebe;400;;Mobil Mobilgear XMP 320;2013-09-18;;;;2018000;kWh;2800;;201;ppm
+1886878;725473;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;2014-01-20;;;;1951956;kWh;;;201;ppm
+1908917;422054;Wind turbine - main gear;350;;Mobil Mobilgear XMP 320;2014-03-06;2012-04-23;;;;;32345;h;202;ppm
+1936320;409691;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;2014-04-04;2013-07-03;;;;;;;202;ppm
+1844805;332463;Wind turbine - main gear;425;l;Mobil Mobilgear XMP 320;2013-11-07;2013-11-06;425;l;2825500;kWh;51144;h;202;ppm
+1890537;560962;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;2014-01-29;;;;;;;;202;ppm
+1908918;422054;Wind turbine - main gear;350;;Mobil Mobilgear XMP 320;2014-03-06;2012-05-23;;;;;32395;h;203;ppm
+1908916;422054;Wind turbine - main gear;350;;Mobil Mobilgear XMP 320;2014-03-06;2012-09-23;;;;;32345;h;203;ppm
+1890529;392018;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;2013-10-31;;;;27821;kWh;;;203;ppm
+1903478;718599;Wind turbine - main gear;500;l;Mobil Mobilgear XMP 320;2014-02-20;;;l;3648000;kWh;5138;;203;ppm
+1925296;328274;Wind turbine - main gear;400;l;Mobil Mobilgear XMP 320;2014-04-04;2013-10-23;;l;43944000;;43889;;204;ppm
+1890483;392021;Wind turbine - main gear;500;;Mobil Mobilgear XMP 320;2013-11-07;;;;26296;kWh;2444;kWh;204;ppm
+1908915;422054;Wind turbine - main gear;350;;Mobil Mobilgear XMP 320;2014-03-06;;;;;;32345;h;204;ppm
+1890531;553004;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;2014-01-29;;;;;;;;204;ppm
+1916106;409689;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;2014-03-11;2013-07-01;;;;;;;205;ppm
+1852027;299608;Énergie éolienne ligne - engrenage principale;500;;Mobil Mobilgear XMP 320;2013-09-30;;;;;;;;205;ppm
+1900033;609468;Wind turbine - main gear;360;;Mobil Mobilgear XMP 320;2014-02-12;;;;10506000;kWh;11437;h;205;ppm
+1848819;722060;Wind turbine - main gear;340;;Mobil Mobilgear XMP 320;2013-11-05;;;;586155;kWh;586155;kWh;205;ppm
+1853685;723957;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;2013-11-29;;;;267295;kWh;472;;205;ppm
+1925305;752911;WKA-Hauptgetriebe;400;;Mobil Mobilgear XMP 320;2014-03-26;;;;5441000;kWh;5888;;205;ppm
+1916109;409695;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;2014-03-11;2013-07-03;;;;;;;206;ppm
+1954741;328276;Wind turbine - main gear;340;l;Mobil Mobilgear XMP 320;2014-05-19;2013-10-24;400;l;;;;;206;ppm
+1852025;299606;Énergie éolienne ligne - engrenage principale;500;;Mobil Mobilgear XMP 320;2013-09-30;;;;;;;;206;ppm
+1886882;722057;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;2014-01-20;;;;2152650;kWh;;;206;ppm
+1886881;723957;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;2014-01-20;;;;913116;kWh;;;206;ppm
+1844816;568663;Wind turbine - main gear;425;;Mobil Mobilgear XMP 320;2013-11-06;2013-06-27;;;23353;kWh;28923;kWh;207;ppm
+1841142;208223;Wind turbine - main gear;250;;Mobil Mobilgear XMP 320;2013-11-06;;;;;;;;207;ppm
+1882802;229174;Énergie éolienne ligne - engrenage principale;425;;Mobil Mobilgear XMP 320;2013-12-08;;;;;;;;207;ppm
+1882948;530836;Wind turbine - main gear;500;;Mobil Mobilgear XMP 320;2014-01-10;;;;;;;;207;ppm
+1908913;446939;Wind turbine - main gear;350;;Mobil Mobilgear XMP 320;2014-03-07;2012-05-23;;;;;33575;h;208;ppm
+1916104;409686;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;2014-03-11;2013-07-02;;;;;;;208;ppm
+1916107;409691;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;2014-03-11;2013-07-04;;;;;;;208;ppm
+2025251;100452;WKA-Hauptgetriebe;300;;Mobil Mobilgear XMP 320;2014-09-23;;;;;;;;208;ppm
+1908914;446939;Wind turbine - main gear;350;;Mobil Mobilgear XMP 320;2014-03-07;2012-05-23;;;;;33575;h;209;ppm
+1890480;560962;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;2013-08-07;;;;;;;;209;ppm
+1848820;722062;Wind turbine - main gear;320;;Mobil Mobilgear XMP 320;2013-01-01;;;;600867;kWh;600867;kWh;209;ppm
+1857892;725465;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;2013-11-15;;;;742078;kWh;742078;kWh;209;ppm
+1886883;725465;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;2014-01-20;;;;1836109;kWh;;;209;ppm
+1942444;445776;Wind turbine - main gear;500;;Mobil Mobilgear XMP 320;2014-04-29;2013-06-08;;;;;;;210;ppm
+1916103;409687;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;2014-03-12;2013-07-04;;;;;;;210;ppm
+1886880;725463;Wind turbine - main gear;340;;Mobil Mobilgear XMP 320;2014-01-20;;;;2134922;kWh;;;210;ppm
+1932500;328275;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;2014-04-11;2013-10-24;;;;;;;211;ppm
+1882818;528676;Wind turbine - main gear;;;Mobil Mobilgear XMP 320;2014-01-10;;;;;;;;211;ppm
+1890530;553004;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;2013-08-12;;;;69300;kWh;;;211;ppm
+1868256;726520;Wind turbine - main gear;500;;Mobil Mobilgear XMP 320;2013-12-09;;;;;;;;211;ppm
+1916105;409696;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;2014-03-11;2013-07-03;;;;;;;212;ppm
+1946455;430681;Wind turbine - main gear;400;l;Mobil Mobilgear XMP 320;2014-04-07;;20;l;;;40007;;212;ppm
+1857895;722060;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;2013-11-22;;;;744454;kWh;973;kWh;213;ppm
+1857897;725473;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;2013-11-13;;;;717569;kWh;717569;kWh;213;ppm
+1861858;124139;Wind turbine - main gear;390;;Mobil Mobilgear XMP 320;2013-11-28;2013-07-01;;;;;;;214;ppm
+1882950;523759;Wind turbine - main gear;500;;Mobil Mobilgear XMP 320;2014-01-10;;;;;;;;214;ppm
+1846135;534217;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;2013-11-14;;;;16718;h;16718;h;214;ppm
+1899097;713799;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;2014-02-13;;;;4142000;kWh;5828;;214;ppm
+1881610;549091;WKA-Hauptgetriebe;340;;Mobil Mobilgear XMP 320;2014-01-20;2013-10-29;;;1643;h;14334;h;215;ppm
+1899098;713798;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;2014-02-11;;;;2953000;kWh;5006;;216;ppm
+1848818;722057;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;2013-10-29;;;;665656;kWh;665656;kWh;216;ppm
+1903477;718598;WKA-Hauptgetriebe;400;l;Mobil Mobilgear XMP 320;2014-02-20;;;l;4773000;kWh;5259;;217;ppm
+1916275;410597;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;2014-03-12;2013-07-04;;;;;;;218;ppm
+1880874;516372;WKA-Hauptgetriebe;330;;Mobil Mobilgear XMP 320;2014-01-15;2013-10-07;;;;;;;218;ppm
+1882953;523759;Wind turbine - main gear;500;;Mobil Mobilgear XMP 320;2014-01-10;;;;;;;;218;ppm
+1881605;313263;WKA-Hauptgetriebe;370;l;Mobil Mobilgear XMP 320;2014-01-23;2013-05-30;5;l;;;;;219;ppm
+1916274;409688;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;2014-03-12;2013-07-04;;;;;;;219;ppm
+1946449;430682;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;2014-04-24;;;;;;39755;h;220;ppm
+1907943;522098;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;2014-02-18;2012-12-10;;;10422.94;h;31791.45;h;221;ppm
+1904336;428228;Wind turbine - main gear;450;;Mobil Mobilgear XMP 320;2014-02-28;;;;;;33448;h;221;ppm
+1918671;701772;WKA-Hauptgetriebe;500;l;Mobil Mobilgear XMP 320;2014-03-17;;;l;4388000;kWh;4691;h;222;ppm
+1899102;724355;Wind turbine - main gear;340;;Mobil Mobilgear XMP 320;2014-02-07;;;;649167;;590.32;;222;ppm
+1897256;428227;Wind turbine - main gear;500;;Mobil Mobilgear XMP 320;2014-02-11;2013-05-22;;;6356.7;h;40231.99;h;223;ppm
+1893322;733797;Wind turbine - main gear;400;l;Mobil Mobilgear XMP 320;2014-02-10;;500;l;2131;h;;;223;ppm
+1916865;487866;Wind turbine - main gear;365;;Mobil Mobilgear XMP 320;2014-03-21;2014-03-20;;;;;25047;h;224;ppm
+1916273;409693;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;2014-03-11;2013-07-04;;;;;;;225;ppm
+1897418;428228;Wind turbine - main gear;450;;Mobil Mobilgear XMP 320;2014-02-12;2013-05-23;;;6356.88;h;40107.27;h;226;ppm
+1904329;428230;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;2014-02-28;;;;;;33448;h;226;ppm
+1857891;725463;Wind turbine - main gear;340;l;Mobil Mobilgear XMP 320;2013-11-14;;;l;807130;kWh;807130;kWh;226;ppm
+1904332;428227;Wind turbine - main gear;450;;Mobil Mobilgear XMP 320;2014-02-28;;;;;;33448;h;227;ppm
+1900419;721242;WKA-Hauptgetriebe;400;;Mobil Mobilgear XMP 320;2014-02-19;;;;7724;h;6444;h;227;ppm
+1899103;724352;Wind turbine - main gear;340;;Mobil Mobilgear XMP 320;2014-02-04;;;;1575000;kWh;1173.53;;227;ppm
+1839540;662814;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;2013-11-07;;;;7630;h;9646;h;229;ppm
+1916828;430682;Wind turbine - main gear;400;l;Mobil Mobilgear XMP 320;2014-03-19;2014-03-18;375;l;;;38903;;232;ppm
+1897417;428230;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;2014-02-08;2013-05-22;;;6201.68;h;40700.22;h;233;ppm
+1900034;609473;Wind turbine - main gear;360;;Mobil Mobilgear XMP 320;2014-02-20;;;;10918000;kWh;12201;h;234;ppm
+1904330;428229;Wind turbine - main gear;450;;Mobil Mobilgear XMP 320;2014-02-28;;;;;;33448;h;236;ppm
+1897416;428229;Wind turbine - main gear;400;l;Mobil Mobilgear XMP 320;2014-02-10;2013-05-22;10;l;6328.47;h;40710.77;h;244;ppm
+2058382;283649;Énergie éolienne ligne - engrenage principale;400;;Mobil Mobilgear XMP 320;2014-11-06;;;;;;;;266;ppm
+1968054;283649;Énergie éolienne ligne - engrenage principale;400;;Mobil Mobilgear XMP 320;2014-05-20;;;;;;;;280;ppm
+1839566;421302;Wind turbine - main gear;400;;Mobil Mobilgear XMP 320;2013-10-23;;;;;;;;280;ppm
+1955761;421302;Wind turbine - main gear;320;;Mobil Mobilgear XMP 320;2014-05-07;2014-05-07;;;;;;;286;ppm
+1234353;474031;Wind turbine - main gear;500;;Mobil Mobilgear XMP 320;2010-06-18;;;;;;;;530;ppm
