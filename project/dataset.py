@@ -89,7 +89,6 @@ class Dataset:
 
                                     x.append(days_service)
                                     y.append(float(row[param]))
-                                    # print(x[len(x)-1], y[len(y)-1])
                         else:
                             if (
                                 len(row["Einfülltage"]) > 0
@@ -261,7 +260,7 @@ class Dataset:
     def origin_sample(*arg):
         read_txt = arg[1]
         for t in range(len(arg) - 2):
-            if arg[t + 2] in read_txt.lower():
+            if arg[t+2] in read_txt.lower():
                 return True
         return False
 
@@ -288,3 +287,14 @@ class Dataset:
                     return True
         except ValueError:
             return False
+
+    def keys_exist(*arg):
+        for t in range(len(arg)-1):
+            if not (arg[t+1] in arg[0].keys):
+                return False
+        return True    
+
+    
+    def sort_by_machine_number(self, param):
+        if self.keys_exist("Anlagennummer", param):
+            print("Yes, they exist")
