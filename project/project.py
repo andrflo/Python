@@ -8,8 +8,6 @@ fn2 = "dataset2.csv"
 fn3 = "dataset3.csv"
 
 fn_list = [fn3, fn1, fn2]
-#fn_list = [fn3, fn1, fn2]
-
 
 def main():
     ds_list = []
@@ -17,8 +15,8 @@ def main():
         ds = Dataset(fn)
         ds_list.append(ds)
         ds.plot_param_t_all_seasons("Wasser K. F.")
-        #ds.plot_param_t_all_seasons("Neutralisationszahl")
-        #ds.plot_param_t_all_seasons("Oxidation")
+        ds.plot_param_t_all_seasons("Neutralisationszahl")
+        ds.plot_param_t_all_seasons("Oxidation")
     generate_PDFreport()
 
 
