@@ -475,7 +475,7 @@ class Dataset:
                             ):
                                 days_service = self.compute_days_in_service(
                                     (data[i])["Datum Probenentnahme"],
-                                    (data[i])["Datum letzter Ölwechsel"],
+                                    (data[i])["Datum letzter Ölwechsel"]
                                 )
                                 x1.append(days_service)
                                 y1.append(float((data[i])[param]))
