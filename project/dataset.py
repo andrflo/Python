@@ -341,7 +341,7 @@ class Dataset:
 
         print(n_sa)       
 
-            
+        """    
         for oil_name in oil_names:
             x1 = []
             y1 = []
@@ -396,9 +396,11 @@ class Dataset:
                         i += 1           
                         if l <= k:
                             l += 1   
-                #plot                 
+                #plot
+                print(x2, y2)
+                print(x3, y3)                 
            
-
+"""
 
                 
                 
