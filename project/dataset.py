@@ -464,7 +464,7 @@ class Dataset:
                             s += 1        
                         i += s
                         while (data[i])[a] == machine_id:
-                            print((data[i])[a])
+                            print(i, (data[i])[a])
                             i += 1
                     # If 2 series have already been added or there are not enough points for a series,
                     # the rest of points are plotted black
