@@ -331,11 +331,15 @@ class Dataset:
             #print(machine_id, n_el[k])   
           
             i=j 
-        
-        res = dict(zip(list_of_ids, n_el))
-        print(res)                 
 
-       
+        res = dict(zip(list_of_ids, n_el))
+
+        n_sa = 0
+        for el in n_el:
+            if el > 3:
+                n_sa += 1
+
+        print(n_sa)       
 
             
         for oil_name in oil_names:
@@ -346,7 +350,7 @@ class Dataset:
             x3 = []
             y3 = []  
 
-            n_sa = 1
+            
             k=0
             while k < n_sa:
                 l=1
