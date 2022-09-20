@@ -367,17 +367,20 @@ class Dataset:
                     if nop > 3 and (not first_done or not second_done):
                         j = 0
                         while j < nop:
+                            row = (data[i + j])
                             if not first_done:
                                 if l > k:
                                     if not ("Einfülltage" in self.keys):
-                                        days_service = self.compute_days_in_service(
-                                        (data[i + j])["Datum Probenentnahme"],
-                                        (data[i + j])["Datum letzter Ölwechsel"],
-                                        )
-                                        x2.append(days_service)
-                                    else:
-                                        x2.append(int((data[i + j])["Einfülltage"]))
-                                    y2.append(float((data[i + j])[param]))
+                                        if len(row["Datum letzter Ölwechsel"]) > 0 and len(row["Datum Probenentnahme"]) > 0:
+                                            days_service = self.compute_days_in_service(
+                                            row["Datum Probenentnahme"],
+                                            row["Datum letzter Ölwechsel"],
+                                            )
+                                            x2.append(days_service)
+                                            y2.append(float(row[param]))
+                                    elif len(row["Einfülltage"]) > 0:
+                                        x2.append(int(row["Einfülltage"]))
+                                        y2.append(float(row[param]))
                                 j += 1
                                 if j == nop:
                                     if l > k:
@@ -388,14 +391,16 @@ class Dataset:
 
                             elif not second_done:
                                 if not ("Einfülltage" in self.keys):
-                                    days_service = self.compute_days_in_service(
-                                    (data[i + j])["Datum Probenentnahme"],
-                                    (data[i + j])["Datum letzter Ölwechsel"],
-                                    )
-                                    x3.append(days_service)
+                                    if len(row["Datum letzter Ölwechsel"]) > 0 and len(row["Datum Probenentnahme"]) > 0:
+                                        days_service = self.compute_days_in_service(
+                                        (data[i + j])["Datum Probenentnahme"],
+                                        (data[i + j])["Datum letzter Ölwechsel"],
+                                        )
+                                        x3.append(days_service)
+                                        y3.append(float((data[i + j])[param]))
                                 else:
                                     x3.append(int((data[i + j])["Einfülltage"]))
-                                y3.append(float((data[i + j])[param]))
+                                    y3.append(float((data[i + j])[param]))
                                 j += 1
                                 if j == nop:
                                     k += 1
@@ -405,14 +410,16 @@ class Dataset:
                         i += j
                     else:
                         if not ("Einfülltage" in self.keys):
-                            days_service = self.compute_days_in_service(
-                            (data[i])["Datum Probenentnahme"],
-                            (data[i])["Datum letzter Ölwechsel"],
-                            )
-                            x1.append(days_service)
+                            if len(row["Datum letzter Ölwechsel"]) > 0 and len(row["Datum Probenentnahme"]) > 0:
+                                days_service = self.compute_days_in_service(
+                                (data[i])["Datum Probenentnahme"],
+                                (data[i])["Datum letzter Ölwechsel"],
+                                )
+                                x1.append(days_service)
+                                y1.append(float((data[i])[param]))
                         else:
                             x1.append(int((data[i + j])["Einfülltage"]))
-                        y1.append(float((data[i])[param]))
+                            y1.append(float((data[i])[param]))
                         i += 1
                         if l <= k:
                             l += 1
