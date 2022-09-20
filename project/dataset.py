@@ -294,6 +294,8 @@ class Dataset:
 
 
     def plot_data_machine(self, param):
+        
+
         a="Anlagennummer"
         if self.keys_exist(a):
             data = self.sort_by_param(a)
