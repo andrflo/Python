@@ -38,8 +38,8 @@ class Dataset:
         if self.keys_exist(
             param, "Probe aus", "Datum letzter Ölwechsel", "Datum Probenentnahme"
         ) or self.keys_exist(param, "Probe aus", "Einfülltage"):
-            
-            oil_names = self.set_of_oils("wind turbine", season, param)            
+
+            oil_names = self.set_of_oils("wind turbine", season, param)
 
             listd = []
             for oil_name in oil_names:
@@ -275,11 +275,10 @@ class Dataset:
         return True
 
     def sort_by_param(self, param):
-        
+
         with open(self.filename) as csvfile:
             reader = csv.DictReader(csvfile, delimiter=";")
-            return sorted(reader, key = lambda row: (row[param]))
-
+            return sorted(reader, key=lambda row: (row[param]))
 
     def set_of_oils(self, source, season, param):
         oil_names = set()
@@ -297,40 +296,40 @@ class Dataset:
                     ):
                         oil_names.add(row["Ölbezeichnung"])
         return oil_names
-    
+
     def plot_data_machine(self, param):
 
-        oil_names = self.set_of_oils("wind turbine", "all_seasons", param)      
-        a="Anlagennummer"
+        oil_names = self.set_of_oils("wind turbine", "all_seasons", param)
+        a = "Anlagennummer"
         if self.keys_exist(a):
             data = self.sort_by_param(a)
 
         set_of_ids = set()
         for row in data:
-            set_of_ids.add(row[a])         
+            set_of_ids.add(row[a])
 
-        n_el = [] 
+        n_el = []
         list_of_ids = []
-        i=0
-        
-        ok = True 
-        while i <len(data) and ok:
-            machine_id = (data[i])[a] 
-            j=i     
-                
-            while (data[j])[a] == machine_id and ok:                
-                if j+1 < len(data):
-                    j=j+1
+        i = 0
+
+        ok = True
+        while i < len(data) and ok:
+            machine_id = (data[i])[a]
+            j = i
+
+            while (data[j])[a] == machine_id and ok:
+                if j + 1 < len(data):
+                    j = j + 1
                 else:
-                    ok = False  
+                    ok = False
 
             if not ok:
-                j=j+1    
-            n_el.append(j-i) 
+                j = j + 1
+            n_el.append(j - i)
             list_of_ids.append(machine_id)
-            #print(machine_id, n_el[k])   
-          
-            i=j 
+            # print(machine_id, n_el[k])
+
+            i = j
 
         res = dict(zip(list_of_ids, n_el))
 
@@ -339,77 +338,65 @@ class Dataset:
             if el > 3:
                 n_sa += 1
 
-             
-
-           
         for oil_name in oil_names:
             x1 = []
             y1 = []
             x2 = []
             y2 = []
             x3 = []
-            y3 = []  
+            y3 = []
 
-            
-            k=0
+            k = 0
             while k < n_sa:
-                l=1
-                i=0            
-                ok = True 
+                l = 1
+                i = 0
+
                 first_done = False
                 second_done = False
-                while i <len(data) and ok and (data[i])["Ölbezeichnung"] == oil_name:
-                    machine_id = (data[i])[a] 
+                while (
+                    i < len(data)
+                    and (data[i])["Ölbezeichnung"] == oil_name
+                    and self.origin_sample(
+                        (data[i])["Probe aus"], "wind", "wea", "wka", "éolienne"
+                    )
+                ):
+                    machine_id = (data[i])[a]
                     nop = res[machine_id]
                     if nop > 3 and (not first_done or not second_done):
-                        j=0
+                        j = 0
                         while j < nop:
                             if not first_done:
                                 if l > k:
                                     if not ("Einfülltage" in self.keys):
                                         x2.append(1)
-                                    else:    
-                                        x2.append((data[i+j])["Einfülltage"])
-                                    y2.append((data[i+j])[param])
+                                    else:
+                                        x2.append((data[i + j])["Einfülltage"])
+                                    y2.append((data[i + j])[param])
                                 j += 1
                                 if j == nop:
                                     if l > k:
                                         k += 1
                                         first_done = True
                                     l += 1
-                                    
+
                             elif not second_done:
                                 if not ("Einfülltage" in self.keys):
                                     x3.append(1)
                                 else:
-                                    x3.append((data[i+j])["Einfülltage"])
-                                y3.append((data[i+j])[param])
+                                    x3.append((data[i + j])["Einfülltage"])
+                                y3.append((data[i + j])[param])
                                 j += 1
                                 if j == nop:
                                     k += 1
                                     l += 1
-                                    second_done = True                        
-                        i += j 
+                                    second_done = True
+                        i += j
                     else:
                         x1.append(1)
-                        y1.append((data[i])[param]) 
-                        i += 1           
+                        y1.append((data[i])[param])
+                        i += 1
                         if l <= k:
-                            l += 1   
-                #plot
+                            l += 1
+                # plot
                 print(x2, y2)
-                print(x3, y3)                 
-           
-
-
-                
-                
-            
-                   
-
-                   
-
-
-
-
-                
+                print(x3, y3)
