@@ -438,8 +438,8 @@ class Dataset:
                                 )
                                 x1.append(days_service)
                                 y1.append(float((data[i])[param]))
-                        else:
-                            x1.append(int((data[i + j])["Einfülltage"]))
+                        elif len(row["Einfülltage"]) > 0:
+                            x1.append(int((data[i])["Einfülltage"]))
                             y1.append(float((data[i])[param]))
                         i += 1
                         if l <= k:
