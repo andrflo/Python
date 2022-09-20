@@ -463,8 +463,7 @@ class Dataset:
                             # s increases even if the point is not going to be plotted         
                             s += 1        
                         i += s
-                        while (data[i])[a] == machine_id:
-                            print(i, (data[i])[a])
+                        while (data[i])[a] == machine_id:                            
                             i += 1
                     # If 2 series have already been added or there are not enough points for a series,
                     # the rest of points are plotted black
@@ -488,6 +487,7 @@ class Dataset:
                 # plot
                 fig, ax = plt.subplots()
                 ax.plot(x2, y2, "go")
+                ax.plot(x3, y3, "mo")
                 plt.title(f"{oil_name}, {len(x1)+len(x2)+len(x3)} points")
                 if param == "Wasser K. F.":
                     plt.ylabel("Water K.F. in ppm")
