@@ -339,9 +339,9 @@ class Dataset:
             if el > 3:
                 n_sa += 1
 
-        print(n_sa)       
+             
 
-        """    
+           
         for oil_name in oil_names:
             x1 = []
             y1 = []
@@ -400,7 +400,7 @@ class Dataset:
                 print(x2, y2)
                 print(x3, y3)                 
            
-"""
+
 
                 
                 
