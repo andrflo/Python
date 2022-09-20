@@ -312,7 +312,7 @@ class Dataset:
         n_el = [] 
         list_of_ids = []
         i=0
-        k=0
+        
         ok = True 
         while i <len(data) and ok:
             machine_id = (data[i])[a] 
@@ -329,7 +329,7 @@ class Dataset:
             n_el.append(j-i) 
             list_of_ids.append(machine_id)
             #print(machine_id, n_el[k])   
-            k += 1
+          
             i=j 
         
         res = dict(zip(list_of_ids, n_el))
@@ -338,21 +338,42 @@ class Dataset:
        
 
             
-        """for oil_name in oil_names:
+        for oil_name in oil_names:
             x1 = []
             y1 = []
             x2 = []
             y2 = []
             x3 = []
-            y3 = []     
+            y3 = []  
 
-            machine_id = ""
-            for row in data:
-                if row["Ölbezeichnung"] == oil_name:
-                    machine_id = row[a]    
+            n_el = [] 
+            list_of_ids = []
+            i=0
+            k=0
+            ok = True 
+            first_done = False
+            second_done = False
+            while i <len(data) and ok and (data[i])["Ölbezeichnung"] == oil_name:
+                machine_id = (data[i])[a] 
+                nop = res[machine_id]
+                if nop > 3:
+                    j=0
+                    while j < nop:
+                        if not first_done:
+                            x2.append(1)
+                            y2.append(1)
+                        elif not second_done:
+                            x3.append(1)
+                            y3.append(1)
+                        else:
+                            #plot
+                            ...
+           
+
+
                 
                 
-            """
+            
                    
 
                    
