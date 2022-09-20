@@ -400,9 +400,10 @@ class Dataset:
                                                     row["Datum Probenentnahme"],
                                                     row["Datum letzter Ölwechsel"],
                                                 )
-                                                x2.append(days_service)
-                                                y2.append(float(row[param]))
-                                                j += 1
+                                                if days_service > 0 and len(row[param]) > 0:
+                                                    x2.append(days_service)
+                                                    y2.append(float(row[param]))
+                                                    j += 1
                                         elif len(row["Einfülltage"]) > 0:
                                             x2.append(int(row["Einfülltage"]))
                                             y2.append(float(row[param]))
@@ -425,9 +426,10 @@ class Dataset:
                                                 row["Datum Probenentnahme"],
                                                 row["Datum letzter Ölwechsel"],
                                             )
-                                            x3.append(days_service)
-                                            y3.append(float(row[param]))
-                                            j += 1
+                                            if days_service > 0 and len(row[param]) > 0:
+                                                x3.append(days_service)
+                                                y3.append(float(row[param]))
+                                                j += 1
                                     elif len(row["Einfülltage"]) > 0:
                                         x3.append(int(row["Einfülltage"]))
                                         y3.append(float(row[param]))
@@ -448,9 +450,10 @@ class Dataset:
                                                 (data[i])["Datum Probenentnahme"],
                                                 (data[i])["Datum letzter Ölwechsel"],
                                             )
-                                            x1.append(days_service)
-                                            y1.append(float(row[param]))
-                                            j += 1
+                                            if days_service > 0 and len(row[param]) > 0:
+                                                x1.append(days_service)
+                                                y1.append(float(row[param]))
+                                                j += 1
                                     elif len(row["Einfülltage"]) > 0:
                                         x1.append(int(row["Einfülltage"]))
                                         y1.append(float(row[param]))
@@ -479,8 +482,9 @@ class Dataset:
                                         (data[i])["Datum Probenentnahme"],
                                         (data[i])["Datum letzter Ölwechsel"],
                                     )
-                                    x1.append(days_service)
-                                    y1.append(float((data[i])[param]))
+                                    if days_service > 0 and len(row[param]) > 0:
+                                        x1.append(days_service)
+                                        y1.append(float((data[i])[param]))
                             elif len(row["Einfülltage"]) > 0:
                                 x1.append(int((data[i])["Einfülltage"]))
                                 y1.append(float((data[i])[param]))
