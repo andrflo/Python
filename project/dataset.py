@@ -286,6 +286,13 @@ class Dataset:
                 return False
         return True
 
-    def sort_by_machine_number(self, param):
-        if self.keys_exist("Anlagennummer", param):
-            print("Yes, they exist")
+    def sort_by_machine(self, param):
+        if self.keys_exist("Anlagennummer"):
+            a = "Anlagennummer"
+        if self.keys_exist("Ölbezeichnung", param):
+            with open(self.filename) as csvfile:
+                reader = csv.DictReader(csvfile, delimiter=";")
+                data = sorted(reader, key = lambda row: (row[a]))
+
+
+                
