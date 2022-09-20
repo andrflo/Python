@@ -22,14 +22,15 @@ def main():
 
     p1 = "H2O_vs_days_all"
     p2 = "AN_vs_days_all"
-    p3 = "Ox_vs_days_all"    
+    p3 = "Ox_vs_days_all"  
+    p4 = "H2O_vs_days_all_seasons"  
     generate_PDFreport()
 
 
 def generate_PDFreport(p):
     
     match p:
-        case "H2O_vs_days_all":
+        case "H2O_vs_days_all" | "H2O_vs_days_all_seasons":
             l = list_files_pattern("data/water_KF", p)
             if len(l) > 0:
                 generate_report_param(p, l)
