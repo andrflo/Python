@@ -348,15 +348,14 @@ class Dataset:
 
             n_el = [] 
             list_of_ids = []
-            i=0
-            k=0
+            i=0            
             ok = True 
             first_done = False
             second_done = False
             while i <len(data) and ok and (data[i])["Ölbezeichnung"] == oil_name:
                 machine_id = (data[i])[a] 
                 nop = res[machine_id]
-                if nop > 3 and not first_done and not second_done:
+                if nop > 3 and (not first_done or not second_done):
                     j=0
                     while j < nop:
                         if not first_done:
@@ -367,16 +366,16 @@ class Dataset:
                                 first_done = True
                         elif not second_done:
                             x3.append(1)
-                            y3.append(1)
+                            y3.append((data[i+j])[param])
                             j += 1
                             if j == nop:
                                 second_done = True                        
                     i += j 
                 else:
                     x1.append(1)
-                    y1.append(1) 
+                    y1.append((data[i])[param]) 
                     i += 1              
-            #plot                 
+        #plot                 
            
 
 
