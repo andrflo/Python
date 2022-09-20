@@ -379,8 +379,9 @@ class Dataset:
                     nop = res[machine_id]
                     if nop > 3 and (not first_done or not second_done):
                         j = 0
+                        s = 0
                         while j < nop:
-                            row = (data[i + j])
+                            row = (data[i + s])
                             if not first_done:
                                 if l > k:
                                     if not ("Einfülltage" in self.keys):
@@ -391,10 +392,12 @@ class Dataset:
                                             )
                                             x2.append(days_service)
                                             y2.append(float(row[param]))
+                                            j += 1
                                     elif len(row["Einfülltage"]) > 0:
                                         x2.append(int(row["Einfülltage"]))
                                         y2.append(float(row[param]))
-                                j += 1
+                                        j += 1
+                                s += 1
                                 if j == nop:
                                     if l > k:
                                         k += 1
@@ -414,13 +417,13 @@ class Dataset:
                                 else:
                                     x3.append(int((data[i + j])["Einfülltage"]))
                                     y3.append(float((data[i + j])[param]))
-                                j += 1
+                                s += 1
                                 if j == nop:
                                     k += 1
                                     l += 1
                                     machine_id2 = machine_id
                                     second_done = True
-                        i += j
+                        i += s
                     else:
                         if not ("Einfülltage" in self.keys):
                             if len(row["Datum letzter Ölwechsel"]) > 0 and len(row["Datum Probenentnahme"]) > 0:
