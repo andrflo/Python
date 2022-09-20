@@ -406,8 +406,8 @@ class Dataset:
                     else:
                         if not ("Einfülltage" in self.keys):
                             days_service = self.compute_days_in_service(
-                            (data[i + j])["Datum Probenentnahme"],
-                            (data[i + j])["Datum letzter Ölwechsel"],
+                            (data[i])["Datum Probenentnahme"],
+                            (data[i])["Datum letzter Ölwechsel"],
                             )
                             x1.append(days_service)
                         else:
