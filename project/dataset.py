@@ -465,9 +465,7 @@ class Dataset:
                                 i += 1
                         # If 2 series have already been added or there are not enough points for a series,
                         # the rest of points are plotted black
-                        else:
-                            print(i)
-                            print((data[i])[a])
+                        else:                            
                             if not ("Einfülltage" in self.keys):
                                 if (
                                     len((data[i])["Datum letzter Ölwechsel"]) > 0
@@ -483,6 +481,8 @@ class Dataset:
                                 x1.append(int((data[i])["Einfülltage"]))
                                 y1.append(float((data[i])[param]))
                             i += 1
+                    else:
+                        i = i+1        
                             
                 # plot
                 fig, ax = plt.subplots()
