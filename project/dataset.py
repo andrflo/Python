@@ -429,7 +429,8 @@ class Dataset:
                         i += s
                         while (data[i])[a] == machine_id:
                             i += 1
-                            
+                    # If 2 series have already been added or there are not enough points for a series,
+                    # the rest of points are plotted black        
                     else:
                         if not ("Einfülltage" in self.keys):
                             if len(row["Datum letzter Ölwechsel"]) > 0 and len(row["Datum Probenentnahme"]) > 0:
