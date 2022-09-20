@@ -425,7 +425,7 @@ class Dataset:
                                     second_done = True
                         i += s
                         while (data[i])[a] == machine_id:
-                            i += s1
+                            i += 1
                             # plot black and advance to next machine_id
                     else:
                         if not ("Einfülltage" in self.keys):
