@@ -383,7 +383,7 @@ class Dataset:
                             j = 0
                             s = 0
                             while j < nop:
-                                print(i+s)
+                                print(i+s, l)
                                 row = data[i + s]
                                 if not first_done:
                                     # Fill up x2 y2 only if the data has not been plotted before
