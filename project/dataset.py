@@ -428,7 +428,7 @@ class Dataset:
                         i += s
                         while (data[i])[a] == machine_id:
                             i += 1
-                            # plot black and advance to next machine_id
+                            
                     else:
                         if not ("Einfülltage" in self.keys):
                             if len(row["Datum letzter Ölwechsel"]) > 0 and len(row["Datum Probenentnahme"]) > 0:
