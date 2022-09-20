@@ -470,8 +470,8 @@ class Dataset:
                     else:
                         if not ("Einfülltage" in self.keys):
                             if (
-                                len(row["Datum letzter Ölwechsel"]) > 0
-                                and len(row["Datum Probenentnahme"]) > 0
+                                len((data[i])["Datum letzter Ölwechsel"]) > 0
+                                and len((data[i])["Datum Probenentnahme"]) > 0
                             ):
                                 print((data[i])["Datum Probenentnahme"])
                                 print((data[i])["Datum letzter Ölwechsel"])
