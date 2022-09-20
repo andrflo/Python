@@ -314,14 +314,18 @@ class Dataset:
         k=0
         while i <len(data):
             machine_id = (data[i])[a] 
-            j=i    
-            if j < len(data):  
-                while (data[j])[a] == machine_id:                
+            j=i     
+            ok = True       
+            while (data[j])[a] == machine_id and ok:                
+                if j+1 < len(data):
                     j=j+1
-                n_el.append(j-i) 
-                print(machine_id, n_el[k])   
-                k += 1
-                i=j 
+                else:
+                    ok = False    
+                 
+            n_el.append(j-i) 
+            print(machine_id, n_el[k])   
+            k += 1
+            i=j 
 
                  
 
