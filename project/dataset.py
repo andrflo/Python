@@ -324,11 +324,10 @@ class Dataset:
                         if not (len((data[j])["Einfülltage"]) > 0):
                             k += 1
                     elif self.keys_exist("Datum letzter Ölwechsel", "Datum Probenentnahme"):
-                        #print((data[j])["Datum letzter Ölwechsel"])
-                        #print((data[j])["Datum Probenentnahme"])
+                        
                         if not ((len((data[j])["Datum letzter Ölwechsel"]) > 0) and (len((data[j])["Datum Probenentnahme"]) > 0)):
                             k += 1        
-                            #print((data[j])[a])
+                           
                     j = j + 1        
                 else:
                     ok = False
@@ -337,8 +336,7 @@ class Dataset:
                 j = j + 1
             n_el.append(j-i-k)
             list_of_ids.append(machine_id)
-            # print(machine_id, n_el[k])
-
+           
             i = j
 
         res = dict(zip(list_of_ids, n_el))
@@ -350,9 +348,9 @@ class Dataset:
             if el > 3:
                 n_sa += 1
 
-        print(n_sa)        
               
-"""
+              
+
         for oil_name in oil_names:
             x1 = []
             y1 = []
@@ -463,4 +461,3 @@ class Dataset:
                 plt.close(fig)
 
                 
-"""
