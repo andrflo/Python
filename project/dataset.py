@@ -353,6 +353,8 @@ class Dataset:
 
                 first_done = False
                 second_done = False
+                machine_id1 = ""
+                machine_id2 = ""
                 while (
                     i < len(data)
                     and (data[i])["Ölbezeichnung"] == oil_name
@@ -380,6 +382,7 @@ class Dataset:
                                 if j == nop:
                                     if l > k:
                                         k += 1
+                                        machine_id1 = machine_id
                                         first_done = True
                                     l += 1
 
@@ -397,6 +400,7 @@ class Dataset:
                                 if j == nop:
                                     k += 1
                                     l += 1
+                                    machine_id2 = machine_id
                                     second_done = True
                         i += j
                     else:
@@ -414,7 +418,26 @@ class Dataset:
                             l += 1
                 # plot
                 fig, ax = plt.subplots()
-                ax.plot(x1, y1, "go")
-                plt.title(f"{oil_name}, {len(x)} points")
+                ax.plot(x2, y2, "go")
+                plt.title(f"{oil_name}, {len(x1)+len(x2)+len(x3)} points")
+                if param == "Wasser K. F.":
+                    plt.ylabel("Water K.F. in ppm")
+                    save_name = f"H2O_vs_days_{machine_id1}_{machine_id2}_{oil_name}.png"
+                elif param == "Neutralisationszahl":
+                    plt.ylabel("Acid number in mgkOH/gOil")
+                    save_name = f"AN_vs_days_{machine_id1}_{machine_id2}_{oil_name}.png"
+                elif param == "Oxidation":
+                    plt.ylabel("Oxidation in A/cm")
+                    save_name = f"Ox_vs_days_{machine_id1}_{machine_id2}_{oil_name}.png"
+                plt.xlabel("Days in service")
+
+                save_name = self.validate_file_name(save_name)
+                if param == "Wasser K. F.":
+                    plt.savefig(f"data/water_KF/{save_name}")
+                elif param == "Neutralisationszahl":
+                    plt.savefig(f"data/AN/{save_name}")
+                elif param == "Oxidation":
+                    plt.savefig(f"data/ox/{save_name}")
+                plt.close(fig)
 
                 
