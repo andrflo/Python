@@ -18,7 +18,7 @@ def main():
         #ds.plot_param_t_all_seasons("Neutralisationszahl")
         #ds.plot_param_t_all_seasons("Oxidation")
         #ds.plot_param_t("all_seasons", "Wasser K. F.")
-        ds.sort_by_param("Anlagennummer")
+        ds.plot_data_machine("Wasser K. F.")
 
 
     p1 = "H2O_vs_days_all"

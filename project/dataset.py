@@ -298,7 +298,7 @@ def plot_data_machine(self, param):
     if self.keys_exist(a):
         data = self.sort_by_param(a)
         for row in data:
-            print(row[a])
+            print(row[a], row[param])
 
 
 
