@@ -387,7 +387,7 @@ class Dataset:
                             j = 0
                             s = 0
                             while j < nop:
-                                #print(i+s, l, k)
+                                print(i+s, l, k)
                                 row = data[i + s]
                                 if not first_done:
                                     # Fill up x2 y2 only if the data has not been plotted before
@@ -521,3 +521,4 @@ class Dataset:
                 elif param == "Oxidation":
                     plt.savefig(f"data/ox/ind_samples/{save_name}")
                 plt.close(fig)
+
