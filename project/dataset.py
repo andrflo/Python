@@ -400,7 +400,14 @@ class Dataset:
                                     second_done = True
                         i += j
                     else:
-                        x1.append(1)
+                        if not ("Einfülltage" in self.keys):
+                            days_service = self.compute_days_in_service(
+                            (data[i + j])["Datum Probenentnahme"],
+                            (data[i + j])["Datum letzter Ölwechsel"],
+                            )
+                            x1.append(days_service)
+                        else:
+                            x1.append(int((data[i + j])["Einfülltage"]))
                         y1.append(float((data[i])[param]))
                         i += 1
                         if l <= k:
