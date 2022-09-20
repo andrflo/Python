@@ -415,5 +415,6 @@ class Dataset:
                 # plot
                 fig, ax = plt.subplots()
                 ax.plot(x1, y1, "go")
+                plt.title(f"{oil_name}, {len(x)} points")
 
                 
