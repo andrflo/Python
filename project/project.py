@@ -89,7 +89,7 @@ def generate_report_param(p1, l1):
 
 def generate_header(p):
     match p:
-        case "H2O_vs_days_all":
+        case "H2O_vs_days_all" | "H2O_vs_days_all_seasons":
             return "Water content in ppm according to Karl-Fischer test, oil samples from wind turbines, all seasons"
         case "AN_vs_days_all":
             return "Acid number in mgkOH/gOil, oil samples from wind turbines, all seasons"
