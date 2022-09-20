@@ -38,20 +38,8 @@ class Dataset:
         if self.keys_exist(
             param, "Probe aus", "Datum letzter Ölwechsel", "Datum Probenentnahme"
         ) or self.keys_exist(param, "Probe aus", "Einfülltage"):
-
-            oil_names = set()
-            with open(self.filename) as csvfile:
-                reader = csv.DictReader(csvfile, delimiter=";")
-                for row in reader:
-                    if (
-                        row["Ölbezeichnung"] != ""
-                        and self.origin_sample(
-                            row["Probe aus"], "wind", "wea", "wka", "éolienne"
-                        )
-                        and len(row[param]) > 0
-                        and self.validate_season(row["Datum Probenentnahme"], season)
-                    ):
-                        oil_names.add(row["Ölbezeichnung"])
+            
+            oil_names = self.set_of_oils("wind turbine", season, param)            
 
             listd = []
             for oil_name in oil_names:
@@ -293,8 +281,31 @@ class Dataset:
             return sorted(reader, key = lambda row: (row[param]))
 
 
+    def set_of_oils(self, source, season, param):
+        oil_names = set()
+        with open(self.filename) as csvfile:
+            reader = csv.DictReader(csvfile, delimiter=";")
+            for row in reader:
+                if "wind" in source.lower():
+                    if (
+                        row["Ölbezeichnung"] != ""
+                        and self.origin_sample(
+                            row["Probe aus"], "wind", "wea", "wka", "éolienne"
+                        )
+                        and len(row[param]) > 0
+                        and self.validate_season(row["Datum Probenentnahme"], season)
+                    ):
+                        oil_names.add(row["Ölbezeichnung"])
+        return oil_names
+    
     def plot_data_machine(self, param):
-        
+
+        oil_names = self.set_of_oils("wind turbine", "all_seasons", param)      
+
+            
+        for oil_name in oil_names:
+            x1 = []
+            y1 = []
 
         a="Anlagennummer"
         if self.keys_exist(a):
