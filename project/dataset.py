@@ -361,6 +361,7 @@ class Dataset:
             # Number of sample series
             k = 0
             while k < n_sa:
+                # l counts data series that have been included in plots already
                 l = 1
                 i = 0
 
