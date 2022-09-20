@@ -358,10 +358,10 @@ class Dataset:
             y2 = []
             x3 = []
             y3 = []
-            # Number of sample series
+            # k counts data series that have been included in plots already
             k = 0
             while k < n_sa:
-                # l counts data series that have been included in plots already
+                # l counts data series as it goes through the rows
                 l = 1
                 i = 0
 
@@ -401,6 +401,7 @@ class Dataset:
                                 s += 1
                                 if j == nop:
                                     if l > k:
+                                        # k increases only if the corresponding series was not plotted before
                                         k += 1
                                         machine_id1 = machine_id
                                         first_done = True
