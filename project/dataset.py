@@ -498,7 +498,7 @@ class Dataset:
                         i = i+1        
                             
                 # plot
-                print(x2, y2)
+                #print(x2, y2)
                 fig, ax = plt.subplots()
                 ax.plot(x1, y1, "ko")
                 ax.plot(x2, y2, "go")
