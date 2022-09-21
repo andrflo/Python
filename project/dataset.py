@@ -461,7 +461,7 @@ class Dataset:
                                                 x1.append(days_service)
                                                 y1.append(float((data[i])[param]))
                                                 j += 1
-                                            print(j, (data[i])[a])
+                                            #print(j, (data[i])[a])
                                     elif len((data[i])["Einfülltage"]) > 0:
                                         x1.append(int((data[i])["Einfülltage"]))
                                         y1.append(float((data[i])[param]))
