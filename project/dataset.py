@@ -305,6 +305,7 @@ class Dataset:
     def plot_data_machine(self, param):
 
         oil_names = self.set_of_oils("wind turbine", "all_seasons", param)
+        print(oil_names)
         if self.keys_exist("Anlagennummer"):
             a = "Anlagennummer"
         elif self.keys_exist("Probenbezeichnung"):
@@ -358,13 +359,13 @@ class Dataset:
 
         res = dict(zip(list_of_ids, n_el))
 
-        print(res)
+        #print(res)
 
         n_sa = 0
         for el in n_el:
             if el > 3:
                 n_sa += 1
-        print(n_sa)
+        #print(n_sa)
         """for oil_name in oil_names:
             
             # k: data series that have been included in plots already
