@@ -454,12 +454,13 @@ class Dataset:
                                             len((data[i])["Datum letzter Ölwechsel"]) > 0
                                             and len((data[i])["Datum Probenentnahme"]) > 0
                                         ):
-                                            print(i+s, l, k, j, nop) 
+                                            
                                             days_service = self.compute_days_in_service(
                                                 (data[i])["Datum Probenentnahme"],
                                                 (data[i])["Datum letzter Ölwechsel"],
                                             )
-                                            if days_service > 0 and len((data[i])[param]) > 0:                                                
+                                            if days_service > 0 and len((data[i])[param]) > 0:
+                                                print(i+s, l, k, j, nop)                                                 
                                                 x1.append(days_service)
                                                 y1.append(float((data[i])[param]))
                                                 j += 1
