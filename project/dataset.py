@@ -360,12 +360,12 @@ class Dataset:
 
         print(res)
 
-        """n_sa = 0
+        n_sa = 0
         for el in n_el:
             if el > 3:
                 n_sa += 1
-
-        for oil_name in oil_names:
+        print(n_sa)
+        """for oil_name in oil_names:
             
             # k: data series that have been included in plots already
             k = 0
