@@ -454,11 +454,11 @@ class Dataset:
                                                 (data[i])["Datum Probenentnahme"],
                                                 (data[i])["Datum letzter Ölwechsel"],
                                             )
-                                            if days_service > 0 and len((data[i])[param]) > 0:
-                                                print((data[i])[a])
+                                            if days_service > 0 and len((data[i])[param]) > 0:                                                
                                                 x1.append(days_service)
                                                 y1.append(float((data[i])[param]))
                                             j += 1
+                                            print(j, (data[i])[a])
                                     elif len((data[i])["Einfülltage"]) > 0:
                                         x1.append(int((data[i])["Einfülltage"]))
                                         y1.append(float((data[i])[param]))
