@@ -525,30 +525,31 @@ class Dataset:
                             
                 # plot
                 #print(x2, y2)
-                fig, ax = plt.subplots()
-                ax.plot(x1, y1, "ko")
-                ax.plot(x2, y2, "go")
-                ax.plot(x3, y3, "mo")
-                plt.title(f"{oil_name}, {len(x1)+len(x2)+len(x3)} points")
-                if param == "Wasser K. F.":
-                    plt.ylabel("Water K.F. in ppm")
-                    save_name = (
-                        f"H2O_vs_days_{machine_id1}_{machine_id2}_{oil_name}.png"
-                    )
-                elif param == "Neutralisationszahl":
-                    plt.ylabel("Acid number in mgkOH/gOil")
-                    save_name = f"AN_vs_days_{machine_id1}_{machine_id2}_{oil_name}.png"
-                elif param == "Oxidation":
-                    plt.ylabel("Oxidation in A/cm")
-                    save_name = f"Ox_vs_days_{machine_id1}_{machine_id2}_{oil_name}.png"
-                plt.xlabel("Days in service")
+                if machine_id1 != "" or machine_id2 != "":
+                    fig, ax = plt.subplots()
+                    ax.plot(x1, y1, "ko")
+                    ax.plot(x2, y2, "go")
+                    ax.plot(x3, y3, "mo")
+                    plt.title(f"{oil_name}, {len(x1)+len(x2)+len(x3)} points")
+                    if param == "Wasser K. F.":
+                        plt.ylabel("Water K.F. in ppm")
+                        save_name = (
+                            f"H2O_vs_days_{machine_id1}_{machine_id2}_{oil_name}.png"
+                        )
+                    elif param == "Neutralisationszahl":
+                        plt.ylabel("Acid number in mgkOH/gOil")
+                        save_name = f"AN_vs_days_{machine_id1}_{machine_id2}_{oil_name}.png"
+                    elif param == "Oxidation":
+                        plt.ylabel("Oxidation in A/cm")
+                        save_name = f"Ox_vs_days_{machine_id1}_{machine_id2}_{oil_name}.png"
+                    plt.xlabel("Days in service")
 
-                save_name = self.validate_file_name(save_name)
-                if param == "Wasser K. F.":
-                    plt.savefig(f"data/water_KF/ind_samples/{save_name}")
-                elif param == "Neutralisationszahl":
-                    plt.savefig(f"data/AN/ind_samples/{save_name}")
-                elif param == "Oxidation":
-                    plt.savefig(f"data/ox/ind_samples/{save_name}")
-                plt.close(fig)
+                    save_name = self.validate_file_name(save_name)
+                    if param == "Wasser K. F.":
+                        plt.savefig(f"data/water_KF/ind_samples/{save_name}")
+                    elif param == "Neutralisationszahl":
+                        plt.savefig(f"data/AN/ind_samples/{save_name}")
+                    elif param == "Oxidation":
+                        plt.savefig(f"data/ox/ind_samples/{save_name}")
+                    plt.close(fig)
 
