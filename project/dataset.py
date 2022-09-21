@@ -412,7 +412,7 @@ class Dataset:
                                                     x2.append(days_service)
                                                     y2.append(float(row[param]))
                                                     j += 1
-                                        elif len(row["Einfülltage"]) > 0:
+                                        elif len(row["Einfülltage"]) > 0 and len(row[param] > 0):
                                             x2.append(int(row["Einfülltage"]))
                                             y2.append(float(row[param]))
                                             j += 1                    
