@@ -10,14 +10,16 @@
             "type": "python",
             "request": "launch",
             "program": "${file}",
-            "console": "integratedTerminal",            
+            "console": "integratedTerminal",
+            "justMyCode": true,
             "cwd": "${fileDirname}"
         },
         {
             "name": "Python-Modul",
             "type": "python",
             "request": "launch",
-            "module": "project",           
+            "module": "project",
+            "justMyCode": true,
             "cwd": "${fileDirname}"
         },
        
