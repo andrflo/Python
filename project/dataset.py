@@ -353,9 +353,9 @@ class Dataset:
 
         res = dict(zip(list_of_ids, n_el))
 
-        #print(res)
+        print(res)
 
-        n_sa = 0
+        """n_sa = 0
         for el in n_el:
             if el > 3:
                 n_sa += 1
@@ -537,3 +537,4 @@ class Dataset:
                     plt.savefig(f"data/ox/ind_samples/{save_name}")
                 plt.close(fig)
 
+"""
