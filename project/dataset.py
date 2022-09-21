@@ -281,9 +281,8 @@ class Dataset:
             short_ds = []
             print(len(oil_names))
          
-            for oil_name in oil_names:
-                for row1 in reader:
-                    if row1["Ölbezeichnung"] == oil_name:
+            for row1 in reader:
+                if row1["Ölbezeichnung"] in oil_names:
                         short_ds.append(row1)  
             u=1            
             for d in short_ds:
