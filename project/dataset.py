@@ -445,12 +445,12 @@ class Dataset:
                                 if l <= k:
                                     
                                     # add to x1, y1, increase j, if it is the case l but not k 
-                                    if not ("Einfülltage" in self.keys):
-                                        print((data[i])[a])
+                                    if not ("Einfülltage" in self.keys):                                        
                                         if (
                                             len((data[i])["Datum letzter Ölwechsel"]) > 0
                                             and len((data[i])["Datum Probenentnahme"]) > 0
                                         ):
+                                            print((data[i])[a])
                                             days_service = self.compute_days_in_service(
                                                 (data[i])["Datum Probenentnahme"],
                                                 (data[i])["Datum letzter Ölwechsel"],
