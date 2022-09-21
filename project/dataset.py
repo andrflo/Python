@@ -314,7 +314,7 @@ class Dataset:
         elif self.keys_exist("Probenbezeichnung"):
             a = "Probenbezeichnung"    
         if self.keys_exist(a):
-            data = self.sort_by_param(a, oil_names)
+            data = self.sort_by_param(a, oil_names, "wind turbine")
 
 
 
