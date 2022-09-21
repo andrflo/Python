@@ -300,7 +300,10 @@ class Dataset:
     def plot_data_machine(self, param):
 
         oil_names = self.set_of_oils("wind turbine", "all_seasons", param)
-        a = "Anlagennummer"
+        if self.keys_exist("Anlagennummer"):
+            a = "Anlagennummer"
+        elif self.keys_exist("Probenbezeichnung"):
+            a = "Probenbezeichnung"    
         if self.keys_exist(a):
             data = self.sort_by_param(a)
 
