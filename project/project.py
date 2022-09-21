@@ -6,7 +6,7 @@ path_proj = os.path.abspath(os.getcwd())
 fn1 = f"{path_proj}/dataset1.csv"
 fn2 = f"{path_proj}/dataset2.csv"
 fn3 = f"{path_proj}/dataset3.csv"
-fn3 = "dataset3.csv"
+#fn3 = "dataset3.csv"
 
 fn_list = [fn3]
 
