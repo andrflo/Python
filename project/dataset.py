@@ -313,8 +313,6 @@ class Dataset:
         if self.keys_exist(a):
             data = self.sort_by_param(a, oil_names)
 
-        print(data)
-
         set_of_ids = set()
         for row in data:
             set_of_ids.add(row[a])
@@ -361,7 +359,7 @@ class Dataset:
 
         res = dict(zip(list_of_ids, n_el))
 
-        #print(res)
+        print(res)
 
         n_sa = 0
         for el in n_el:
