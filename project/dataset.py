@@ -282,7 +282,7 @@ class Dataset:
             for oil_name in oil_names:
                 for row in reader:
                     if row["Ölbezeichnung"] == oil_name:
-                        short_ds.append(row)
+                        short_ds.append(row)                        
             return sorted(short_ds, key=lambda row: (row[param]))
 
     def set_of_oils(self, source, season, param):
