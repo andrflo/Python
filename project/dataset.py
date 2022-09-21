@@ -383,6 +383,7 @@ class Dataset:
                     if (data[i])["Ölbezeichnung"] == oil_name and self.origin_sample((data[i])["Probe aus"], "wind", "wea", "wka", "éolienne"):
                         machine_id = (data[i])[a]
                         nop = res[machine_id]
+                        print(nop)
                         if nop > 3 and (not first_done or not second_done):
                             j = 0
                             s = 0
@@ -469,7 +470,7 @@ class Dataset:
                                 # s increases even if the point is not going to be plotted         
                                 s += 1        
                             i += s
-                            print(i)
+                            #print(i)
                             while (data[i])[a] == machine_id:                            
                                 i += 1
                         # If 2 series have already been added or there are not enough points for a series,
