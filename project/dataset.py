@@ -318,7 +318,7 @@ class Dataset:
 
         set_of_ids = set()
         for row in data:
-            set_of_ids.add(row[a])
+            set_of_ids.add(str(row[a]))
 
         n_el = []
         list_of_ids = []
