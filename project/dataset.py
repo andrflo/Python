@@ -274,11 +274,16 @@ class Dataset:
                 return False
         return True
 
-    def sort_by_param(self, param):
+    def sort_by_param(self, param, oil_names):
 
         with open(self.filename) as csvfile:
             reader = csv.DictReader(csvfile, delimiter=";")
-            return sorted(reader, key=lambda row: (row[param]))
+            short_ds = []
+            for oil_name in oil_names:
+                for row in reader:
+                    if row["Ölbezeichnung"] == oil_name:
+                        short_ds.append(row)
+            return sorted(short_ds, key=lambda row: (row[param]))
 
     def set_of_oils(self, source, season, param):
         oil_names = set()
@@ -305,7 +310,7 @@ class Dataset:
         elif self.keys_exist("Probenbezeichnung"):
             a = "Probenbezeichnung"    
         if self.keys_exist(a):
-            data = self.sort_by_param(a)
+            data = self.sort_by_param(a, oil_names)
 
         set_of_ids = set()
         for row in data:
