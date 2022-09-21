@@ -443,6 +443,7 @@ class Dataset:
                                         machine_id2 = machine_id
                                         second_done = True
                                 if l <= k:
+                                    print((data[i])[a])
                                     # add to x1, y1, increase j, if it is the case l but not k 
                                     if not ("Einfülltage" in self.keys):
                                         if (
@@ -454,7 +455,7 @@ class Dataset:
                                                 (data[i])["Datum letzter Ölwechsel"],
                                             )
                                             if days_service > 0 and len((data[i])[param]) > 0:
-                                                print((data[i])[a])
+                                                #print((data[i])[a])
                                                 x1.append(days_service)
                                                 y1.append(float((data[i])[param]))
                                                 j += 1
