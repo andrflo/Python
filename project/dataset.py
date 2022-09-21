@@ -383,12 +383,12 @@ class Dataset:
                     if (data[i])["Ölbezeichnung"] == oil_name and self.origin_sample((data[i])["Probe aus"], "wind", "wea", "wka", "éolienne"):
                         machine_id = (data[i])[a]
                         nop = res[machine_id]
-                        print(i, machine_id, nop)
+                        #print(i, machine_id, nop)
                         if nop > 3 and (not first_done or not second_done):
                             j = 0
                             s = 0
                             while j < nop:
-                                #print(i+s, l, k)
+                                print(i+s, l, k)
                                 row = data[i + s]
                                 if not first_done:
                                     # Fill up x2 y2 only if the data has not been plotted before
