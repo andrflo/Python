@@ -499,8 +499,12 @@ class Dataset:
                                 s += 1        
                             i += s
                             #print(i)
-                            while (data[i])[a] == machine_id:                            
-                                i += 1
+                            if i < len(data):
+                                ok2 = True
+                                while (data[i])[a] == machine_id and ok2:                            
+                                    i += 1
+                                    if not (i < len(data)):
+                                        ok2 = False
                         # If 2 series have already been added or there are not enough points for a series,
                         # the rest of points are plotted black
                         else:                            
