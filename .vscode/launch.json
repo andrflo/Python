@@ -11,8 +11,7 @@
             "request": "launch",
             "program": "${file}", 
             "console": "integratedTerminal",
-            "justMyCode": true,     
-            "cwd": "${workspaceFolder}/project"       
+            "justMyCode": true  
         },
         {
             "name": "Python-Modul",
