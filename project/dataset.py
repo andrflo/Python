@@ -388,7 +388,7 @@ class Dataset:
                             j = 0
                             s = 0
                             while j < nop:
-                                print(i+s, l, k)
+                                #print(i+s, l, k)
                                 row = data[i + s]
                                 if not first_done:
                                     # Fill up x2 y2 only if the data has not been plotted before
@@ -496,10 +496,11 @@ class Dataset:
                         i = i+1        
                             
                 # plot
+                print(x2, y2)
                 fig, ax = plt.subplots()
-                ax.plot(x1, y1, "ko")
+                #ax.plot(x1, y1, "ko")
                 ax.plot(x2, y2, "go")
-                ax.plot(x3, y3, "mo")
+                #ax.plot(x3, y3, "mo")
                 plt.title(f"{oil_name}, {len(x1)+len(x2)+len(x3)} points")
                 if param == "Wasser K. F.":
                     plt.ylabel("Water K.F. in ppm")
