@@ -406,7 +406,7 @@ class Dataset:
                                                 if days_service > 0 and len(row[param]) > 0:                                                    
                                                     x2.append(days_service)
                                                     y2.append(float(row[param]))
-                                                    j += 1
+                                                j += 1
                                         elif len(row["Einfülltage"]) > 0:
                                             x2.append(int(row["Einfülltage"]))
                                             y2.append(float(row[param]))
@@ -432,7 +432,7 @@ class Dataset:
                                             if days_service > 0 and len(row[param]) > 0:
                                                 x3.append(days_service)
                                                 y3.append(float(row[param]))
-                                                j += 1
+                                            j += 1
                                     elif len(row["Einfülltage"]) > 0:
                                         x3.append(int(row["Einfülltage"]))
                                         y3.append(float(row[param]))
@@ -458,7 +458,7 @@ class Dataset:
                                                 #print((data[i])[a])
                                                 x1.append(days_service)
                                                 y1.append(float((data[i])[param]))
-                                                j += 1
+                                            j += 1
                                     elif len((data[i])["Einfülltage"]) > 0:
                                         x1.append(int((data[i])["Einfülltage"]))
                                         y1.append(float((data[i])[param]))
