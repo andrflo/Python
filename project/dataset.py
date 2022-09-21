@@ -369,7 +369,7 @@ class Dataset:
             
             # k: data series that have been included in plots already
             k = 0
-            #print(oil_name, len(data), n_sa)
+            print(oil_name, len(data), n_sa)
             while k < n_sa:
                 x1 = []
                 y1 = []
