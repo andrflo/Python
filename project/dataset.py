@@ -459,6 +459,7 @@ class Dataset:
                                                 (data[i])["Datum Probenentnahme"],
                                                 (data[i])["Datum letzter Ölwechsel"],
                                             )
+                                            print(i+s, l, k, j, nop, days_service)
                                             if days_service > 0 and len((data[i])[param]) > 0:
                                                 print(i+s, l, k, j, nop)                                                 
                                                 x1.append(days_service)
