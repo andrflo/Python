@@ -450,7 +450,6 @@ class Dataset:
                                             len((data[i])["Datum letzter Ölwechsel"]) > 0
                                             and len((data[i])["Datum Probenentnahme"]) > 0
                                         ):
-                                            print((data[i])[a])
                                             days_service = self.compute_days_in_service(
                                                 (data[i])["Datum Probenentnahme"],
                                                 (data[i])["Datum letzter Ölwechsel"],
