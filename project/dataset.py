@@ -313,6 +313,8 @@ class Dataset:
         if self.keys_exist(a):
             data = self.sort_by_param(a, oil_names)
 
+        print ("l oils:", len(oil_names), "l data:", len(data))    
+
         set_of_ids = set()
         for row in data:
             set_of_ids.add(row[a])
