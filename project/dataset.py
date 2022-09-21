@@ -276,16 +276,15 @@ class Dataset:
 
     def sort_by_param(self, param, oil_names, app):
 
-
-
         with open(self.filename) as csvfile:
             reader = csv.DictReader(csvfile, delimiter=";")
             short_ds = []         
          
             for row1 in reader:
-                if row1["Ölbezeichnung"] in oil_names and self.origin_sample(
-                    row1["Probe aus"], "wind", "wea", "wka", "éolienne"):
-                    short_ds.append(row1)  
+                if app == "wind turbine":
+                    if row1["Ölbezeichnung"] in oil_names and self.origin_sample(
+                        row1["Probe aus"], "wind", "wea", "wka", "éolienne"):
+                        short_ds.append(row1)  
                         
             return sorted(short_ds, key=lambda row: (row[param]))
             
