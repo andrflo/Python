@@ -366,7 +366,7 @@ class Dataset:
 
         n_sa = 0
         for el in n_el:
-            if el > 3:
+            if el > 4:
                 n_sa += 1
         
         print(n_sa)
