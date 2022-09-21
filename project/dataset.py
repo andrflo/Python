@@ -392,7 +392,7 @@ class Dataset:
                                 #print(i+s, l, k)
                                 row = data[i + s]
                                 if not first_done:
-                                    print(i, machine_id, nop)
+                                    
                                     # Fill up x2 y2 only if the data has not been plotted before
                                     if l > k:
                                         # j increases only when the point is included to be plotted
@@ -445,9 +445,10 @@ class Dataset:
                                         machine_id2 = machine_id
                                         second_done = True
                                 if l <= k:
-                                    
+                                   
                                     # add to x1, y1, increase j, if it is the case l but not k 
-                                    if not ("Einfülltage" in self.keys):                                        
+                                    if not ("Einfülltage" in self.keys):  
+                                        print(i, machine_id, nop)                                      
                                         if (
                                             len((data[i])["Datum letzter Ölwechsel"]) > 0
                                             and len((data[i])["Datum Probenentnahme"]) > 0
