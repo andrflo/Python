@@ -279,6 +279,7 @@ class Dataset:
         with open(self.filename) as csvfile:
             reader = csv.DictReader(csvfile, delimiter=";")
             short_ds = []
+            print(len(oil_names))
             for oil_name in oil_names:
                 for row1 in reader:
                     if row1["Ölbezeichnung"] == oil_name:
