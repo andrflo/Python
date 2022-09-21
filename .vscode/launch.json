@@ -12,7 +12,7 @@
             "program": "${file}", 
             "console": "integratedTerminal",
             "justMyCode": true,     
-            "cwd": "${workspaceFolder}/project"       
+            "cwd": "${fileDirname}/project"       
         },
         {
             "name": "Python-Modul",
