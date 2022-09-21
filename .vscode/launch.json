@@ -19,7 +19,8 @@
             "type": "python",
             "request": "launch",
             "module": "project",
-            "justMyCode": true
+            "justMyCode": true,
+            "cwd": "${fileDirname}"
         },
        
     ]
