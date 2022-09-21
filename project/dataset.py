@@ -378,7 +378,8 @@ class Dataset:
             # k: data series that have been included in plots already
             k = 0
             print(oil_name, len(data), n_sa)
-            while k < n_sa:
+            ok1 = True
+            while k < n_sa and ok1:
                 x1 = []
                 y1 = []
                 x2 = []
@@ -555,4 +556,8 @@ class Dataset:
                     elif param == "Oxidation":
                         plt.savefig(f"data/ox/ind_samples/{save_name}")
                     plt.close(fig)
+
+                elif machine_id1 == "" and machine_id2 == "":
+                    ok1 = False
+
 
