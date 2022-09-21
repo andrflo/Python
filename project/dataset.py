@@ -550,7 +550,8 @@ class Dataset:
 
                     save_name = self.validate_file_name(save_name)
                     if param == "Wasser K. F.":
-                        plt.savefig(f"{path_proj}/project/data/water_KF/ind_samples/{save_name}")
+                        #plt.savefig(f"{path_proj}/project/data/water_KF/ind_samples/{save_name}")
+                        plt.savefig(f"data/water_KF/ind_samples/{save_name}")
                     elif param == "Neutralisationszahl":
                         plt.savefig(f"data/AN/ind_samples/{save_name}")
                     elif param == "Oxidation":
