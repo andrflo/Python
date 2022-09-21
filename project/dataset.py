@@ -407,7 +407,7 @@ class Dataset:
                             
                             j = 0
                             s = 0
-                            while j < nop:
+                            while j < nop and i+s < len(data):
                                 #print(i+s, l, k, j, nop)
                                 row = data[i + s]
                                 if not first_done:
