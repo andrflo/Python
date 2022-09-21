@@ -316,7 +316,7 @@ class Dataset:
 
 
 
-        print ("l oils:", len(oil_names), "l data:", len(data))    
+        #print ("l oils:", len(oil_names), "l data:", len(data))    
 
         set_of_ids = set()
         for row in data:
@@ -368,8 +368,10 @@ class Dataset:
         for el in n_el:
             if el > 3:
                 n_sa += 1
-
         
+        print(n_sa)
+
+        """
         for oil_name in oil_names:
             
             # k: data series that have been included in plots already
@@ -550,3 +552,4 @@ class Dataset:
                     plt.savefig(f"data/ox/ind_samples/{save_name}")
                 plt.close(fig)
 
+"""
