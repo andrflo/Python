@@ -383,8 +383,9 @@ class Dataset:
                     if (data[i])["Ölbezeichnung"] == oil_name and self.origin_sample((data[i])["Probe aus"], "wind", "wea", "wka", "éolienne"):
                         machine_id = (data[i])[a]
                         nop = res[machine_id]
-                        print(i, machine_id, nop)
+                        
                         if nop > 3 and (not first_done or not second_done):
+                            print(i, machine_id, nop)
                             j = 0
                             s = 0
                             while j < nop:
