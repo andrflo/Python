@@ -385,13 +385,14 @@ class Dataset:
                         nop = res[machine_id]
                         
                         if nop > 3 and (not first_done or not second_done):
-                            print(i, machine_id, nop)
+                            
                             j = 0
                             s = 0
                             while j < nop:
                                 #print(i+s, l, k)
                                 row = data[i + s]
                                 if not first_done:
+                                    print(i, machine_id, nop)
                                     # Fill up x2 y2 only if the data has not been plotted before
                                     if l > k:
                                         # j increases only when the point is included to be plotted
