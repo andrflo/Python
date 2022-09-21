@@ -2,6 +2,7 @@ import csv
 import matplotlib.pyplot as plt
 import matplotlib.lines as mlines
 import numpy as np
+import os
 from datetime import date, time, datetime
 
 
@@ -531,6 +532,8 @@ class Dataset:
                     ax.plot(x2, y2, "go")
                     ax.plot(x3, y3, "mo")
                     plt.title(f"{oil_name}, {len(x1)+len(x2)+len(x3)} points")
+
+                    path_proj = os.path.abspath(os.getcwd())
                     if param == "Wasser K. F.":
                         plt.ylabel("Water K.F. in ppm")
                         save_name = (
@@ -546,7 +549,7 @@ class Dataset:
 
                     save_name = self.validate_file_name(save_name)
                     if param == "Wasser K. F.":
-                        plt.savefig(f"data/water_KF/ind_samples/{save_name}")
+                        plt.savefig(f"{path_proj}/project/data/water_KF/ind_samples/{save_name}")
                     elif param == "Neutralisationszahl":
                         plt.savefig(f"data/AN/ind_samples/{save_name}")
                     elif param == "Oxidation":
