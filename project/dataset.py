@@ -278,17 +278,12 @@ class Dataset:
 
         with open(self.filename) as csvfile:
             reader = csv.DictReader(csvfile, delimiter=";")
-            short_ds = []
-            print(len(oil_names))
+            short_ds = []         
          
             for row1 in reader:
                 if row1["Ölbezeichnung"] in oil_names:
                         short_ds.append(row1)  
-            u=1            
-            for d in short_ds:
-                print(d["Ölbezeichnung"])
-                print(u)
-                u+=1                 
+                        
             return sorted(short_ds, key=lambda row: (row[param]))
             
     def set_of_oils(self, source, season, param):
