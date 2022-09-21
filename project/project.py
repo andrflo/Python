@@ -7,7 +7,7 @@ fn1 = "dataset1.csv"
 fn2 = "dataset2.csv"
 fn3 = "dataset3.csv"
 
-fn_list = [fn2]
+fn_list = [fn1]
 
 def main():
     ds_list = []
