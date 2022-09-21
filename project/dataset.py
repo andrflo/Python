@@ -369,6 +369,7 @@ class Dataset:
             
             # k: data series that have been included in plots already
             k = 0
+            print(oil_name, len(data), n_sa)
             while k < n_sa:
                 x1 = []
                 y1 = []
@@ -388,7 +389,7 @@ class Dataset:
                 # Go through all rows
                 
                 while i < len(data):
-                    print(oil_name, len(data))
+                    
                     if (data[i])["Ölbezeichnung"] == oil_name and self.origin_sample((data[i])["Probe aus"], "wind", "wea", "wka", "éolienne"):
                         machine_id = (data[i])[a]
                         nop = res[machine_id]
