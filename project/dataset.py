@@ -448,7 +448,7 @@ class Dataset:
                                    
                                     # add to x1, y1, increase j, if it is the case l but not k 
                                     if not ("Einfülltage" in self.keys):  
-                                        print(i, machine_id, nop)                                      
+                                        #print(i, (data[i])[a], nop)                                      
                                         if (
                                             len((data[i])["Datum letzter Ölwechsel"]) > 0
                                             and len((data[i])["Datum Probenentnahme"]) > 0
