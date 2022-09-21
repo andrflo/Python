@@ -493,6 +493,7 @@ class Dataset:
                             elif len((data[i])["Einfülltage"]) > 0:
                                 x1.append(int((data[i])["Einfülltage"]))
                                 y1.append(float((data[i])[param]))
+                            print((data[i])[a], l)    
                             i += 1
                     else:
                         i = i+1        
