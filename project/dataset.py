@@ -451,24 +451,24 @@ class Dataset:
                                         #print(i, (data[i])[a], nop)     
                                                                         
                                         if (
-                                            len((data[i])["Datum letzter Ölwechsel"]) > 0
-                                            and len((data[i])["Datum Probenentnahme"]) > 0
+                                            len(row["Datum letzter Ölwechsel"]) > 0
+                                            and len(row["Datum Probenentnahme"]) > 0
                                         ):
                                             
                                             days_service = self.compute_days_in_service(
-                                                (data[i])["Datum Probenentnahme"],
-                                                (data[i])["Datum letzter Ölwechsel"],
+                                                row["Datum Probenentnahme"],
+                                                row["Datum letzter Ölwechsel"],
                                             )
-                                            print(i+s, l, k, j, nop, (data[i])["Datum Probenentnahme"], (data[i])["Datum letzter Ölwechsel"], days_service)
-                                            if days_service > 0 and len((data[i])[param]) > 0:
-                                                print(i+s, l, k, j, nop)                                                 
+                                            #print(i+s, l, k, j, nop, row["Datum Probenentnahme"], row["Datum letzter Ölwechsel"], days_service)
+                                            if days_service > 0 and len(row[param]) > 0:
+                                                #print(i+s, l, k, j, nop)                                                 
                                                 x1.append(days_service)
-                                                y1.append(float((data[i])[param]))
+                                                y1.append(float(row[param]))
                                                 j += 1
                                             #print(j, (data[i])[a])
-                                    elif len((data[i])["Einfülltage"]) > 0:
-                                        x1.append(int((data[i])["Einfülltage"]))
-                                        y1.append(float((data[i])[param]))
+                                    elif len(row["Einfülltage"]) > 0:
+                                        x1.append(int(row["Einfülltage"]))
+                                        y1.append(float(row[param]))
                                         j += 1
                                     if j == nop:                                    
                                         l += 1
