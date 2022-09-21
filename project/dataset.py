@@ -388,6 +388,7 @@ class Dataset:
                 # Go through all rows
                 
                 while i < len(data):
+                    print(oil_name, len(data))
                     if (data[i])["Ölbezeichnung"] == oil_name and self.origin_sample((data[i])["Probe aus"], "wind", "wea", "wka", "éolienne"):
                         machine_id = (data[i])[a]
                         nop = res[machine_id]
