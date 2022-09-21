@@ -359,14 +359,13 @@ class Dataset:
 
         res = dict(zip(list_of_ids, n_el))
 
-        print(res)
-
         n_sa = 0
         for el in n_el:
             if el > 3:
                 n_sa += 1
-        #print(n_sa)
-        """for oil_name in oil_names:
+
+        
+        for oil_name in oil_names:
             
             # k: data series that have been included in plots already
             k = 0
@@ -543,4 +542,3 @@ class Dataset:
                     plt.savefig(f"data/ox/ind_samples/{save_name}")
                 plt.close(fig)
 
-"""
