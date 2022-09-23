@@ -555,6 +555,30 @@ class Dataset:
                         save_name = f"v40_vs_days_{machine_id1}_{machine_id2}_{oil_name}.png"
                     plt.xlabel("Days in service")
 
+                     # winter_patch = mpatches.Patch(color='blue', label='Winter')
+                    A_point = mlines.Line2D(
+                        [],
+                        [],
+                        linewidth=0,
+                        color="blue",
+                        marker="o",
+                        markersize=7,
+                        label="Machine id: A",
+                    )
+                    # spring_patch = mpatches.Patch(color='green', label='Spring')
+                    B_point = mlines.Line2D(
+                        [],
+                        [],
+                        linewidth=0,
+                        color="green",
+                        marker="o",
+                        markersize=7,
+                        label="Machine id: B",
+                    )
+                    ax.legend(
+                        handles=[A_point, B_point]
+                    )
+
                     save_name = self.validate_file_name(save_name)
                     if param == "Wasser K. F.":
                         #plt.savefig(f"{path_proj}/project/data/water_KF/ind_samples/{save_name}")
