@@ -550,6 +550,9 @@ class Dataset:
                     elif param == "Oxidation":
                         plt.ylabel("Oxidation in A/cm")
                         save_name = f"Ox_vs_days_{machine_id1}_{machine_id2}_{oil_name}.png"
+                    elif param == "Viskosität bei 40°C":
+                        plt.ylabel("Oxidation in A/cm")
+                        save_name = f"v40_vs_days_{machine_id1}_{machine_id2}_{oil_name}.png"
                     plt.xlabel("Days in service")
 
                     save_name = self.validate_file_name(save_name)
@@ -560,6 +563,8 @@ class Dataset:
                         plt.savefig(f"data/AN/ind_samples/{save_name}")
                     elif param == "Oxidation":
                         plt.savefig(f"data/ox/ind_samples/{save_name}")
+                    elif param == "Viskosität bei 40°C":
+                        plt.savefig(f"data/viscosity/40/{save_name}")
                     plt.close(fig)
 
                 elif machine_id1 == "" and machine_id2 == "":
