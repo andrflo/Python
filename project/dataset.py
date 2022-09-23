@@ -551,7 +551,7 @@ class Dataset:
                         plt.ylabel("Oxidation in A/cm")
                         save_name = f"Ox_vs_days_{machine_id1}_{machine_id2}_{oil_name}.png"
                     elif param == "Viskosität bei 40°C":
-                        plt.ylabel("Oxidation in A/cm")
+                        plt.ylabel("Viskosität bei 40°C")
                         save_name = f"v40_vs_days_{machine_id1}_{machine_id2}_{oil_name}.png"
                     plt.xlabel("Days in service")
 
