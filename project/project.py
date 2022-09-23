@@ -20,7 +20,7 @@ def main():
         #ds.plot_param_t_all_seasons("Oxidation")
         #ds.plot_param_t("all_seasons", "Wasser K. F.")
         #ds.plot_data_machine("Wasser K. F.")
-        ds.plot_data_machine("Neutralisationszahl")
+        ds.plot_data_machine("Viskosität bei 40°C")
 
 
     p1 = "H2O_vs_days_all"
