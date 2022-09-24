@@ -553,7 +553,7 @@ class Dataset:
                     elif param == "Viskosität bei 40°C":
                         plt.ylabel("Viskosität bei 40°C in mm^2/s")
                         ax.set_xlim(-50, 3000)
-                        ax.set_ylim(100, 400)
+                        ax.set_ylim(200, 400)
                         save_name = f"v40_vs_days_{machine_id1}_{machine_id2}_{oil_name}.png"
                     plt.xlabel("Days in service")
 
