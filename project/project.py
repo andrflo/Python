@@ -8,20 +8,20 @@ fn2 = f"{path_proj}/dataset2.csv"
 #fn3 = f"{path_proj}/project/dataset3.csv"
 fn3 = "dataset3.csv"
 
-fn_list = [fn3]
+fn_list = [fn1]
 
 def main():
     ds_list = []
     for fn in fn_list:
         ds = Dataset(fn)
         ds_list.append(ds)
-        #ds.plot_param_t_all_seasons("Wasser K. F.")
+        ds.plot_param_t_all_seasons("Wasser K. F.")
         #ds.plot_param_t_all_seasons("Neutralisationszahl")
         #ds.plot_param_t_all_seasons("Oxidation")
         #ds.plot_param_t("all_seasons", "Wasser K. F.")
         #ds.plot_data_machine("Wasser K. F.")
         #ds.plot_data_machine("Viskosität bei 40°C")
-        ds.plot_data_machine("Neutralisationszahl")
+        #ds.plot_data_machine("Neutralisationszahl")
 
 
     p1 = "H2O_vs_days_all"
