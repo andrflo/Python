@@ -188,6 +188,8 @@ class Dataset:
                 if p == "Wasser K. F.":
                     ylabelstr = "Water K.F. in ppm"
                     save_name = f"H2O_vs_days_all_{noil}.png"
+                    ax.set_xlim(-50, 4000)
+                    ax.set_ylim(0, 1000)
                     if len(d1["x_values"]) > 150:
                         binwidth = 25
                     else:
