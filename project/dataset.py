@@ -184,9 +184,14 @@ class Dataset:
                                         npoints += len(d4["x_values"])
                                         ax.plot(d4["x_values"], d4["y_values"], "ro")
                 ax.set_title(f"Season: all, {noil}, {npoints} points")
+                binwidth = 0
                 if p == "Wasser K. F.":
                     ylabelstr = "Water K.F. in ppm"
                     save_name = f"H2O_vs_days_all_{noil}.png"
+                    if len(d1["x_values"]) > 150:
+                        binwidth = 25
+                    else:
+                        binwidth = 50
                 elif p == "Neutralisationszahl":
                     ylabelstr = "Acid number in mgkOH/gOil"
                     save_name = f"AN_vs_days_all_{noil}.png"
@@ -240,7 +245,7 @@ class Dataset:
                 ax.legend(
                     handles=[summer_point, fall_point, winter_point, spring_point]
                 )
-                binwidth = 25
+                
                 xymax = max(np.max(np.abs(d1["x_values"])), np.max(np.abs(d1["y_values"])))
                 lim = (int(xymax/binwidth) + 1) * binwidth
 
