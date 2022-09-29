@@ -151,7 +151,7 @@ class Dataset:
                 npoints = len(d1["x_values"])
 
                 fig = plt.figure(figsize=(6, 3))
-                gs = fig.add_gridspec(1, 5, width_ratios=(4, 0.25, 0.25, 0.25, 0.25),
+                gs = fig.add_gridspec(1, 5, width_ratios=(4, 0.5, 0.5, 0.5, 0.5),
                 left=0.15, right=0.85, bottom=0.15, top=0.85,
                 wspace=0.05, hspace=0.05)
                 ax = fig.add_subplot(gs[0, 0])                    
