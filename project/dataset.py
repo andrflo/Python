@@ -191,9 +191,9 @@ class Dataset:
                     ax.set_xlim(-50, 4000)
                     ax.set_ylim(0, 600)
                     if len(d1["x_values"]) > 150:
-                        binwidth = 25
+                        binwidth = 20
                     else:
-                        binwidth = 50
+                        binwidth = 25
                 elif p == "Neutralisationszahl":
                     ylabelstr = "Acid number in mgkOH/gOil"
                     save_name = f"AN_vs_days_all_{noil}.png"
