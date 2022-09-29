@@ -8,7 +8,7 @@ fn2 = f"{path_proj}/dataset2.csv"
 #fn3 = f"{path_proj}/project/dataset3.csv"
 fn3 = "dataset3.csv"
 
-fn_list = [fn1]
+fn_list = [fn1, fn2]
 
 def main():
     ds_list = []
