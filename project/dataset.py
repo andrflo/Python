@@ -149,7 +149,27 @@ class Dataset:
             for d1 in ldfall:
                 noil = d1["oil_name"]
                 npoints = len(d1["x_values"])
-                fig, ax = plt.subplots()
+
+                fig = plt.figure(figsize=(6, 3))
+                gs = fig.add_gridspec(1, 5, width_ratios=(4, 0.25, 0.25, 0.25, 0.25),
+                left=0.15, right=0.85, bottom=0.15, top=0.85,
+                wspace=0.05, hspace=0.05)
+                ax = fig.add_subplot(gs[0, 0])                    
+                ax_histy_summer = fig.add_subplot(gs[0, 1], sharey=ax)  
+                ax_histy_fall = fig.add_subplot(gs[0, 2], sharey=ax) 
+                ax_histy_winter = fig.add_subplot(gs[0, 3], sharey=ax) 
+                ax_histy_spring = fig.add_subplot(gs[0, 4], sharey=ax) 
+
+                ax_histy_summer.tick_params(axis="y", labelleft=False)
+                ax_histy_fall.tick_params(axis="y", labelleft=False)
+                ax_histy_winter.tick_params(axis="y", labelleft=False)
+                ax_histy_spring.tick_params(axis="y", labelleft=False)
+
+                ylabelstr = ""
+
+
+
+                #fig, ax = plt.subplots()
                 ax.plot(d1["x_values"], d1["y_values"], "mo")
                 for d2 in ldspring:
                     if d2["oil_name"] == noil:
@@ -163,17 +183,19 @@ class Dataset:
                                     if d4["oil_name"] == noil:
                                         npoints += len(d4["x_values"])
                                         ax.plot(d4["x_values"], d4["y_values"], "ro")
-                plt.title(f"Season: all, {noil}, {npoints} points")
+                ax.set_title(f"Season: all, {noil}, {npoints} points")
                 if p == "Wasser K. F.":
-                    plt.ylabel("Water K.F. in ppm")
+                    ylabelstr = "Water K.F. in ppm"
                     save_name = f"H2O_vs_days_all_{noil}.png"
                 elif p == "Neutralisationszahl":
-                    plt.ylabel("Acid number in mgkOH/gOil")
+                    ylabelstr = "Acid number in mgkOH/gOil"
                     save_name = f"AN_vs_days_all_{noil}.png"
                 elif p == "Oxidation":
-                    plt.ylabel("Oxidation in A/cm")
+                    ylabelstr = "Oxidation in A/cm"
                     save_name = f"Ox_vs_days_all_{noil}.png"
-                plt.xlabel("Days in service")
+                #plt.xlabel("Days in service")
+                ax.set_xlabel("Days in service")
+                ax.set_ylabel(ylabelstr)
 
                 # summer_patch = mpatches.Patch(color='red', label='Summer')
                 summer_point = mlines.Line2D(
@@ -218,6 +240,43 @@ class Dataset:
                 ax.legend(
                     handles=[summer_point, fall_point, winter_point, spring_point]
                 )
+                binwidth = 25
+                xymax = max(np.max(np.abs(d1["x_values"])), np.max(np.abs(d1["y_values"])))
+                lim = (int(xymax/binwidth) + 1) * binwidth
+
+                bins = np.arange(-lim, lim + binwidth, binwidth)
+                    
+                ax_histy_summer.hist(d1["y_values"], bins=bins, orientation='horizontal')
+
+
+                xymax = max(np.max(np.abs(d2["x_values"])), np.max(np.abs(d2["y_values"])))
+                lim = (int(xymax/binwidth) + 1) * binwidth
+
+                bins = np.arange(-lim, lim + binwidth, binwidth)
+                    
+                ax_histy_fall.hist(d2["y_values"], bins=bins, orientation='horizontal')
+
+
+                xymax = max(np.max(np.abs(d3["x_values"])), np.max(np.abs(d3["y_values"])))
+                lim = (int(xymax/binwidth) + 1) * binwidth
+
+                bins = np.arange(-lim, lim + binwidth, binwidth)
+                    
+                ax_histy_winter.hist(d3["y_values"], bins=bins, orientation='horizontal')
+
+
+                xymax = max(np.max(np.abs(d4["x_values"])), np.max(np.abs(d4["y_values"])))
+                lim = (int(xymax/binwidth) + 1) * binwidth
+
+                bins = np.arange(-lim, lim + binwidth, binwidth)
+                    
+                ax_histy_spring.hist(d4["y_values"], bins=bins, orientation='horizontal')
+
+
+
+
+
+
 
                 save_name = self.validate_file_name(save_name)
                 if p == "Wasser K. F.":
