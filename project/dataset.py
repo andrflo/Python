@@ -588,7 +588,7 @@ class Dataset:
                             else:
                                 binwidth = 5           
                     
-                    
+                    print("binwidth:", binwidth)
                     xymax = max(np.max(np.abs(x1)), np.max(np.abs(y1)))
                     lim = (int(xymax/binwidth) + 1) * binwidth
 
