@@ -574,6 +574,8 @@ class Dataset:
                             ax.set_xlim(-50, 4000)
                             ax.set_ylim(0, 3)
                             save_name = f"AN_vs_days_{machine_id1}_{machine_id2}_{oil_name}.png"
+                            if binwidth < 0.1:
+                                binwidth = 0.1
                             #binwidth = 0.25
                         case "Oxidation":
                             ylabelstr = "Oxidation in A/cm"
