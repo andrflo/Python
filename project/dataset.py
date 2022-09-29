@@ -247,37 +247,37 @@ class Dataset:
                 ax.legend(
                     handles=[summer_point, fall_point, winter_point, spring_point]
                 )
-                
-                xymax = max(np.max(np.abs(d1["x_values"])), np.max(np.abs(d1["y_values"])))
-                lim = (int(xymax/binwidth) + 1) * binwidth
+                if len(d1["x_values"]) > 0:
+                    xymax = max(np.max(np.abs(d1["x_values"])), np.max(np.abs(d1["y_values"])))
+                    lim = (int(xymax/binwidth) + 1) * binwidth
 
-                bins = np.arange(-lim, lim + binwidth, binwidth)
-                    
-                ax_histy_summer.hist(d1["y_values"], bins=bins, color="red", orientation='horizontal')
+                    bins = np.arange(-lim, lim + binwidth, binwidth)
+                        
+                    ax_histy_summer.hist(d1["y_values"], bins=bins, color="red", orientation='horizontal')
 
+                if len(d2["x_values"]) > 0:
+                    xymax = max(np.max(np.abs(d2["x_values"])), np.max(np.abs(d2["y_values"])))
+                    lim = (int(xymax/binwidth) + 1) * binwidth
 
-                xymax = max(np.max(np.abs(d2["x_values"])), np.max(np.abs(d2["y_values"])))
-                lim = (int(xymax/binwidth) + 1) * binwidth
+                    bins = np.arange(-lim, lim + binwidth, binwidth)
+                        
+                    ax_histy_fall.hist(d2["y_values"], bins=bins, color="m", orientation='horizontal')
 
-                bins = np.arange(-lim, lim + binwidth, binwidth)
-                    
-                ax_histy_fall.hist(d2["y_values"], bins=bins, color="m", orientation='horizontal')
+                if len(d3["x_values"]) > 0:
+                    xymax = max(np.max(np.abs(d3["x_values"])), np.max(np.abs(d3["y_values"])))
+                    lim = (int(xymax/binwidth) + 1) * binwidth
 
+                    bins = np.arange(-lim, lim + binwidth, binwidth)
+                        
+                    ax_histy_winter.hist(d3["y_values"], bins=bins, color="blue", orientation='horizontal')
 
-                xymax = max(np.max(np.abs(d3["x_values"])), np.max(np.abs(d3["y_values"])))
-                lim = (int(xymax/binwidth) + 1) * binwidth
+                if len(d4["x_values"]) > 0:
+                    xymax = max(np.max(np.abs(d4["x_values"])), np.max(np.abs(d4["y_values"])))
+                    lim = (int(xymax/binwidth) + 1) * binwidth
 
-                bins = np.arange(-lim, lim + binwidth, binwidth)
-                    
-                ax_histy_winter.hist(d3["y_values"], bins=bins, color="blue", orientation='horizontal')
-
-
-                xymax = max(np.max(np.abs(d4["x_values"])), np.max(np.abs(d4["y_values"])))
-                lim = (int(xymax/binwidth) + 1) * binwidth
-
-                bins = np.arange(-lim, lim + binwidth, binwidth)
-                    
-                ax_histy_spring.hist(d4["y_values"], bins=bins, color="green", orientation='horizontal')
+                    bins = np.arange(-lim, lim + binwidth, binwidth)
+                        
+                    ax_histy_spring.hist(d4["y_values"], bins=bins, color="green", orientation='horizontal')
 
 
 
