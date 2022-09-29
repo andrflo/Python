@@ -4,6 +4,7 @@ import matplotlib.lines as mlines
 import numpy as np
 import os
 from datetime import date, time, datetime
+from decimal import *
 
 
 class Dataset:
@@ -531,31 +532,77 @@ class Dataset:
                             
                 # plot
                 #print(x2, y2)
-                if machine_id1 != "" or machine_id2 != "":
-                    fig, ax = plt.subplots()
+                if (machine_id1 != "" or machine_id2 != "") and len(x1) > 16:
+                    #fig, ax = plt.subplots()
+                    fig = plt.figure(figsize=(6, 6))
+                    #gs = fig.add_gridspec(1, 2, width_ratios=(4, 1),
+                     # left=0.1, right=0.9, bottom=0.1, top=0.9,
+                      #wspace=0.05, hspace=0.05)
+                    gs = fig.add_gridspec(1, 2, width_ratios=(4, 1),
+                      left=0.15, right=0.85, bottom=0.1, top=0.9,
+                      wspace=0.05, hspace=0.05)
+                    ax = fig.add_subplot(gs[0, 0])                    
+                    ax_histy = fig.add_subplot(gs[0, 1], sharey=ax)  
+                    ax_histy.tick_params(axis="y", labelleft=False)
+
                     ax.plot(x1, y1, "ko")
                     ax.plot(x2, y2, "go")
                     ax.plot(x3, y3, "mo")
-                    plt.title(f"{oil_name}, {len(x1)+len(x2)+len(x3)} points")
+
+                    ylabelstr = ""
+                    if param == "Wasser K. F." or param == "Viskosität bei 40°C":
+                        binwidth = round((np.max(np.abs(y1)) - np.min(np.abs(y1))) / round(Decimal(len(x1)).sqrt()))
+                    else:     
+                        binwidth = (np.max(np.abs(y1)) - np.min(np.abs(y1))) / round(Decimal(len(x1)).sqrt())
+
+                    save_name = ""
+
+                    match param:
+                        case "Wasser K. F.":
+                            ylabelstr = "Water K.F. in ppm"
+                            save_name = (
+                            f"H2O_vs_days_{machine_id1}_{machine_id2}_{oil_name}.png"
+                            )
+                            ax.set_xlim(-50, 4000)
+                            ax.set_ylim(0, 1000)
+                            if len(x1) > 150:
+                                binwidth = 25
+                            else:
+                                binwidth = 50
+                        case "Neutralisationszahl":
+                            ylabelstr = "Acid number in mgkOH/gOil"
+                            ax.set_xlim(-50, 4000)
+                            ax.set_ylim(0, 3)
+                            save_name = f"AN_vs_days_{machine_id1}_{machine_id2}_{oil_name}.png"
+                            #binwidth = 0.25
+                        case "Oxidation":
+                            ylabelstr = "Oxidation in A/cm"
+                            save_name = f"Ox_vs_days_{machine_id1}_{machine_id2}_{oil_name}.png"
+                        case "Viskosität bei 40°C":
+                            ylabelstr = "Viscosity at 40°C in mm^2/s"
+                            ax.set_xlim(-50, 3000)
+                            ax.set_ylim(200, 400)
+                            save_name = f"v40_vs_days_{machine_id1}_{machine_id2}_{oil_name}.png"
+                            if len(x1) > 150:
+                                binwidth = 4
+                            else:
+                                binwidth = 5           
+                    
+                    
+                    xymax = max(np.max(np.abs(x1)), np.max(np.abs(y1)))
+                    lim = (int(xymax/binwidth) + 1) * binwidth
+
+                    bins = np.arange(-lim, lim + binwidth, binwidth)
+                    
+                    ax_histy.hist(y1, bins=bins, orientation='horizontal')
+                    
+                    #plt.title(f"{oil_name}, {len(x1)+len(x2)+len(x3)} points")
+                    ax.set_title(f"{oil_name}, {len(x1)+len(x2)+len(x3)} points")
 
                     path_proj = os.path.abspath(os.getcwd())
-                    if param == "Wasser K. F.":
-                        plt.ylabel("Water K.F. in ppm")
-                        save_name = (
-                            f"H2O_vs_days_{machine_id1}_{machine_id2}_{oil_name}.png"
-                        )
-                    elif param == "Neutralisationszahl":
-                        plt.ylabel("Acid number in mgkOH/gOil")
-                        save_name = f"AN_vs_days_{machine_id1}_{machine_id2}_{oil_name}.png"
-                    elif param == "Oxidation":
-                        plt.ylabel("Oxidation in A/cm")
-                        save_name = f"Ox_vs_days_{machine_id1}_{machine_id2}_{oil_name}.png"
-                    elif param == "Viskosität bei 40°C":
-                        plt.ylabel("Viskosität bei 40°C in mm^2/s")
-                        ax.set_xlim(-50, 3000)
-                        ax.set_ylim(200, 400)
-                        save_name = f"v40_vs_days_{machine_id1}_{machine_id2}_{oil_name}.png"
-                    plt.xlabel("Days in service")
+                    
+                    ax.set_xlabel("Days in service")
+                    ax.set_ylabel(ylabelstr)
 
                      # winter_patch = mpatches.Patch(color='blue', label='Winter')
                     A_point = mlines.Line2D(
