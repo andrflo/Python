@@ -246,7 +246,7 @@ class Dataset:
 
                 bins = np.arange(-lim, lim + binwidth, binwidth)
                     
-                ax_histy_summer.hist(d1["y_values"], bins=bins, orientation='horizontal')
+                ax_histy_summer.hist(d1["y_values"], bins=bins, color="red", orientation='horizontal')
 
 
                 xymax = max(np.max(np.abs(d2["x_values"])), np.max(np.abs(d2["y_values"])))
@@ -254,7 +254,7 @@ class Dataset:
 
                 bins = np.arange(-lim, lim + binwidth, binwidth)
                     
-                ax_histy_fall.hist(d2["y_values"], bins=bins, orientation='horizontal')
+                ax_histy_fall.hist(d2["y_values"], bins=bins, color="m", orientation='horizontal')
 
 
                 xymax = max(np.max(np.abs(d3["x_values"])), np.max(np.abs(d3["y_values"])))
@@ -262,7 +262,7 @@ class Dataset:
 
                 bins = np.arange(-lim, lim + binwidth, binwidth)
                     
-                ax_histy_winter.hist(d3["y_values"], bins=bins, orientation='horizontal')
+                ax_histy_winter.hist(d3["y_values"], bins=bins, color="blue", orientation='horizontal')
 
 
                 xymax = max(np.max(np.abs(d4["x_values"])), np.max(np.abs(d4["y_values"])))
@@ -270,11 +270,7 @@ class Dataset:
 
                 bins = np.arange(-lim, lim + binwidth, binwidth)
                     
-                ax_histy_spring.hist(d4["y_values"], bins=bins, orientation='horizontal')
-
-
-
-
+                ax_histy_spring.hist(d4["y_values"], bins=bins, color="green", orientation='horizontal')
 
 
 
