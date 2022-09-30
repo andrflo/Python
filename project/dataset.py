@@ -240,7 +240,7 @@ class Dataset:
                     xymax = max(np.max(np.abs(d1["x_values"])), np.max(np.abs(d1["y_values"])))
                     lim = (int(xymax/binwidth) + 1) * binwidth
                     bins = np.arange(-lim, lim + binwidth, binwidth)                        
-                    ax_histy_fall.hist(d1["y_values"], bins=bins, color="red", orientation='horizontal')
+                    ax_histy_fall.hist(d1["y_values"], bins=bins, color="m", orientation='horizontal')
                 
                 for d2 in ldspring:
                     if d2["oil_name"] == noil:
@@ -250,7 +250,7 @@ class Dataset:
                             xymax = max(np.max(np.abs(d2["x_values"])), np.max(np.abs(d2["y_values"])))
                             lim = (int(xymax/binwidth) + 1) * binwidth
                             bins = np.arange(-lim, lim + binwidth, binwidth)                                
-                            ax_histy_spring.hist(d2["y_values"], bins=bins, color="m", orientation='horizontal')
+                            ax_histy_spring.hist(d2["y_values"], bins=bins, color="green", orientation='horizontal')
 
                         for d3 in ldwinter:
                             if d3["oil_name"] == noil:
@@ -270,7 +270,7 @@ class Dataset:
                                             xymax = max(np.max(np.abs(d4["x_values"])), np.max(np.abs(d4["y_values"])))
                                             lim = (int(xymax/binwidth) + 1) * binwidth
                                             bins = np.arange(-lim, lim + binwidth, binwidth)                                                
-                                            ax_histy_summer.hist(d4["y_values"], bins=bins, color="green", orientation='horizontal')
+                                            ax_histy_summer.hist(d4["y_values"], bins=bins, color="red", orientation='horizontal')
                                             break
                                         
                 ax.set_title(f"Season: all, {noil}, {npoints} points")               
