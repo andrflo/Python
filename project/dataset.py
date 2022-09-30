@@ -248,6 +248,7 @@ class Dataset:
                     handles=[summer_point, fall_point, winter_point, spring_point]
                 )
                 if len(d2["x_values"]) > 0:
+                    print(len(d2["y_values"]))
                     xymax = max(np.max(np.abs(d2["x_values"])), np.max(np.abs(d2["y_values"])))
                     lim = (int(xymax/binwidth) + 1) * binwidth
 
