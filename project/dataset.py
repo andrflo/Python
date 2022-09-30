@@ -263,9 +263,7 @@ class Dataset:
                                 if len(d3["x_values"]) > 0:                                    
                                     xymax = max(np.max(np.abs(d3["x_values"])), np.max(np.abs(d3["y_values"])))
                                     lim = (int(xymax/binwidth) + 1) * binwidth
-
-                                    bins = np.arange(-lim, lim + binwidth, binwidth)
-                                        
+                                    bins = np.arange(-lim, lim + binwidth, binwidth)                                        
                                     ax_histy_winter.hist(d3["y_values"], bins=bins, color="blue", orientation='horizontal')
                                 
                                 for d4 in ldsummer:
@@ -275,10 +273,9 @@ class Dataset:
                                         if len(d4["x_values"]) > 0:                    
                                             xymax = max(np.max(np.abs(d4["x_values"])), np.max(np.abs(d4["y_values"])))
                                             lim = (int(xymax/binwidth) + 1) * binwidth
-
-                                            bins = np.arange(-lim, lim + binwidth, binwidth)
-                                                
+                                            bins = np.arange(-lim, lim + binwidth, binwidth)                                                
                                             ax_histy_spring.hist(d4["y_values"], bins=bins, color="green", orientation='horizontal')
+                                            break
                                         
                 ax.set_title(f"Season: all, {noil}, {npoints} points")               
 
