@@ -667,7 +667,7 @@ class Dataset:
                     match paramx:
                         case "Wasser K. F.":
                             xlabelstr = "Water K.F. in ppm"
-                            xax = paramx.replace(" ", "").replace(".", "").replace("°C", "").replace("bei","")
+                            xax = paramx.replace(".", "").replace("°C", "").replace("bei","")
                             ax.set_xlim(0, 1000)
                             if len(x1) > 150:
                                 binwidthx = 25
