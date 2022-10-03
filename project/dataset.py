@@ -662,64 +662,53 @@ class Dataset:
 
                     save_name = ""
                     xax = "days"
+                    ax.set_xlim(-50, 4000)
 
                     match paramx:
                         case "Wasser K. F.":
                             xlabelstr = "Water K.F. in ppm"
-                            save_name = (
-                            f"H2O_vs_days_{machine_id1}_{machine_id2}_{oil_name}.png"
-                            )
-                            ax.set_xlim(-50, 4000)
-                            ax.set_ylim(0, 1000)
+                            xax = paramx.replace(" ", "").replace(".", "").replace("°C", "").replace("bei","")
+                            ax.set_xlim(0, 1000)
                             if len(x1) > 150:
-                                binwidthy = 25
+                                binwidthx = 25
                             else:
-                                binwidthy = 50
+                                binwidthx = 50
                         case "Neutralisationszahl":
-                            ylabelstr = "Acid number in mgkOH/gOil"
-                            ax.set_xlim(-50, 4000)
-                            ax.set_ylim(0, 3)
-                            save_name = f"AN_vs_days_{machine_id1}_{machine_id2}_{oil_name}.png"
-                            if binwidthy < 0.15:
-                                binwidthy = 0.15
+                            xlabelstr = "Acid number in mgkOH/gOil"                            
+                            ax.set_xlim(0, 3)
+                            if binwidthx < 0.15:
+                                binwidthx = 0.15
                             #binwidth = 0.25
                         case "Oxidation":
-                            ylabelstr = "Oxidation in A/cm"
-                            save_name = f"Ox_vs_days_{machine_id1}_{machine_id2}_{oil_name}.png"
+                            xlabelstr = "Oxidation in A/cm"                            
                         case "Viskosität bei 40°C":
-                            ylabelstr = "Viscosity at 40°C in mm^2/s"
-                            ax.set_xlim(-50, 3000)
-                            ax.set_ylim(200, 400)
-                            save_name = f"v40_vs_days_{machine_id1}_{machine_id2}_{oil_name}.png"
+                            xlabelstr = "Viscosity at 40°C in mm^2/s"                            
+                            ax.set_xlim(200, 400)                            
                             if len(x1) > 150:
-                                binwidthy = 4
+                                binwidthx = 4
                             else:
-                                binwidthy = 5      
+                                binwidthx = 5      
                         case "Viskosität bei 100°C":
-                            ylabelstr = "Viscosity at 100°C in mm^2/s"
-                            ax.set_xlim(-50, 3000)
-                            ax.set_ylim(10, 75)
-                            save_name = f"v100_vs_days_{machine_id1}_{machine_id2}_{oil_name}.png"
+                            xlabelstr = "Viscosity at 100°C in mm^2/s"                            
+                            ax.set_xlim(10, 75)                            
                             if len(x1) > 150:
-                                binwidthy = 1
+                                binwidthx = 1
                             else:
-                                binwidthy = 2
+                                binwidthx = 2
 
                     match paramy:
                         case "Wasser K. F.":
                             ylabelstr = "Water K.F. in ppm"
                             save_name = (
                             f"H2O_vs_{xax}_{machine_id1}_{machine_id2}_{oil_name}.png"
-                            )
-                            ax.set_xlim(-50, 4000)
+                            )                            
                             ax.set_ylim(0, 1000)
                             if len(x1) > 150:
                                 binwidthy = 25
                             else:
                                 binwidthy = 50
                         case "Neutralisationszahl":
-                            ylabelstr = "Acid number in mgkOH/gOil"
-                            ax.set_xlim(-50, 4000)
+                            ylabelstr = "Acid number in mgkOH/gOil"                            
                             ax.set_ylim(0, 3)
                             save_name = f"AN_vs_{xax}_{machine_id1}_{machine_id2}_{oil_name}.png"
                             if binwidthy < 0.15:
@@ -730,7 +719,8 @@ class Dataset:
                             save_name = f"Ox_vs_{xax}_{machine_id1}_{machine_id2}_{oil_name}.png"
                         case "Viskosität bei 40°C":
                             ylabelstr = "Viscosity at 40°C in mm^2/s"
-                            ax.set_xlim(-50, 3000)
+                            if paramx == "time":
+                                ax.set_xlim(-50, 3000)
                             ax.set_ylim(200, 400)
                             save_name = f"v40_vs_{xax}_{machine_id1}_{machine_id2}_{oil_name}.png"
                             if len(x1) > 150:
@@ -739,7 +729,8 @@ class Dataset:
                                 binwidthy = 5      
                         case "Viskosität bei 100°C":
                             ylabelstr = "Viscosity at 100°C in mm^2/s"
-                            ax.set_xlim(-50, 3000)
+                            if paramx == "time":
+                                ax.set_xlim(-50, 3000)
                             ax.set_ylim(10, 75)
                             save_name = f"v100_vs_{xax}_{machine_id1}_{machine_id2}_{oil_name}.png"
                             if len(x1) > 150:
