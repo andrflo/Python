@@ -608,7 +608,7 @@ class Dataset:
                     ax.plot(x3, y3, "mo")
 
                     ylabelstr = ""
-                    if param == "Wasser K. F." or param == "Viskosität bei 40°C":
+                    if param == "Wasser K. F." or param == "Viskosität bei 40°C" or param == "Viskosität bei 100°C":
                         binwidth = round((np.max(np.abs(y1)) - np.min(np.abs(y1))) / round(Decimal(len(x1)).sqrt()))
                     else:     
                         binwidth = (np.max(np.abs(y1)) - np.min(np.abs(y1))) / round(Decimal(len(x1)).sqrt())
@@ -646,7 +646,16 @@ class Dataset:
                             if len(x1) > 150:
                                 binwidth = 4
                             else:
-                                binwidth = 5           
+                                binwidth = 5      
+                        case "Viskosität bei 100°C":
+                            ylabelstr = "Viscosity at 100°C in mm^2/s"
+                            ax.set_xlim(-50, 3000)
+                            ax.set_ylim(0, 100)
+                            save_name = f"v100_vs_days_{machine_id1}_{machine_id2}_{oil_name}.png"
+                            if len(x1) > 150:
+                                binwidth = 2
+                            else:
+                                binwidth = 3              
                     
                     print("binwidth:", binwidth)
                     xymax = max(np.max(np.abs(x1)), np.max(np.abs(y1)))
