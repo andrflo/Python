@@ -633,6 +633,8 @@ class Dataset:
                     ax.plot(x3, y3, "mo")
 
                     ylabelstr = ""
+                    xlabelstr = ""
+                    
                     if paramy == "Wasser K. F." or paramy == "Viskosität bei 40°C" or paramy == "Viskosität bei 100°C":
                         binwidth = round((np.max(np.abs(y1)) - np.min(np.abs(y1))) / round(Decimal(len(x1)).sqrt()))
                     else:     
