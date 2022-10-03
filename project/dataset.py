@@ -762,7 +762,7 @@ class Dataset:
 
                     path_proj = os.path.abspath(os.getcwd())
                     
-                    ax.set_xlabel("Days in service")
+                    ax.set_xlabel(xlabelstr)
                     ax.set_ylabel(ylabelstr)
 
                      # winter_patch = mpatches.Patch(color='blue', label='Winter')
