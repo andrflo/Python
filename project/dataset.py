@@ -695,6 +695,14 @@ class Dataset:
                                 binwidthx = 1
                             else:
                                 binwidthx = 2
+                        case "FE":
+                            xlabelstr = "Fe content in ppm"                            
+                            ax.set_xlim(0, 200)                            
+                            if len(x1) > 150:
+                                binwidthx = 2
+                            else:
+                                binwidthx = 3
+
 
                     match paramy:
                         case "Wasser K. F.":
@@ -736,7 +744,15 @@ class Dataset:
                             if len(x1) > 150:
                                 binwidthy = 1
                             else:
-                                binwidthy = 2              
+                                binwidthy = 2  
+                        case "FE":
+                            ylabelstr = "Fe content in ppm"                            
+                            ax.set_ylim(0, 200)         
+                            save_name = f"Fe_vs_{xax}_{machine_id1}_{machine_id2}_{oil_name}.png"                   
+                            if len(x1) > 150:
+                                binwidthy = 2
+                            else:
+                                binwidthy = 3                    
                     
                     print("binwidthy:", binwidthy)
                     #xymax = max(np.max(np.abs(x1)), np.max(np.abs(y1)))
@@ -801,7 +817,9 @@ class Dataset:
                         case "Viskosität bei 40°C":
                             plt.savefig(f"data/viscosity/40/{save_name}")
                         case "Viskosität bei 100°C":
-                            plt.savefig(f"data/viscosity/100/{save_name}")    
+                            plt.savefig(f"data/viscosity/100/{save_name}")   
+                        case "FE":
+                            plt.savefig(f"data/elements/Fe/{save_name}")       
                     plt.close(fig)
 
                 elif machine_id1 == "" and machine_id2 == "":
