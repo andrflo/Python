@@ -571,10 +571,8 @@ class Dataset:
                                             y1.append(float(row[paramy]))
                                             j += 1        
                                     if j == nop:                                    
-                                        l += 1
-                                        
-                                    
-                                    
+                                        l += 1                                   
+                                                                   
 
                                 # s increases even if the point is not going to be plotted         
                                 s += 1        
