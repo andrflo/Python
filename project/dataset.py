@@ -498,7 +498,7 @@ class Dataset:
                                                 x2.append(int(row["Einfülltage"]))
                                                 y2.append(float(row[paramy]))
                                                 j += 1
-                                        elif paramx in self.keys:
+                                        elif self.keys_exist(paramx, paramy) and len(row[paramx]) > 0 and len(row[paramy]) > 0:
                                             x2.append(float(row[paramx]))
                                             y2.append(float(row[paramy]))
                                             j += 1
