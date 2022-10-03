@@ -707,6 +707,8 @@ class Dataset:
                         plt.savefig(f"data/ox/ind_samples/{save_name}")
                     elif param == "Viskosität bei 40°C":
                         plt.savefig(f"data/viscosity/40/{save_name}")
+                    elif param == "Viskosität bei 100°C":
+                        plt.savefig(f"data/viscosity/100/{save_name}")    
                     plt.close(fig)
 
                 elif machine_id1 == "" and machine_id2 == "":
