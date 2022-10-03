@@ -542,29 +542,34 @@ class Dataset:
                                 if l <= k:
                                    
                                     # add to x1, y1, increase j, if it is the case l but not k 
-                                    if not ("Einfülltage" in self.keys):  
-                                        #print(i, (data[i])[a], nop)     
-                                                                        
-                                        if (
-                                            len(row["Datum letzter Ölwechsel"]) > 0
-                                            and len(row["Datum Probenentnahme"]) > 0
-                                        ):
-                                            
-                                            days_service = self.compute_days_in_service(
-                                                row["Datum Probenentnahme"],
-                                                row["Datum letzter Ölwechsel"],
-                                            )
-                                            #print(i+s, l, k, j, nop, row["Datum Probenentnahme"], row["Datum letzter Ölwechsel"], days_service)
-                                            if days_service > 0 and len(row[paramy]) > 0:
-                                                #print(i+s, l, k, j, nop)                                                 
-                                                x1.append(days_service)
-                                                y1.append(float(row[paramy]))
-                                                j += 1
-                                            #print(j, (data[i])[a])
-                                    elif len(row["Einfülltage"]) > 0 and len(row[paramy]) > 0:
-                                        x1.append(int(row["Einfülltage"]))
-                                        y1.append(float(row[paramy]))
-                                        j += 1
+                                    if paramx == "time":
+                                        if not ("Einfülltage" in self.keys):  
+                                            #print(i, (data[i])[a], nop)     
+                                                                            
+                                            if (
+                                                len(row["Datum letzter Ölwechsel"]) > 0
+                                                and len(row["Datum Probenentnahme"]) > 0
+                                            ):
+                                                
+                                                days_service = self.compute_days_in_service(
+                                                    row["Datum Probenentnahme"],
+                                                    row["Datum letzter Ölwechsel"],
+                                                )
+                                                #print(i+s, l, k, j, nop, row["Datum Probenentnahme"], row["Datum letzter Ölwechsel"], days_service)
+                                                if days_service > 0 and len(row[paramy]) > 0:
+                                                    #print(i+s, l, k, j, nop)                                                 
+                                                    x1.append(days_service)
+                                                    y1.append(float(row[paramy]))
+                                                    j += 1
+                                                #print(j, (data[i])[a])
+                                        elif len(row["Einfülltage"]) > 0 and len(row[paramy]) > 0:
+                                            x1.append(int(row["Einfülltage"]))
+                                            y1.append(float(row[paramy]))
+                                            j += 1
+                                    elif self.keys_exist(paramx, paramy) and len(row[paramx]) > 0 and len(row[paramy]) > 0:
+                                            x1.append(float(row[paramx]))
+                                            y1.append(float(row[paramy]))
+                                            j += 1        
                                     if j == nop:                                    
                                         l += 1
                                         
