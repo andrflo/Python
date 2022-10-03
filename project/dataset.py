@@ -745,6 +745,15 @@ class Dataset:
                     bins = np.arange(-lim, lim + binwidthy, binwidthy)
                     
                     ax_histy.hist(y1, bins=bins, orientation='horizontal')
+
+                    if paramx != "time":
+                        xymax = max(np.max(np.abs(x1)), np.max(np.abs(y1)))
+                        lim = (int(xymax/binwidthy) + 1) * binwidthy
+
+                        bins = np.arange(-lim, lim + binwidthy, binwidthy)
+                    
+                        ax_histy.hist(y1, bins=bins, orientation='horizontal')
+
                     
                     #plt.title(f"{oil_name}, {len(x1)+len(x2)+len(x3)} points")
                     ax.set_title(f"{oil_name}, {len(x1)+len(x2)+len(x3)} points")
