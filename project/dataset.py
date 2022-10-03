@@ -648,6 +648,12 @@ class Dataset:
 
                     ylabelstr = ""
                     xlabelstr = ""
+
+                    if paramx != "time":
+                        if paramx == "Wasser K. F." or paramx == "Viskosität bei 40°C" or paramx == "Viskosität bei 100°C":
+                            binwidthx = round((np.max(np.abs(x1)) - np.min(np.abs(x1))) / round(Decimal(len(x1)).sqrt()))
+                        else:     
+                            binwidthx = (np.max(np.abs(x1)) - np.min(np.abs(x1))) / round(Decimal(len(x1)).sqrt())
                     
                     if paramy == "Wasser K. F." or paramy == "Viskosität bei 40°C" or paramy == "Viskosität bei 100°C":
                         binwidthy = round((np.max(np.abs(y1)) - np.min(np.abs(y1))) / round(Decimal(len(x1)).sqrt()))
