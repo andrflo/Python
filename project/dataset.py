@@ -739,20 +739,22 @@ class Dataset:
                                 binwidthy = 2              
                     
                     print("binwidthy:", binwidthy)
-                    xymax = max(np.max(np.abs(x1)), np.max(np.abs(y1)))
-                    lim = (int(xymax/binwidthy) + 1) * binwidthy
+                    #xymax = max(np.max(np.abs(x1)), np.max(np.abs(y1)))
+                    ymax = np.max(np.abs(y1))
+                    #lim = (int(xymax/binwidthy) + 1) * binwidthy
+                    lim = (int(ymax/binwidthy) + 1) * binwidthy
 
                     bins = np.arange(-lim, lim + binwidthy, binwidthy)
                     
                     ax_histy.hist(y1, bins=bins, orientation='horizontal')
 
                     if paramx != "time":
-                        xymax = max(np.max(np.abs(x1)), np.max(np.abs(y1)))
-                        lim = (int(xymax/binwidthy) + 1) * binwidthy
+                        xmax = np.max(np.abs(x1))
+                        lim = (int(xmax/binwidthx) + 1) * binwidthx
 
-                        bins = np.arange(-lim, lim + binwidthy, binwidthy)
+                        bins = np.arange(-lim, lim + binwidthx, binwidthx)
                     
-                        ax_histy.hist(y1, bins=bins, orientation='horizontal')
+                        ax_histx.hist(x1, bins=bins)
 
                     
                     #plt.title(f"{oil_name}, {len(x1)+len(x2)+len(x3)} points")
