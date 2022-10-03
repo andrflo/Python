@@ -586,23 +586,28 @@ class Dataset:
                                         ok2 = False
                         # If 2 series have already been added or there are not enough points for a series,
                         # the rest of points are plotted black
-                        else:                            
-                            if not ("Einfülltage" in self.keys):
-                                if (
-                                    len((data[i])["Datum letzter Ölwechsel"]) > 0
-                                    and len((data[i])["Datum Probenentnahme"]) > 0
-                                ):                                
-                                    days_service = self.compute_days_in_service(
-                                        (data[i])["Datum Probenentnahme"],
-                                        (data[i])["Datum letzter Ölwechsel"],
-                                    )
-                                    if days_service > 0 and len((data[i])[paramy]) > 0:
-                                        x1.append(days_service)
-                                        y1.append(float((data[i])[paramy]))
-                            elif len((data[i])["Einfülltage"]) > 0 and len(data[i][paramy]) > 0:
-                                x1.append(int((data[i])["Einfülltage"]))
-                                #print((data[i])[a], (data[i])[param])
-                                y1.append(float((data[i])[paramy]))
+                        else:    
+                            if paramx == "time":                        
+                                if not ("Einfülltage" in self.keys):
+                                    if (
+                                        len((data[i])["Datum letzter Ölwechsel"]) > 0
+                                        and len((data[i])["Datum Probenentnahme"]) > 0
+                                    ):                                
+                                        days_service = self.compute_days_in_service(
+                                            (data[i])["Datum Probenentnahme"],
+                                            (data[i])["Datum letzter Ölwechsel"],
+                                        )
+                                        if days_service > 0 and len((data[i])[paramy]) > 0:
+                                            x1.append(days_service)
+                                            y1.append(float((data[i])[paramy]))
+                                elif len((data[i])["Einfülltage"]) > 0 and len(data[i][paramy]) > 0:
+                                    x1.append(int((data[i])["Einfülltage"]))
+                                    #print((data[i])[a], (data[i])[param])
+                                    y1.append(float((data[i])[paramy]))
+                            elif self.keys_exist(paramx, paramy) and len(row[paramx]) > 0 and len(row[paramy]) > 0:
+                                    x1.append(float(row[paramx]))
+                                    y1.append(float(row[paramy]))
+                                    j += 1        
                             #print((data[i])[a], l)    
                             i += 1
                     else:
