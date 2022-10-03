@@ -629,6 +629,19 @@ class Dataset:
                         ax_histy = fig.add_subplot(gs[0, 1], sharey=ax)  
                         ax_histy.tick_params(axis="y", labelleft=False)
 
+                    else:
+                        gs = fig.add_gridspec(2, 2, width_ratios=(4, 1), height_ratios=(1, 4),
+                        left=0.15, right=0.85, bottom=0.1, top=0.9,
+                        wspace=0.05, hspace=0.05)
+                        ax = fig.add_subplot(gs[1, 0])                    
+                        ax_histy = fig.add_subplot(gs[1, 1], sharey=ax)  
+                        ax_histy.tick_params(axis="y", labelleft=False)
+                        ax_histx = fig.add_subplot(gs[0, 0], sharex=ax)
+                        ax_histx.tick_params(axis="x", labelbottom=False)
+    
+                        
+
+
                     ax.plot(x1, y1, "ko")
                     ax.plot(x2, y2, "go")
                     ax.plot(x3, y3, "mo")
