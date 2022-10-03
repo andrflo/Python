@@ -365,9 +365,9 @@ class Dataset:
                         oil_names.add(row["Ölbezeichnung"])
         return oil_names
 
-    def plot_data_machine(self, param):
+    def plot_data_machine(self, paramx, paramy):
 
-        oil_names = self.set_of_oils("wind turbine", "all_seasons", param)
+        oil_names = self.set_of_oils("wind turbine", "all_seasons", paramy)
         
         if self.keys_exist("Anlagennummer"):
             a = "Anlagennummer"
@@ -485,13 +485,13 @@ class Dataset:
                                                     row["Datum Probenentnahme"],
                                                     row["Datum letzter Ölwechsel"],
                                                 )
-                                                if days_service > 0 and len(row[param]) > 0:                                                    
+                                                if days_service > 0 and len(row[paramy]) > 0:                                                    
                                                     x2.append(days_service)
-                                                    y2.append(float(row[param]))
+                                                    y2.append(float(row[paramy]))
                                                     j += 1
-                                        elif len(row["Einfülltage"]) > 0 and len(row[param]) > 0:
+                                        elif len(row["Einfülltage"]) > 0 and len(row[paramy]) > 0:
                                             x2.append(int(row["Einfülltage"]))
-                                            y2.append(float(row[param]))
+                                            y2.append(float(row[paramy]))
                                             j += 1                    
                                         # if all of the points of the series have been already included                                      
                                         if j == nop:
@@ -511,13 +511,13 @@ class Dataset:
                                                 row["Datum Probenentnahme"],
                                                 row["Datum letzter Ölwechsel"],
                                             )
-                                            if days_service > 0 and len(row[param]) > 0:
+                                            if days_service > 0 and len(row[paramy]) > 0:
                                                 x3.append(days_service)
-                                                y3.append(float(row[param]))
+                                                y3.append(float(row[paramy]))
                                                 j += 1
-                                    elif len(row["Einfülltage"]) > 0 and len(row[param]) > 0:
+                                    elif len(row["Einfülltage"]) > 0 and len(row[paramy]) > 0:
                                         x3.append(int(row["Einfülltage"]))
-                                        y3.append(float(row[param]))
+                                        y3.append(float(row[paramy]))
                                         j += 1                                
                                     if j == nop:
                                         k += 1
@@ -540,15 +540,15 @@ class Dataset:
                                                 row["Datum letzter Ölwechsel"],
                                             )
                                             #print(i+s, l, k, j, nop, row["Datum Probenentnahme"], row["Datum letzter Ölwechsel"], days_service)
-                                            if days_service > 0 and len(row[param]) > 0:
+                                            if days_service > 0 and len(row[paramy]) > 0:
                                                 #print(i+s, l, k, j, nop)                                                 
                                                 x1.append(days_service)
-                                                y1.append(float(row[param]))
+                                                y1.append(float(row[paramy]))
                                                 j += 1
                                             #print(j, (data[i])[a])
-                                    elif len(row["Einfülltage"]) > 0 and len(row[param]) > 0:
+                                    elif len(row["Einfülltage"]) > 0 and len(row[paramy]) > 0:
                                         x1.append(int(row["Einfülltage"]))
-                                        y1.append(float(row[param]))
+                                        y1.append(float(row[paramy]))
                                         j += 1
                                     if j == nop:                                    
                                         l += 1
@@ -578,13 +578,13 @@ class Dataset:
                                         (data[i])["Datum Probenentnahme"],
                                         (data[i])["Datum letzter Ölwechsel"],
                                     )
-                                    if days_service > 0 and len((data[i])[param]) > 0:
+                                    if days_service > 0 and len((data[i])[paramy]) > 0:
                                         x1.append(days_service)
-                                        y1.append(float((data[i])[param]))
-                            elif len((data[i])["Einfülltage"]) > 0 and len(data[i][param]) > 0:
+                                        y1.append(float((data[i])[paramy]))
+                            elif len((data[i])["Einfülltage"]) > 0 and len(data[i][paramy]) > 0:
                                 x1.append(int((data[i])["Einfülltage"]))
                                 #print((data[i])[a], (data[i])[param])
-                                y1.append(float((data[i])[param]))
+                                y1.append(float((data[i])[paramy]))
                             #print((data[i])[a], l)    
                             i += 1
                     else:
@@ -610,14 +610,14 @@ class Dataset:
                     ax.plot(x3, y3, "mo")
 
                     ylabelstr = ""
-                    if param == "Wasser K. F." or param == "Viskosität bei 40°C" or param == "Viskosität bei 100°C":
+                    if paramy == "Wasser K. F." or paramy == "Viskosität bei 40°C" or paramy == "Viskosität bei 100°C":
                         binwidth = round((np.max(np.abs(y1)) - np.min(np.abs(y1))) / round(Decimal(len(x1)).sqrt()))
                     else:     
                         binwidth = (np.max(np.abs(y1)) - np.min(np.abs(y1))) / round(Decimal(len(x1)).sqrt())
 
                     save_name = ""
 
-                    match param:
+                    match paramy:
                         case "Wasser K. F.":
                             ylabelstr = "Water K.F. in ppm"
                             save_name = (
@@ -700,17 +700,18 @@ class Dataset:
                     )
 
                     save_name = self.validate_file_name(save_name)
-                    if param == "Wasser K. F.":
-                        #plt.savefig(f"{path_proj}/project/data/water_KF/ind_samples/{save_name}")
-                        plt.savefig(f"data/water_KF/ind_samples/{save_name}")
-                    elif param == "Neutralisationszahl":
-                        plt.savefig(f"data/AN/ind_samples/{save_name}")
-                    elif param == "Oxidation":
-                        plt.savefig(f"data/ox/ind_samples/{save_name}")
-                    elif param == "Viskosität bei 40°C":
-                        plt.savefig(f"data/viscosity/40/{save_name}")
-                    elif param == "Viskosität bei 100°C":
-                        plt.savefig(f"data/viscosity/100/{save_name}")    
+                    match paramy:
+                        case "Wasser K. F.":                    
+                            #plt.savefig(f"{path_proj}/project/data/water_KF/ind_samples/{save_name}")
+                            plt.savefig(f"data/water_KF/ind_samples/{save_name}")
+                        case "Neutralisationszahl":
+                            plt.savefig(f"data/AN/ind_samples/{save_name}")
+                        case "Oxidation":
+                            plt.savefig(f"data/ox/ind_samples/{save_name}")
+                        case "Viskosität bei 40°C":
+                            plt.savefig(f"data/viscosity/40/{save_name}")
+                        case "Viskosität bei 100°C":
+                            plt.savefig(f"data/viscosity/100/{save_name}")    
                     plt.close(fig)
 
                 elif machine_id1 == "" and machine_id2 == "":
