@@ -611,7 +611,7 @@ class Dataset:
                             #print((data[i])[a], l)    
                             i += 1
                     else:
-                        i = i+1        
+                        i += 1        
                             
                 # plot
                 #print(x2, y2)
