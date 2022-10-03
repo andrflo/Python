@@ -512,23 +512,28 @@ class Dataset:
                                             l += 1                                            
                                 # if l < k, first_done should be false and it would not go through the following elif
                                 elif not second_done:
-                                    if not ("Einfülltage" in self.keys):
-                                        if (
-                                            len(row["Datum letzter Ölwechsel"]) > 0
-                                            and len(row["Datum Probenentnahme"]) > 0
-                                        ):
-                                            days_service = self.compute_days_in_service(
-                                                row["Datum Probenentnahme"],
-                                                row["Datum letzter Ölwechsel"],
-                                            )
-                                            if days_service > 0 and len(row[paramy]) > 0:
-                                                x3.append(days_service)
-                                                y3.append(float(row[paramy]))
-                                                j += 1
-                                    elif len(row["Einfülltage"]) > 0 and len(row[paramy]) > 0:
-                                        x3.append(int(row["Einfülltage"]))
-                                        y3.append(float(row[paramy]))
-                                        j += 1                                
+                                    if paramx == "time":
+                                        if not ("Einfülltage" in self.keys):
+                                            if (
+                                                len(row["Datum letzter Ölwechsel"]) > 0
+                                                and len(row["Datum Probenentnahme"]) > 0
+                                            ):
+                                                days_service = self.compute_days_in_service(
+                                                    row["Datum Probenentnahme"],
+                                                    row["Datum letzter Ölwechsel"],
+                                                )
+                                                if days_service > 0 and len(row[paramy]) > 0:
+                                                    x3.append(days_service)
+                                                    y3.append(float(row[paramy]))
+                                                    j += 1
+                                        elif len(row["Einfülltage"]) > 0 and len(row[paramy]) > 0:
+                                            x3.append(int(row["Einfülltage"]))
+                                            y3.append(float(row[paramy]))
+                                            j += 1
+                                    elif self.keys_exist(paramx, paramy) and len(row[paramx]) > 0 and len(row[paramy]) > 0:
+                                            x3.append(float(row[paramx]))
+                                            y3.append(float(row[paramy]))
+                                            j += 1                                        
                                     if j == nop:
                                         k += 1
                                         l += 1
