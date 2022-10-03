@@ -650,12 +650,12 @@ class Dataset:
                         case "Viskosität bei 100°C":
                             ylabelstr = "Viscosity at 100°C in mm^2/s"
                             ax.set_xlim(-50, 3000)
-                            ax.set_ylim(0, 100)
+                            ax.set_ylim(10, 75)
                             save_name = f"v100_vs_days_{machine_id1}_{machine_id2}_{oil_name}.png"
                             if len(x1) > 150:
-                                binwidth = 2
+                                binwidth = 1
                             else:
-                                binwidth = 3              
+                                binwidth = 2              
                     
                     print("binwidth:", binwidth)
                     xymax = max(np.max(np.abs(x1)), np.max(np.abs(y1)))
