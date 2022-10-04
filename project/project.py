@@ -22,8 +22,11 @@ def main():
         #ds.plot_data_machine("time", "Wasser K. F.")
         #ds.plot_data_machine("time", "Viskosität bei 40°C")
         #ds.plot_data_machine("time", "Viskosität bei 100°C")
-        ds.plot_data_machine("time", "FE")
+        #ds.plot_data_machine("time", "FE")
+        #ds.plot_data_machine("time", "P")
+        #ds.plot_data_machine("FE", "Neutralisationszahl")
         #ds.plot_data_machine("Neutralisationszahl")
+        ds.plot_data_machine("Anlagengöße [kW]", "Ölmenge im System")
 
 
     p1 = "H2O_vs_days_all"

@@ -340,11 +340,14 @@ class Dataset:
             reader = csv.DictReader(csvfile, delimiter=";")
             short_ds = []         
          
-            for row1 in reader:
+            for row1 in reader:                
                 if app == "wind turbine":
-                    if row1["Ölbezeichnung"] in oil_names and self.origin_sample(
-                        row1["Probe aus"], "wind", "wea", "wka", "éolienne"):
-                        short_ds.append(row1)  
+                    
+                    if row1["Ölbezeichnung"] in oil_names and (self.origin_sample(
+                        row1["Probe aus"], "wind", "wea", "wka", "éolienne") 
+                        or self.origin_sample(
+                        row1["Komponente"], "wind", "wea", "wka", "éolienne")):                        
+                        short_ds.append(row1)                    
                         
             return sorted(short_ds, key=lambda row: (row[param]))
             
@@ -374,11 +377,7 @@ class Dataset:
         elif self.keys_exist("Probenbezeichnung"):
             a = "Probenbezeichnung"    
         if self.keys_exist(a):
-            data = self.sort_by_param(a, oil_names, "wind turbine")
-
-
-
-        #print ("l oils:", len(oil_names), "l data:", len(data))    
+            data = self.sort_by_param(a, oil_names, "wind turbine")         
 
         set_of_ids = set()
         for row in data:
@@ -468,6 +467,7 @@ class Dataset:
                         machine_id = (data[i])[a]
                         nop = res[machine_id]
                         
+                            
                         if nop > 3 and (not first_done or not second_done):
                             
                             j = 0
@@ -475,8 +475,7 @@ class Dataset:
                             while j < nop and i+s < len(data):
                                 #print(i+s, l, k, j, nop)
                                 row = data[i + s]
-                                if not first_done:
-                                    
+                                if not first_done:                                    
                                     # Fill up x2 y2 only if the data has not been plotted before
                                     if l > k:
                                         # j increases only when the point is included to be plotted
@@ -615,6 +614,7 @@ class Dataset:
                             
                 # plot
                 #print(x2, y2)
+                
                 if (machine_id1 != "" or machine_id2 != "") and len(x1) > 16:
                     #fig, ax = plt.subplots()
                     fig = plt.figure(figsize=(6, 6))
@@ -647,7 +647,7 @@ class Dataset:
                     ax.plot(x3, y3, "mo")
 
                     ylabelstr = ""
-                    xlabelstr = ""
+                    xlabelstr = "Days in service"
 
                     if paramx != "time":
                         if paramx == "Wasser K. F." or paramx == "Viskosität bei 40°C" or paramx == "Viskosität bei 100°C":
@@ -666,8 +666,7 @@ class Dataset:
 
                     match paramx:
                         case "Wasser K. F.":
-                            xlabelstr = "Water K.F. in ppm"
-                            xax = paramx.replace(".", "").replace("°C", "").replace("bei","")
+                            xlabelstr = "Water K.F. in ppm"                            
                             ax.set_xlim(0, 1000)
                             if len(x1) > 150:
                                 binwidthx = 25
@@ -702,7 +701,24 @@ class Dataset:
                                 binwidthx = 2
                             else:
                                 binwidthx = 3
+                        case "P":
+                            xlabelstr = "P content in ppm"                            
+                            ax.set_xlim(0, 3000)                            
+                            if len(x1) > 150:
+                                binwidthx = 5
+                            else:
+                                binwidthx = 10   
+                        case "Ölmenge im System":
+                            xlabelstr = "Oil volume in L"                            
+                            ax.set_xlim(0, 500)                                                     
+                            binwidthx = 100 
+                        case "Anlagengöße [kW]":
+                            xlabelstr = "Power in kW"                            
+                            ax.set_xlim(0, 4000)                                            
+                            binwidthx = 50             
 
+                    if paramx != "time":
+                        xax = paramx.replace(".", "").replace("°C", "").replace("bei","")
 
                     match paramy:
                         case "Wasser K. F.":
@@ -752,8 +768,26 @@ class Dataset:
                             if len(x1) > 150:
                                 binwidthy = 2
                             else:
-                                binwidthy = 3                    
-                    
+                                binwidthy = 3   
+                        case "P":
+                            ylabelstr = "P content in ppm"                            
+                            ax.set_ylim(0, 3000)         
+                            save_name = f"P_vs_{xax}_{machine_id1}_{machine_id2}_{oil_name}.png"                   
+                            if len(x1) > 150:
+                                binwidthy = 5
+                            else:
+                                binwidthy = 10   
+                        case "Ölmenge im System":
+                            ylabelstr = "Oil volume in L"                            
+                            ax.set_ylim(0, 500)         
+                            save_name = f"Oilvol_vs_{xax}_{machine_id1}_{machine_id2}_{oil_name}.png"                   
+                            binwidthy = 100                             
+                        case "Anlagengöße [kW]":
+                            ylabelstr = "Power in kW"                            
+                            ax.set_ylim(0, 4000)         
+                            save_name = f"Power_vs_{xax}_{machine_id1}_{machine_id2}_{oil_name}.png"                   
+                            binwidthy = 50
+                            
                     print("binwidthy:", binwidthy)
                     #xymax = max(np.max(np.abs(x1)), np.max(np.abs(y1)))
                     ymax = np.max(np.abs(y1))
@@ -764,17 +798,17 @@ class Dataset:
                     
                     ax_histy.hist(y1, bins=bins, orientation='horizontal')
 
-                    if paramx != "time":
+                    if paramx != "time":                        
                         xmax = np.max(np.abs(x1))
                         lim = (int(xmax/binwidthx) + 1) * binwidthx
-
-                        bins = np.arange(-lim, lim + binwidthx, binwidthx)
-                    
+                        bins = np.arange(-lim, lim + binwidthx, binwidthx)                    
                         ax_histx.hist(x1, bins=bins)
+                        ax_histx.set_title(f"{oil_name}, {len(x1)+len(x2)+len(x3)} points")
 
                     
                     #plt.title(f"{oil_name}, {len(x1)+len(x2)+len(x3)} points")
-                    ax.set_title(f"{oil_name}, {len(x1)+len(x2)+len(x3)} points")
+                    if  paramx == "time":
+                        ax.set_title(f"{oil_name}, {len(x1)+len(x2)+len(x3)} points")
 
                     path_proj = os.path.abspath(os.getcwd())
                     
@@ -819,7 +853,11 @@ class Dataset:
                         case "Viskosität bei 100°C":
                             plt.savefig(f"data/viscosity/100/{save_name}")   
                         case "FE":
-                            plt.savefig(f"data/elements/Fe/{save_name}")       
+                            plt.savefig(f"data/elements/Fe/{save_name}")  
+                        case "P":
+                            plt.savefig(f"data/elements/P/{save_name}")
+                        case "Ölmenge im System" | "Anlagengöße [kW]":
+                            plt.savefig(f"data/machine/{save_name}")          
                     plt.close(fig)
 
                 elif machine_id1 == "" and machine_id2 == "":
