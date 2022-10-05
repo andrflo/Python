@@ -378,11 +378,9 @@ class Dataset:
             a = "Probenbezeichnung"    
         if self.keys_exist(a):
             data = self.sort_by_param(a, oil_names, "wind turbine")    
+     
 
-        for row in data:
-            print(row["Probenbezeichnung"])         
-
-        """set_of_ids = set()
+        set_of_ids = set()
         for row in data:
             set_of_ids.add(row[a])
 
@@ -866,4 +864,3 @@ class Dataset:
                 elif machine_id1 == "" and machine_id2 == "":
                     ok1 = False
 
-"""
