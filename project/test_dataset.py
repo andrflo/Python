@@ -12,4 +12,4 @@ def test_sort_by_param():
     data = ds.sort_by_param("Probenbezeichnung", oil_names, "wind turbine")
 
     for row in data:
-        print(data["Probenbezeichnung"])
+        print(row["Probenbezeichnung"])
