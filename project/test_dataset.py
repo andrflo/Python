@@ -10,3 +10,6 @@ def test_sort_by_param():
     ds = Dataset(fn3)
     oil_names = ds.set_of_oils("wind turbine", "all_seasons", "Viskosität bei 100°C")
     data = ds.sort_by_param("Probenbezeichnung", oil_names, "wind turbine")
+
+    for row in data:
+        print(data["Probenbezeichnung"])
