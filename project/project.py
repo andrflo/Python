@@ -21,7 +21,7 @@ def main():
         #ds.plot_param_t("all_seasons", "Wasser K. F.")
         #ds.plot_data_machine("time", "Wasser K. F.")
         #ds.plot_data_machine("time", "Viskosität bei 40°C")
-        #ds.plot_data_machine("time", "Viskosität bei 100°C")
+        ds.plot_data_machine("time", "Viskosität bei 100°C")
         #ds.plot_data_machine("time", "FE")
         #ds.plot_data_machine("time", "P")
         #ds.plot_data_machine("FE", "Neutralisationszahl")
