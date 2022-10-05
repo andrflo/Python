@@ -377,7 +377,10 @@ class Dataset:
         elif self.keys_exist("Probenbezeichnung"):
             a = "Probenbezeichnung"    
         if self.keys_exist(a):
-            data = self.sort_by_param(a, oil_names, "wind turbine")         
+            data = self.sort_by_param(a, oil_names, "wind turbine")    
+
+        for row in data:
+            print(row["Probenbezeichnung"])         
 
         """set_of_ids = set()
         for row in data:
