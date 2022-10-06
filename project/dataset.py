@@ -718,7 +718,7 @@ class Dataset:
                                 y1.append(float(row[paramy]))
                             # print((data[i])[a], l)
                             i += 1
-                    else:
+                    else: # if the current row does not correspond to the current oil_name or the data does not come from a wind turbine
                         i += 1
 
                 # plot
