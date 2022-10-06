@@ -606,8 +606,7 @@ class Dataset:
                                     y1.append(float((data[i])[paramy]))
                             elif self.keys_exist(paramx, paramy) and len(row[paramx]) > 0 and len(row[paramy]) > 0:
                                     x1.append(float(row[paramx]))
-                                    y1.append(float(row[paramy]))
-                                    j += 1        
+                                    y1.append(float(row[paramy]))                                           
                             #print((data[i])[a], l)    
                             i += 1
                     else:
