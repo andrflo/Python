@@ -855,7 +855,7 @@ class Dataset:
                         case "Ölmenge im System":
                             xlabelstr = "Oil volume in L"
                             ax.set_xlim(0, 500)
-                            binwidthx = 100
+                            binwidthx = 50
                         case "Anlagengöße [kW]":
                             xlabelstr = "Power in kW"
                             ax.set_xlim(0, 4000)
@@ -927,7 +927,7 @@ class Dataset:
                             ylabelstr = "Oil volume in L"
                             ax.set_ylim(0, 500)
                             save_name = f"Oilvol_vs_{xax}_{machine_id1}_{machine_id2}_{oil_name}.png"
-                            binwidthy = 100
+                            binwidthy = 50
                         case "Anlagengöße [kW]":
                             ylabelstr = "Power in kW"
                             ax.set_ylim(0, 4000)
