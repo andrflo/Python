@@ -541,7 +541,7 @@ class Dataset:
                                         second_done = True
                                 if l <= k:
                                    
-                                    # add to x1, y1, increase j, if it is the case l but not k 
+                                    # add to x1, y1, increase j (because l<=k), if it is the case l but not k 
                                     if paramx == "time":
                                         if not ("Einfülltage" in self.keys):  
                                             #print(i, (data[i])[a], nop)     
