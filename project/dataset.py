@@ -640,7 +640,7 @@ class Dataset:
                         ax_histx.tick_params(axis="x", labelbottom=False)
     
                         
-
+                    print("lenx2:", len(x2), "lenx3:", len(x3))
 
                     ax.plot(x1, y1, "ko")
                     ax.plot(x2, y2, "go")
@@ -788,7 +788,7 @@ class Dataset:
                             save_name = f"Power_vs_{xax}_{machine_id1}_{machine_id2}_{oil_name}.png"                   
                             binwidthy = 50
                             
-                    print("binwidthy:", binwidthy)
+                    #print("binwidthy:", binwidthy)
                     #xymax = max(np.max(np.abs(x1)), np.max(np.abs(y1)))
                     ymax = np.max(np.abs(y1))
                     #lim = (int(xymax/binwidthy) + 1) * binwidthy
