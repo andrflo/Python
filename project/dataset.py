@@ -415,6 +415,7 @@ class Dataset:
             a = "Probenbezeichnung"
         if self.keys_exist(a):
             data = self.sort_by_param(a, oil_names, "wind turbine")
+        # data is sorted by machine id. All points of a machine are grouped     
 
         set_of_ids = set()
         for row in data:
@@ -676,7 +677,7 @@ class Dataset:
                                 # s increases even if the point is not going to be plotted
                                 s += 1
                             i += s
-                            # print(i)
+                            
                             if i < len(data):
                                 ok2 = True
                                 while (data[i])[a] == machine_id and ok2:
