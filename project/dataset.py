@@ -415,7 +415,7 @@ class Dataset:
             a = "Probenbezeichnung"
         if self.keys_exist(a):
             data = self.sort_by_param(a, oil_names, "wind turbine")
-        # data is sorted by machine id. All points of a machine are grouped     
+        # data is sorted by machine id. All points of a machine are grouped
 
         set_of_ids = set()
         for row in data:
@@ -677,7 +677,7 @@ class Dataset:
                                 # s increases even if the point is not going to be plotted
                                 s += 1
                             i += s
-                            
+
                             if i < len(data):
                                 ok2 = True
                                 while (data[i])[a] == machine_id and ok2:
@@ -687,6 +687,8 @@ class Dataset:
                         # If 2 series have already been added or there are not enough points from a series,
                         # the rest of points are plotted black
                         else:
+                            #if first_done and second_done:
+                                #print("i:", i, "lendata:", len(data), oil_name)
                             if paramx == "time":
                                 if not ("Einfülltage" in self.keys):
                                     if (
@@ -708,18 +710,17 @@ class Dataset:
                                     and len(data[i][paramy]) > 0
                                 ):
                                     x1.append(int((data[i])["Einfülltage"]))
-                                    # print((data[i])[a], (data[i])[param])
                                     y1.append(float((data[i])[paramy]))
                             elif (
                                 self.keys_exist(paramx, paramy)
-                                and len(row[paramx]) > 0
-                                and len(row[paramy]) > 0
+                                and len((data[i])[paramx]) > 0
+                                and len((data[i])[paramy]) > 0
                             ):
-                                x1.append(float(row[paramx]))
-                                y1.append(float(row[paramy]))
+                                x1.append(float((data[i])[paramx]))
+                                y1.append(float((data[i])[paramy]))
                             # print((data[i])[a], l)
                             i += 1
-                    else: # if the current row does not correspond to the current oil_name or the data does not come from a wind turbine
+                    else:  # if the current row does not correspond to the current oil_name or the data does not come from a wind turbine
                         i += 1
 
                 # plot
@@ -765,7 +766,7 @@ class Dataset:
                         ax_histx = fig.add_subplot(gs[0, 0], sharex=ax)
                         ax_histx.tick_params(axis="x", labelbottom=False)
 
-                    print("lenx2:", len(x2), "lenx3:", len(x3))
+                    #print("lenx2:", len(x2), "lenx3:", len(x3))
 
                     ax.plot(x1, y1, "ko")
                     ax.plot(x2, y2, "go")
@@ -1004,5 +1005,7 @@ class Dataset:
                             plt.savefig(f"data/machine/{save_name}")
                     plt.close(fig)
 
+                # It kept going through the rows of data but it did not find more machines using that oil
+                # Time to plot for another oil ok1 = false
                 elif machine_id1 == "" and machine_id2 == "":
                     ok1 = False
