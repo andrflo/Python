@@ -613,7 +613,6 @@ class Dataset:
                         i += 1        
                             
                 # plot
-                #print(x2, y2)
                 
                 if (machine_id1 != "" or machine_id2 != "") and len(x1) > 16:
                     #fig, ax = plt.subplots()
