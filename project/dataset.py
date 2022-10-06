@@ -584,7 +584,7 @@ class Dataset:
                                     i += 1
                                     if not (i < len(data)):
                                         ok2 = False
-                        # If 2 series have already been added or there are not enough points for a series,
+                        # If 2 series have already been added or there are not enough points from a series,
                         # the rest of points are plotted black
                         else:    
                             if paramx == "time":                        
