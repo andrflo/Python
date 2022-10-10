@@ -690,10 +690,6 @@ class Dataset:
                         # If 2 series have already been added or there are not enough points from a series,
                         # the rest of points are plotted black
                         else:
-                            if first_done and second_done:
-                                print("first and second done, i:", i, "lendata:", len(data), oil_name)
-                            else:
-                                print("not enough points, i:", i, "lendata:", len(data), oil_name)    
                             if paramx == "time":
                                 if not ("Einfülltage" in self.keys):
                                     if (
@@ -716,6 +712,10 @@ class Dataset:
                                 ):
                                     x1.append(int((data[i])["Einfülltage"]))
                                     y1.append(float((data[i])[paramy]))
+                                    if first_done and second_done:
+                                        print("first and second done, i:", i, "lendata:", len(data), oil_name)
+                                    else:
+                                        print("not enough points, i:", i, "lendata:", len(data), oil_name)  
                             elif (
                                 self.keys_exist(paramx, paramy)
                                 and len((data[i])[paramx]) > 0
