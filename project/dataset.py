@@ -430,9 +430,11 @@ class Dataset:
         ok = True
         while i < len(data) and ok:
             machine_id = (data[i])[a]
+            oil_n = (data[i])["Ölbezeichnung"]
             j = i
             k = 0
-            while (data[j])[a] == machine_id and ok:
+            # Machine ids are not always associated with the same oil names
+            while (data[j])[a] == machine_id and ((data[j])["Ölbezeichnung"] == oil_n) and ok:
 
                 if j + 1 < len(data):
                     if paramx == "time":
