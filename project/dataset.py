@@ -586,7 +586,7 @@ class Dataset:
                                             k += 1
                                             machine_id1 = machine_id
                                             first_done = True
-                                            print("first done")
+                                            print("first done", len(x2))
                                             l += 1
                                 # if l < k, first_done should be false and it would not go through the following elif
                                 elif not second_done:
@@ -629,7 +629,7 @@ class Dataset:
                                         l += 1
                                         machine_id2 = machine_id
                                         second_done = True
-                                        print("second done")
+                                        print("second done", len(x3))
                                 if l <= k:
 
                                     # add to x1, y1, increase j (because l<=k), if it is the case l but not k
