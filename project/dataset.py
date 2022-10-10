@@ -665,7 +665,7 @@ class Dataset:
                                             x1.append(int(row["Einfülltage"]))
                                             y1.append(float(row[paramy]))
                                             j += 1
-                                            print(i+s, l, k, n_sa, j, nop, "lenx1:", len(x1))
+                                            print(i+s, l, k, n_sa, j, nop, "lenx1:", len(x1), (data[i])[a])
                                     elif (
                                         self.keys_exist(paramx, paramy)
                                         and len(row[paramx]) > 0
@@ -713,9 +713,9 @@ class Dataset:
                                     x1.append(int((data[i])["Einfülltage"]))
                                     y1.append(float((data[i])[paramy]))
                                     if first_done and second_done:
-                                        print("first and second done, nop:", nop, "i:", i, "lendata:", len(data), oil_name, "lenx1:", len(x1))
+                                        print("first and second done, nop:", nop, "i:", i, "lendata:", len(data), oil_name, "lenx1:", len(x1), (data[i])[a])
                                     else:    
-                                        print("nop:", nop, "i:", i, "lendata:", len(data), oil_name, "lenx1:", len(x1))  
+                                        print("nop:", nop, "i:", i, "lendata:", len(data), oil_name, "lenx1:", len(x1), (data[i])[a])  
                             elif (
                                 self.keys_exist(paramx, paramy)
                                 and len((data[i])[paramx]) > 0
