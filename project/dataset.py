@@ -586,6 +586,7 @@ class Dataset:
                                             k += 1
                                             machine_id1 = machine_id
                                             first_done = True
+                                            print("first done")
                                             l += 1
                                 # if l < k, first_done should be false and it would not go through the following elif
                                 elif not second_done:
@@ -628,6 +629,7 @@ class Dataset:
                                         l += 1
                                         machine_id2 = machine_id
                                         second_done = True
+                                        print("second done")
                                 if l <= k:
 
                                     # add to x1, y1, increase j (because l<=k), if it is the case l but not k
@@ -687,8 +689,10 @@ class Dataset:
                         # If 2 series have already been added or there are not enough points from a series,
                         # the rest of points are plotted black
                         else:
-                            #if first_done and second_done:
-                                #print("i:", i, "lendata:", len(data), oil_name)
+                            if first_done and second_done:
+                                print("first and second done, i:", i, "lendata:", len(data), oil_name)
+                            else:
+                                print("not enough points, i:", i, "lendata:", len(data), oil_name)    
                             if paramx == "time":
                                 if not ("Einfülltage" in self.keys):
                                     if (
