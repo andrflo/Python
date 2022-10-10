@@ -665,6 +665,7 @@ class Dataset:
                                             x1.append(int(row["Einfülltage"]))
                                             y1.append(float(row[paramy]))
                                             j += 1
+                                            print(i+s, l, k, j, nop, row["Datum Probenentnahme"], row["Datum letzter Ölwechsel"], days_service)
                                     elif (
                                         self.keys_exist(paramx, paramy)
                                         and len(row[paramx]) > 0
