@@ -665,7 +665,7 @@ class Dataset:
                                             x1.append(int(row["Einfülltage"]))
                                             y1.append(float(row[paramy]))
                                             j += 1
-                                            print(i+s, l, k, n_sa, j, nop, "lenx1:", len(x1), (data[i])[a])
+                                            print(i+s, l, k, n_sa, j, nop, "lenx1:", len(x1), (data[i+s])[a])
                                     elif (
                                         self.keys_exist(paramx, paramy)
                                         and len(row[paramx]) > 0
