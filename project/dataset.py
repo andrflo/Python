@@ -712,12 +712,10 @@ class Dataset:
                                 ):
                                     x1.append(int((data[i])["Einfülltage"]))
                                     y1.append(float((data[i])[paramy]))
-                                    if first_done and second_done and nop>3:
-                                        print("first and second done, nop>3, i:", i, "lendata:", len(data), oil_name, "lenx1:", len(x1))
-                                    elif first_done and second_done and nop<=3:
-                                        print("first and second done, nop<=3, i:", i, "lendata:", len(data), oil_name, "lenx1:", len(x1))
-                                    elif nop<=3:    
-                                        print("nop<=3, i:", i, "lendata:", len(data), oil_name, "lenx1:", len(x1))  
+                                    if first_done and second_done:
+                                        print("first and second done, nop:", nop, "i:", i, "lendata:", len(data), oil_name, "lenx1:", len(x1))
+                                    else:    
+                                        print("nop:", nop, "i:", i, "lendata:", len(data), oil_name, "lenx1:", len(x1))  
                             elif (
                                 self.keys_exist(paramx, paramy)
                                 and len((data[i])[paramx]) > 0
