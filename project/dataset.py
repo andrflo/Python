@@ -407,612 +407,613 @@ class Dataset:
 
     def plot_data_machine(self, paramx, paramy):
 
-        oil_names = self.set_of_oils("wind turbine", "all_seasons", paramy)
+        if self.keys_exist(paramy):
+            oil_names = self.set_of_oils("wind turbine", "all_seasons", paramy)
 
-        if self.keys_exist("Anlagennummer"):
-            a = "Anlagennummer"
-        elif self.keys_exist("Probenbezeichnung"):
-            a = "Probenbezeichnung"
-        if self.keys_exist(a):
-            data = self.sort_by_param(a, oil_names, "wind turbine")
-        # data is sorted by machine id. All points of a machine are grouped
+            if self.keys_exist("Anlagennummer"):
+                a = "Anlagennummer"
+            elif self.keys_exist("Probenbezeichnung"):
+                a = "Probenbezeichnung"
+            if self.keys_exist(a):
+                data = self.sort_by_param(a, oil_names, "wind turbine")
+            # data is sorted by machine id. All points of a machine are grouped
 
-        set_of_ids = set()
-        for row in data:
-            set_of_ids.add(row[a])
+            set_of_ids = set()
+            for row in data:
+                set_of_ids.add(row[a])
 
-        # Number of samples for each machine
-        n_el = []
-        # List of machine ids
-        list_of_ids = []
-        i = 0
+            # Number of samples for each machine
+            n_el = []
+            # List of machine ids
+            list_of_ids = []
+            i = 0
 
-        ok = True
-        while i < len(data) and ok:
-            machine_id = (data[i])[a]
-            oil_n = (data[i])["Ölbezeichnung"]
-            j = i
-            k = 0
-            # Machine ids are not always associated with the same oil names
-            while (data[j])[a] == machine_id and ((data[j])["Ölbezeichnung"] == oil_n) and ok:
+            ok = True
+            while i < len(data) and ok:
+                machine_id = (data[i])[a]
+                oil_n = (data[i])["Ölbezeichnung"]
+                j = i
+                k = 0
+                # Machine ids are not always associated with the same oil names
+                while (data[j])[a] == machine_id and ((data[j])["Ölbezeichnung"] == oil_n) and ok:
 
-                if j + 1 < len(data):
-                    if paramx == "time":
-                        if self.keys_exist("Einfülltage"):
-                            if (not (len((data[j])["Einfülltage"]) > 0)) or (
-                                not (
-                                    self.origin_sample(
-                                        (data[j])["Probe aus"],
-                                        "wind",
-                                        "wea",
-                                        "wka",
-                                        "éolienne",
+                    if j + 1 < len(data):
+                        if paramx == "time":
+                            if self.keys_exist("Einfülltage"):
+                                if (not (len((data[j])["Einfülltage"]) > 0)) or (
+                                    not (
+                                        self.origin_sample(
+                                            (data[j])["Probe aus"],
+                                            "wind",
+                                            "wea",
+                                            "wka",
+                                            "éolienne",
+                                        )
                                     )
-                                )
-                            ):
-                                k += 1
-                        elif self.keys_exist(
-                            "Datum letzter Ölwechsel", "Datum Probenentnahme"
-                        ):
-
-                            if not (
-                                (len((data[j])["Datum letzter Ölwechsel"]) > 0)
-                                and (len((data[j])["Datum Probenentnahme"]) > 0)
-                            ) or (
-                                not (
-                                    self.origin_sample(
-                                        (data[j])["Probe aus"],
-                                        "wind",
-                                        "wea",
-                                        "wka",
-                                        "éolienne",
-                                    )
-                                )
-                            ):
-                                k += 1
-                            else:
-                                if (
-                                    self.compute_days_in_service(
-                                        (data[j])["Datum Probenentnahme"],
-                                        (data[j])["Datum letzter Ölwechsel"],
-                                    )
-                                    < 0
                                 ):
                                     k += 1
+                            elif self.keys_exist(
+                                "Datum letzter Ölwechsel", "Datum Probenentnahme"
+                            ):
+
+                                if not (
+                                    (len((data[j])["Datum letzter Ölwechsel"]) > 0)
+                                    and (len((data[j])["Datum Probenentnahme"]) > 0)
+                                ) or (
+                                    not (
+                                        self.origin_sample(
+                                            (data[j])["Probe aus"],
+                                            "wind",
+                                            "wea",
+                                            "wka",
+                                            "éolienne",
+                                        )
+                                    )
+                                ):
+                                    k += 1
+                                else:
+                                    if (
+                                        self.compute_days_in_service(
+                                            (data[j])["Datum Probenentnahme"],
+                                            (data[j])["Datum letzter Ölwechsel"],
+                                        )
+                                        < 0
+                                    ):
+                                        k += 1
+                        else:
+                            if not (
+                                self.origin_sample(
+                                    (data[j])["Probe aus"], "wind", "wea", "wka", "éolienne"
+                                )
+                            ):
+                                k += 1
+                        j = j + 1
                     else:
-                        if not (
-                            self.origin_sample(
-                                (data[j])["Probe aus"], "wind", "wea", "wka", "éolienne"
-                            )
-                        ):
-                            k += 1
+                        ok = False
+
+                if not ok:
                     j = j + 1
-                else:
-                    ok = False
+                n_el.append(j - i - k)
+                list_of_ids.append(machine_id)
 
-            if not ok:
-                j = j + 1
-            n_el.append(j - i - k)
-            list_of_ids.append(machine_id)
+                i = j
 
-            i = j
+            res = dict(zip(list_of_ids, n_el))
 
-        res = dict(zip(list_of_ids, n_el))
+            n_sa = 0
+            for el in n_el:
+                if el > 3:
+                    n_sa += 1  # total number of data series in color
 
-        n_sa = 0
-        for el in n_el:
-            if el > 3:
-                n_sa += 1  # total number of data series in color
+            for oil_name in oil_names:
 
-        for oil_name in oil_names:
+                # k: data series that have been included in plots already
+                k = 0
+                print(oil_name, len(data), n_sa)
+                ok1 = True
+                while k < n_sa and ok1:
+                    x1 = []
+                    y1 = []
+                    x2 = []
+                    y2 = []
+                    x3 = []
+                    y3 = []
 
-            # k: data series that have been included in plots already
-            k = 0
-            print(oil_name, len(data), n_sa)
-            ok1 = True
-            while k < n_sa and ok1:
-                x1 = []
-                y1 = []
-                x2 = []
-                y2 = []
-                x3 = []
-                y3 = []
+                    # l counts the next data series to be plotted
+                    l = 1
+                    i = 0
 
-                # l counts the next data series to be plotted
-                l = 1
-                i = 0
+                    first_done = False
+                    second_done = False
+                    machine_id1 = ""
+                    machine_id2 = ""
+                    # Go through all rows
 
-                first_done = False
-                second_done = False
-                machine_id1 = ""
-                machine_id2 = ""
-                # Go through all rows
+                    while i < len(data):
 
-                while i < len(data):
+                        if (data[i])["Ölbezeichnung"] == oil_name and self.origin_sample(
+                            (data[i])["Probe aus"], "wind", "wea", "wka", "éolienne"
+                        ):
+                            machine_id = (data[i])[a]
+                            nop = res[machine_id]
 
-                    if (data[i])["Ölbezeichnung"] == oil_name and self.origin_sample(
-                        (data[i])["Probe aus"], "wind", "wea", "wka", "éolienne"
-                    ):
-                        machine_id = (data[i])[a]
-                        nop = res[machine_id]
+                            if nop > 3 and (not first_done or not second_done):
 
-                        if nop > 3 and (not first_done or not second_done):
+                                j = 0
+                                s = 0
+                                while j < nop and i + s < len(data):
+                                    # print(i+s, l, k, j, nop)
+                                    row = data[i + s]
+                                    if not first_done:
+                                        # Fill up x2 y2 only if the data has not been plotted before
+                                        if l > k:
+                                            # j increases only when the point is included to be plotted
+                                            if paramx == "time":
+                                                if not ("Einfülltage" in self.keys):
+                                                    if (
+                                                        len(row["Datum letzter Ölwechsel"])
+                                                        > 0
+                                                        and len(row["Datum Probenentnahme"])
+                                                        > 0
+                                                    ):
+                                                        days_service = self.compute_days_in_service(
+                                                            row["Datum Probenentnahme"],
+                                                            row["Datum letzter Ölwechsel"],
+                                                        )
+                                                        if (
+                                                            days_service > 0
+                                                            and len(row[paramy]) > 0
+                                                        ):
+                                                            x2.append(days_service)
+                                                            y2.append(float(row[paramy]))
+                                                            j += 1
+                                                elif (
+                                                    len(row["Einfülltage"]) > 0
+                                                    and len(row[paramy]) > 0
+                                                ):
+                                                    x2.append(int(row["Einfülltage"]))
+                                                    y2.append(float(row[paramy]))
+                                                    j += 1
+                                            elif (
+                                                self.keys_exist(paramx, paramy)
+                                                and len(row[paramx]) > 0
+                                                and len(row[paramy]) > 0
+                                            ):
+                                                x2.append(float(row[paramx]))
+                                                y2.append(float(row[paramy]))
+                                                j += 1
 
-                            j = 0
-                            s = 0
-                            while j < nop and i + s < len(data):
-                                # print(i+s, l, k, j, nop)
-                                row = data[i + s]
-                                if not first_done:
-                                    # Fill up x2 y2 only if the data has not been plotted before
-                                    if l > k:
-                                        # j increases only when the point is included to be plotted
+                                            # if all of the points of the series have been already included
+                                            if j == nop:
+                                                # increase the number of series k and the next series to be plotted l
+                                                k += 1
+                                                machine_id1 = machine_id
+                                                first_done = True
+                                                #print("first done", len(x2))
+                                                l += 1
+                                    # if l < k, first_done should be false and it would not go through the following elif
+                                    elif not second_done:
                                         if paramx == "time":
                                             if not ("Einfülltage" in self.keys):
                                                 if (
-                                                    len(row["Datum letzter Ölwechsel"])
-                                                    > 0
-                                                    and len(row["Datum Probenentnahme"])
-                                                    > 0
+                                                    len(row["Datum letzter Ölwechsel"]) > 0
+                                                    and len(row["Datum Probenentnahme"]) > 0
                                                 ):
-                                                    days_service = self.compute_days_in_service(
-                                                        row["Datum Probenentnahme"],
-                                                        row["Datum letzter Ölwechsel"],
+                                                    days_service = (
+                                                        self.compute_days_in_service(
+                                                            row["Datum Probenentnahme"],
+                                                            row["Datum letzter Ölwechsel"],
+                                                        )
                                                     )
                                                     if (
                                                         days_service > 0
                                                         and len(row[paramy]) > 0
                                                     ):
-                                                        x2.append(days_service)
-                                                        y2.append(float(row[paramy]))
+                                                        x3.append(days_service)
+                                                        y3.append(float(row[paramy]))
                                                         j += 1
                                             elif (
                                                 len(row["Einfülltage"]) > 0
                                                 and len(row[paramy]) > 0
                                             ):
-                                                x2.append(int(row["Einfülltage"]))
-                                                y2.append(float(row[paramy]))
+                                                x3.append(int(row["Einfülltage"]))
+                                                y3.append(float(row[paramy]))
                                                 j += 1
                                         elif (
                                             self.keys_exist(paramx, paramy)
                                             and len(row[paramx]) > 0
                                             and len(row[paramy]) > 0
                                         ):
-                                            x2.append(float(row[paramx]))
-                                            y2.append(float(row[paramy]))
-                                            j += 1
-
-                                        # if all of the points of the series have been already included
-                                        if j == nop:
-                                            # increase the number of series k and the next series to be plotted l
-                                            k += 1
-                                            machine_id1 = machine_id
-                                            first_done = True
-                                            #print("first done", len(x2))
-                                            l += 1
-                                # if l < k, first_done should be false and it would not go through the following elif
-                                elif not second_done:
-                                    if paramx == "time":
-                                        if not ("Einfülltage" in self.keys):
-                                            if (
-                                                len(row["Datum letzter Ölwechsel"]) > 0
-                                                and len(row["Datum Probenentnahme"]) > 0
-                                            ):
-                                                days_service = (
-                                                    self.compute_days_in_service(
-                                                        row["Datum Probenentnahme"],
-                                                        row["Datum letzter Ölwechsel"],
-                                                    )
-                                                )
-                                                if (
-                                                    days_service > 0
-                                                    and len(row[paramy]) > 0
-                                                ):
-                                                    x3.append(days_service)
-                                                    y3.append(float(row[paramy]))
-                                                    j += 1
-                                        elif (
-                                            len(row["Einfülltage"]) > 0
-                                            and len(row[paramy]) > 0
-                                        ):
-                                            x3.append(int(row["Einfülltage"]))
+                                            x3.append(float(row[paramx]))
                                             y3.append(float(row[paramy]))
                                             j += 1
-                                    elif (
-                                        self.keys_exist(paramx, paramy)
-                                        and len(row[paramx]) > 0
-                                        and len(row[paramy]) > 0
-                                    ):
-                                        x3.append(float(row[paramx]))
-                                        y3.append(float(row[paramy]))
-                                        j += 1
-                                    if j == nop:
-                                        k += 1
-                                        l += 1
-                                        machine_id2 = machine_id
-                                        second_done = True
-                                        #print("second done", len(x3))
-                                if l <= k:
+                                        if j == nop:
+                                            k += 1
+                                            l += 1
+                                            machine_id2 = machine_id
+                                            second_done = True
+                                            #print("second done", len(x3))
+                                    if l <= k:
 
-                                    # add to x1, y1, increase j (because l<=k), if it is the case l but not k
-                                    if paramx == "time":
-                                        if not ("Einfülltage" in self.keys):
-                                            # print(i, (data[i])[a], nop)
+                                        # add to x1, y1, increase j (because l<=k), if it is the case l but not k
+                                        if paramx == "time":
+                                            if not ("Einfülltage" in self.keys):
+                                                # print(i, (data[i])[a], nop)
 
-                                            if (
-                                                len(row["Datum letzter Ölwechsel"]) > 0
-                                                and len(row["Datum Probenentnahme"]) > 0
-                                            ):
-
-                                                days_service = (
-                                                    self.compute_days_in_service(
-                                                        row["Datum Probenentnahme"],
-                                                        row["Datum letzter Ölwechsel"],
-                                                    )
-                                                )
-                                                # print(i+s, l, k, j, nop, row["Datum Probenentnahme"], row["Datum letzter Ölwechsel"], days_service)
                                                 if (
-                                                    days_service > 0
-                                                    and len(row[paramy]) > 0
+                                                    len(row["Datum letzter Ölwechsel"]) > 0
+                                                    and len(row["Datum Probenentnahme"]) > 0
                                                 ):
-                                                    # print(i+s, l, k, j, nop)
-                                                    x1.append(days_service)
-                                                    y1.append(float(row[paramy]))
-                                                    j += 1
-                                                # print(j, (data[i])[a])
+
+                                                    days_service = (
+                                                        self.compute_days_in_service(
+                                                            row["Datum Probenentnahme"],
+                                                            row["Datum letzter Ölwechsel"],
+                                                        )
+                                                    )
+                                                    # print(i+s, l, k, j, nop, row["Datum Probenentnahme"], row["Datum letzter Ölwechsel"], days_service)
+                                                    if (
+                                                        days_service > 0
+                                                        and len(row[paramy]) > 0
+                                                    ):
+                                                        # print(i+s, l, k, j, nop)
+                                                        x1.append(days_service)
+                                                        y1.append(float(row[paramy]))
+                                                        j += 1
+                                                    # print(j, (data[i])[a])
+                                            elif (
+                                                len(row["Einfülltage"]) > 0
+                                                and len(row[paramy]) > 0
+                                            ):
+                                                x1.append(int(row["Einfülltage"]))
+                                                y1.append(float(row[paramy]))
+                                                j += 1
+                                                #print(i+s, l, k, n_sa, j, nop, "lenx1:", len(x1), (data[i+s])[a])
                                         elif (
-                                            len(row["Einfülltage"]) > 0
+                                            self.keys_exist(paramx, paramy)
+                                            and len(row[paramx]) > 0
                                             and len(row[paramy]) > 0
                                         ):
-                                            x1.append(int(row["Einfülltage"]))
+                                            x1.append(float(row[paramx]))
                                             y1.append(float(row[paramy]))
                                             j += 1
-                                            #print(i+s, l, k, n_sa, j, nop, "lenx1:", len(x1), (data[i+s])[a])
-                                    elif (
-                                        self.keys_exist(paramx, paramy)
-                                        and len(row[paramx]) > 0
-                                        and len(row[paramy]) > 0
-                                    ):
-                                        x1.append(float(row[paramx]))
-                                        y1.append(float(row[paramy]))
-                                        j += 1
-                                    if j == nop:
-                                        l += 1
+                                        if j == nop:
+                                            l += 1
 
-                                # s increases even if the point is not going to be plotted
-                                s += 1
-                            i += s
+                                    # s increases even if the point is not going to be plotted
+                                    s += 1
+                                i += s
 
-                            if i < len(data):
-                                ok2 = True
-                                while (data[i])[a] == machine_id and ok2:
-                                    i += 1
-                                    if not (i < len(data)):
-                                        ok2 = False
-                        # If 2 series have already been added or there are not enough points from a series,
-                        # the rest of points are plotted black
-                        else:
-                            if paramx == "time":
-                                if not ("Einfülltage" in self.keys):
-                                    if (
-                                        len((data[i])["Datum letzter Ölwechsel"]) > 0
-                                        and len((data[i])["Datum Probenentnahme"]) > 0
-                                    ):
-                                        days_service = self.compute_days_in_service(
-                                            (data[i])["Datum Probenentnahme"],
-                                            (data[i])["Datum letzter Ölwechsel"],
-                                        )
+                                if i < len(data):
+                                    ok2 = True
+                                    while (data[i])[a] == machine_id and ok2:
+                                        i += 1
+                                        if not (i < len(data)):
+                                            ok2 = False
+                            # If 2 series have already been added or there are not enough points from a series,
+                            # the rest of points are plotted black
+                            else:
+                                if paramx == "time":
+                                    if not ("Einfülltage" in self.keys):
                                         if (
-                                            days_service > 0
-                                            and len((data[i])[paramy]) > 0
+                                            len((data[i])["Datum letzter Ölwechsel"]) > 0
+                                            and len((data[i])["Datum Probenentnahme"]) > 0
                                         ):
-                                            x1.append(days_service)
-                                            y1.append(float((data[i])[paramy]))
+                                            days_service = self.compute_days_in_service(
+                                                (data[i])["Datum Probenentnahme"],
+                                                (data[i])["Datum letzter Ölwechsel"],
+                                            )
+                                            if (
+                                                days_service > 0
+                                                and len((data[i])[paramy]) > 0
+                                            ):
+                                                x1.append(days_service)
+                                                y1.append(float((data[i])[paramy]))
+                                    elif (
+                                        len((data[i])["Einfülltage"]) > 0
+                                        and len(data[i][paramy]) > 0
+                                    ):
+                                        x1.append(int((data[i])["Einfülltage"]))
+                                        y1.append(float((data[i])[paramy]))
+                                        #if first_done and second_done:
+                                        #    print("first and second done, nop:", nop, "i:", i, "lendata:", len(data), oil_name, "lenx1:", len(x1), (data[i])[a])
+                                        #else:    
+                                        #   print("nop:", nop, "i:", i, "lendata:", len(data), oil_name, "lenx1:", len(x1), (data[i])[a])  
                                 elif (
-                                    len((data[i])["Einfülltage"]) > 0
-                                    and len(data[i][paramy]) > 0
+                                    self.keys_exist(paramx, paramy)
+                                    and len((data[i])[paramx]) > 0
+                                    and len((data[i])[paramy]) > 0
                                 ):
-                                    x1.append(int((data[i])["Einfülltage"]))
+                                    x1.append(float((data[i])[paramx]))
                                     y1.append(float((data[i])[paramy]))
-                                    #if first_done and second_done:
-                                    #    print("first and second done, nop:", nop, "i:", i, "lendata:", len(data), oil_name, "lenx1:", len(x1), (data[i])[a])
-                                    #else:    
-                                    #   print("nop:", nop, "i:", i, "lendata:", len(data), oil_name, "lenx1:", len(x1), (data[i])[a])  
-                            elif (
-                                self.keys_exist(paramx, paramy)
-                                and len((data[i])[paramx]) > 0
-                                and len((data[i])[paramy]) > 0
-                            ):
-                                x1.append(float((data[i])[paramx]))
-                                y1.append(float((data[i])[paramy]))
-                            # print((data[i])[a], l)
+                                # print((data[i])[a], l)
+                                i += 1
+                        else:  # if the current row does not correspond to the current oil_name or the data does not come from a wind turbine
                             i += 1
-                    else:  # if the current row does not correspond to the current oil_name or the data does not come from a wind turbine
-                        i += 1
 
-                # plot
+                    # plot
 
-                if (machine_id1 != "" or machine_id2 != "") and len(x1) > 16:
-                    # fig, ax = plt.subplots()
-                    fig = plt.figure(figsize=(6, 6))
-                    # gs = fig.add_gridspec(1, 2, width_ratios=(4, 1),
-                    # left=0.1, right=0.9, bottom=0.1, top=0.9,
-                    # wspace=0.05, hspace=0.05)
-                    if paramx == "time":
-                        gs = fig.add_gridspec(
-                            1,
-                            2,
-                            width_ratios=(4, 1),
-                            left=0.15,
-                            right=0.85,
-                            bottom=0.1,
-                            top=0.9,
-                            wspace=0.05,
-                            hspace=0.05,
-                        )
-                        ax = fig.add_subplot(gs[0, 0])
-                        ax_histy = fig.add_subplot(gs[0, 1], sharey=ax)
-                        ax_histy.tick_params(axis="y", labelleft=False)
+                    if (machine_id1 != "" or machine_id2 != "") and len(x1) > 16:
+                        # fig, ax = plt.subplots()
+                        fig = plt.figure(figsize=(6, 6))
+                        # gs = fig.add_gridspec(1, 2, width_ratios=(4, 1),
+                        # left=0.1, right=0.9, bottom=0.1, top=0.9,
+                        # wspace=0.05, hspace=0.05)
+                        if paramx == "time":
+                            gs = fig.add_gridspec(
+                                1,
+                                2,
+                                width_ratios=(4, 1),
+                                left=0.15,
+                                right=0.85,
+                                bottom=0.1,
+                                top=0.9,
+                                wspace=0.05,
+                                hspace=0.05,
+                            )
+                            ax = fig.add_subplot(gs[0, 0])
+                            ax_histy = fig.add_subplot(gs[0, 1], sharey=ax)
+                            ax_histy.tick_params(axis="y", labelleft=False)
 
-                    else:
-                        gs = fig.add_gridspec(
-                            2,
-                            2,
-                            width_ratios=(4, 1),
-                            height_ratios=(1, 4),
-                            left=0.15,
-                            right=0.85,
-                            bottom=0.1,
-                            top=0.9,
-                            wspace=0.05,
-                            hspace=0.05,
-                        )
-                        ax = fig.add_subplot(gs[1, 0])
-                        ax_histy = fig.add_subplot(gs[1, 1], sharey=ax)
-                        ax_histy.tick_params(axis="y", labelleft=False)
-                        ax_histx = fig.add_subplot(gs[0, 0], sharex=ax)
-                        ax_histx.tick_params(axis="x", labelbottom=False)
+                        else:
+                            gs = fig.add_gridspec(
+                                2,
+                                2,
+                                width_ratios=(4, 1),
+                                height_ratios=(1, 4),
+                                left=0.15,
+                                right=0.85,
+                                bottom=0.1,
+                                top=0.9,
+                                wspace=0.05,
+                                hspace=0.05,
+                            )
+                            ax = fig.add_subplot(gs[1, 0])
+                            ax_histy = fig.add_subplot(gs[1, 1], sharey=ax)
+                            ax_histy.tick_params(axis="y", labelleft=False)
+                            ax_histx = fig.add_subplot(gs[0, 0], sharex=ax)
+                            ax_histx.tick_params(axis="x", labelbottom=False)
 
-                    #print("lenx2:", len(x2), "lenx3:", len(x3))
+                        #print("lenx2:", len(x2), "lenx3:", len(x3))
 
-                    ax.plot(x1, y1, "ko")
-                    ax.plot(x2, y2, "go")
-                    ax.plot(x3, y3, "mo")
+                        ax.plot(x1, y1, "ko")
+                        ax.plot(x2, y2, "go")
+                        ax.plot(x3, y3, "mo")
 
-                    ylabelstr = ""
-                    xlabelstr = "Days in service"
+                        ylabelstr = ""
+                        xlabelstr = "Days in service"
 
-                    if paramx != "time":
+                        if paramx != "time":
+                            if (
+                                paramx == "Wasser K. F."
+                                or paramx == "Viskosität bei 40°C"
+                                or paramx == "Viskosität bei 100°C"
+                            ):
+                                binwidthx = round(
+                                    (np.max(np.abs(x1)) - np.min(np.abs(x1)))
+                                    / round(Decimal(len(x1)).sqrt())
+                                )
+                            else:
+                                binwidthx = (
+                                    np.max(np.abs(x1)) - np.min(np.abs(x1))
+                                ) / round(Decimal(len(x1)).sqrt())
+
                         if (
-                            paramx == "Wasser K. F."
-                            or paramx == "Viskosität bei 40°C"
-                            or paramx == "Viskosität bei 100°C"
+                            paramy == "Wasser K. F."
+                            or paramy == "Viskosität bei 40°C"
+                            or paramy == "Viskosität bei 100°C"
                         ):
-                            binwidthx = round(
-                                (np.max(np.abs(x1)) - np.min(np.abs(x1)))
+                            binwidthy = round(
+                                (np.max(np.abs(y1)) - np.min(np.abs(y1)))
                                 / round(Decimal(len(x1)).sqrt())
                             )
                         else:
-                            binwidthx = (
-                                np.max(np.abs(x1)) - np.min(np.abs(x1))
-                            ) / round(Decimal(len(x1)).sqrt())
-
-                    if (
-                        paramy == "Wasser K. F."
-                        or paramy == "Viskosität bei 40°C"
-                        or paramy == "Viskosität bei 100°C"
-                    ):
-                        binwidthy = round(
-                            (np.max(np.abs(y1)) - np.min(np.abs(y1)))
-                            / round(Decimal(len(x1)).sqrt())
-                        )
-                    else:
-                        binwidthy = (np.max(np.abs(y1)) - np.min(np.abs(y1))) / round(
-                            Decimal(len(x1)).sqrt()
-                        )
-
-                    save_name = ""
-                    xax = "days"
-                    ax.set_xlim(-50, 4000)
-
-                    match paramx:
-                        case "Wasser K. F.":
-                            xlabelstr = "Water K.F. in ppm"
-                            ax.set_xlim(0, 1000)
-                            if len(x1) > 150:
-                                binwidthx = 25
-                            else:
-                                binwidthx = 50
-                        case "Neutralisationszahl":
-                            xlabelstr = "Acid number in mgkOH/gOil"
-                            ax.set_xlim(0, 3)
-                            if binwidthx < 0.15:
-                                binwidthx = 0.15
-                            # binwidth = 0.25
-                        case "Oxidation":
-                            xlabelstr = "Oxidation in A/cm"
-                        case "Viskosität bei 40°C":
-                            xlabelstr = "Viscosity at 40°C in mm^2/s"
-                            ax.set_xlim(200, 400)
-                            if len(x1) > 150:
-                                binwidthx = 4
-                            else:
-                                binwidthx = 5
-                        case "Viskosität bei 100°C":
-                            xlabelstr = "Viscosity at 100°C in mm^2/s"
-                            ax.set_xlim(10, 75)
-                            if len(x1) > 150:
-                                binwidthx = 1
-                            else:
-                                binwidthx = 2
-                        case "FE":
-                            xlabelstr = "Fe content in ppm"
-                            ax.set_xlim(0, 200)
-                            if len(x1) > 150:
-                                binwidthx = 2
-                            else:
-                                binwidthx = 3
-                        case "P":
-                            xlabelstr = "P content in ppm"
-                            ax.set_xlim(0, 3000)
-                            if len(x1) > 150:
-                                binwidthx = 5
-                            else:
-                                binwidthx = 10
-                        case "Ölmenge im System":
-                            xlabelstr = "Oil volume in L"
-                            ax.set_xlim(0, 500)
-                            binwidthx = 50
-                        case "Anlagengöße [kW]":
-                            xlabelstr = "Power in kW"
-                            ax.set_xlim(0, 4000)
-                            binwidthx = 50
-
-                    if paramx != "time":
-                        xax = (
-                            paramx.replace(".", "").replace("°C", "").replace("bei", "")
-                        )
-
-                    match paramy:
-                        case "Wasser K. F.":
-                            ylabelstr = "Water K.F. in ppm"
-                            save_name = f"H2O_vs_{xax}_{machine_id1}_{machine_id2}_{oil_name}.png"
-                            ax.set_ylim(0, 1000)
-                            if len(x1) > 150:
-                                binwidthy = 25
-                            else:
-                                binwidthy = 50
-                        case "Neutralisationszahl":
-                            ylabelstr = "Acid number in mgkOH/gOil"
-                            ax.set_ylim(0, 3)
-                            save_name = f"AN_vs_{xax}_{machine_id1}_{machine_id2}_{oil_name}.png"
-                            if binwidthy < 0.15:
-                                binwidthy = 0.15
-                            # binwidth = 0.25
-                        case "Oxidation":
-                            ylabelstr = "Oxidation in A/cm"
-                            save_name = f"Ox_vs_{xax}_{machine_id1}_{machine_id2}_{oil_name}.png"
-                        case "Viskosität bei 40°C":
-                            ylabelstr = "Viscosity at 40°C in mm^2/s"
-                            if paramx == "time":
-                                ax.set_xlim(-50, 3000)
-                            ax.set_ylim(200, 400)
-                            save_name = f"v40_vs_{xax}_{machine_id1}_{machine_id2}_{oil_name}.png"
-                            if len(x1) > 150:
-                                binwidthy = 4
-                            else:
-                                binwidthy = 5
-                        case "Viskosität bei 100°C":
-                            ylabelstr = "Viscosity at 100°C in mm^2/s"
-                            if paramx == "time":
-                                ax.set_xlim(-50, 3000)
-                            ax.set_ylim(10, 75)
-                            save_name = f"v100_vs_{xax}_{machine_id1}_{machine_id2}_{oil_name}.png"
-                            if len(x1) > 150:
-                                binwidthy = 1
-                            else:
-                                binwidthy = 2
-                        case "FE":
-                            ylabelstr = "Fe content in ppm"
-                            ax.set_ylim(0, 200)
-                            save_name = f"Fe_vs_{xax}_{machine_id1}_{machine_id2}_{oil_name}.png"
-                            if len(x1) > 150:
-                                binwidthy = 2
-                            else:
-                                binwidthy = 3
-                        case "P":
-                            ylabelstr = "P content in ppm"
-                            ax.set_ylim(0, 3000)
-                            save_name = (
-                                f"P_vs_{xax}_{machine_id1}_{machine_id2}_{oil_name}.png"
+                            binwidthy = (np.max(np.abs(y1)) - np.min(np.abs(y1))) / round(
+                                Decimal(len(x1)).sqrt()
                             )
-                            if len(x1) > 150:
-                                binwidthy = 5
-                            else:
-                                binwidthy = 10
-                        case "Ölmenge im System":
-                            ylabelstr = "Oil volume in L"
-                            ax.set_ylim(0, 500)
-                            save_name = f"Oilvol_vs_{xax}_{machine_id1}_{machine_id2}_{oil_name}.png"
-                            binwidthy = 50
-                        case "Anlagengöße [kW]":
-                            ylabelstr = "Power in kW"
-                            ax.set_ylim(0, 4000)
-                            save_name = f"Power_vs_{xax}_{machine_id1}_{machine_id2}_{oil_name}.png"
-                            binwidthy = 50
 
-                    # print("binwidthy:", binwidthy)
-                    # xymax = max(np.max(np.abs(x1)), np.max(np.abs(y1)))
-                    ymax = np.max(np.abs(y1))
-                    # lim = (int(xymax/binwidthy) + 1) * binwidthy
-                    lim = (int(ymax / binwidthy) + 1) * binwidthy
+                        save_name = ""
+                        xax = "days"
+                        ax.set_xlim(-50, 4000)
 
-                    bins = np.arange(-lim, lim + binwidthy, binwidthy)
+                        match paramx:
+                            case "Wasser K. F.":
+                                xlabelstr = "Water K.F. in ppm"
+                                ax.set_xlim(0, 1000)
+                                if len(x1) > 150:
+                                    binwidthx = 25
+                                else:
+                                    binwidthx = 50
+                            case "Neutralisationszahl":
+                                xlabelstr = "Acid number in mgkOH/gOil"
+                                ax.set_xlim(0, 3)
+                                if binwidthx < 0.15:
+                                    binwidthx = 0.15
+                                # binwidth = 0.25
+                            case "Oxidation":
+                                xlabelstr = "Oxidation in A/cm"
+                            case "Viskosität bei 40°C":
+                                xlabelstr = "Viscosity at 40°C in mm^2/s"
+                                ax.set_xlim(200, 400)
+                                if len(x1) > 150:
+                                    binwidthx = 4
+                                else:
+                                    binwidthx = 5
+                            case "Viskosität bei 100°C":
+                                xlabelstr = "Viscosity at 100°C in mm^2/s"
+                                ax.set_xlim(10, 75)
+                                if len(x1) > 150:
+                                    binwidthx = 1
+                                else:
+                                    binwidthx = 2
+                            case "FE":
+                                xlabelstr = "Fe content in ppm"
+                                ax.set_xlim(0, 200)
+                                if len(x1) > 150:
+                                    binwidthx = 2
+                                else:
+                                    binwidthx = 3
+                            case "P":
+                                xlabelstr = "P content in ppm"
+                                ax.set_xlim(0, 3000)
+                                if len(x1) > 150:
+                                    binwidthx = 5
+                                else:
+                                    binwidthx = 10
+                            case "Ölmenge im System":
+                                xlabelstr = "Oil volume in L"
+                                ax.set_xlim(0, 500)
+                                binwidthx = 50
+                            case "Anlagengöße [kW]":
+                                xlabelstr = "Power in kW"
+                                ax.set_xlim(0, 4000)
+                                binwidthx = 50
 
-                    ax_histy.hist(y1, bins=bins, orientation="horizontal")
+                        if paramx != "time":
+                            xax = (
+                                paramx.replace(".", "").replace("°C", "").replace("bei", "")
+                            )
 
-                    if paramx != "time":
-                        xmax = np.max(np.abs(x1))
-                        lim = (int(xmax / binwidthx) + 1) * binwidthx
-                        bins = np.arange(-lim, lim + binwidthx, binwidthx)
-                        ax_histx.hist(x1, bins=bins)
-                        ax_histx.set_title(
-                            f"{oil_name}, {len(x1)+len(x2)+len(x3)} points"
+                        match paramy:
+                            case "Wasser K. F.":
+                                ylabelstr = "Water K.F. in ppm"
+                                save_name = f"H2O_vs_{xax}_{machine_id1}_{machine_id2}_{oil_name}.png"
+                                ax.set_ylim(0, 1000)
+                                if len(x1) > 150:
+                                    binwidthy = 25
+                                else:
+                                    binwidthy = 50
+                            case "Neutralisationszahl":
+                                ylabelstr = "Acid number in mgkOH/gOil"
+                                ax.set_ylim(0, 3)
+                                save_name = f"AN_vs_{xax}_{machine_id1}_{machine_id2}_{oil_name}.png"
+                                if binwidthy < 0.15:
+                                    binwidthy = 0.15
+                                # binwidth = 0.25
+                            case "Oxidation":
+                                ylabelstr = "Oxidation in A/cm"
+                                save_name = f"Ox_vs_{xax}_{machine_id1}_{machine_id2}_{oil_name}.png"
+                            case "Viskosität bei 40°C":
+                                ylabelstr = "Viscosity at 40°C in mm^2/s"
+                                if paramx == "time":
+                                    ax.set_xlim(-50, 3000)
+                                ax.set_ylim(200, 400)
+                                save_name = f"v40_vs_{xax}_{machine_id1}_{machine_id2}_{oil_name}.png"
+                                if len(x1) > 150:
+                                    binwidthy = 4
+                                else:
+                                    binwidthy = 5
+                            case "Viskosität bei 100°C":
+                                ylabelstr = "Viscosity at 100°C in mm^2/s"
+                                if paramx == "time":
+                                    ax.set_xlim(-50, 3000)
+                                ax.set_ylim(10, 75)
+                                save_name = f"v100_vs_{xax}_{machine_id1}_{machine_id2}_{oil_name}.png"
+                                if len(x1) > 150:
+                                    binwidthy = 1
+                                else:
+                                    binwidthy = 2
+                            case "FE":
+                                ylabelstr = "Fe content in ppm"
+                                ax.set_ylim(0, 200)
+                                save_name = f"Fe_vs_{xax}_{machine_id1}_{machine_id2}_{oil_name}.png"
+                                if len(x1) > 150:
+                                    binwidthy = 2
+                                else:
+                                    binwidthy = 3
+                            case "P":
+                                ylabelstr = "P content in ppm"
+                                ax.set_ylim(0, 3000)
+                                save_name = (
+                                    f"P_vs_{xax}_{machine_id1}_{machine_id2}_{oil_name}.png"
+                                )
+                                if len(x1) > 150:
+                                    binwidthy = 5
+                                else:
+                                    binwidthy = 10
+                            case "Ölmenge im System":
+                                ylabelstr = "Oil volume in L"
+                                ax.set_ylim(0, 500)
+                                save_name = f"Oilvol_vs_{xax}_{machine_id1}_{machine_id2}_{oil_name}.png"
+                                binwidthy = 50
+                            case "Anlagengöße [kW]":
+                                ylabelstr = "Power in kW"
+                                ax.set_ylim(0, 4000)
+                                save_name = f"Power_vs_{xax}_{machine_id1}_{machine_id2}_{oil_name}.png"
+                                binwidthy = 50
+
+                        # print("binwidthy:", binwidthy)
+                        # xymax = max(np.max(np.abs(x1)), np.max(np.abs(y1)))
+                        ymax = np.max(np.abs(y1))
+                        # lim = (int(xymax/binwidthy) + 1) * binwidthy
+                        lim = (int(ymax / binwidthy) + 1) * binwidthy
+
+                        bins = np.arange(-lim, lim + binwidthy, binwidthy)
+
+                        ax_histy.hist(y1, bins=bins, orientation="horizontal")
+
+                        if paramx != "time":
+                            xmax = np.max(np.abs(x1))
+                            lim = (int(xmax / binwidthx) + 1) * binwidthx
+                            bins = np.arange(-lim, lim + binwidthx, binwidthx)
+                            ax_histx.hist(x1, bins=bins)
+                            ax_histx.set_title(
+                                f"{oil_name}, {len(x1)+len(x2)+len(x3)} points"
+                            )
+
+                        # plt.title(f"{oil_name}, {len(x1)+len(x2)+len(x3)} points")
+                        if paramx == "time":
+                            ax.set_title(f"{oil_name}, {len(x1)+len(x2)+len(x3)} points")
+
+                        path_proj = os.path.abspath(os.getcwd())
+
+                        ax.set_xlabel(xlabelstr)
+                        ax.set_ylabel(ylabelstr)
+
+                        # winter_patch = mpatches.Patch(color='blue', label='Winter')
+                        A_point = mlines.Line2D(
+                            [],
+                            [],
+                            linewidth=0,
+                            color="green",
+                            marker="o",
+                            markersize=7,
+                            label="Machine id: A",
                         )
+                        # spring_patch = mpatches.Patch(color='green', label='Spring')
+                        B_point = mlines.Line2D(
+                            [],
+                            [],
+                            linewidth=0,
+                            color="m",
+                            marker="o",
+                            markersize=7,
+                            label="Machine id: B",
+                        )
+                        ax.legend(handles=[A_point, B_point])
 
-                    # plt.title(f"{oil_name}, {len(x1)+len(x2)+len(x3)} points")
-                    if paramx == "time":
-                        ax.set_title(f"{oil_name}, {len(x1)+len(x2)+len(x3)} points")
+                        save_name = self.validate_file_name(save_name)
+                        match paramy:
+                            case "Wasser K. F.":
+                                # plt.savefig(f"{path_proj}/project/data/water_KF/ind_samples/{save_name}")
+                                plt.savefig(f"data/water_KF/ind_samples/{save_name}")
+                            case "Neutralisationszahl":
+                                plt.savefig(f"data/AN/ind_samples/{save_name}")
+                            case "Oxidation":
+                                plt.savefig(f"data/ox/ind_samples/{save_name}")
+                            case "Viskosität bei 40°C":
+                                plt.savefig(f"data/viscosity/40/{save_name}")
+                            case "Viskosität bei 100°C":
+                                plt.savefig(f"data/viscosity/100/{save_name}")
+                            case "FE":
+                                plt.savefig(f"data/elements/Fe/{save_name}")
+                            case "P":
+                                plt.savefig(f"data/elements/P/{save_name}")
+                            case "Ölmenge im System" | "Anlagengöße [kW]":
+                                plt.savefig(f"data/machine/{save_name}")
+                        plt.close(fig)
 
-                    path_proj = os.path.abspath(os.getcwd())
-
-                    ax.set_xlabel(xlabelstr)
-                    ax.set_ylabel(ylabelstr)
-
-                    # winter_patch = mpatches.Patch(color='blue', label='Winter')
-                    A_point = mlines.Line2D(
-                        [],
-                        [],
-                        linewidth=0,
-                        color="green",
-                        marker="o",
-                        markersize=7,
-                        label="Machine id: A",
-                    )
-                    # spring_patch = mpatches.Patch(color='green', label='Spring')
-                    B_point = mlines.Line2D(
-                        [],
-                        [],
-                        linewidth=0,
-                        color="m",
-                        marker="o",
-                        markersize=7,
-                        label="Machine id: B",
-                    )
-                    ax.legend(handles=[A_point, B_point])
-
-                    save_name = self.validate_file_name(save_name)
-                    match paramy:
-                        case "Wasser K. F.":
-                            # plt.savefig(f"{path_proj}/project/data/water_KF/ind_samples/{save_name}")
-                            plt.savefig(f"data/water_KF/ind_samples/{save_name}")
-                        case "Neutralisationszahl":
-                            plt.savefig(f"data/AN/ind_samples/{save_name}")
-                        case "Oxidation":
-                            plt.savefig(f"data/ox/ind_samples/{save_name}")
-                        case "Viskosität bei 40°C":
-                            plt.savefig(f"data/viscosity/40/{save_name}")
-                        case "Viskosität bei 100°C":
-                            plt.savefig(f"data/viscosity/100/{save_name}")
-                        case "FE":
-                            plt.savefig(f"data/elements/Fe/{save_name}")
-                        case "P":
-                            plt.savefig(f"data/elements/P/{save_name}")
-                        case "Ölmenge im System" | "Anlagengöße [kW]":
-                            plt.savefig(f"data/machine/{save_name}")
-                    plt.close(fig)
-
-                # It kept going through the rows of data but it did not find more machines using that oil
-                # Time to plot for another oil ok1 = false
-                elif machine_id1 == "" and machine_id2 == "":
-                    ok1 = False
+                    # It kept going through the rows of data but it did not find more machines using that oil
+                    # Time to plot for another oil ok1 = false
+                    elif machine_id1 == "" and machine_id2 == "":
+                        ok1 = False
