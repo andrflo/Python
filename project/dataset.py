@@ -588,7 +588,7 @@ class Dataset:
                                             k += 1
                                             machine_id1 = machine_id
                                             first_done = True
-                                            print("first done", len(x2))
+                                            #print("first done", len(x2))
                                             l += 1
                                 # if l < k, first_done should be false and it would not go through the following elif
                                 elif not second_done:
@@ -631,7 +631,7 @@ class Dataset:
                                         l += 1
                                         machine_id2 = machine_id
                                         second_done = True
-                                        print("second done", len(x3))
+                                        #print("second done", len(x3))
                                 if l <= k:
 
                                     # add to x1, y1, increase j (because l<=k), if it is the case l but not k
@@ -667,7 +667,7 @@ class Dataset:
                                             x1.append(int(row["Einfülltage"]))
                                             y1.append(float(row[paramy]))
                                             j += 1
-                                            print(i+s, l, k, n_sa, j, nop, "lenx1:", len(x1), (data[i+s])[a])
+                                            #print(i+s, l, k, n_sa, j, nop, "lenx1:", len(x1), (data[i+s])[a])
                                     elif (
                                         self.keys_exist(paramx, paramy)
                                         and len(row[paramx]) > 0
@@ -714,10 +714,10 @@ class Dataset:
                                 ):
                                     x1.append(int((data[i])["Einfülltage"]))
                                     y1.append(float((data[i])[paramy]))
-                                    if first_done and second_done:
-                                        print("first and second done, nop:", nop, "i:", i, "lendata:", len(data), oil_name, "lenx1:", len(x1), (data[i])[a])
-                                    else:    
-                                        print("nop:", nop, "i:", i, "lendata:", len(data), oil_name, "lenx1:", len(x1), (data[i])[a])  
+                                    #if first_done and second_done:
+                                    #    print("first and second done, nop:", nop, "i:", i, "lendata:", len(data), oil_name, "lenx1:", len(x1), (data[i])[a])
+                                    #else:    
+                                    #   print("nop:", nop, "i:", i, "lendata:", len(data), oil_name, "lenx1:", len(x1), (data[i])[a])  
                             elif (
                                 self.keys_exist(paramx, paramy)
                                 and len((data[i])[paramx]) > 0
