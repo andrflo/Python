@@ -1039,7 +1039,7 @@ def plot_param_gral_ev(self, gral_ev, param):
                                 and self.origin_sample(
                                     row["Probe aus"], "wind", "wea", "wka", "éolienne"
                                 )
-                                and row["Gesamtbewertung"] == gral_ev
+                                and int(row["Gesamtbewertung"]) == gral_ev
                             ):
                                 days_service = self.compute_days_in_service(
                                     row["Datum Probenentnahme"],
