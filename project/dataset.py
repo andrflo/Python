@@ -1064,7 +1064,7 @@ def plot_param_gral_ev(self, gral_ev, param):
                     
                 d = {
                     "oil_name": oil_name,
-                    "season": season,
+                    "gral_ev": gral_ev,
                     "x_values": x,
                     "y_values": y,
                 }
