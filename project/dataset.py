@@ -1014,3 +1014,102 @@ class Dataset:
                     # Time to plot for another oil ok1 = false
                     elif machine_id1 == "" and machine_id2 == "":
                         ok1 = False
+
+
+def plot_param_gral_ev(self, gral_ev, param):                        
+    if self.keys_exist(
+            param, "Probe aus", "Datum letzter Ölwechsel", "Datum Probenentnahme"
+        ) or self.keys_exist(param, "Probe aus", "Einfülltage"):
+
+            oil_names = self.set_of_oils("wind turbine", season, param)
+
+            listd = []
+            for oil_name in oil_names:
+                x = []
+                y = []
+
+                with open(self.filename) as csvfile:
+                    reader = csv.DictReader(csvfile, delimiter=";")
+                    for row in reader:
+                        if not ("Einfülltage" in self.keys):
+
+                            if (
+                                self.validate_season(
+                                    row["Datum Probenentnahme"], season
+                                )
+                                and len(row["Datum letzter Ölwechsel"]) > 0
+                                and row["Ölbezeichnung"] == oil_name
+                                and self.origin_sample(
+                                    row["Probe aus"], "wind", "wea", "wka", "éolienne"
+                                )
+                            ):
+                                days_service = self.compute_days_in_service(
+                                    row["Datum Probenentnahme"],
+                                    row["Datum letzter Ölwechsel"],
+                                )
+                                if days_service > 0 and len(row[param]) > 0:
+
+                                    x.append(days_service)
+                                    y.append(float(row[param]))
+                        else:
+                            if (
+                                len(row["Einfülltage"]) > 0
+                                and row["Ölbezeichnung"] == oil_name
+                                and self.origin_sample(
+                                    row["Probe aus"], "wind", "wea", "wka", "éolienne"
+                                )
+                                and self.validate_season(
+                                    row["Datum Probenentnahme"], season
+                                )
+                            ):
+                                days_service = int(row["Einfülltage"])
+                                if days_service > 0 and len(row[param]) > 0:
+                                    x.append(days_service)
+                                    y.append(float(row[param]))
+
+                    
+                d = {
+                    "oil_name": oil_name,
+                    "season": season,
+                    "x_values": x,
+                    "y_values": y,
+                }
+                listd.append(d)
+                if len(x) > 3:
+                    fig, ax = plt.subplots()
+                    match season:
+                        case "summer":
+                            ax.plot(x, y, "ro")
+                        case "fall":
+                            ax.plot(x, y, "mo")
+                        case "winter":
+                            ax.plot(x, y, "bo")
+                        case "spring":
+                            ax.plot(x, y, "go")
+                        case _:
+                            ax.plot(x, y, "ko")
+                    # plt.plot(x, y, 'bo')
+                    # print("oil: ", oil_name)
+                    plt.title(f"Season: {season}, {oil_name}, {len(x)} points")
+                    if param == "Wasser K. F.":
+                        plt.ylabel("Water K.F. in ppm")
+                        save_name = f"H2O_vs_days_{season}_{oil_name}.png"
+                    elif param == "Neutralisationszahl":
+                        plt.ylabel("Acid number in mgkOH/gOil")
+                        save_name = f"AN_vs_days_{season}_{oil_name}.png"
+                    elif param == "Oxidation":
+                        plt.ylabel("Oxidation in A/cm")
+                        save_name = f"Ox_vs_days_{season}_{oil_name}.png"
+                    plt.xlabel("Days in service")
+
+                    save_name = self.validate_file_name(save_name)
+                    if param == "Wasser K. F.":
+                        plt.savefig(f"data/water_KF/{save_name}")
+                    elif param == "Neutralisationszahl":
+                        plt.savefig(f"data/AN/{save_name}")
+                    elif param == "Oxidation":
+                        plt.savefig(f"data/ox/{save_name}")
+                    plt.close(fig)
+                    # plt.show()
+
+            return listd
