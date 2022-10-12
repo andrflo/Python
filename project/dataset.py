@@ -87,10 +87,7 @@ class Dataset:
                                     x.append(days_service)
                                     y.append(float(row[param]))
 
-                    # fig, ax = plt.subplots()
-                    # ax.plot(x, y)
-                    # plt.show()
-                    # plt.plot([1,2,3])
+                    
                 d = {
                     "oil_name": oil_name,
                     "season": season,
