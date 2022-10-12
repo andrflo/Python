@@ -1055,8 +1055,8 @@ def plot_param_gral_ev(self, gral_ev, param):
                                 and row["Ölbezeichnung"] == oil_name
                                 and self.origin_sample(
                                     row["Probe aus"], "wind", "wea", "wka", "éolienne"
-
                                 )                                
+                                and int(row["Gesamtbewertung"]) == gral_ev
                             ):
                                 days_service = int(row["Einfülltage"])
                                 if days_service > 0 and len(row[param]) > 0:
@@ -1073,15 +1073,13 @@ def plot_param_gral_ev(self, gral_ev, param):
                 listd.append(d)
                 if len(x) > 3:
                     fig, ax = plt.subplots()
-                    match season:
-                        case "summer":
-                            ax.plot(x, y, "ro")
-                        case "fall":
-                            ax.plot(x, y, "mo")
-                        case "winter":
-                            ax.plot(x, y, "bo")
-                        case "spring":
+                    match gral_ev:
+                        case 1:
                             ax.plot(x, y, "go")
+                        case 2:
+                            ax.plot(x, y, "yo")
+                        case 3:
+                            ax.plot(x, y, "ro")                        
                         case _:
                             ax.plot(x, y, "ko")
                     # plt.plot(x, y, 'bo')
