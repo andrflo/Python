@@ -1018,8 +1018,8 @@ class Dataset:
 
 def plot_param_gral_ev(self, gral_ev, param):                        
     if self.keys_exist(
-            param, "Probe aus", "Datum letzter Ölwechsel", "Datum Probenentnahme"
-        ) or self.keys_exist(param, "Probe aus", "Einfülltage"):
+            param, "Probe aus", "Datum letzter Ölwechsel", "Datum Probenentnahme", "Gesamtbewertung"
+        ) or self.keys_exist(param, "Probe aus", "Einfülltage", "Gesamtbewertung"):
 
             oil_names = self.set_of_oils("wind turbine", "all_seasons", param)
 
@@ -1054,6 +1054,7 @@ def plot_param_gral_ev(self, gral_ev, param):
                                 and row["Ölbezeichnung"] == oil_name
                                 and self.origin_sample(
                                     row["Probe aus"], "wind", "wea", "wka", "éolienne"
+
                                 )                                
                             ):
                                 days_service = int(row["Einfülltage"])
