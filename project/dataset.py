@@ -1054,10 +1054,7 @@ def plot_param_gral_ev(self, gral_ev, param):
                                 and row["Ölbezeichnung"] == oil_name
                                 and self.origin_sample(
                                     row["Probe aus"], "wind", "wea", "wka", "éolienne"
-                                )
-                                and self.validate_season(
-                                    row["Datum Probenentnahme"], season
-                                )
+                                )                                
                             ):
                                 days_service = int(row["Einfülltage"])
                                 if days_service > 0 and len(row[param]) > 0:
