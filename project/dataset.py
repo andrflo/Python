@@ -1098,11 +1098,11 @@ def plot_param_gral_ev(self, gral_ev, param):
 
                     save_name = self.validate_file_name(save_name)
                     if param == "Wasser K. F.":
-                        plt.savefig(f"data/water_KF/{save_name}")
+                        plt.savefig(f"data/water_KF/gral_evaluation/{save_name}")
                     elif param == "Neutralisationszahl":
-                        plt.savefig(f"data/AN/{save_name}")
+                        plt.savefig(f"data/AN/gral_evaluation/{save_name}")
                     elif param == "Oxidation":
-                        plt.savefig(f"data/ox/{save_name}")
+                        plt.savefig(f"data/ox/gral_evaluation/{save_name}")
                     plt.close(fig)
                     # plt.show()
 
