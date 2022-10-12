@@ -1084,16 +1084,16 @@ def plot_param_gral_ev(self, gral_ev, param):
                             ax.plot(x, y, "ko")
                     # plt.plot(x, y, 'bo')
                     # print("oil: ", oil_name)
-                    plt.title(f"Season: {season}, {oil_name}, {len(x)} points")
+                    plt.title(f"General evaluation: {gral_ev}, {oil_name}, {len(x)} points")
                     if param == "Wasser K. F.":
                         plt.ylabel("Water K.F. in ppm")
-                        save_name = f"H2O_vs_days_{season}_{oil_name}.png"
+                        save_name = f"H2O_vs_days_{gral_ev}_{oil_name}.png"
                     elif param == "Neutralisationszahl":
                         plt.ylabel("Acid number in mgkOH/gOil")
-                        save_name = f"AN_vs_days_{season}_{oil_name}.png"
+                        save_name = f"AN_vs_days_{gral_ev}_{oil_name}.png"
                     elif param == "Oxidation":
                         plt.ylabel("Oxidation in A/cm")
-                        save_name = f"Ox_vs_days_{season}_{oil_name}.png"
+                        save_name = f"Ox_vs_days_{gral_ev}_{oil_name}.png"
                     plt.xlabel("Days in service")
 
                     save_name = self.validate_file_name(save_name)
