@@ -1021,7 +1021,7 @@ def plot_param_gral_ev(self, gral_ev, param):
             param, "Probe aus", "Datum letzter Ölwechsel", "Datum Probenentnahme"
         ) or self.keys_exist(param, "Probe aus", "Einfülltage"):
 
-            oil_names = self.set_of_oils("wind turbine", season, param)
+            oil_names = self.set_of_oils("wind turbine", "all_seasons", param)
 
             listd = []
             for oil_name in oil_names:
@@ -1033,11 +1033,8 @@ def plot_param_gral_ev(self, gral_ev, param):
                     for row in reader:
                         if not ("Einfülltage" in self.keys):
 
-                            if (
-                                self.validate_season(
-                                    row["Datum Probenentnahme"], season
-                                )
-                                and len(row["Datum letzter Ölwechsel"]) > 0
+                            if (                                
+                                len(row["Datum letzter Ölwechsel"]) > 0
                                 and row["Ölbezeichnung"] == oil_name
                                 and self.origin_sample(
                                     row["Probe aus"], "wind", "wea", "wka", "éolienne"
