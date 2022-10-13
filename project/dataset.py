@@ -1165,31 +1165,31 @@ class Dataset:
                 ax.set_ylabel(ylabelstr)
 
                 # summer_patch = mpatches.Patch(color='red', label='Summer')
-                summer_point = mlines.Line2D(
+                one_point = mlines.Line2D(
                     [],
                     [],
                     linewidth=0,
-                    color="red",
+                    color="green",
                     marker="o",
                     markersize=7,
-                    label="Summer",
+                    label="1",
                 )
                 # fall_patch = mpatches.Patch(color='magenta', label='Fall')
-                fall_point = mlines.Line2D(
+                two_point = mlines.Line2D(
                     [],
                     [],
                     linewidth=0,
-                    color="m",
+                    color="y",
                     marker="o",
                     markersize=7,
-                    label="Fall",
+                    label="2",
                 )
                 # winter_patch = mpatches.Patch(color='blue', label='Winter')
-                winter_point = mlines.Line2D(
+                three_point = mlines.Line2D(
                     [],
                     [],
                     linewidth=0,
-                    color="blue",
+                    color="",
                     marker="o",
                     markersize=7,
                     label="Winter",
