@@ -1110,22 +1110,22 @@ class Dataset:
 
     def plot_param_gral_ev_all(self, p):
 
-        ldfall = self.plot_param_gral_ev(1, p)
-        ldspring = self.plot_param_gral_ev(2, p)
-        ldwinter = self.plot_param_gral_ev(3, p)
+        ld1 = self.plot_param_gral_ev(1, p)
+        ld2 = self.plot_param_gral_ev(2, p)
+        ld3 = self.plot_param_gral_ev(3, p)
         
 
-        if ldfall and ldspring and ldwinter and ldsummer:
+        if ld1 and ld2 and ld3:
 
-            for d1 in ldfall:
+            for d1 in ld1:
                 noil = d1["oil_name"]
                 npoints = len(d1["x_values"])
 
                 fig = plt.figure(figsize=(6, 3))
                 gs = fig.add_gridspec(
                     1,
-                    5,
-                    width_ratios=(4, 0.5, 0.5, 0.5, 0.5),
+                    4,
+                    width_ratios=(4, 0.33, 0.33, 0.33),
                     left=0.15,
                     right=0.85,
                     bottom=0.15,
@@ -1134,10 +1134,10 @@ class Dataset:
                     hspace=0.05,
                 )
                 ax = fig.add_subplot(gs[0, 0])
-                ax_histy_summer = fig.add_subplot(gs[0, 1], sharey=ax)
-                ax_histy_fall = fig.add_subplot(gs[0, 2], sharey=ax)
-                ax_histy_winter = fig.add_subplot(gs[0, 3], sharey=ax)
-                ax_histy_spring = fig.add_subplot(gs[0, 4], sharey=ax)
+                ax_histy_1 = fig.add_subplot(gs[0, 1], sharey=ax)
+                ax_histy_2 = fig.add_subplot(gs[0, 2], sharey=ax)
+                ax_histy_3 = fig.add_subplot(gs[0, 3], sharey=ax)
+               
 
                 ax_histy_summer.tick_params(axis="y", labelleft=False)
                 ax_histy_fall.tick_params(axis="y", labelleft=False)
