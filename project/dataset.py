@@ -1157,6 +1157,8 @@ class Dataset:
                 elif p == "Neutralisationszahl":
                     ylabelstr = "Acid number in mgkOH/gOil"
                     save_name = f"AN_vs_days_all_{noil}.png"
+                    ax.set_xlim(-50, 4000)
+                    ax.set_ylim(0, 3)
                     binwidth = 0.15
                 elif p == "Oxidation":
                     ylabelstr = "Oxidation in A/cm"
