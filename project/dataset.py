@@ -1107,3 +1107,187 @@ class Dataset:
                         # plt.show()
 
                 return listd
+
+    def plot_param_gral_ev_all(self, p):
+
+        ldfall = self.plot_param_gral_ev(1, p)
+        ldspring = self.plot_param_gral_ev(2, p)
+        ldwinter = self.plot_param_gral_ev(3, p)
+        
+
+        if ldfall and ldspring and ldwinter and ldsummer:
+
+            for d1 in ldfall:
+                noil = d1["oil_name"]
+                npoints = len(d1["x_values"])
+
+                fig = plt.figure(figsize=(6, 3))
+                gs = fig.add_gridspec(
+                    1,
+                    5,
+                    width_ratios=(4, 0.5, 0.5, 0.5, 0.5),
+                    left=0.15,
+                    right=0.85,
+                    bottom=0.15,
+                    top=0.85,
+                    wspace=0.05,
+                    hspace=0.05,
+                )
+                ax = fig.add_subplot(gs[0, 0])
+                ax_histy_summer = fig.add_subplot(gs[0, 1], sharey=ax)
+                ax_histy_fall = fig.add_subplot(gs[0, 2], sharey=ax)
+                ax_histy_winter = fig.add_subplot(gs[0, 3], sharey=ax)
+                ax_histy_spring = fig.add_subplot(gs[0, 4], sharey=ax)
+
+                ax_histy_summer.tick_params(axis="y", labelleft=False)
+                ax_histy_fall.tick_params(axis="y", labelleft=False)
+                ax_histy_winter.tick_params(axis="y", labelleft=False)
+                ax_histy_spring.tick_params(axis="y", labelleft=False)
+
+                ylabelstr = ""
+
+                binwidth = 0
+                if p == "Wasser K. F.":
+                    ylabelstr = "Water K.F. in ppm"
+                    save_name = f"H2O_vs_days_all_{noil}.png"
+                    ax.set_xlim(-50, 4000)
+                    ax.set_ylim(0, 600)
+                    if len(d1["x_values"]) > 150:
+                        binwidth = 20
+                    else:
+                        binwidth = 25
+                elif p == "Neutralisationszahl":
+                    ylabelstr = "Acid number in mgkOH/gOil"
+                    save_name = f"AN_vs_days_all_{noil}.png"
+                elif p == "Oxidation":
+                    ylabelstr = "Oxidation in A/cm"
+                    save_name = f"Ox_vs_days_all_{noil}.png"
+                # plt.xlabel("Days in service")
+                ax.set_xlabel("Days in service")
+                ax.set_ylabel(ylabelstr)
+
+                # summer_patch = mpatches.Patch(color='red', label='Summer')
+                summer_point = mlines.Line2D(
+                    [],
+                    [],
+                    linewidth=0,
+                    color="red",
+                    marker="o",
+                    markersize=7,
+                    label="Summer",
+                )
+                # fall_patch = mpatches.Patch(color='magenta', label='Fall')
+                fall_point = mlines.Line2D(
+                    [],
+                    [],
+                    linewidth=0,
+                    color="m",
+                    marker="o",
+                    markersize=7,
+                    label="Fall",
+                )
+                # winter_patch = mpatches.Patch(color='blue', label='Winter')
+                winter_point = mlines.Line2D(
+                    [],
+                    [],
+                    linewidth=0,
+                    color="blue",
+                    marker="o",
+                    markersize=7,
+                    label="Winter",
+                )
+                # spring_patch = mpatches.Patch(color='green', label='Spring')
+                spring_point = mlines.Line2D(
+                    [],
+                    [],
+                    linewidth=0,
+                    color="green",
+                    marker="o",
+                    markersize=7,
+                    label="Spring",
+                )
+                ax.legend(
+                    handles=[summer_point, fall_point, winter_point, spring_point]
+                )
+
+                # fig, ax = plt.subplots()
+                ax.plot(d1["x_values"], d1["y_values"], "mo")
+                if len(d1["x_values"]) > 0:
+                    xymax = max(
+                        np.max(np.abs(d1["x_values"])), np.max(np.abs(d1["y_values"]))
+                    )
+                    lim = (int(xymax / binwidth) + 1) * binwidth
+                    bins = np.arange(-lim, lim + binwidth, binwidth)
+                    ax_histy_fall.hist(
+                        d1["y_values"], bins=bins, color="m", orientation="horizontal"
+                    )
+
+                for d2 in ldspring:
+                    if d2["oil_name"] == noil:
+                        npoints += len(d2["x_values"])
+                        ax.plot(d2["x_values"], d2["y_values"], "go")
+                        if len(d2["x_values"]) > 0:
+                            xymax = max(
+                                np.max(np.abs(d2["x_values"])),
+                                np.max(np.abs(d2["y_values"])),
+                            )
+                            lim = (int(xymax / binwidth) + 1) * binwidth
+                            bins = np.arange(-lim, lim + binwidth, binwidth)
+                            ax_histy_spring.hist(
+                                d2["y_values"],
+                                bins=bins,
+                                color="green",
+                                orientation="horizontal",
+                            )
+
+                        for d3 in ldwinter:
+                            if d3["oil_name"] == noil:
+                                npoints += len(d3["x_values"])
+                                ax.plot(d3["x_values"], d3["y_values"], "bo")
+                                if len(d3["x_values"]) > 0:
+                                    xymax = max(
+                                        np.max(np.abs(d3["x_values"])),
+                                        np.max(np.abs(d3["y_values"])),
+                                    )
+                                    lim = (int(xymax / binwidth) + 1) * binwidth
+                                    bins = np.arange(-lim, lim + binwidth, binwidth)
+                                    ax_histy_winter.hist(
+                                        d3["y_values"],
+                                        bins=bins,
+                                        color="blue",
+                                        orientation="horizontal",
+                                    )
+
+                                for d4 in ldsummer:
+                                    if d4["oil_name"] == noil:
+                                        npoints += len(d4["x_values"])
+                                        ax.plot(d4["x_values"], d4["y_values"], "ro")
+                                        if len(d4["x_values"]) > 0:
+                                            xymax = max(
+                                                np.max(np.abs(d4["x_values"])),
+                                                np.max(np.abs(d4["y_values"])),
+                                            )
+                                            lim = (int(xymax / binwidth) + 1) * binwidth
+                                            bins = np.arange(
+                                                -lim, lim + binwidth, binwidth
+                                            )
+                                            ax_histy_summer.hist(
+                                                d4["y_values"],
+                                                bins=bins,
+                                                color="red",
+                                                orientation="horizontal",
+                                            )
+                                            break
+
+                ax.set_title(f"Season: all, {noil}, {npoints} points")
+
+                save_name = self.validate_file_name(save_name)
+                if p == "Wasser K. F.":
+                    plt.savefig(f"data/water_KF/{save_name}")
+                elif p == "Neutralisationszahl":
+                    plt.savefig(f"data/AN/{save_name}")
+                elif p == "Oxidation":
+                    plt.savefig(f"data/ox/{save_name}")
+                plt.close(fig)            
+
+
