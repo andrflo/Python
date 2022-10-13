@@ -1136,13 +1136,11 @@ class Dataset:
                 ax = fig.add_subplot(gs[0, 0])
                 ax_histy_1 = fig.add_subplot(gs[0, 1], sharey=ax)
                 ax_histy_2 = fig.add_subplot(gs[0, 2], sharey=ax)
-                ax_histy_3 = fig.add_subplot(gs[0, 3], sharey=ax)
-               
+                ax_histy_3 = fig.add_subplot(gs[0, 3], sharey=ax)               
 
-                ax_histy_summer.tick_params(axis="y", labelleft=False)
-                ax_histy_fall.tick_params(axis="y", labelleft=False)
-                ax_histy_winter.tick_params(axis="y", labelleft=False)
-                ax_histy_spring.tick_params(axis="y", labelleft=False)
+                ax_histy_1.tick_params(axis="y", labelleft=False)
+                ax_histy_2.tick_params(axis="y", labelleft=False)
+                ax_histy_3.tick_params(axis="y", labelleft=False)                
 
                 ylabelstr = ""
 
