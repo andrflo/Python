@@ -1189,41 +1189,32 @@ class Dataset:
                     [],
                     [],
                     linewidth=0,
-                    color="",
+                    color="red",
                     marker="o",
                     markersize=7,
-                    label="Winter",
+                    label="3",
                 )
-                # spring_patch = mpatches.Patch(color='green', label='Spring')
-                spring_point = mlines.Line2D(
-                    [],
-                    [],
-                    linewidth=0,
-                    color="green",
-                    marker="o",
-                    markersize=7,
-                    label="Spring",
-                )
+               
                 ax.legend(
-                    handles=[summer_point, fall_point, winter_point, spring_point]
+                    handles=[one_point, two_point, three_point]
                 )
 
                 # fig, ax = plt.subplots()
-                ax.plot(d1["x_values"], d1["y_values"], "mo")
+                ax.plot(d1["x_values"], d1["y_values"], "go")
                 if len(d1["x_values"]) > 0:
                     xymax = max(
                         np.max(np.abs(d1["x_values"])), np.max(np.abs(d1["y_values"]))
                     )
                     lim = (int(xymax / binwidth) + 1) * binwidth
                     bins = np.arange(-lim, lim + binwidth, binwidth)
-                    ax_histy_fall.hist(
-                        d1["y_values"], bins=bins, color="m", orientation="horizontal"
+                    ax_histy_1.hist(
+                        d1["y_values"], bins=bins, color="green", orientation="horizontal"
                     )
 
-                for d2 in ldspring:
+                for d2 in ld2:
                     if d2["oil_name"] == noil:
                         npoints += len(d2["x_values"])
-                        ax.plot(d2["x_values"], d2["y_values"], "go")
+                        ax.plot(d2["x_values"], d2["y_values"], "yo")
                         if len(d2["x_values"]) > 0:
                             xymax = max(
                                 np.max(np.abs(d2["x_values"])),
@@ -1231,17 +1222,17 @@ class Dataset:
                             )
                             lim = (int(xymax / binwidth) + 1) * binwidth
                             bins = np.arange(-lim, lim + binwidth, binwidth)
-                            ax_histy_spring.hist(
+                            ax_histy_2.hist(
                                 d2["y_values"],
                                 bins=bins,
-                                color="green",
+                                color="y",
                                 orientation="horizontal",
                             )
 
-                        for d3 in ldwinter:
+                        for d3 in ld3:
                             if d3["oil_name"] == noil:
                                 npoints += len(d3["x_values"])
-                                ax.plot(d3["x_values"], d3["y_values"], "bo")
+                                ax.plot(d3["x_values"], d3["y_values"], "ro")
                                 if len(d3["x_values"]) > 0:
                                     xymax = max(
                                         np.max(np.abs(d3["x_values"])),
@@ -1249,43 +1240,24 @@ class Dataset:
                                     )
                                     lim = (int(xymax / binwidth) + 1) * binwidth
                                     bins = np.arange(-lim, lim + binwidth, binwidth)
-                                    ax_histy_winter.hist(
+                                    ax_histy_3.hist(
                                         d3["y_values"],
                                         bins=bins,
-                                        color="blue",
+                                        color="red",
                                         orientation="horizontal",
                                     )
+                                    break
 
-                                for d4 in ldsummer:
-                                    if d4["oil_name"] == noil:
-                                        npoints += len(d4["x_values"])
-                                        ax.plot(d4["x_values"], d4["y_values"], "ro")
-                                        if len(d4["x_values"]) > 0:
-                                            xymax = max(
-                                                np.max(np.abs(d4["x_values"])),
-                                                np.max(np.abs(d4["y_values"])),
-                                            )
-                                            lim = (int(xymax / binwidth) + 1) * binwidth
-                                            bins = np.arange(
-                                                -lim, lim + binwidth, binwidth
-                                            )
-                                            ax_histy_summer.hist(
-                                                d4["y_values"],
-                                                bins=bins,
-                                                color="red",
-                                                orientation="horizontal",
-                                            )
-                                            break
-
+                                
                 ax.set_title(f"Season: all, {noil}, {npoints} points")
 
                 save_name = self.validate_file_name(save_name)
                 if p == "Wasser K. F.":
-                    plt.savefig(f"data/water_KF/{save_name}")
+                    plt.savefig(f"data/water_KF/gral_evaluation/{save_name}")
                 elif p == "Neutralisationszahl":
-                    plt.savefig(f"data/AN/{save_name}")
+                    plt.savefig(f"data/AN/gral_evaluation/{save_name}")
                 elif p == "Oxidation":
-                    plt.savefig(f"data/ox/{save_name}")
+                    plt.savefig(f"data/ox/gral_evaluation/{save_name}")
                 plt.close(fig)            
 
 
