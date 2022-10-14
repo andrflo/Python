@@ -850,6 +850,13 @@ class Dataset:
                                     binwidthx = 2
                                 else:
                                     binwidthx = 3
+                            case "CU":
+                                xlabelstr = "Cu content in ppm"
+                                ax.set_xlim(0, 200)
+                                if len(x1) > 150:
+                                    binwidthx = 2
+                                else:
+                                    binwidthx = 3        
                             case "P":
                                 xlabelstr = "P content in ppm"
                                 ax.set_xlim(0, 3000)
@@ -918,6 +925,14 @@ class Dataset:
                                     binwidthy = 2
                                 else:
                                     binwidthy = 3
+                            case "CU":
+                                ylabelstr = "Cu content in ppm"
+                                ax.set_ylim(0, 200)
+                                save_name = f"Cu_vs_{xax}_{machine_id1}_{machine_id2}_{oil_name}.png"
+                                if len(x1) > 150:
+                                    binwidthy = 2
+                                else:
+                                    binwidthy = 3        
                             case "P":
                                 ylabelstr = "P content in ppm"
                                 ax.set_ylim(0, 3000)
@@ -1004,6 +1019,8 @@ class Dataset:
                                 plt.savefig(f"data/viscosity/100/{save_name}")
                             case "FE":
                                 plt.savefig(f"data/elements/Fe/{save_name}")
+                            case "CU":
+                                plt.savefig(f"data/elements/Cu/{save_name}")    
                             case "P":
                                 plt.savefig(f"data/elements/P/{save_name}")
                             case "Ölmenge im System" | "Anlagengöße [kW]":
