@@ -141,6 +141,7 @@ def shortest_path(source, target):
                 print("Kevin")
             if not frontier.contains_state(actor) and actor not in explored:
                 child = Node(state=actor, parent=node, action=movie)
+                print(actor, movie)
                 frontier.add(child)
 
 
