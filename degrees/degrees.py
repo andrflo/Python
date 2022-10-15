@@ -178,7 +178,7 @@ def neighbors_for_person(person_id):
     who starred with a given person.
     """
     movie_ids = people[person_id]["movies"]
-    if 1270898 in movie_ids:
+    if 1270798 in movie_ids:
         print("ja")
     neighbors = set()
     for movie_id in movie_ids:
