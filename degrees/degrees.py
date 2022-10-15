@@ -181,7 +181,8 @@ def neighbors_for_person(person_id):
     neighbors = set()
     for movie_id in movie_ids:
         for person_id in movies[movie_id]["stars"]:
-            print(person_id)
+            if person_id == 102:
+                print("KB")
             neighbors.add((movie_id, person_id))           
     return neighbors
 
