@@ -117,15 +117,18 @@ def shortest_path(source, target):
 
         # If node is the goal, then we have a solution
         if node.state == target:
-            movies = []
-            actors = []
+            #movies = []
+            #actors = []
+            solution = []
             while node.parent is not None:
-                movies.append(node.action)
-                actors.append(node.state)
+                #movies.append(node.action)
+                #actors.append(node.state)
+                solution.append(node.action, node.state)
                 node = node.parent
-            movies.reverse()
-            actors.reverse()
-            return [movies, actors]
+            #movies.reverse()
+            #actors.reverse()
+            solution.reverse()
+            return solution
             
 
         # Mark node as explored
