@@ -109,6 +109,7 @@ def shortest_path(source, target):
 
         # If nothing left in frontier, then no path
         if frontier.empty():
+            print("frontera vacia")
             return None
 
         # Choose a node from the frontier
