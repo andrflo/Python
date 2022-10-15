@@ -405,6 +405,8 @@ class Dataset:
     def plot_data_machine(self, paramx, paramy):
 
         if self.keys_exist(paramy):
+            if not self.keys_exist(paramx):
+                raise Exception("paramx does not exist")
             oil_names = self.set_of_oils("wind turbine", "all_seasons", paramy)
 
             if self.keys_exist("Anlagennummer"):
@@ -1031,6 +1033,8 @@ class Dataset:
                     # Time to plot for another oil ok1 = false
                     elif machine_id1 == "" and machine_id2 == "":
                         ok1 = False
+        else:
+            raise Exception("paramy does not exist")                
 
 
     def plot_param_gral_ev(self, gral_ev, param):                        
