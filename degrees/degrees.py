@@ -123,7 +123,7 @@ def shortest_path(source, target):
             while node.parent is not None:
                 #movies.append(node.action)
                 #actors.append(node.state)
-                solution.append(node.action, node.state)
+                solution.append((node.action, node.state))
                 node = node.parent
             #movies.reverse()
             #actors.reverse()
