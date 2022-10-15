@@ -123,11 +123,11 @@ def shortest_path(source, target):
                 node = node.parent
             movies.reverse()
             actors.reverse()
-            solution = (actions, cells)
-            return
+            return (movies, actors)
+            
 
             # Mark node as explored
-            self.explored.add(node.state)
+            explored.add(node.state)
 
             # Add neighbors to frontier
             for action, state in self.neighbors(node.state):
