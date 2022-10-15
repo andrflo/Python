@@ -128,16 +128,13 @@ def shortest_path(source, target):
             #movies.reverse()
             #actors.reverse()
             solution.reverse()
-            return solution
-            
+            return solution            
 
         # Mark node as explored
-        explored.add(node.state)
-        if (node.state == '102'):
-            print("kb visitado")
+        explored.add(node.state)       
 
         # Add neighbors to frontier
-        for movie, actor in neighbors_for_person(source):
+        for movie, actor in neighbors_for_person(node.state):
             
             if not frontier.contains_state(actor) and actor not in explored:
                 child = Node(state=actor, parent=node, action=movie)                
