@@ -131,7 +131,7 @@ def shortest_path(source, target):
 
         # Add neighbors to frontier
         for movie, actor in neighbors_for_person(source):
-            if not frontier.contains_state(actor) and actor not in self.explored:
+            if not frontier.contains_state(actor) and actor not in explored:
                 child = Node(state=actor, parent=node, action=movie)
                 frontier.add(child)
 
