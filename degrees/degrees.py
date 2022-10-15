@@ -133,6 +133,8 @@ def shortest_path(source, target):
 
         # Mark node as explored
         explored.add(node.state)
+        if (node.state == '1270798'):
+            print("kb visitado")
 
         # Add neighbors to frontier
         for movie, actor in neighbors_for_person(source):
