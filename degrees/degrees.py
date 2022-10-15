@@ -136,6 +136,8 @@ def shortest_path(source, target):
 
         # Add neighbors to frontier
         for movie, actor in neighbors_for_person(source):
+            if (movie == '1270798' and actor == '102'):
+                print("Kevin")
             if not frontier.contains_state(actor) and actor not in explored:
                 child = Node(state=actor, parent=node, action=movie)
                 frontier.add(child)
@@ -177,18 +179,11 @@ def neighbors_for_person(person_id):
     Returns (movie_id, person_id) pairs for people
     who starred with a given person.
     """
-    movie_ids = people[person_id]["movies"]
-    print("person", person_id)
-    print(movie_ids)
-    if '1270798' in movie_ids:
-        print("ja")
-        
+    movie_ids = people[person_id]["movies"]       
 
     neighbors = set()
     for movie_id in movie_ids:
-        for person_id in movies[movie_id]["stars"]:
-            if person_id == '102':
-                print("KB")
+        for person_id in movies[movie_id]["stars"]:            
             neighbors.add((movie_id, person_id))           
     return neighbors
 
