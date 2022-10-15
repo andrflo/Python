@@ -92,6 +92,12 @@ def shortest_path(source, target):
     If no possible path, returns None.
     """
 
+    start = Node(state=source, parent=None, action=None)
+    frontier = QueueFrontier()
+    frontier.add(start)
+
+    neighbors_for_person(source)
+
     # TODO
     raise NotImplementedError
 
