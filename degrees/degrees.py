@@ -123,7 +123,7 @@ def shortest_path(source, target):
                 node = node.parent
             movies.reverse()
             actors.reverse()
-            return (movies, actors)
+            return [movies, actors]
             
 
         # Mark node as explored
