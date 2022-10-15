@@ -92,9 +92,15 @@ def shortest_path(source, target):
     If no possible path, returns None.
     """
 
+    # Keep track of number of states explored
+    num_explored = 0
+
     start = Node(state=source, parent=None, action=None)
     frontier = QueueFrontier()
     frontier.add(start)
+
+    # Initialize an empty explored set
+    explored = set()
 
     neighbors_for_person(source)
 
