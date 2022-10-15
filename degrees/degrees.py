@@ -102,6 +102,40 @@ def shortest_path(source, target):
     # Initialize an empty explored set
     explored = set()
 
+    # Keep looping until solution found
+    while True:
+
+        # If nothing left in frontier, then no path
+        if frontier.empty():
+            raise Exception("no solution")
+
+        # Choose a node from the frontier
+        node = frontier.remove()
+        num_explored += 1
+
+        # If node is the goal, then we have a solution
+        if node.state == target:
+            movies = []
+            actors = []
+            while node.parent is not None:
+                movies.append(node.action)
+                actors.append(node.state)
+                node = node.parent
+            movies.reverse()
+            actors.reverse()
+            solution = (actions, cells)
+            return
+
+            # Mark node as explored
+            self.explored.add(node.state)
+
+            # Add neighbors to frontier
+            for action, state in self.neighbors(node.state):
+                if not frontier.contains_state(state) and state not in self.explored:
+                    child = Node(state=state, parent=node, action=action)
+                    frontier.add(child)
+
+
     neighbors_for_person(source)
 
     # TODO
