@@ -108,8 +108,7 @@ def shortest_path(source, target):
     while True:
 
         # If nothing left in frontier, then no path
-        if frontier.empty():
-            print("frontera vacia")
+        if frontier.empty():            
             return None
 
         # Choose a node from the frontier
@@ -137,8 +136,7 @@ def shortest_path(source, target):
 
         # Add neighbors to frontier
         for movie, actor in neighbors_for_person(source):
-            if (movie == '1270798' and actor == '102'):
-                print("Kevin")
+            
             if not frontier.contains_state(actor) and actor not in explored:
                 child = Node(state=actor, parent=node, action=movie)
                 print(actor, movie)
