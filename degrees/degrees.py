@@ -114,17 +114,12 @@ def shortest_path(source, target):
         num_explored += 1
 
         # If node is the goal, then we have a solution
-        if node.state == target:
-            #movies = []
-            #actors = []
+        if node.state == target:            
             solution = []
-            while node.parent is not None:
-                #movies.append(node.action)
-                #actors.append(node.state)
+            while node.parent is not None:                
                 solution.append((node.action, node.state))
                 node = node.parent
-            #movies.reverse()
-            #actors.reverse()
+            
             solution.reverse()
             return solution            
 
