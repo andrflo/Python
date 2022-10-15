@@ -131,12 +131,7 @@ def shortest_path(source, target):
             
             if not frontier.contains_state(actor) and actor not in explored:
                 child = Node(state=actor, parent=node, action=movie)                
-                frontier.add(child)
-
-
-    
-
-    
+                frontier.add(child)    
 
 
 def person_id_for_name(name):
@@ -177,9 +172,6 @@ def neighbors_for_person(person_id):
         for person_id in movies[movie_id]["stars"]:            
             neighbors.add((movie_id, person_id))           
     return neighbors
-
-    #1270798
-    #2225369
 
 
 if __name__ == "__main__":
