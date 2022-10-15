@@ -133,7 +133,7 @@ def shortest_path(source, target):
 
         # Mark node as explored
         explored.add(node.state)
-        if (node.state == '1270798'):
+        if (node.state == '102'):
             print("kb visitado")
 
         # Add neighbors to frontier
