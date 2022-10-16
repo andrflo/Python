@@ -123,7 +123,9 @@ def minimax(board):
     if terminal(board):
         return None
     else:
-        pos_actions = actions(board) 
+        pos_actions = actions(board)
+        for action in pos_actions:
+            nboard = result(board, action) 
         if player(board) == X:
             ...
         else:
