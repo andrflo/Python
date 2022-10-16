@@ -65,7 +65,13 @@ def winner(board):
             while board[i][col] == aux and i < 3:
                 i+=1
             if i == 3:
-                return aux        
+                return aux
+        # Go through diagonals
+        if board[0][0] == board[1][1] and board[1][1] == board[2][2]:
+            return board[0][0]  
+
+        if (board[0][2] == board[1][1] and board[1][1] == board[2][0]):
+            return board[0][2];                     
 
 
 
