@@ -25,7 +25,7 @@ def player(board):
     if board == [[EMPTY, EMPTY, EMPTY],
             [EMPTY, EMPTY, EMPTY],
             [EMPTY, EMPTY, EMPTY]]:
-            
+        return X    
 
 
 def actions(board):
