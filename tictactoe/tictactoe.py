@@ -58,7 +58,15 @@ def winner(board):
         for row in board:
             if row[0] == row[1] and row[1] == row[2]:
                 return row[0]
-                    
+        # Go through columns:        
+        for col in range(3):
+            i=0
+            aux = board[i][col]
+            while board[i][col] == aux and i < 3:
+                i+=1
+            if i == 3:
+                return aux        
+
 
 
 def terminal(board):
