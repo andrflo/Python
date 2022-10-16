@@ -62,18 +62,21 @@ def terminal(board):
     if w != X and w != O:
         count = countboard(board)
         return True if count == 9 else False
-
     else:
         return True
-
-
 
 
 def utility(board):
     """
     Returns 1 if X has won the game, -1 if O has won, 0 otherwise.
     """
-    raise NotImplementedError
+    match winner(board):
+        case "X":
+            return 1
+        case "O":
+            return -1
+        case _:
+            return 0        
 
 
 def minimax(board):
