@@ -51,7 +51,14 @@ def winner(board):
     """
     Returns the winner of the game, if there is one.
     """
-    raise NotImplementedError
+    if countboard(board) <= 4:
+        return None
+    else:
+        # Go through rows
+        for row in board:
+            if row[0] == row[1] and row[1] == row[2]:
+                return row[0]
+                    
 
 
 def terminal(board):
