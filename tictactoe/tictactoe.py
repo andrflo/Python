@@ -24,7 +24,7 @@ def player(board):
     """
     if board == [[EMPTY, EMPTY, EMPTY],
             [EMPTY, EMPTY, EMPTY],
-            [EMPTY, EMPTY, EMPTY]]:
+            [EMPTY, EMPTY, EMPTY]] or terminal(board):
         return X    
 
 
