@@ -51,8 +51,10 @@ def result(board, action):
     """
     Returns the board that results from making move (i, j) on the board.
     """
+    if not (0 < action(0) < 3) or not (0 < action(1) < 3):
+        raise Exception("Invalid action")
     if board[action(0)][action(1)] != EMPTY:
-        raise Exception("Invalid move")
+        raise Exception("Invalid action")
     board1 = board
     if player(board1) == X:
         board1[action(0)][action(1)] = X
