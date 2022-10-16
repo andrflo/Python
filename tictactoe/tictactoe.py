@@ -123,7 +123,7 @@ def minimax(board):
     if terminal(board):
         return None
     else:
-        ...    
+        pos_actions = actions(board)    
 
 def countboard(board):
     count = 0
