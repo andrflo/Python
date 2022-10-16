@@ -90,7 +90,7 @@ def winner(board):
 
         return None                
 
-        
+
 def terminal(board):
     """
     Returns True if game is over, False otherwise.
@@ -120,7 +120,10 @@ def minimax(board):
     """
     Returns the optimal action for the current player on the board.
     """
-    raise NotImplementedError
+    if terminal(board):
+        return None
+    else:
+        ...    
 
 def countboard(board):
     count = 0
