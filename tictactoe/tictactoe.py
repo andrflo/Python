@@ -71,7 +71,9 @@ def winner(board):
             return board[0][0]  
 
         if (board[0][2] == board[1][1] and board[1][1] == board[2][0]):
-            return board[0][2];                     
+            return board[0][2]
+
+        return None                        
 
 
 
