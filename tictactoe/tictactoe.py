@@ -52,9 +52,10 @@ def result(board, action):
     Returns the board that results from making move (i, j) on the board.
     """
     if player(board) == X:
-        ...
+        board[action(0)][action(1)] = X
     else:    
-        ...
+        board[action(0)][action(1)] = O
+    return board    
 
 def winner(board):
     """
