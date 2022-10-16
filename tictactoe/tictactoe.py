@@ -51,8 +51,10 @@ def result(board, action):
     """
     Returns the board that results from making move (i, j) on the board.
     """
-    raise NotImplementedError
-
+    if player(board) == X:
+        ...
+    else:    
+        ...
 
 def winner(board):
     """
