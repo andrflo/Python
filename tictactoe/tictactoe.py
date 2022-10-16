@@ -27,11 +27,7 @@ def player(board):
             [EMPTY, EMPTY, EMPTY]] or terminal(board):
         return X    
     else:
-        count = 0
-        for row in board:
-            for elem in row:   
-                if board[row][elem] != EMPTY:
-                    count += 1 
+        count = countboard(board)
         if count % 2 == 0:
             return X
         else:
@@ -64,7 +60,7 @@ def terminal(board):
     """
     w = winner(board)
     if w != X and w != O:
-        
+        count = countboard(board)
         return True if count == 9 else False
 
     else:
@@ -92,3 +88,4 @@ def countboard(board):
         for elem in row:   
             if board[row][elem] != EMPTY:
                 count += 1 
+    return count
