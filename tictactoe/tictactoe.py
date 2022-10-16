@@ -64,11 +64,7 @@ def terminal(board):
     """
     w = winner(board)
     if w != X and w != O:
-        count = 0
-        for row in board:
-            for elem in row:   
-                if board[row][elem] != EMPTY:
-                    count += 1 
+        
         return True if count == 9 else False
 
     else:
@@ -89,3 +85,10 @@ def minimax(board):
     Returns the optimal action for the current player on the board.
     """
     raise NotImplementedError
+
+def countboard(board):
+    count = 0
+    for row in board:
+        for elem in row:   
+            if board[row][elem] != EMPTY:
+                count += 1 
