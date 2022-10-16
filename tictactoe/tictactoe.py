@@ -26,7 +26,16 @@ def player(board):
             [EMPTY, EMPTY, EMPTY],
             [EMPTY, EMPTY, EMPTY]] or terminal(board):
         return X    
-
+    else:
+        count = 0
+        for row in board:
+            for elem in row:   
+                if board[row][elem] != EMPTY:
+                    count += 1 
+        if count % 2 == 0:
+            return X
+        else:
+            return O     
 
 def actions(board):
     """
