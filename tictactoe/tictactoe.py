@@ -62,7 +62,8 @@ def terminal(board):
     """
     Returns True if game is over, False otherwise.
     """
-    if winner(board) != X and winner(board) != O:
+    w = winner(board)
+    if w != X and w != O:
         count = 0
         for row in board:
             for elem in row:   
