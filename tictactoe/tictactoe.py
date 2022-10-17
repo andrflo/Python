@@ -87,7 +87,7 @@ def winner(board):
                 if (i+1 < 3):
                     i += 1
                 else:
-                    print("SSS")
+                    print(aux)
                     ok = False
             if not ok:
                 return aux
