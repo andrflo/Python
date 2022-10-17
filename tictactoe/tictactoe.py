@@ -45,12 +45,7 @@ def actions(board):
         for row in range(3):
             for elem in range(3):
                 if board[row][elem] == EMPTY:
-                    set_of_actions.add((row, elem))
-    if countboard(board) == 1:
-
-        print(board)
-        for action in set_of_actions:
-            print(action)                
+                    set_of_actions.add((row, elem))                  
     return set_of_actions
 
 def result(board, action):
