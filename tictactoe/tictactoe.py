@@ -47,6 +47,7 @@ def actions(board):
             for elem in range(3):
                 if board[row][elem] == EMPTY:
                     set_of_actions.add((row, elem))
+    print(board)
     for action in set_of_actions:
         print(action)                
     return set_of_actions
