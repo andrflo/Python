@@ -180,7 +180,9 @@ def minaction(board):
                 minutility =  maxaction(nboard)[1]
                 minaction_var = action 
                 #print("non terminal action: ", minaction_var)           
-            
+    if len(minaction_var)<2:
+        print("minaction:", minaction_var)      
+
     return minaction_var, minutility        
 
 
@@ -209,6 +211,9 @@ def maxaction(board):
             if minaction(nboard)[1] > maxutility:
                 maxutility =  minaction(nboard)[1]
                 maxaction_var = action            
+
+    if len(maxaction_var)<2:
+        print("maxaction:", maxaction_var)  
             
     return maxaction_var, maxutility    
 
