@@ -38,15 +38,16 @@ def actions(board):
     """
     Returns set of all possible actions (i, j) available on the board.
     """
+    set_of_actions = set()
     if terminal(board):
-        return (0,0)
+        set_of_actions.add((0, 0))    
     else:
         set_of_actions = set()
         for row in range(3):
             for elem in range(3):
                 if board[row][elem] == EMPTY:
                     set_of_actions.add((row, elem))
-        return set_of_actions
+    return set_of_actions
 
 def result(board, action):
     """
