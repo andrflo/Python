@@ -47,6 +47,8 @@ def actions(board):
             for elem in range(3):
                 if board[row][elem] == EMPTY:
                     set_of_actions.add((row, elem))
+    for action in set_of_actions:
+        print(action)                
     return set_of_actions
 
 def result(board, action):
@@ -62,13 +64,9 @@ def result(board, action):
         raise Exception("Invalid action")
     board1 = deepcopy(board)
     if player(board1) == X:
-        board1[action[0]][action[1]] = X
-        if board == board1:
-            print("falla")
+        board1[action[0]][action[1]] = X        
     else:    
-        board1[action[0]][action[1]] = O
-        if board == board1:
-            print("falla")
+        board1[action[0]][action[1]] = O        
         
     return board1    
 
