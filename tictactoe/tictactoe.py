@@ -72,7 +72,7 @@ def winner(board):
     Returns the winner of the game, if there is one.
     """
     if countboard(board) <= 4:
-        print("<=4")
+        print("count<=4")
         return None
     else:
         # Go through rows
@@ -104,8 +104,8 @@ def winner(board):
 def terminal(board):
     """
     Returns True if game is over, False otherwise.
-    """  
-    print("winner:", w)
+    """
+    w = winner(board)    
     if w != X and w != O:
         count = countboard(board)
         return True if count == 9 else False
