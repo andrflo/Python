@@ -161,7 +161,7 @@ def minaction(board):
 
     for action in pos_actions:
         if minaction_var == None:
-            minaction = action
+            minaction_var = action
     
     for action in pos_actions:
         """if action == 0:
@@ -196,6 +196,11 @@ def maxaction(board):
     pos_actions = actions(board)
     maxutility = -1
     maxaction_var = None
+
+    for action in pos_actions:
+        if maxaction_var == None:
+            maxaction_var = action
+
     for action in pos_actions:
         """if action == 0:
             print(board)"""
