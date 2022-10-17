@@ -187,7 +187,7 @@ def minaction(board, minauxut):
     return minaction_var, minutility        
 
 
-def maxaction(board, maxauxut):        
+def maxaction(board, minauxut):        
     # invoked by player X
     
     pos_actions = actions(board)
