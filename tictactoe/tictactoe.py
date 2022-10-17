@@ -177,9 +177,9 @@ def minaction(board):
         # X chooses the max of the next min moves
         # O    
         else:
-            maxaction(nboard)[1]
-            if maxaction(nboard)[1] < minutility:
-                minutility =  maxaction(nboard)[1]
+            max_utility = maxaction(nboard)[1]
+            if max_utility < minutility:
+                minutility =  max_utility
                 minaction_var = action 
                 #print("non terminal action: ", minaction_var)           
     if minaction_var==None:
