@@ -207,8 +207,10 @@ def maxaction(board):
         # X    
         else:
             min_utility = minaction(nboard, minauxut)[1]
-            if minauxut == None
+            if minauxut == None:
                 minauxut = min_utility
+            elif min_utility > minauxut:
+                minauxut = min_utility    
             if  min_utility > maxutility:
                 maxutility =  min_utility
                 maxaction_var = action        
