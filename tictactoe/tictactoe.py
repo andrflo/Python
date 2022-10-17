@@ -233,4 +233,6 @@ def countboard(board):
         for elem in range(3):   
             if row[elem] != EMPTY:
                 count += 1 
+    print(board)
+    print(count)            
     return count
