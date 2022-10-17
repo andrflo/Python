@@ -147,7 +147,7 @@ def minimax(board):
             return minaction(board, None)[0]    
 
 
-def minaction(board, maxauxut):        
+def minaction(board, aux):        
     # invoked by player O
     
     pos_actions = actions(board)
@@ -169,8 +169,8 @@ def minaction(board, maxauxut):
                 minutility =  utility(nboard)
                 minaction_var = action 
 
-            if minauxut != None:
-                if utility(nboard) <= minauxut:  
+            if aux != None:
+                if utility(nboard) <= aux:  
                     break                 
 
         # O chooses the min of the next max moves
@@ -178,8 +178,8 @@ def minaction(board, maxauxut):
         # O    
         else:
             max_utility = maxaction(nboard)[1]
-            if minauxut == None:
-                minauxut = max_utility
+            if aux == None:
+                aux = max_utility
             if max_utility < minutility:
                 minutility =  max_utility
                 minaction_var = action                           
@@ -187,7 +187,7 @@ def minaction(board, maxauxut):
     return minaction_var, minutility        
 
 
-def maxaction(board, minauxut):        
+def maxaction(board, aux):        
     # invoked by player X
     
     pos_actions = actions(board)
@@ -212,11 +212,11 @@ def maxaction(board, minauxut):
         # O chooses the min of the next max moves
         # X    
         else:
-            min_utility = minaction(nboard, minauxut)[1]
-            if minauxut == None:
-                minauxut = min_utility
-            elif min_utility > minauxut:
-                minauxut = min_utility    
+            min_utility = minaction(nboard, aux)[1]
+            if aux == None:
+                aux = min_utility
+            elif min_utility > aux:
+                aux = min_utility    
             if  min_utility > maxutility:
                 maxutility =  min_utility
                 maxaction_var = action        
