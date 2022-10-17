@@ -82,7 +82,7 @@ def winner(board):
     else:
         # Go through rows
         for row in board:
-            if row[0] == row[1] and row[1] == row[2]:
+            if row[0] == row[1] and row[1] == row[2] and row[0] != EMPTY :
                 return row[0]
         # Go through columns:        
         for col in range(3):
@@ -97,10 +97,10 @@ def winner(board):
             if not ok:
                 return aux
         # Go through diagonals
-        if board[0][0] == board[1][1] and board[1][1] == board[2][2]:
+        if board[0][0] == board[1][1] and board[1][1] == board[2][2] and board[0][0] != EMPTY:
             return board[0][0]  
 
-        if (board[0][2] == board[1][1] and board[1][1] == board[2][0]):
+        if (board[0][2] == board[1][1] and board[1][1] == board[2][0]) and board[0][2] != EMPTY:
             return board[0][2]
 
         # tied game
