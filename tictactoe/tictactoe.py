@@ -197,7 +197,7 @@ def maxaction(board):
 def countboard(board):
     count = 0
     for row in board:
-        for elem in row:   
+        for elem in range(3):   
             if row[elem] != EMPTY:
                 count += 1 
     return count
