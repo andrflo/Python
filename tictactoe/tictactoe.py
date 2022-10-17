@@ -77,8 +77,11 @@ def winner(board):
         for col in range(3):
             i=0
             aux = board[i][col]
-            while board[i][col] == aux and i < 3:
+            ok = True
+            while board[i][col] == aux and ok:
                 i+=1
+                if i==3:
+                    ok = False
             if i == 3:
                 return aux
         # Go through diagonals
