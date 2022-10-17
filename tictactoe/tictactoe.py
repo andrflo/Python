@@ -155,7 +155,7 @@ def minaction(board):
     pos_actions = actions(board)
     
     minutility = 1
-    minaction_var = None
+    #minaction_var = None
     
     for action in pos_actions:
         nboard = result(board, action)
