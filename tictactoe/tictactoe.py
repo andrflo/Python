@@ -54,6 +54,7 @@ def result(board, action):
     """
     if terminal(board):
         return board
+
     if not (0 <= action[0] < 3) or not (0 <= action[1] < 3):
         raise Exception("Invalid action")
     if board[action[0]][action[1]] != EMPTY:
@@ -160,7 +161,7 @@ def minaction(board):
             minaction_var = action
     
     for action in pos_actions:
-        if action == 0:
+        if len(action)<2:
             print("action 0 in minaction", board)
         nboard = result(board, action)
         # O chooses the min of the next max moves
@@ -198,7 +199,7 @@ def maxaction(board):
             maxaction_var = action
 
     for action in pos_actions:
-        if action == 0:
+        if len(action) < 2:
             print("action 0 in maxaction", board)
         nboard = result(board, action)
         # X chooses the max of the next min moves
