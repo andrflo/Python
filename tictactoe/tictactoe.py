@@ -5,6 +5,8 @@ Tic Tac Toe Player
 import math
 from copy import deepcopy
 
+from numpy import empty
+
 X = "X"
 O = "O"
 EMPTY = None
@@ -87,7 +89,7 @@ def winner(board):
             i=0
             aux = board[i][col]
             ok = True
-            while board[i][col] == aux and ok:
+            while board[i][col] == aux and ok and aux != EMPTY:
                 if (i+1 < 3):
                     i += 1
                 else:                    
