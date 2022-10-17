@@ -147,7 +147,7 @@ def minimax(board):
             return minaction(board)[0]    
 
 
-def minaction(board):        
+def minaction(board, minauxut):        
     # invoked by player O
     
     pos_actions = actions(board)
@@ -165,7 +165,7 @@ def minaction(board):
         # X
         if terminal(nboard): 
 
-            if utility(nboard) < minutility:
+            if utility(nboard) < minutility and utility(nboard) > minauxut:
                 minutility =  utility(nboard)
                 minaction_var = action                
 
