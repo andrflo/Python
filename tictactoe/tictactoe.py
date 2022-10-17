@@ -199,14 +199,13 @@ def maxaction(board, aux):
 
     for action in pos_actions:
         if maxaction_var == None:
-            maxaction_var = action
-
-        if aux != None:
-            if utility(nboard) >= aux:  
-                break  
+            maxaction_var = action          
 
     for action in pos_actions:        
         nboard = result(board, action)
+        if aux != None:
+            if utility(nboard) >= aux:  
+                break
         # X chooses the max of the next min moves
         # O
         if terminal(nboard): 
