@@ -208,9 +208,7 @@ def maxaction(board):
         if maxaction_var == None:
             maxaction_var = action
 
-    for action in pos_actions:
-        if len(action) < 2:
-            print("action 0 in maxaction", board)
+    for action in pos_actions:        
         nboard = result(board, action)
         # X chooses the max of the next min moves
         # O
