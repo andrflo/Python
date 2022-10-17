@@ -105,6 +105,7 @@ def terminal(board):
     Returns True if game is over, False otherwise.
     """
     w = winner(board)
+    print("winner:", w)
     if w != X and w != O:
         count = countboard(board)
         return True if count == 9 else False
