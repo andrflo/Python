@@ -41,15 +41,16 @@ def actions(board):
     set_of_actions = set()
     if terminal(board):
         set_of_actions.add((0, 0))    
-    else:
-        set_of_actions = set()
+    else:        
         for row in range(3):
             for elem in range(3):
                 if board[row][elem] == EMPTY:
                     set_of_actions.add((row, elem))
-    print(board)
-    for action in set_of_actions:
-        print(action)                
+    if countboard(board) == 1:
+
+        print(board)
+        for action in set_of_actions:
+            print(action)                
     return set_of_actions
 
 def result(board, action):
@@ -57,8 +58,6 @@ def result(board, action):
     Returns the board that results from making move (i, j) on the board.
     """
     
-    if action == 0:
-        print(board)
     if not (0 <= action[0] < 3) or not (0 <= action[1] < 3):
         raise Exception("Invalid action")
     if board[action[0]][action[1]] != EMPTY:
