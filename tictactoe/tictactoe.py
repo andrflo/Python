@@ -134,9 +134,9 @@ def minimax(board):
         return None
     else:
         if player(board) == X:
-            return maxaction(board)[1]
-        else:
-            return minaction(board)[1]    
+            return maxaction(board)[0]
+        else:    
+            return minaction(board)[0]    
         """
         pos_actions = actions(board)
         for action in pos_actions:
@@ -215,8 +215,9 @@ def maxaction(board):
         # O chooses the min of the next max moves
         # X    
         else:
-            if minaction(nboard)[1] > maxutility:
-                maxutility =  minaction(nboard)[1]
+            min_utility = minaction(nboard)[1]
+            if  min_utility > maxutility:
+                maxutility =  min_utility
                 maxaction_var = action            
 
     if maxaction_var==None:
