@@ -180,7 +180,7 @@ def minaction(board, aux):
             max_utility = maxaction(nboard, aux)[1]
             if aux == None:
                 aux = max_utility
-            elif max_utility > aux:
+            elif max_utility < aux:
                 aux = max_utility    
             if max_utility < minutility:
                 minutility =  max_utility
