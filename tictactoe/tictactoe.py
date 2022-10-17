@@ -59,8 +59,13 @@ def result(board, action):
     board1 = board
     if player(board1) == X:
         board1[action[0]][action[1]] = X
+        if board == board1:
+            print("falla")
     else:    
         board1[action[0]][action[1]] = O
+        if board == board1:
+            print("falla")
+        
     return board1    
 
 def winner(board):
