@@ -191,6 +191,8 @@ def maxaction(board):
     maxutility = -1
     maxaction_var = None
     for action in pos_actions:
+        if action == 0:
+            print(board)
         nboard = result(board, action)
         # X chooses the max of the next min moves
         # O
