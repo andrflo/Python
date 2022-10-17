@@ -39,7 +39,7 @@ def actions(board):
     Returns set of all possible actions (i, j) available on the board.
     """
     if terminal(board):
-        return None
+        return (0,0)
     else:
         set_of_actions = set()
         for row in range(3):
