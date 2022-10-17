@@ -71,6 +71,10 @@ def winner(board):
     """
     Returns the winner of the game, if there is one.
     """
+    if board == [[EMPTY, EMPTY, X],
+            [EMPTY, O, X],
+            [EMPTY, O, X]]:
+            print(board)
     if countboard(board) <= 4:        
         return None
     else:
