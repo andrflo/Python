@@ -157,7 +157,11 @@ def minaction(board):
     pos_actions = actions(board)
     
     minutility = 1
-    minaction_var = None
+    minaction = None
+
+    for action in pos_actions:
+        if minaction_var == None:
+            minaction = action
     
     for action in pos_actions:
         """if action == 0:
@@ -167,7 +171,7 @@ def minaction(board):
         # X
         if terminal(nboard): 
 
-            if utility(nboard) <= minutility:
+            if utility(nboard) < minutility:
                 minutility =  utility(nboard)
                 minaction_var = action
                 #print("terminal action: ", minaction_var)
@@ -176,7 +180,7 @@ def minaction(board):
         # X chooses the max of the next min moves
         # O    
         else:
-            if maxaction(nboard)[1] <= minutility:
+            if maxaction(nboard)[1] < minutility:
                 minutility =  maxaction(nboard)[1]
                 minaction_var = action 
                 #print("non terminal action: ", minaction_var)           
@@ -200,7 +204,7 @@ def maxaction(board):
         # O
         if terminal(nboard): 
 
-            if utility(nboard) >= maxutility:
+            if utility(nboard) > maxutility:
                 maxutility =  utility(nboard)
                 maxaction_var = action
 
@@ -208,7 +212,7 @@ def maxaction(board):
         # O chooses the min of the next max moves
         # X    
         else:
-            if minaction(nboard)[1] >= maxutility:
+            if minaction(nboard)[1] > maxutility:
                 maxutility =  minaction(nboard)[1]
                 maxaction_var = action            
 
