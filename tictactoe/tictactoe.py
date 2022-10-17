@@ -142,9 +142,9 @@ def minimax(board):
         return None
     else:
         if player(board) == X:
-            return maxaction(board)[0]
+            return maxaction(board, None)[0]
         else:    
-            return minaction(board)[0]    
+            return minaction(board, None)[0]    
 
 
 def minaction(board, minauxut):        
@@ -185,7 +185,7 @@ def minaction(board, minauxut):
     return minaction_var, minutility        
 
 
-def maxaction(board):        
+def maxaction(board, maxauxut):        
     # invoked by player X
     
     pos_actions = actions(board)
