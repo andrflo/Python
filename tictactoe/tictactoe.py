@@ -73,10 +73,10 @@ def winner(board):
     """
     Returns the winner of the game, if there is one.
     """
-    if board == [[EMPTY, EMPTY, X],
+    """if board == [[EMPTY, EMPTY, X],
             [EMPTY, O, X],
             [EMPTY, O, X]]:
-            print(board)
+            print(board)"""
     if countboard(board) <= 4:        
         return None
     else:
@@ -112,8 +112,8 @@ def terminal(board):
     Returns True if game is over, False otherwise.
     """
     w = winner(board)  
-    print(board) 
-    print(w) 
+    #print(board) 
+    #print(w) 
     if w != X and w != O:
         count = countboard(board)
         return True if count == 9 else False
