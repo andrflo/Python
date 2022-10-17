@@ -86,8 +86,7 @@ def winner(board):
             while board[i][col] == aux and ok:
                 if (i+1 < 3):
                     i += 1
-                else:
-                    print(aux)
+                else:                    
                     ok = False
             if not ok:
                 return aux
@@ -98,6 +97,7 @@ def winner(board):
         if (board[0][2] == board[1][1] and board[1][1] == board[2][0]):
             return board[0][2]
 
+        # tied game
         return None                
 
 
