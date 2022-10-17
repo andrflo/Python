@@ -15,7 +15,7 @@ white = (255, 255, 255)
 
 screen = pygame.display.set_mode(size)
 
-path_proj = os.path.abspath(os.getcwd())
+path_proj = os.path.abspath(os.getcwd())+"/tictactoe"
 
 mediumFont = pygame.font.Font(path_proj+"/OpenSans-Regular.ttf", 28)
 largeFont = pygame.font.Font(path_proj+"/OpenSans-Regular.ttf", 40)
