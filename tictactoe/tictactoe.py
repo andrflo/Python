@@ -56,7 +56,7 @@ def result(board, action):
         raise Exception("Invalid action")
     if board[action[0]][action[1]] != EMPTY:
         raise Exception("Invalid action")
-    board1 = board
+    board1 = deepcopy(board)
     if player(board1) == X:
         board1[action[0]][action[1]] = X
         if board == board1:
