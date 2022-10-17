@@ -193,7 +193,7 @@ def maxaction(board, maxauxut):
     pos_actions = actions(board)
     maxutility = -1
     maxaction_var = None
-    minauxut = None
+   
 
     for action in pos_actions:
         if maxaction_var == None:
