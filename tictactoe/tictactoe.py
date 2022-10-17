@@ -163,11 +163,15 @@ def minaction(board, minauxut):
         nboard = result(board, action)
         # O chooses the min of the next max moves
         # X
-        if terminal(nboard): 
+        if terminal(nboard):    
 
-            if utility(nboard) < minutility and utility(nboard) > minauxut:
+            if utility(nboard) < minutility:
                 minutility =  utility(nboard)
-                minaction_var = action                
+                minaction_var = action 
+
+            if minauxut != None:
+                if utility(nboard) <= minauxut:  
+                    break                 
 
         # O chooses the min of the next max moves
         # X chooses the max of the next min moves
