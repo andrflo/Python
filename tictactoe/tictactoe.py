@@ -38,7 +38,7 @@ def actions(board):
     Returns set of all possible actions (i, j) available on the board.
     """
     if terminal(board):
-        return set()
+        return None
     else:
         set_of_actions = set()
         for row in range(3):
@@ -123,13 +123,73 @@ def minimax(board):
     if terminal(board):
         return None
     else:
+        ...
+        """
         pos_actions = actions(board)
         for action in pos_actions:
             nboard = result(board, action) 
-        if player(board) == X:
-            ...
+            if terminal(nboard):
+
+            if player(board) == X:
+                ...
+            else:
+                ... """ 
+
+def minaction(board):        
+    # invoked by player O
+    
+    pos_actions = actions(board)
+    
+    minutility = 1
+    minaction_var = None
+    
+    for action in pos_actions:
+        nboard = result(board, action)
+        # O chooses the min of the next max moves
+        # X
+        if terminal(nboard): 
+
+            if utility(nboard) < minutility:
+                minutility =  utility(nboard)
+                minaction_var = action
+
+        # O chooses the min of the next max moves
+        # X chooses the max of the next min moves
+        # O    
         else:
-            ...   
+            if maxaction(nboard)[1] < minutility:
+                minutility =  maxaction(nboard)[1]
+                minaction_var = action            
+            
+    return minaction_var, minutility        
+
+
+def maxaction(board):        
+    # invoked by player X
+    
+    pos_actions = actions(board)
+    maxutility = -1
+    maxaction_var = None
+    for action in pos_actions:
+        nboard = result(board, action)
+        # X chooses the max of the next min moves
+        # O
+        if terminal(nboard): 
+
+            if utility(nboard) > maxutility:
+                maxutility =  utility(nboard)
+                maxaction_var = action
+
+        # X chooses the max of the next min moves
+        # O chooses the min of the next max moves
+        # X    
+        else:
+            if minaction(nboard)[1] > maxutility:
+                maxutility =  minaction(nboard)[1]
+                maxaction_var = action            
+            
+    return maxaction_var, maxutility    
+
 
 def countboard(board):
     count = 0
