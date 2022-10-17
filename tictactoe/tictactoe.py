@@ -198,6 +198,6 @@ def countboard(board):
     count = 0
     for row in board:
         for elem in row:   
-            if board[row][elem] != EMPTY:
+            if row[elem] != EMPTY:
                 count += 1 
     return count
