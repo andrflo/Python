@@ -71,8 +71,7 @@ def winner(board):
     """
     Returns the winner of the game, if there is one.
     """
-    if countboard(board) <= 4:
-        print("count<=4")
+    if countboard(board) < 4:        
         return None
     else:
         # Go through rows
@@ -232,7 +231,5 @@ def countboard(board):
     for row in board:
         for elem in range(3):   
             if row[elem] != EMPTY:
-                count += 1 
-    print(board)
-    print(count)            
+                count += 1                
     return count
