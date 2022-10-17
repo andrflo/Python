@@ -71,7 +71,7 @@ def winner(board):
     """
     Returns the winner of the game, if there is one.
     """
-    if countboard(board) < 4:        
+    if countboard(board) <= 4:        
         return None
     else:
         # Go through rows
