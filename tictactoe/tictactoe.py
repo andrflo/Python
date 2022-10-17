@@ -160,8 +160,8 @@ def minaction(board):
             minaction_var = action
     
     for action in pos_actions:
-        """if action == 0:
-            print(board)"""
+        if action == 0:
+            print("action 0 in minaction", board)
         nboard = result(board, action)
         # O chooses the min of the next max moves
         # X
@@ -198,8 +198,8 @@ def maxaction(board):
             maxaction_var = action
 
     for action in pos_actions:
-        """if action == 0:
-            print(board)"""
+        if action == 0:
+            print("action 0 in maxaction", board)
         nboard = result(board, action)
         # X chooses the max of the next min moves
         # O
