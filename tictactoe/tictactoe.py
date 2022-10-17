@@ -53,9 +53,9 @@ def result(board, action):
     """
     Returns the board that results from making move (i, j) on the board.
     """
-    print(action)
+    """print(action)
     if action == 0:
-        print(board)
+        print(board)"""
     if not (0 <= action[0] < 3) or not (0 <= action[1] < 3):
         raise Exception("Invalid action")
     if board[action[0]][action[1]] != EMPTY:
@@ -135,7 +135,7 @@ def minimax(board):
     Returns the optimal action for the current player on the board.
     """
     if terminal(board):
-        print("terminal in minimax")
+        #print("terminal in minimax")
         return None
     else:
         if player(board) == X:
@@ -162,8 +162,8 @@ def minaction(board):
     minaction_var = None
     
     for action in pos_actions:
-        if action == 0:
-            print(board)
+        """if action == 0:
+            print(board)"""
         nboard = result(board, action)
         # O chooses the min of the next max moves
         # X
@@ -172,7 +172,7 @@ def minaction(board):
             if utility(nboard) < minutility:
                 minutility =  utility(nboard)
                 minaction_var = action
-                print("terminal action: ", minaction_var)
+                #print("terminal action: ", minaction_var)
 
         # O chooses the min of the next max moves
         # X chooses the max of the next min moves
@@ -181,7 +181,7 @@ def minaction(board):
             if maxaction(nboard)[1] < minutility:
                 minutility =  maxaction(nboard)[1]
                 minaction_var = action 
-                print("non terminal action: ", minaction_var)           
+                #print("non terminal action: ", minaction_var)           
             
     return minaction_var, minutility        
 
@@ -193,8 +193,8 @@ def maxaction(board):
     maxutility = -1
     maxaction_var = None
     for action in pos_actions:
-        if action == 0:
-            print(board)
+        """if action == 0:
+            print(board)"""
         nboard = result(board, action)
         # X chooses the max of the next min moves
         # O
