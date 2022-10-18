@@ -16,6 +16,7 @@ knowledge0 = And(
     Not(And(AKnight, AKnave)),
     #And(AKnight, AKnave),
     #AKnight,
+    AKnight,
     AKnave
 )
 
