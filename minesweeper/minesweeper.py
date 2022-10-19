@@ -193,12 +193,22 @@ class MinesweeperAI():
         list_of_cells = []
         for i in range(self.height):
             for j in range(self.width):
-                if self.withinboard(i+1, j-1) and not(self.identified((i+1,j-1))):
+                if self.withinboard(i+1, j-1) and not(self.identified((i+1, j-1))):
                     list_of_cells.append((i+1, j-1))
-                if self.withinboard(i+1, j) and not(self.identified((i+1,j))):
+                if self.withinboard(i+1, j) and not(self.identified((i+1, j))):
                     list_of_cells.append((i+1, j))  
-                if self.withinboard(i+1, j+1) and not(self.identified((i+1,j+1))):
-                    list_of_cells.append((i+1, j+1))        
+                if self.withinboard(i+1, j+1) and not(self.identified((i+1, j+1))):
+                    list_of_cells.append((i+1, j+1)) 
+                if self.withinboard(i, j-1) and not(self.identified((i, j-1))):
+                    list_of_cells.append((i, j-1))                    
+                if self.withinboard(i, j+1) and not(self.identified((i, j+1))):
+                    list_of_cells.append((i, j+1))      
+                if self.withinboard(i-1, j-1) and not(self.identified((i-1, j-1))):
+                    list_of_cells.append((i-1, j-1))   
+                if self.withinboard(i-1, j) and not(self.identified((i-1, j))):
+                    list_of_cells.append((i-1, j))   
+                if self.withinboard(i-1, j+1) and not(self.identified((i-1, j+1))):
+                    list_of_cells.append((i-1, j+1))                       
 
         
 
