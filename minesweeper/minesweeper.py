@@ -211,8 +211,13 @@ class MinesweeperAI():
                     list_of_cells.append((i-1, j+1))
             ns = Sentence(list_of_cells, count)
             self.knowledge.append(ns)                               
-
-        
+            for sentence in self.knowledge:
+                if ns.cells.issubset(sentence.cells):
+                    new_set = sentence.cells - ns.cells
+                    new_count = sentence.count - ns.count
+                    ns1 = Sentence([], new_count)
+                    ns1.cells = new_set
+                    self.knowledge.append(ns1)
 
     def make_safe_move(self):
         """
