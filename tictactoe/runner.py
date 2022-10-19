@@ -2,8 +2,6 @@ import pygame
 import sys
 import time
 
-import os
-
 import tictactoe as ttt
 
 pygame.init()
@@ -14,12 +12,6 @@ black = (0, 0, 0)
 white = (255, 255, 255)
 
 screen = pygame.display.set_mode(size)
-
-path_proj = os.path.abspath(os.getcwd())+"/tictactoe"
-
-"""mediumFont = pygame.font.Font(path_proj+"/OpenSans-Regular.ttf", 28)
-largeFont = pygame.font.Font(path_proj+"/OpenSans-Regular.ttf", 40)
-moveFont = pygame.font.Font(path_proj+"/OpenSans-Regular.ttf", 60)"""
 
 mediumFont = pygame.font.Font("OpenSans-Regular.ttf", 28)
 largeFont = pygame.font.Font("OpenSans-Regular.ttf", 40)
@@ -102,7 +94,7 @@ while True:
 
         # Show title
         if game_over:
-            winner = ttt.winner(board)            
+            winner = ttt.winner(board)
             if winner is None:
                 title = f"Game Over: Tie."
             else:
@@ -120,7 +112,7 @@ while True:
         if user != player and not game_over:
             if ai_turn:
                 time.sleep(0.5)
-                move = ttt.minimax(board)                
+                move = ttt.minimax(board)
                 board = ttt.result(board, move)
                 ai_turn = False
             else:

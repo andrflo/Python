@@ -190,6 +190,17 @@ class MinesweeperAI():
         """
         self.moves_made.add(cell)
         self.mark_safe(cell)
+        list_of_cells = []
+        for i in range(self.height):
+            for j in range(self.width):
+                if self.withinboard(i+1, j-1) and not(self.identified((i+1,j-1))):
+                    list_of_cells.append((i+1, j-1))
+                if self.withinboard(i+1, j) and not(self.identified((i+1,j))):
+                    list_of_cells.append((i+1, j))  
+                if self.withinboard(i+1, j+1) and not(self.identified((i+1,j+1))):
+                    list_of_cells.append((i+1, j+1))        
+
+        
 
     def make_safe_move(self):
         """
@@ -210,3 +221,15 @@ class MinesweeperAI():
             2) are not known to be mines
         """
         raise NotImplementedError
+
+    def withinboard(self, cell):
+        if 0<= cell[0] < self.height and 0<= cell[1] < self.width:
+            return True
+        else:
+            return False 
+
+    def identified(self, cell):
+        if cell in self.safes or cell in self.mines:
+            return True               
+        else:
+            return False
