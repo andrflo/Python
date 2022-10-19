@@ -213,7 +213,10 @@ class MinesweeperAI():
             self.knowledge.append(ns)  
             if count == 0:
                 for cell in ns.cells:
-                    self.mark_safe(cell)                             
+                    self.mark_safe(cell)    
+            elif count == len(ns.cells):
+                for cell in ns.cells:
+                    self.mark_mine(cell)                         
             for sentence in self.knowledge:
                 if ns.cells.issubset(sentence.cells):
                     new_set = sentence.cells - ns.cells
