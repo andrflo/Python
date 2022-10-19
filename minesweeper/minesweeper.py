@@ -210,7 +210,10 @@ class MinesweeperAI():
                 if self.withinboard(i-1, j+1) and not(self.identified((i-1, j+1))):
                     list_of_cells.append((i-1, j+1))
             ns = Sentence(list_of_cells, count)
-            self.knowledge.append(ns)                               
+            self.knowledge.append(ns)  
+            if count == 0:
+                for cell in ns.cells:
+                    self.mark_safe(cell)                             
             for sentence in self.knowledge:
                 if ns.cells.issubset(sentence.cells):
                     new_set = sentence.cells - ns.cells
