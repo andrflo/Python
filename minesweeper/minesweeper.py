@@ -235,6 +235,15 @@ class MinesweeperAI():
             1) have not already been chosen, and
             2) are not known to be mines
         """
+        list_of_moves = []
+        for i in range(self.height):
+            for j in range(self.width):
+                if not((i,j) in self.moves_made) and not((i,j) in self.mines):
+                    list_of_moves.append((i,j))
+        if len(list_of_moves) > 0:      
+            move=random.randint(0, len(list_of_moves)-1)
+            return list_of_moves[move]
+        return None    
         
 
     def withinboard(self, cell):
