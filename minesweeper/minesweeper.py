@@ -262,10 +262,11 @@ class MinesweeperAI():
         if ns.count == 0:
             if len(ns.cells) == 1:
                 self.mark_safe(ns.cells.pop())
-            for cell in ns.cells:
-                ns1 = Sentence([cell], 0)  
-                self.knowledge.append(ns1)
-                self.derive_new_sentences(ns1)   
+            else:
+                for cell in ns.cells:
+                    ns1 = Sentence([cell], 0)  
+                    self.knowledge.append(ns1)
+                    self.derive_new_sentences(ns1)   
         elif ns.count == len(ns.cells):
             for cell in ns.cells:
                 self.mark_mine(cell)                         
