@@ -260,6 +260,8 @@ class MinesweeperAI():
 
     def derive_new_sentences(self, ns):
         if ns.count == 0:
+            if len(ns.cells) == 1:
+                self.mark_safe(ns.cells.pop())
             for cell in ns.cells:
                 ns1 = Sentence([cell], 0)  
                 self.knowledge.append(ns1)
