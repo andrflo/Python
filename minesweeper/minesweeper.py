@@ -273,6 +273,7 @@ class MinesweeperAI():
             for sentence in self.knowledge:
                 if ns.cells.issubset(sentence.cells) and len(ns.cells) > 0 and len(sentence.cells) > 0 and sentence.cells != ns.cells:
                     print("sentence",sentence)
+                    print("new sentence", ns)
                     new_set = sentence.cells - ns.cells
                     new_count = sentence.count - ns.count
                     ns1 = Sentence([], new_count)
