@@ -268,20 +268,26 @@ class MinesweeperAI():
                     self.knowledge.append(ns1)
                     self.derive_new_sentences(ns1)   
         elif ns.count == len(ns.cells):
-            for cell in ns.cells:
-                self.mark_mine(cell)                         
-        for sentence in self.knowledge:
-            if ns.cells.issubset(sentence.cells):
-                new_set = sentence.cells - ns.cells
-                new_count = sentence.count - ns.count
-                ns1 = Sentence([], new_count)
-                ns1.cells = new_set
-                self.knowledge.append(ns1)
-                self.derive_new_sentences(ns1)
-            elif sentence.cells.issubset(ns.cells):
-                new_set = ns.cells - sentence.cells
-                new_count = ns.count - sentence.count
-                ns1 = Sentence([], new_count)
-                ns1.cells = new_set
-                self.knowledge.append(ns1)  
-                self.derive_new_sentences(ns1)
+            if len(ns.cells) == 1:
+                self.mark_mine(ns.cells.pop())
+            else:    
+                for cell in ns.cells:
+                    ns1 = Sentence([cell], 1)  
+                    self.knowledge.append(ns1)
+                    self.derive_new_sentences(ns1)   
+        else:                                                     
+            for sentence in self.knowledge:
+                if ns.cells.issubset(sentence.cells):
+                    new_set = sentence.cells - ns.cells
+                    new_count = sentence.count - ns.count
+                    ns1 = Sentence([], new_count)
+                    ns1.cells = new_set
+                    self.knowledge.append(ns1)
+                    self.derive_new_sentences(ns1)
+                elif sentence.cells.issubset(ns.cells):
+                    new_set = ns.cells - sentence.cells
+                    new_count = ns.count - sentence.count
+                    ns1 = Sentence([], new_count)
+                    ns1.cells = new_set
+                    self.knowledge.append(ns1)  
+                    self.derive_new_sentences(ns1)
