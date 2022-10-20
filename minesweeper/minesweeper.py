@@ -202,7 +202,9 @@ class MinesweeperAI():
                     list_of_cells.append((i, j))
                 
         print("vecis", list_of_cells) 
-        print("count", count)       
+        
+        count = min(count, len(list_of_cells))  
+        print("count", count)     
         ns = Sentence(list_of_cells, count)
         self.knowledge.append(ns)  
         self.derive_new_sentences(ns)  
