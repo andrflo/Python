@@ -198,8 +198,8 @@ class MinesweeperAI():
         list_of_cells = []
         for i in range(self.height):
             for j in range(self.width):                
-                if self.neighbor(cell, (i, j)) and not (cell in self.safes):
-                    if not (cell in self.mines):
+                if self.neighbor(cell, (i, j)) and not ((i,j) in self.safes):
+                    if not ((i,j) in self.mines):
                         list_of_cells.append((i, j))
                     else:
                         count -= 1    
