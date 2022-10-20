@@ -238,13 +238,9 @@ class MinesweeperAI():
         return None 
 
     def neighbor(self, cell1, cell2):
-        if abs(cell1[0] - cell2[0]) < 2 and abs(cell1[1] - cell2[1] < 2):
-            print("neighbor, true", cell1, cell2)
-            print("neighbor, true", abs(cell1[0] - cell2[0]))
-            print("neighbor, true", abs(cell1[1] - cell2[1]))
+        if abs(cell1[0] - cell2[0]) < 2 and abs(cell1[1] - cell2[1]) < 2:            
             return True
-        else:
-            print("neighbor, false", cell1, cell2)
+        else:            
             return False
 
     def identified(self, cell):
