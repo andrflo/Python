@@ -276,7 +276,7 @@ class MinesweeperAI():
                     print("new sentence", ns)
                     new_set = sentence.cells - ns.cells
                     new_count = sentence.count - ns.count
-                    sentence = Sentence([], new_count)
+                    ns1 = Sentence([], new_count)
                     ns1.cells = new_set
                     self.knowledge.remove(sentence)
                     self.knowledge.append(ns1)
