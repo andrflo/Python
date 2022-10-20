@@ -106,7 +106,7 @@ class Sentence():
         """
         Returns the set of all cells in self.cells known to be mines.
         """
-        if len(self.cells)==1 and self.count==1:
+        if (len(self.cells) == 1 and self.count == 1) or len(self.cells) == self.count:
             return self.cells
 
     def known_safes(self):
