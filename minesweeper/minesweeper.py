@@ -240,8 +240,7 @@ class MinesweeperAI():
         This function may use the knowledge in self.mines, self.safes
         and self.moves_made, but should not modify any of those values.
         """
-        raise NotImplementedError
-
+        
     def make_random_move(self):
         """
         Returns a move to make on the Minesweeper board.
