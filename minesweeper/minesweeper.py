@@ -213,6 +213,7 @@ class MinesweeperAI():
                     list_of_cells.append((i-1, j))   
                 if self.withinboard((i-1, j+1)) and not(self.identified((i-1, j+1))):
                     list_of_cells.append((i-1, j+1))
+            print("vecis", list_of_cells)        
             ns = Sentence(list_of_cells, count)
             self.knowledge.append(ns)  
             self.derive_new_sentences(ns)  
