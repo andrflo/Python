@@ -212,7 +212,7 @@ class MinesweeperAI():
                     list_of_cells.append((i-1, j+1))
             ns = Sentence(list_of_cells, count)
             self.knowledge.append(ns)  
-              
+            self.derive_new_sentences(ns)  
 
     def make_safe_move(self):
         """
