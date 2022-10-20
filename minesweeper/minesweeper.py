@@ -2,7 +2,6 @@ import itertools
 import random
 
 
-
 class Minesweeper():
     """
     Minesweeper game representation
@@ -134,7 +133,6 @@ class Sentence():
         """
         if cell in self.cells and self.count > 0:
             self.cells.remove(cell)
-
 
 
 class MinesweeperAI():
