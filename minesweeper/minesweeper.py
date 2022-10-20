@@ -132,7 +132,7 @@ class Sentence():
         Updates internal knowledge representation given the fact that
         a cell is known to be safe.
         """
-        if cell in self.cells:
+        if cell in self.cells and self.count > 0:
             self.cells.remove(cell)
 
 
@@ -252,7 +252,7 @@ class MinesweeperAI():
             return False    
 
     def derive_new_sentences(self, ns):
-        if ns.count == 0:
+        if ns.count == 0:            
             if len(ns.cells) == 1:
                 self.mark_safe(ns.cells.pop())
             else:
