@@ -196,7 +196,7 @@ class MinesweeperAI():
         print("conocimiento, safe: ", self.safes)
         list_of_cells = []
         for i in range(self.height):
-            for j in range(self.width):
+            for j in range(self.width):                
                 if self.withinboard((i+1, j-1)) and not(self.identified((i+1, j-1))):
                     list_of_cells.append((i+1, j-1))
                 if self.withinboard((i+1, j)) and not(self.identified((i+1, j))):
@@ -255,6 +255,12 @@ class MinesweeperAI():
             return True
         else:
             return False 
+
+    def neighbor(self, cell1, cell2):
+        if abs(cell1[0] - cell2[0]) < 2 and abs(cell1[1] - cell2[1] < 2):
+            return True
+        else:
+            return False
 
     def identified(self, cell):
         if cell in self.safes or cell in self.mines:
