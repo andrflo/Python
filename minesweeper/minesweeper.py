@@ -265,10 +265,13 @@ class MinesweeperAI():
             if len(ns.cells) == 1:
                 self.mark_mine(ns.cells.pop())
             else:    
+                lns = []
                 for cell in ns.cells:
                     ns1 = Sentence([cell], 1)  
                     self.knowledge.append(ns1)
-                    self.derive_new_sentences(ns1)   
+                    lns.append(ns1)
+                for elem in lns:    
+                    self.derive_new_sentences(elem)   
         else:                                                     
             for sentence in self.knowledge:
                 if ns.cells.issubset(sentence.cells) and len(ns.cells) > 0 and len(sentence.cells) > 0:
