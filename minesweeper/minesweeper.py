@@ -211,25 +211,7 @@ class MinesweeperAI():
                     list_of_cells.append((i-1, j+1))
             ns = Sentence(list_of_cells, count)
             self.knowledge.append(ns)  
-            if count == 0:
-                for cell in ns.cells:
-                    self.mark_safe(cell)    
-            elif count == len(ns.cells):
-                for cell in ns.cells:
-                    self.mark_mine(cell)                         
-            for sentence in self.knowledge:
-                if ns.cells.issubset(sentence.cells):
-                    new_set = sentence.cells - ns.cells
-                    new_count = sentence.count - ns.count
-                    ns1 = Sentence([], new_count)
-                    ns1.cells = new_set
-                    self.knowledge.append(ns1)
-                elif sentence.cells.issubset(ns.cells):
-                    new_set = ns.cells - sentence.cells
-                    new_count = ns.count - sentence.count
-                    ns1 = Sentence([], new_count)
-                    ns1.cells = new_set
-                    self.knowledge.append(ns1)    
+              
 
     def make_safe_move(self):
         """
@@ -261,3 +243,24 @@ class MinesweeperAI():
             return True               
         else:
             return False
+
+    def derive_new_sentences(self, ns):
+        if ns.count == 0:
+            for cell in ns.cells:
+                self.mark_safe(cell)    
+        elif ns.count == len(ns.cells):
+            for cell in ns.cells:
+                self.mark_mine(cell)                         
+        for sentence in self.knowledge:
+            if ns.cells.issubset(sentence.cells):
+                new_set = sentence.cells - ns.cells
+                new_count = sentence.count - ns.count
+                ns1 = Sentence([], new_count)
+                ns1.cells = new_set
+                self.knowledge.append(ns1)
+            elif sentence.cells.issubset(ns.cells):
+                new_set = ns.cells - sentence.cells
+                new_count = ns.count - sentence.count
+                ns1 = Sentence([], new_count)
+                ns1.cells = new_set
+                self.knowledge.append(ns1)  
