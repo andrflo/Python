@@ -165,8 +165,7 @@ class MinesweeperAI():
         """
         self.mines.add(cell)
         for sentence in self.knowledge:
-            sentence.mark_mine(cell)
-        print("minas", self.mines)    
+            sentence.mark_mine(cell)         
 
     def mark_safe(self, cell):
         """
@@ -175,8 +174,7 @@ class MinesweeperAI():
         """
         self.safes.add(cell)
         for sentence in self.knowledge:
-            sentence.mark_safe(cell)
-        print("seguro", self.safes)    
+            sentence.mark_safe(cell)           
 
     def add_knowledge(self, cell, count):
         """
@@ -194,9 +192,7 @@ class MinesweeperAI():
                if they can be inferred from existing knowledge
         """
         self.moves_made.add(cell)
-        self.mark_safe(cell)
-        print("conocimiento, safe: ", self.safes)
-        print("cell", cell)
+        self.mark_safe(cell)        
         list_of_cells = []
         for i in range(self.height):
             for j in range(self.width):                
@@ -204,12 +200,9 @@ class MinesweeperAI():
                     if not ((i,j) in self.mines):
                         list_of_cells.append((i, j))
                     else:
-                        count -= 1    
-                
-        print("vecis", list_of_cells) 
+                        count -= 1   
         
-        count = min(count, len(list_of_cells))  
-        print("count", count)     
+        count = min(count, len(list_of_cells))             
         ns = Sentence(list_of_cells, count)
         self.knowledge.append(ns)  
         self.derive_new_sentences(ns)  
