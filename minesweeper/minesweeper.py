@@ -164,7 +164,7 @@ class MinesweeperAI():
         self.mines.add(cell)
         for sentence in self.knowledge:
             sentence.mark_mine(cell)
-        print(self.mines)    
+        print("minas", self.mines)    
 
     def mark_safe(self, cell):
         """
@@ -174,7 +174,7 @@ class MinesweeperAI():
         self.safes.add(cell)
         for sentence in self.knowledge:
             sentence.mark_safe(cell)
-        print(self.safes)    
+        print("seguro", self.safes)    
 
     def add_knowledge(self, cell, count):
         """
