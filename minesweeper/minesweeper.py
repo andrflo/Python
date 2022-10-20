@@ -261,7 +261,7 @@ class MinesweeperAI():
     def derive_new_sentences(self, ns):
         if ns.count == 0:
             for cell in ns.cells:
-                self.mark_safe(cell)    
+                ns1 = Sentence([cell], 0)     
         elif ns.count == len(ns.cells):
             for cell in ns.cells:
                 self.mark_mine(cell)                         
