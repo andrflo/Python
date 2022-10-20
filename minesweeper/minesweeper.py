@@ -234,14 +234,7 @@ class MinesweeperAI():
         if len(list_of_moves) > 0:      
             move=random.randint(0, len(list_of_moves)-1)
             return list_of_moves[move]
-        return None    
-        
-
-    def withinboard(self, cell):
-        if 0<= cell[0] < self.height and 0<= cell[1] < self.width:
-            return True
-        else:
-            return False 
+        return None 
 
     def neighbor(self, cell1, cell2):
         if abs(cell1[0] - cell2[0]) < 2 and abs(cell1[1] - cell2[1] < 2):
