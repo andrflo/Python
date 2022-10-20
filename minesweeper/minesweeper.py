@@ -200,10 +200,10 @@ class MinesweeperAI():
                 if self.neighbor(cell, (i, j)) and not(self.identified((i, j))):
                     list_of_cells.append((i, j))
                 
-            print("vecis", list_of_cells)        
-            ns = Sentence(list_of_cells, count)
-            self.knowledge.append(ns)  
-            self.derive_new_sentences(ns)  
+        print("vecis", list_of_cells)        
+        ns = Sentence(list_of_cells, count)
+        self.knowledge.append(ns)  
+        self.derive_new_sentences(ns)  
 
     def make_safe_move(self):
         """
