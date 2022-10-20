@@ -194,6 +194,7 @@ class MinesweeperAI():
         self.moves_made.add(cell)
         self.mark_safe(cell)
         print("conocimiento, safe: ", self.safes)
+        print("cell", cell)
         list_of_cells = []
         for i in range(self.height):
             for j in range(self.width):                
