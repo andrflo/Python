@@ -132,7 +132,7 @@ class Sentence():
         Updates internal knowledge representation given the fact that
         a cell is known to be safe.
         """
-        if cell in self.cells and self.count > 0:
+        if cell in self.cells:
             self.cells.remove(cell)
 
 
