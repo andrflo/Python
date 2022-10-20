@@ -234,7 +234,7 @@ class MinesweeperAI():
             1) have not already been chosen, and
             2) are not known to be mines
         """
-        raise NotImplementedError
+        
 
     def withinboard(self, cell):
         if 0<= cell[0] < self.height and 0<= cell[1] < self.width:
