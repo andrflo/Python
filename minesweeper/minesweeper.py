@@ -279,7 +279,7 @@ class MinesweeperAI():
                     ns1 = Sentence([], new_count)
                     ns1.cells = new_set
                     self.knowledge.append(ns1)
-                    if (len(self.knowledge)>500):
+                    if (len(self.knowledge)>800):
                         print("length knowl:", len(self.knowledge))
                     #print("ns1 cells:", ns1.cells)
 
