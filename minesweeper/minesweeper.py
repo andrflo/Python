@@ -198,8 +198,11 @@ class MinesweeperAI():
         list_of_cells = []
         for i in range(self.height):
             for j in range(self.width):                
-                if self.neighbor(cell, (i, j)) and not(self.identified((i, j))):
-                    list_of_cells.append((i, j))
+                if self.neighbor(cell, (i, j)) and not (cell in self.safes):
+                    if not (cell in self.mines):
+                        list_of_cells.append((i, j))
+                    else:
+                        count -= 1    
                 
         print("vecis", list_of_cells) 
         
@@ -244,13 +247,7 @@ class MinesweeperAI():
         if abs(cell1[0] - cell2[0]) < 2 and abs(cell1[1] - cell2[1]) < 2:            
             return True
         else:            
-            return False
-
-    def identified(self, cell):
-        if cell in self.safes or cell in self.mines:
-            return True               
-        else:
-            return False
+            return False    
 
     def derive_new_sentences(self, ns):
         if ns.count == 0:
