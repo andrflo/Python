@@ -50,4 +50,6 @@ def test_sample_pagerank():
     assert round(acc,0) == 1
 
 def test_iterate_pagerank():
-    ...    
+    corpus = crawl("corpus0")   
+    ans = iterate_pagerank(corpus, 0.85)  
+       
