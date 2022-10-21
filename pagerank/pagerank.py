@@ -81,6 +81,10 @@ def sample_pagerank(corpus, damping_factor, n):
     """
     sample_pr = dict.fromkeys(corpus)   
     initial_page = (list(sample_pr))[random.randint(0, len(sample_pr)-1)]
+    sample_pr[initial_page] += 1/n
+    counter = n-1
+    while counter>0:
+        
     return sample_pr
 
 
