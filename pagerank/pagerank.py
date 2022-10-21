@@ -60,10 +60,10 @@ def transition_model(corpus, page, damping_factor):
     tm = dict.fromkeys(corpus)
     print("corpus", corpus)
     for p in tm:
-        tm[p] = float(1 - damping_factor)/len(tm)
+        tm[p] = round(float(1 - damping_factor)/len(tm), 4)
         # If p can be reached from page
         if (p in corpus[page]):
-            tm[p] += float(damping_factor * 1/(len(corpus[page])))
+            tm[p] += round(float(damping_factor * 1/(len(corpus[page]))), 4)
     print(tm)
     return tm
 
