@@ -40,7 +40,7 @@ def test_transition_model_corpus1():
         acc += ans[k]
     assert round(acc,0) == 1
 
-def test_sample_pagerank(): 
+def test_sample_pagerank_corpus0(): 
     corpus = crawl("corpus0")   
     ans = sample_pagerank(corpus, 0.85, 1000)  
     #assert ans == {"1.html": None, "2.html": None, "3.html": None, "4.html": None}
@@ -48,6 +48,24 @@ def test_sample_pagerank():
     for k in ans:
         acc += ans[k]
     assert round(acc,0) == 1
+
+def test_sample_pagerank_corpus1(): 
+    corpus = crawl("corpus1")   
+    ans = sample_pagerank(corpus, 0.85, 1000)  
+    #assert ans == {"1.html": None, "2.html": None, "3.html": None, "4.html": None}
+    acc = 0
+    for k in ans:
+        acc += ans[k]
+    assert round(acc,0) == 1    
+
+def test_sample_pagerank_corpus2(): 
+    corpus = crawl("corpus2")   
+    ans = sample_pagerank(corpus, 0.85, 1000)  
+    #assert ans == {"1.html": None, "2.html": None, "3.html": None, "4.html": None}
+    acc = 0
+    for k in ans:
+        acc += ans[k]
+    assert round(acc,0) == 1      
 
 def test_iterate_pagerank_corpus0():
     corpus = crawl("corpus0")   
