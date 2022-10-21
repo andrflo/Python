@@ -58,8 +58,9 @@ def transition_model(corpus, page, damping_factor):
     a link at random chosen from all pages in the corpus.
     """
     tm = dict.fromkeys(corpus)
+    print("corpus", corpus)
     for page in tm:
-        tm[page] = damping_factor
+        tm[page] = damping_factor * 1/(len(corpus[page]))
     print(tm)
     return tm
 
