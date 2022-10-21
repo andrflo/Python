@@ -124,6 +124,7 @@ def iterate_pagerank(corpus, damping_factor):
                 if pr in corpus[p]:
                     if len(corpus[p]) > 0:
                         sum += (iterate_pr[p])[-1]/len(corpus[p])
+                    # If the page does not have any links in the corpus    
                     else:
                         sum += ((iterate_pr[p])[-1])/n_pages    
             iterate_pr[pr].append(constant + damping_factor*sum)  
