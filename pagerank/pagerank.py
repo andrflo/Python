@@ -111,17 +111,23 @@ def iterate_pagerank(corpus, damping_factor):
     
     n_pages = len(iterate_pr)
     constant = (1-damping_factor)/n_pages
+    convergence = True
     
     for pr in iterate_pr:
         iterate_pr[pr] = [1/n_pages]
 
-    for pr in iterate_pr:        
-        sum = 0
-        for p in corpus:
-            if pr in p:
-                sum += iterate_pr[p]/len(corpus[p])
-        iterate_pr[pr].append(constant + damping_factor*sum)  
-
+    while not convergence:
+        for pr in iterate_pr:        
+            sum = 0
+            for p in corpus:
+                if pr in p:
+                    sum += iterate_pr[p]/len(corpus[p])
+            iterate_pr[pr].append(constant + damping_factor*sum)  
+        for pr in iterate_pr: 
+            if (iterate_pr[pr])[-1] - (iterate_pr[pr])[len(iterate_pr[pr])-2] <= 0.001:
+                convergence = convergence and True
+            else:
+                convergence = convergence and False             
     return iterate_pr
 
 
