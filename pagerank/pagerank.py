@@ -106,7 +106,8 @@ def iterate_pagerank(corpus, damping_factor):
     their estimated PageRank value (a value between 0 and 1). All
     PageRank values should sum to 1.
     """
-    raise NotImplementedError
+    iterate_pr = dict.fromkeys(corpus) 
+    return iterate_pr
 
 
 if __name__ == "__main__":

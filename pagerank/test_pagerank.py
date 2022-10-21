@@ -1,6 +1,7 @@
 from pagerank import transition_model
 from pagerank import crawl
 from pagerank import sample_pagerank
+from pagerank import iterate_pagerank
 
 
 def test_transition_model_corpus0():
@@ -47,3 +48,6 @@ def test_sample_pagerank():
     for k in ans:
         acc += ans[k]
     assert round(acc,0) == 1
+
+def test_iterate_pagerank():
+    ...    
