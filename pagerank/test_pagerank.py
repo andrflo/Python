@@ -52,4 +52,5 @@ def test_sample_pagerank():
 def test_iterate_pagerank():
     corpus = crawl("corpus0")   
     ans = iterate_pagerank(corpus, 0.85)  
+    assert ans == {"1.html": None, "2.html": None, "3.html": None, "4.html": None}
        
