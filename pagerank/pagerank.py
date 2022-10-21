@@ -110,11 +110,16 @@ def iterate_pagerank(corpus, damping_factor):
     iterate_pr = dict.fromkeys(corpus) 
     n_pages = len(iterate_pr)
     constant = (1-damping_factor)/n_pages
+
     for pr in iterate_pr:
         iterate_pr[pr] = 1/n_pages
 
-    for pr in iterate_pr:
-        iterate_pr[pr] =  + damping_factor    
+    for pr in iterate_pr:        
+        sum = 0
+        for p in corpus:
+            if pr in p:
+                sum += iterate_pr[p]/len(corpus[p])
+        iterate_pr[pr] =  constant + damping_factor*sum
 
     return iterate_pr
 
