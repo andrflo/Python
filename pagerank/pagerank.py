@@ -88,6 +88,8 @@ def sample_pagerank(corpus, damping_factor, n):
         initial_page = max(tm, key=tm.get)
         sample_pr[initial_page] += 1/n
         counter -= 1
+    for pr in sample_pr:
+        sample_pr[pr] = round(float(sample_pr[pr]), 4)    
     return sample_pr
 
 

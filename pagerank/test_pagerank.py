@@ -41,5 +41,5 @@ def test_transition_model_corpus1():
 
 def test_sample_pagerank(): 
     corpus = crawl("corpus0")   
-    ans = sample_pagerank(corpus, 0.85, 1)  
+    ans = sample_pagerank(corpus, 0.85, 100)  
     assert ans == {"1.html": None, "2.html": None, "3.html": None, "4.html": None}
