@@ -5,7 +5,7 @@ import sys
 from tkinter import N
 
 DAMPING = 0.85
-SAMPLES = 10000
+SAMPLES = 100000
 
 
 def main():
