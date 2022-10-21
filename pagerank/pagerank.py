@@ -108,6 +108,7 @@ def iterate_pagerank(corpus, damping_factor):
     PageRank values should sum to 1.
     """
     iterate_pr = dict.fromkeys(corpus) 
+    iterate_pr_ans = dict.fromkeys(corpus) 
     
     n_pages = len(iterate_pr)
     constant = (1-damping_factor)/n_pages
@@ -128,8 +129,12 @@ def iterate_pagerank(corpus, damping_factor):
             if (iterate_pr[pr])[-1] - (iterate_pr[pr])[len(iterate_pr[pr])-2] <= 0.001:
                 convergence = convergence and True
             else:
-                convergence = convergence and False             
-    return iterate_pr
+                convergence = convergence and False   
+
+    for pr in iterate_pr_ans:
+        iterate_pr_ans[pr] = (iterate_pr[pr])[-1]
+
+    return iterate_pr_ans
 
 
 if __name__ == "__main__":
