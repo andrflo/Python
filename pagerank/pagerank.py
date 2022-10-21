@@ -108,9 +108,10 @@ def iterate_pagerank(corpus, damping_factor):
     PageRank values should sum to 1.
     """
     iterate_pr = dict.fromkeys(corpus) 
+    
     n_pages = len(iterate_pr)
     constant = (1-damping_factor)/n_pages
-
+    
     for pr in iterate_pr:
         iterate_pr[pr] = 1/n_pages
 
