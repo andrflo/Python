@@ -12,4 +12,4 @@ def test_transition_model_corpus0():
 
 def test_transition_model_corpus1():
     corpus = crawl("corpus1")    
-    assert transition_model(corpus, "bfs.html", 0.85) == {"bfs.html": 0.0375, "dfs.html": 0.8875, "games.html": 0.0375, "minesweeper.html": 0.0375, "minimax.html": 0.0375, "search.html": 0.0375, "tictactoe.html": 0.0375}    
+    assert transition_model(corpus, "bfs.html", 0.85) == {"bfs.html": 0.0214, "dfs.html": 0.0214, "games.html": 0.0214, "minesweeper.html": 0.0214, "minimax.html": 0.0214, "search.html": 0.8714, "tictactoe.html": 0.0214}    
