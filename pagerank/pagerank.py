@@ -85,7 +85,9 @@ def sample_pagerank(corpus, damping_factor, n):
     counter = n-1
     while counter>0:
         tm = transition_model(corpus, initial_page, damping_factor)
-        max(tm, key=tm.get)
+        initial_page = max(tm, key=tm.get)
+        sample_pr[initial_page] += 1/n
+        counter -= 1
     return sample_pr
 
 
