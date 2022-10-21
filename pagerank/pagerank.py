@@ -2,6 +2,7 @@ import os
 import random
 import re
 import sys
+from tkinter import N
 
 DAMPING = 0.85
 SAMPLES = 10000
@@ -107,7 +108,14 @@ def iterate_pagerank(corpus, damping_factor):
     PageRank values should sum to 1.
     """
     iterate_pr = dict.fromkeys(corpus) 
-    
+    n_pages = len(iterate_pr)
+    constant = (1-damping_factor)/n_pages
+    for pr in iterate_pr:
+        iterate_pr[pr] = 1/n_pages
+
+    for pr in iterate_pr:
+        iterate_pr[pr] =  + damping_factor    
+
     return iterate_pr
 
 
