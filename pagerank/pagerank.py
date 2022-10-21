@@ -113,7 +113,7 @@ def iterate_pagerank(corpus, damping_factor):
     constant = (1-damping_factor)/n_pages
     
     for pr in iterate_pr:
-        iterate_pr[pr] = 1/n_pages
+        iterate_pr[pr] = [1/n_pages]
 
     for pr in iterate_pr:        
         sum = 0
