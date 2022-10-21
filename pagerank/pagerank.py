@@ -59,6 +59,7 @@ def transition_model(corpus, page, damping_factor):
     """
     tm = dict.fromkeys(corpus)
     print(tm)
+    return tm
 
     
 
