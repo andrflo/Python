@@ -80,7 +80,7 @@ def sample_pagerank(corpus, damping_factor, n):
     PageRank values should sum to 1.
     """
     sample_pr = dict.fromkeys(corpus)   
-    initial_page = (sample_pr.keys())[random.randint(0, len(sample_pr)-1)]
+    initial_page = (list(sample_pr))[random.randint(0, len(sample_pr)-1)]
     return sample_pr
 
 
