@@ -40,4 +40,5 @@ def test_transition_model_corpus1():
     assert round(acc,0) == 1
 
 def test_sample_pagerank(): 
-    ...  
+    corpus = crawl("corpus0")   
+    ans = sample_pagerank(corpus, 0.85, 1)  
