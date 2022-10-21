@@ -80,9 +80,10 @@ def sample_pagerank(corpus, damping_factor, n):
     PageRank values should sum to 1.
     """
     sample_pr = dict.fromkeys(corpus)   
-    initial_page = (list(sample_pr))[random.randint(0, len(sample_pr)-1)]
-    print(initial_page)
-    sample_pr[initial_page] += 1/n
+    for pr in sample_pr:
+        sample_pr[pr] = 0
+    initial_page = (list(sample_pr))[random.randint(0, len(sample_pr)-1)]      
+    sample_pr[initial_page] = 1/n
     counter = n-1
     while counter>0:
         tm = transition_model(corpus, initial_page, damping_factor)
