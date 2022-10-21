@@ -120,7 +120,7 @@ def iterate_pagerank(corpus, damping_factor):
         for p in corpus:
             if pr in p:
                 sum += iterate_pr[p]/len(corpus[p])
-        iterate_pr[pr] =  constant + damping_factor*sum
+        iterate_pr[pr].append(constant + damping_factor*sum)  
 
     return iterate_pr
 
