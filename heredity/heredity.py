@@ -146,7 +146,8 @@ def joint_probability(people, one_gene, two_genes, have_trait):
         if people[person]["father"] == None and people[person]["mother"]:
             if people[person] in one_gene:
                 prob_gene = PROBS["gene"][1]
-                prob_trait = PROBS["trait"][1]
+                if people[person] in have_trait:
+                    prob_trait = PROBS["trait"][1]
             elif people[person] in two_genes: 
                 prob_gene = PROBS["gene"][2]
             else:
