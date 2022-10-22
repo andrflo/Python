@@ -241,11 +241,9 @@ def joint_probability(people, one_gene, two_genes, have_trait):
                     # if the father has only one copy of the gene
                     else:
                         # prob. that the father and the mother pass them
-                        prob_gene = (0.5-PROBS["mutation"])*(0.5+PROBS["mutation"]) + (0.5-PROBS["mutation"])*(0.5+PROBS["mutation"])  
+                        prob_gene = (0.5*(1-PROBS["mutation"]))*(0.5*(1-PROBS["mutation"]))  
 
-                          
-
-
+                                                                
 def update(probabilities, one_gene, two_genes, have_trait, p):
     """
     Add to `probabilities` a new joint probability `p`.
