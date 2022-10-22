@@ -139,7 +139,17 @@ def joint_probability(people, one_gene, two_genes, have_trait):
         * everyone in set `have_trait` has the trait, and
         * everyone not in set` have_trait` does not have the trait.
     """
-    # does not hava a father, does not have a mother
+    prob_gene = 0
+    for person in people:
+        # does not hava a father, does not have a mother
+        if people[person]["father"] == None and people[person]["mother"]:
+            if people[person] in one_gene:
+                prob_gene = PROBS["gene"][1]
+            elif people[person] in two_genes: 
+                prob_gene = PROBS["gene"][2]
+            else:
+                prob_gene = PROBS["gene"][0]
+
 
 
 def update(probabilities, one_gene, two_genes, have_trait, p):
