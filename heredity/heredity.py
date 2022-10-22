@@ -140,6 +140,7 @@ def joint_probability(people, one_gene, two_genes, have_trait):
         * everyone not in set` have_trait` does not have the trait.
     """
     prob_gene = 0
+    prob_trait = 0
     for person in people:
         # does not hava a father, does not have a mother
         if people[person]["father"] == None and people[person]["mother"]:
