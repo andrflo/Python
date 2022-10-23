@@ -259,8 +259,8 @@ def joint_probability(people, one_gene, two_genes, have_trait):
                         prob_gene = (1-PROBS["mutation"])*(1-PROBS["mutation"])
                     # if the father has only one copy of the gene
                     else:
-                        # prob. that the father does not pass it and it does not mutate and the prob that the mother does not passes it 
-                        # or prob. that the father passes it and it mutates and the prob that the mother does not passes it         
+                        # prob. that the father and the mother does not pass it and it does not mutate  
+                        # or prob. that the father passes it and it mutates and the prob that the mother does not pass it and it does not mutate        
                         prob_gene = (0.5*(1-PROBS["mutation"]))*(1-PROBS["mutation"]) + 0.5*(PROBS["mutation"])*(1-PROBS["mutation"])  
                 # if the mother has two copies of the gene
                 if (people[person]["mother"] in two_genes):
