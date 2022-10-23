@@ -246,7 +246,7 @@ def joint_probability(people, one_gene, two_genes, have_trait):
             #
             #
             
-            if people[person] in two_genes:
+            if not(people[person] in two_genes) and not(people[person] in one_gene):
                 # if the mother has zero copies of the gene
                 if (not(people[person]["mother"] in one_gene) and not(people[person]["mother"] in two_genes)):
                     # if the father has two copies of the gene
