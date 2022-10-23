@@ -298,6 +298,9 @@ def normalize(probabilities):
         probabilities[person]["gene"][2] = probabilities[person]["gene"][2]/tot_gene
         probabilities[person]["gene"][0] = probabilities[person]["gene"][0]/tot_gene
 
+        tot_trait = probabilities[person]["trait"][False] + probabilities[person]["trait"][True]
+        probabilities[person]["trait"][False] = probabilities[person]["trait"][False]/tot_trait
+        probabilities[person]["trait"][True] = probabilities[person]["trait"][True]/tot_trait  
 
 if __name__ == "__main__":
     main()
