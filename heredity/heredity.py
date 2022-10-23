@@ -150,7 +150,7 @@ def joint_probability(people, one_gene, two_genes, have_trait):
             if people[person]["name"] in one_gene:
                 prob_gene = PROBS["gene"][1]                
                 prob_trait = PROBS["trait"][1][(people[person]["name"] in have_trait)]                
-            elif people[person]["name"] in two_genes: 
+            if people[person]["name"] in two_genes: 
                 prob_gene = PROBS["gene"][2]                
                 prob_trait = PROBS["trait"][2][(people[person]["name"] in have_trait)]                
             else:
