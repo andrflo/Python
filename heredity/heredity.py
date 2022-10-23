@@ -267,7 +267,9 @@ def joint_probability(people, one_gene, two_genes, have_trait):
                     # if the father has only one copy of the gene
                     else:                         
                         prob_gene = 0.25
-        prob_gene_trait = prob_gene * prob_trait                
+        prob_gene_trait = prob_gene * prob_trait 
+        jp *= prob_gene_trait
+    return jp                   
 
 def update(probabilities, one_gene, two_genes, have_trait, p):
     """
