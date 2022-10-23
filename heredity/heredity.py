@@ -158,7 +158,7 @@ def joint_probability(people, one_gene, two_genes, have_trait):
                 prob_trait = PROBS["trait"][0][(people[person] in have_trait)]                
         elif people[person]["father"] != None and people[person]["mother"] != None:   
             # if person has only one copy of the gene 
-            if people[person] in one_gene:
+            if people[person]["name"] in one_gene:
                 prob_trait = PROBS["trait"][1][(people[person] in have_trait)] 
                 # if the mother has zero copies of the gene
                 if (not(people[person]["mother"] in one_gene) and not(people[person]["mother"] in two_genes)):
@@ -196,7 +196,7 @@ def joint_probability(people, one_gene, two_genes, have_trait):
                     else:                        
                         prob_gene = 0.5
             # if person has two copies of the gene 
-            if people[person] in two_genes:
+            if people[person]["name"] in two_genes:
                 prob_trait = PROBS["trait"][2][(people[person] in have_trait)] 
                 # if the mother has zero copies of the gene
                 if (not(people[person]["mother"] in one_gene) and not(people[person]["mother"] in two_genes)):
@@ -232,7 +232,7 @@ def joint_probability(people, one_gene, two_genes, have_trait):
                     else:                        
                         prob_gene = 0.25 
             # if person has zero copies of the gene            
-            if not(people[person] in two_genes) and not(people[person] in one_gene):
+            if not(people[person]["name"] in two_genes) and not(people[person]["name"] in one_gene):
                 prob_trait = PROBS["trait"][0][(people[person] in have_trait)] 
                 # if the mother has zero copies of the gene
                 if (not(people[person]["mother"] in one_gene) and not(people[person]["mother"] in two_genes)):
