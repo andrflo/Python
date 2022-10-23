@@ -144,12 +144,13 @@ def joint_probability(people, one_gene, two_genes, have_trait):
     prob_gene_trait = 0
     jp = 1
 
-    print("one gene", one_gene)
-    print("two_genes", two_genes)
+    
 
     for person in people:
         # does not have a father, does not have a mother
         if people[person]["father"] == None and people[person]["mother"] == None:
+            if people[person]["name"] in one_gene and people[person]["name"] in two_genes:
+                print(people[person]["name"])
             if people[person]["name"] in one_gene:
                 prob_gene = PROBS["gene"][1]                
                 prob_trait = PROBS["trait"][1][(people[person]["name"] in have_trait)]                
