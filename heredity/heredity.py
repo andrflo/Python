@@ -144,7 +144,8 @@ def joint_probability(people, one_gene, two_genes, have_trait):
     prob_gene_trait = 0
     jp = 1
 
-    
+    print("one gene", one_gene)
+    print("two_genes", two_genes)
 
     for person in people:
         # does not have a father, does not have a mother
