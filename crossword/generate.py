@@ -115,9 +115,12 @@ class CrosswordCreator():
         """
         indexes = self.crossword.overlaps[x,y]
         for w1 in self.domains[x]:
+            el = True
             for w2 in self.domains[y]:
-                if w1[indexes[0]] != w2[indexes[1]]:
-                    self.domains[x].remove(w1)
+                if ch1 = w1[indexes[0]] == w2[indexes[1]]:
+                    el = False
+            if el:
+                self.domains[x].remove(w1)
 
     def ac3(self, arcs=None):
         """
