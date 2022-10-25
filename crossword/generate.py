@@ -153,7 +153,10 @@ class CrosswordCreator():
         """
         Return True if `assignment` is complete (i.e., assigns a value to each
         crossword variable); return False otherwise.
-        """        
+        """  
+        for v in self.crossword.variables:
+            if not v in assignment:
+                return False      
         for v in assignment:
             if not (assignment[v] in self.crossword.words):
                 return False
