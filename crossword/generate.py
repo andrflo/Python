@@ -114,13 +114,16 @@ class CrosswordCreator():
         False if no revision was made.
         """
         indexes = self.crossword.overlaps[x,y]
+        rev = False
         for w1 in self.domains[x]:
             el = True
             for w2 in self.domains[y]:
-                if ch1 = w1[indexes[0]] == w2[indexes[1]]:
+                if w1[indexes[0]] == w2[indexes[1]]:
                     el = False
             if el:
                 self.domains[x].remove(w1)
+                rev = True
+        return rev        
 
     def ac3(self, arcs=None):
         """
