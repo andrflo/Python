@@ -149,19 +149,16 @@ class CrosswordCreator():
                     arcs.append((a[0], n))
         return True            
 
-
-
     def assignment_complete(self, assignment):
         """
         Return True if `assignment` is complete (i.e., assigns a value to each
         crossword variable); return False otherwise.
-        """
-        complete = True
+        """        
         for v in assignment:
             if not (assignment[v] in self.crossword.words):
-                complete = False
-        return complete
-        
+                return False
+        return True
+
     def consistent(self, assignment):
         """
         Return True if `assignment` is consistent (i.e., words fit in crossword
