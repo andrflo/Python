@@ -140,6 +140,11 @@ class CrosswordCreator():
                     if not ((v, n) in arcs) and not ((n, v) in arcs):
                         arcs.append((v, n))
 
+        for a in arcs:
+            if self.revise(a[0], a[1]):
+                if len(self.domains[a[0]]) == 0:
+                    return False                
+
 
     def assignment_complete(self, assignment):
         """
