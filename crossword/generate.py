@@ -140,12 +140,14 @@ class CrosswordCreator():
                     if not ((v, n) in arcs) and not ((n, v) in arcs):
                         arcs.append((v, n))
 
-        for a in arcs:
+        while len(arcs) > 0:
+            a = arcs.pop(0)
             if self.revise(a[0], a[1]):
                 if len(self.domains[a[0]]) == 0:
                     return False
                 for n in (self.crossword.neighbors(a[0])-set(a[1])):
                     arcs.append((a[0], n))
+        return True            
 
 
 
