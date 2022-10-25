@@ -166,8 +166,8 @@ class CrosswordCreator():
         Return True if `assignment` is consistent (i.e., words fit in crossword
         puzzle without conflicting characters); return False otherwise.
         """
-        vs = list(assignment.values())
-        if len(vs) != len(set(vs)):
+        ws = list(assignment.values())
+        if len(ws) != len(set(ws)):
             return False
 
         for v in assignment:
