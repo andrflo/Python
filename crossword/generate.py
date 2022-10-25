@@ -113,7 +113,9 @@ class CrosswordCreator():
         Return True if a revision was made to the domain of `x`; return
         False if no revision was made.
         """
-        raise NotImplementedError
+        for w1 in self.domains[x]:
+            for w2 in self.domains[y]:
+                
 
     def ac3(self, arcs=None):
         """
