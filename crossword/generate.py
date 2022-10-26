@@ -238,6 +238,7 @@ class CrosswordCreator():
         """
         if self.assignment_complete(assignment):
             return assignment
+        unvar = self.select_unassigned_variable(assignment)    
 
 
 def main():
