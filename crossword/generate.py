@@ -213,6 +213,11 @@ class CrosswordCreator():
         for var in self.crossword.variables:
             if not var in assignment:
                 dictvar[var] = len(self.domains[var])
+        tup = sorted(dictvar.items(), key=lambda x:x[1])   
+        list_ordered_values = []
+        for t in tup:
+            list_ordered_values.append(t[0])
+        return list_ordered_values       
 
 
     def backtrack(self, assignment):
