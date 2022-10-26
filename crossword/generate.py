@@ -212,7 +212,7 @@ class CrosswordCreator():
         dictvar = dict()
         for var in self.crossword.variables:
             if not var in assignment:
-                dictvar[var] = self.domains[var]
+                dictvar[var] = len(self.domains[var])
 
 
     def backtrack(self, assignment):
