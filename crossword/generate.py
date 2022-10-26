@@ -208,7 +208,11 @@ class CrosswordCreator():
         degree. If there is a tie, any of the tied variables are acceptable
         return values.
         """
-        
+
+        dictvar = dict()
+        for var in self.crossword.variables:
+            if not var in assignment:
+
 
     def backtrack(self, assignment):
         """
