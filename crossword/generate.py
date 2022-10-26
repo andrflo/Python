@@ -192,7 +192,7 @@ class CrosswordCreator():
         
         for val in dict_restrict:
             for neighbor in self.crossword.neighbors(var):
-                if val in self.domains[neighbor]:
+                if not (neighbor in assignment) and val in self.domains[neighbor]:
                     dict_restrict[val] += 1
         tup = sorted(dict_restrict.items(), key=lambda x:x[1])       
         list_ordered_values = []
