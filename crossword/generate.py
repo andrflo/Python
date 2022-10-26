@@ -217,8 +217,11 @@ class CrosswordCreator():
         list_ordered_values1 = []
         list_ordered_values2 = []
         for t in tup:
+            # vars
             list_ordered_values.append(t[0])
+            # minimum remaining value
             list_ordered_values1.append(t[1])
+            # degree
             list_ordered_values2.append(len(self.crossword.neighbors(t[0])))
         if len(list_ordered_values1) > 1:
             if list_ordered_values1[0] == list_ordered_values1[1]:
