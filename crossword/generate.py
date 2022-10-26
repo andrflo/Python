@@ -189,6 +189,11 @@ class CrosswordCreator():
         """
         list_values = self.domains[var]
         dict_restrict = dict(list_values, [0]*len(list_values))
+        
+        for val in dict_restrict:
+            for neighbor in self.crossword.neighbors(var):
+                if val in self.domains[neighbor]:
+                    dict_restrict[val] += 1
 
     def select_unassigned_variable(self, assignment):
         """
