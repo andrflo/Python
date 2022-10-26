@@ -197,7 +197,8 @@ class CrosswordCreator():
         tup = sorted(dict_restrict.items(), key=lambda x:x[1])       
         list_ordered_values = []
         for t in tup:
-            list_ordered_values.append()
+            list_ordered_values.append(t[0])
+        return list_ordered_values    
 
     def select_unassigned_variable(self, assignment):
         """
