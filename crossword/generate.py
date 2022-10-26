@@ -215,9 +215,16 @@ class CrosswordCreator():
                 dictvar[var] = len(self.domains[var])
         tup = sorted(dictvar.items(), key=lambda x:x[1])   
         list_ordered_values = []
+        list_ordered_values1 = []
+        list_ordered_values2 = []
         for t in tup:
             list_ordered_values.append(t[0])
-        return list_ordered_values       
+            list_ordered_values1.append(t[1])
+            list_ordered_values2.append(len(self.crossword.neighbors(t[0])))
+        if len(list_ordered_values1) > 1:
+            if list_ordered_values1[0] == list_ordered_values1[1]:
+                return list_ordered_values[0] if list_ordered_values2[0] >= list_ordered_values2[1] else list_ordered_values[1] 
+
 
 
     def backtrack(self, assignment):
