@@ -99,10 +99,14 @@ class CrosswordCreator():
         (Remove any values that are inconsistent with a variable's unary
          constraints; in this case, the length of the word.)
         """
+        
         for v in self.domains:
+            inconsistent_values = []
             for w in self.domains[v]:
                 if v.length != len(w):
-                    self.domains[v].remove(w)
+                    inconsistent_values.append(w)
+            for iv in inconsistent_values:        
+                self.domains[v].remove(iv)
 
     def revise(self, x, y):
         """
