@@ -251,14 +251,17 @@ class CrosswordCreator():
         """
         if self.assignment_complete(assignment):
             return assignment
-        unvar = self.select_unassigned_variable(assignment)    
-        for val in self.domains[unvar]:
-            new_assignment = assignment.copy()
-            new_assignment[unvar] = val            
-            if self.consistent(new_assignment):
-                result = self.backtrack(new_assignment)
-                if result != None:
-                    return result                
+        try:
+            unvar = self.select_unassigned_variable(assignment)    
+            for val in self.domains[unvar]:
+                new_assignment = assignment.copy()
+                new_assignment[unvar] = val            
+                if self.consistent(new_assignment):
+                    result = self.backtrack(new_assignment)
+                    if result != None:
+                        return result     
+        except KeyError:
+            return None                           
         return None
 
 def main():
