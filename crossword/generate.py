@@ -239,6 +239,13 @@ class CrosswordCreator():
         if self.assignment_complete(assignment):
             return assignment
         unvar = self.select_unassigned_variable(assignment)    
+        for val in self.domains[unvar]:
+            assignment[unvar] = val            
+            if self.consistent(assignment):
+                result = self.backtrack(assignment)
+            else:
+                del assignment[unvar]    
+
 
 
 def main():
