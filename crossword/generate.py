@@ -233,7 +233,7 @@ class CrosswordCreator():
         list_ordered_values2 = []
         for t in tup:
             # vars
-            print("t[0]", t[0])
+            print("t[0]", t[0][0])
             list_ordered_values.append(t[0])
             # minimum remaining value
             list_ordered_values1.append(t[1])
