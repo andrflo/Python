@@ -253,7 +253,8 @@ class CrosswordCreator():
         if self.assignment_complete(assignment):
             return assignment
         
-        unvar = self.select_unassigned_variable(assignment)    
+        unvar = self.select_unassigned_variable(assignment)   
+        print("unvar", unvar) 
         for val in self.domains[unvar]:
             new_assignment = assignment.copy()
             new_assignment[unvar] = val            
