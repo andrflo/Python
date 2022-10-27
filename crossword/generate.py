@@ -245,6 +245,7 @@ class CrosswordCreator():
                 result = self.backtrack(assignment)
             else:
                 del assignment[unvar]    
+        return None        
 
 
 
