@@ -236,6 +236,7 @@ class CrosswordCreator():
             print("t[0]", t[0])
             list_ordered_values.append(t[0])
             # minimum remaining value
+            print("t[1]", t[1])
             list_ordered_values1.append(t[1])
             # degree
             list_ordered_values2.append(len(self.crossword.neighbors(t[0])))
