@@ -242,12 +242,10 @@ class CrosswordCreator():
         for val in self.domains[unvar]:
             assignment[unvar] = val            
             if self.consistent(assignment):
-                result = self.backtrack(assignment)
+                self.backtrack(assignment)
             else:
                 del assignment[unvar]    
-        return None        
-
-
+        return None
 
 def main():
 
