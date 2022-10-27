@@ -239,7 +239,7 @@ class CrosswordCreator():
             print("t[1]", t[1])
             list_ordered_values1.append(t[1])
             # degree
-            print("t[2]", t[2])
+            print("degree", len(self.crossword.neighbors(t[0])))
             list_ordered_values2.append(len(self.crossword.neighbors(t[0])))
         if len(list_ordered_values1) > 1:
             if list_ordered_values1[0] == list_ordered_values1[1]:
