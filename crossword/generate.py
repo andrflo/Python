@@ -156,8 +156,10 @@ class CrosswordCreator():
             if self.revise(a[0], a[1]):
                 if len(self.domains[a[0]]) == 0:
                     return False
-                for n in (self.crossword.neighbors(a[0])-set(a[1])):
-                    arcs.append((a[0], n))
+                #for n in (self.crossword.neighbors(a[0])-set(a[1])):
+                for n in self.crossword.neighbors(a[0]):
+                    if n != a[1]:
+                        arcs.append((a[0], n))
         return True            
 
     def assignment_complete(self, assignment):
