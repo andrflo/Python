@@ -241,8 +241,9 @@ class CrosswordCreator():
         unvar = self.select_unassigned_variable(assignment)    
         for val in self.domains[unvar]:
             assignment[unvar] = val            
-            if self.consistent(assignment):
-                self.backtrack(assignment)
+            result = self.consistent(self.backtrack(assignment))
+            if result != None:
+                return result    
             else:
                 del assignment[unvar]    
         return None
