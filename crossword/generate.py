@@ -225,6 +225,7 @@ class CrosswordCreator():
         for var in self.crossword.variables:
             if not var in assignment:
                 dictvar[var] = len(self.domains[var])
+        print(dictvar)        
         tup = sorted(dictvar.items(), key=lambda x:x[1])   
         list_ordered_values = []
         list_ordered_values1 = []
