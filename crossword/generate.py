@@ -142,6 +142,7 @@ class CrosswordCreator():
             for v in self.domains:
                 for n in self.crossword.neighbors(v):
                     if arcs == None:
+                        arcs = []
                         arcs.append((v, n))
                     else:
                         if not ((v, n) in arcs) and not ((n, v) in arcs):
