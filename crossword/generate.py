@@ -243,8 +243,7 @@ class CrosswordCreator():
         if len(list_ordered_values1) > 1:
             if list_ordered_values1[0] == list_ordered_values1[1]:
                 return list_ordered_values[0] if list_ordered_values2[0] >= list_ordered_values2[1] else list_ordered_values[1] 
-            else:
-                
+            else:                
                 return list_ordered_values[0]
     def backtrack(self, assignment):
         """
