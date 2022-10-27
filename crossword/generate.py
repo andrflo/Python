@@ -249,6 +249,7 @@ class CrosswordCreator():
 
         If no assignment is possible, return None.
         """
+        print("assig", assignment)
         if self.assignment_complete(assignment):
             return assignment
         try:
