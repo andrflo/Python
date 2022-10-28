@@ -92,12 +92,12 @@ def load_data(filename):
                 case "dec":
                     month = 11 
 
-            visitorType = -1
+            returningVisitor = -1
             match row["VisitorType"].lower:
                 case "returning_visitor":
-                    visitorType = 1
+                    returningVisitor = 1
                 case "new_visitor":
-                    visitorType = 0  
+                    returningVisitor = 0  
 
             weekend = -1
             match row["Weekend"].lower:
@@ -112,7 +112,7 @@ def load_data(filename):
             int(row["Informational"]), float(row["Informational_Duration"]), int(row["ProductRelated"]),
             float(row["ProductRelated_Duration"]), float(row["BounceRates"]), float(row["ExitRates"]),
             float(row["PageValues"]), float(row["SpecialDay"]), month, int(row["OperatingSystems"]), 
-            int(row["Browser"]), int(row["Region"]), int(row["TrafficType"]), visitorType, int(row["Weekend"])]
+            int(row["Browser"]), int(row["Region"]), int(row["TrafficType"]), visitorType, weekend]
             labels[i] = int(row["Revenue"])
             i += 1
     return (evidence, labels)        
