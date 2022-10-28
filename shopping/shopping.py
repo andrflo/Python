@@ -151,8 +151,7 @@ def evaluate(labels, predictions):
     num_positive_labels = np.sum(labels)
     num_negative_labels = len(labels) - num_positive_labels
     one_matches = 0
-    zero_matches = 0 
-              
+    zero_matches = 0               
 
     for i in range(len(labels)):            
         if labels[i] == 1 and predictions[i] == 1:
@@ -172,8 +171,6 @@ def evaluate(labels, predictions):
         specificity = float(zero_matches/num_negative_labels)    
     
     return (sensitivity, specificity)     
-
-
 
 
 if __name__ == "__main__":
