@@ -149,8 +149,8 @@ def evaluate(labels, predictions):
     """    
     num_positive_labels = 0
     num_negative_labels = 0   
-    num_positive_labels1 = (labels == [1]*len(labels)).sum()
-    num_negative_labels1 = (labels == [0]*len(labels)).sum()
+    num_positive_labels1 = labels.sum()
+    num_negative_labels1 = (len(labels)-labels.sum()).sum()
 
     for l in labels:        
         if labels[l] == 1:
