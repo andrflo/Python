@@ -149,6 +149,9 @@ def evaluate(labels, predictions):
     """    
     num_positive_labels = 0
     num_negative_labels = 0   
+    num_positive_labels1 = (labels == 1).sum()
+    num_negative_labels1 = (labels == 0).sum()
+
     for l in labels:        
         if labels[l] == 1:
             num_positive_labels += 1
@@ -156,7 +159,9 @@ def evaluate(labels, predictions):
             num_negative_labels += 1
 
     print("npl", num_positive_labels)
+    print("npl1", num_positive_labels1)
     print("nnl", num_negative_labels)
+    print("nnl1", num_negative_labels1)
     num_positive_preds = 0
     num_negative_preds = 0
     for p in predictions:
