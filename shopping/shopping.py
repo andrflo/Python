@@ -62,8 +62,7 @@ def load_data(filename):
     evidence = []
     labels = []
     with open(filename) as csvfile:
-        reader = csv.DictReader(csvfile, delimiter=",")
-        i = 0
+        reader = csv.DictReader(csvfile, delimiter=",")        
         for row in reader:
             month = -1
             match row["Month"].lower:
@@ -113,13 +112,12 @@ def load_data(filename):
                 case "TRUE":
                     revenue = 1
 
-            evidence[i] = [int(row["Administrative"]), float(row["Administrative_Duration"]), 
+            evidence.append([int(row["Administrative"]), float(row["Administrative_Duration"]), 
             int(row["Informational"]), float(row["Informational_Duration"]), int(row["ProductRelated"]),
             float(row["ProductRelated_Duration"]), float(row["BounceRates"]), float(row["ExitRates"]),
             float(row["PageValues"]), float(row["SpecialDay"]), month, int(row["OperatingSystems"]), 
-            int(row["Browser"]), int(row["Region"]), int(row["TrafficType"]), returningVisitor, weekend]
-            labels[i] = revenue
-            i += 1
+            int(row["Browser"]), int(row["Region"]), int(row["TrafficType"]), returningVisitor, weekend])
+            labels.append(revenue)            
     return (evidence, labels)        
 
 
