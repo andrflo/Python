@@ -108,6 +108,15 @@ def evaluate(labels, predictions):
         else:
             num_negative_labels += 1
 
+    num_positive_preds = 0
+    num_negative_preds = 0
+    for p in predictions:
+        if predictions[p] == 1:
+            num_positive_preds += 1
+        else:
+            num_negative_preds += 1
+        
+
 
 
 
