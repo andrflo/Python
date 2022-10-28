@@ -100,16 +100,16 @@ def load_data(filename):
 
             weekend = -1
             match row["Weekend"].lower:
-                case "FALSE":
+                case "false":
                     weekend = 0
-                case "TRUE":
+                case "true":
                     weekend = 1       
 
             revenue = -1
             match row["Revenue"].lower:
-                case "FALSE":
+                case "false":
                     revenue = 0
-                case "TRUE":
+                case "true":
                     revenue = 1
 
             evidence.append([int(row["Administrative"]), float(row["Administrative_Duration"]), 
