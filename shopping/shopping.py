@@ -4,7 +4,7 @@ import sys
 from sklearn.model_selection import train_test_split
 from sklearn.neighbors import KNeighborsClassifier
 
-TEST_SIZE = 0.9
+TEST_SIZE = 0.2
 
 
 def main():
