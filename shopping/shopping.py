@@ -149,6 +149,7 @@ def evaluate(labels, predictions):
     num_positive_labels = 0
     num_negative_labels = 0
     for l in labels:
+        print("label", labels[l])
         if labels[l] == 1:
             num_positive_labels += 1
         else:
