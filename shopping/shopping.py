@@ -164,7 +164,8 @@ def evaluate(labels, predictions):
 
     print("num_positive_preds", num_positive_preds) 
     print("num_positive_labels", num_positive_labels)   
-    print("num_negative_preds", num_negative_labels)     
+    print("num_negative_preds", num_negative_preds)   
+    print("num_negative_labels", num_negative_labels)   
     
     return (float(num_positive_preds/num_positive_labels), float(num_negative_preds/num_negative_labels))     
 
