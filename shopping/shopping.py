@@ -82,7 +82,7 @@ def train_model(evidence, labels):
     """
     m = KNeighborsClassifier(n_neighbors=1)
     # Fit model
-    m.fit(evidence, labels)
+    return m.fit(evidence, labels)
 
 
 def evaluate(labels, predictions):
