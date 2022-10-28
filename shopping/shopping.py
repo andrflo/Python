@@ -100,7 +100,15 @@ def evaluate(labels, predictions):
     representing the "true negative rate": the proportion of
     actual negative labels that were accurately identified.
     """
-    raise NotImplementedError
+    num_positive_labels = 0
+    num_negative_labels = 0
+    for l in labels:
+        if labels[l] == 1:
+            num_positive_labels += 1
+        else:
+            num_negative_labels += 1
+
+
 
 
 if __name__ == "__main__":
