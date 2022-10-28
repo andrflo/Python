@@ -158,46 +158,18 @@ def evaluate(labels, predictions):
         if labels[i] == 1 and predictions[i] == 1:
             one_matches += 1
         elif labels[i] == 0 and predictions[i] == 0:
-            zero_matches += 1    
-
-            
-    print("len", len(labels))
-    if 1 in labels:
-        print("Hay un uon")
-    
-    print("npl", num_positive_labels)
-    print("npl1", num_positive_labels1)
-    print("nnl", num_negative_labels)
-    print("nnl1", num_negative_labels1)
-    num_positive_preds = 0
-    num_negative_preds = 0
-    num_positive_preds1 = np.sum(predictions)
-    num_negative_preds1 = len(predictions)-num_positive_preds1
-    for p in predictions:
-        if predictions[p] == 1:
-            num_positive_preds += 1
-        else:
-            num_negative_preds += 1  
-
-    print("npp", num_positive_preds)
-    print("npp1", num_positive_preds1)
-    print("nnp", num_negative_preds)  
-    print("nnp1", num_negative_preds1) 
+            zero_matches += 1       
          
 
-    if num_positive_preds == 0 and num_positive_labels == 0:
-        sensitivity = 1
-    elif num_positive_preds != 0 and num_positive_labels == 0:
-        sensitivity = 0
+    if one_matches == 0 and num_positive_labels == 0:
+        sensitivity = 1    
     else:
-        sensitivity = float(num_positive_preds/num_positive_labels) 
+        sensitivity = float(one_matches/num_positive_labels) 
 
-    if num_negative_preds == 0 and num_negative_labels == 0:
-        specificity = 1
-    elif num_negative_preds != 0 and num_negative_labels == 0:  
-        specificity = 0  
+    if zero_matches == 0 and num_negative_labels == 0:
+        specificity = 1    
     else:    
-        specificity = float(num_negative_preds/num_negative_labels)    
+        specificity = float(zero_matches/num_negative_labels)    
     
     return (sensitivity, specificity)     
 
