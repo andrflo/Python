@@ -149,11 +149,17 @@ def evaluate(labels, predictions):
     actual negative labels that were accurately identified.
     """    
     num_positive_labels = np.sum(labels)
+    num_negative_labels = len(labels) - num_positive_labels
     one_matches = 0
-    num_negative_labels = 0           
+    zero_matches = 0 
+              
 
     for i in range(len(labels)):            
         if labels[i] == 1 and predictions[i] == 1:
+            one_matches += 1
+        elif labels[i] == 0 and predictions[i] == 0:
+            zero_matches += 1    
+
             
     print("len", len(labels))
     if 1 in labels:
