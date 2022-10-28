@@ -99,7 +99,6 @@ def load_data(filename):
                 case "new_visitor":
                     visitorType = 0    
 
-
             evidence[i] = [int(row["Administrative"]), float(row["Administrative_Duration"]), 
             int(row["Informational"]), float(row["Informational_Duration"]), int(row["ProductRelated"]),
             float(row["ProductRelated_Duration"]), float(row["BounceRates"]), float(row["ExitRates"]),
