@@ -190,8 +190,9 @@ class CrosswordCreator():
             for n in self.crossword.neighbors(v):
                 indexes = self.crossword.overlaps[v,n]
                 print("assignment[n] consist", assignment[n][indexes[1]])
-                if assignment[v][indexes[0]] != assignment[n][indexes[1]]:
-                    return False
+                if n in assignment:
+                    if assignment[v][indexes[0]] != assignment[n][indexes[1]]:
+                        return False
         return True
 
 
