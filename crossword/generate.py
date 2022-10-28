@@ -184,6 +184,7 @@ class CrosswordCreator():
             return False
 
         for v in assignment:
+            print("assignment[v] consist", assignment[v])
             if v.length != len(assignment[v]):
                 return False     
             for n in self.crossword.neighbors(v):
@@ -246,7 +247,7 @@ class CrosswordCreator():
                 return list_ordered_values[0] if list_ordered_values2[0] >= list_ordered_values2[1] else list_ordered_values[1] 
             else:                
                 return list_ordered_values[0]
-                
+
     def backtrack(self, assignment):
         """
         Using Backtracking Search, take as input a partial assignment for the
