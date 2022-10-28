@@ -65,7 +65,9 @@ def load_data(filename):
         reader = csv.DictReader(csvfile, delimiter=",")
         i = 0
         for row in reader:
-            evidence[i] = [int(row["Administrative"]), float(row["Administrative_Duration"])]
+            evidence[i] = [int(row["Administrative"]), float(row["Administrative_Duration"]), 
+            int(row["Informational"]), float(row["Informational_Duration"]), int(row["ProductRelated"]),
+            float(row["ProductRelated_Duration"])]
 
 
 def train_model(evidence, labels):
