@@ -71,6 +71,8 @@ def load_data(filename):
             float(row["PageValues"]), float(row["SpecialDay"]), int(row["Month"]), int(row["OperatingSystems"]), 
             int(row["Browser"]), int(row["Region"]), int(row["TrafficType"]), int(row["VisitorType"]), int(row["Weekend"])]
             labels[i] = int(row["Revenue"])
+            i += 1
+    return (evidence, labels)        
 
 
 def train_model(evidence, labels):
