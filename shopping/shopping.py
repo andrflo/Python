@@ -118,7 +118,7 @@ def load_data(filename):
             float(row["ProductRelated_Duration"]), float(row["BounceRates"]), float(row["ExitRates"]),
             float(row["PageValues"]), float(row["SpecialDay"]), month, int(row["OperatingSystems"]), 
             int(row["Browser"]), int(row["Region"]), int(row["TrafficType"]), returningVisitor, weekend]
-            labels[i] = int(row["Revenue"])
+            labels[i] = revenue
             i += 1
     return (evidence, labels)        
 
