@@ -145,7 +145,7 @@ def evaluate(labels, predictions):
     `specificity` should be a floating-point value from 0 to 1
     representing the "true negative rate": the proportion of
     actual negative labels that were accurately identified.
-    """
+    """    
     num_positive_labels = 0
     num_negative_labels = 0
     for l in labels:
