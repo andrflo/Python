@@ -162,7 +162,9 @@ def evaluate(labels, predictions):
         else:
             num_negative_labels += 1
     print("len", len(labels))
-    print(labels[0])
+    if 1 in labels:
+        print("Hay un uon")
+    
     print("npl", num_positive_labels)
     print("npl1", num_positive_labels1)
     print("nnl", num_negative_labels)
