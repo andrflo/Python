@@ -182,8 +182,7 @@ class CrosswordCreator():
         if len(ws) != len(set(ws)):
             return False
 
-        for v in assignment:
-            
+        for v in assignment:            
             if v.length != len(assignment[v]):
                 return False     
             for n in self.crossword.neighbors(v):
