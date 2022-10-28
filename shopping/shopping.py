@@ -64,6 +64,7 @@ def load_data(filename):
     with open(filename) as csvfile:
         reader = csv.DictReader(csvfile, delimiter=",")        
         for row in reader:
+            print(row)
             month = -1
             match row["Month"].lower:
                 case "jan":
@@ -106,7 +107,7 @@ def load_data(filename):
                     weekend = 1       
 
             revenue = -1
-            print(row["Revenue"].lower)
+            #print(row["Revenue"].lower)
             match row["Revenue"].lower:
                 case "false":
                     revenue = 0
