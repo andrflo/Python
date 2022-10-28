@@ -226,22 +226,17 @@ class CrosswordCreator():
         dictvar = dict()
         for var in self.crossword.variables:
             if not var in assignment:
-                dictvar[var] = len(self.domains[var])
-        print("dictvar", dictvar)        
-        tup = sorted(dictvar.items(), key=lambda x:x[1])  
-        print("tup", tup) 
+                dictvar[var] = len(self.domains[var])               
+        tup = sorted(dictvar.items(), key=lambda x:x[1])        
         list_ordered_values = []
         list_ordered_values1 = []
         list_ordered_values2 = []
         for t in tup:
-            # vars
-            print("t[0]", t[0])
+            # vars            
             list_ordered_values.append(t[0])
-            # minimum remaining value
-            print("t[1]", t[1])
+            # minimum remaining value            
             list_ordered_values1.append(t[1])
-            # degree
-            print("degree", len(self.crossword.neighbors(t[0])))
+            # degree            
             list_ordered_values2.append(len(self.crossword.neighbors(t[0])))
         if len(list_ordered_values1) > 1:
             if list_ordered_values1[0] == list_ordered_values1[1]:
