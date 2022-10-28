@@ -65,6 +65,32 @@ def load_data(filename):
         reader = csv.DictReader(csvfile, delimiter=",")
         i = 0
         for row in reader:
+            match row["Month"].lower:
+                case "jan":
+                    month = 0
+                case "feb":
+                    month = 1
+                case "mar":
+                    month = 2
+                case "apr":
+                    month = 3
+                case "may":
+                    month = 4    
+                case "jun":
+                    month = 5    
+                case "jul":
+                    month = 6   
+                case "aug":
+                    month = 7
+                case "sep":
+                    month = 8
+                case "oct":
+                    month = 9
+                case "nov":
+                    month = 10
+                case "dec":
+                    month = 11                                       
+
             evidence[i] = [int(row["Administrative"]), float(row["Administrative_Duration"]), 
             int(row["Informational"]), float(row["Informational_Duration"]), int(row["ProductRelated"]),
             float(row["ProductRelated_Duration"]), float(row["BounceRates"]), float(row["ExitRates"]),
