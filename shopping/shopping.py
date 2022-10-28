@@ -68,7 +68,9 @@ def load_data(filename):
             evidence[i] = [int(row["Administrative"]), float(row["Administrative_Duration"]), 
             int(row["Informational"]), float(row["Informational_Duration"]), int(row["ProductRelated"]),
             float(row["ProductRelated_Duration"]), float(row["BounceRates"]), float(row["ExitRates"]),
-            float(row["PageValues"])]
+            float(row["PageValues"]), float(row["SpecialDay"]), int(row["Month"]), int(row["OperatingSystems"]), 
+            int(row["Browser"]), int(row["Region"]), int(row["TrafficType"]), int(row["VisitorType"]), int(row["Weekend"])]
+            labels[i] = int(row["Revenue"])
 
 
 def train_model(evidence, labels):
