@@ -166,8 +166,22 @@ def evaluate(labels, predictions):
     print("num_positive_labels", num_positive_labels)   
     print("num_negative_preds", num_negative_preds)   
     print("num_negative_labels", num_negative_labels)   
+
+    if num_positive_preds == 0 and num_positive_labels == 0:
+        sensitivity = 1
+    elif num_positive_preds != 0 and num_positive_labels == 0:
+        sensitivity = 0
+    else:
+        sensitivity = float(num_positive_preds/num_positive_labels) 
+
+    if num_negative_preds == 0 and num_negative_labels == 0:
+        specificity = 1
+    elif num_negative_preds != 0 and num_negative_labels == 0:  
+        specificity = 0  
+    else:    
+        specificity = float(num_negative_preds/num_negative_labels)    
     
-    return (float(num_positive_preds/num_positive_labels), float(num_negative_preds/num_negative_labels))     
+    return (sensitivity, specificity)     
 
 
 
