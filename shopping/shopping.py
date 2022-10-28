@@ -157,8 +157,7 @@ def evaluate(labels, predictions):
         if labels[i] == 1 and predictions[i] == 1:
             one_matches += 1
         elif labels[i] == 0 and predictions[i] == 0:
-            zero_matches += 1       
-         
+            zero_matches += 1                
 
     if one_matches == 0 and num_positive_labels == 0:
         sensitivity = 1    
