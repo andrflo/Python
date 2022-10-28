@@ -59,9 +59,13 @@ def load_data(filename):
     labels should be the corresponding list of labels, where each label
     is 1 if Revenue is true, and 0 otherwise.
     """
+    evidence = []
+    labels = []
     with open(filename) as csvfile:
         reader = csv.DictReader(csvfile, delimiter=",")
-        self.keys = reader.fieldnames
+        i = 0
+        for row in reader:
+            evidence[i] = [int(row["Administrative"]), float(row["Administrative_Duration"])]
 
 
 def train_model(evidence, labels):
