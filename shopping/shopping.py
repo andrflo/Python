@@ -67,7 +67,8 @@ def load_data(filename):
         for row in reader:
             evidence[i] = [int(row["Administrative"]), float(row["Administrative_Duration"]), 
             int(row["Informational"]), float(row["Informational_Duration"]), int(row["ProductRelated"]),
-            float(row["ProductRelated_Duration"])]
+            float(row["ProductRelated_Duration"]), float(row["BounceRates"]), float(row["ExitRates"]),
+            float(row["PageValues"])]
 
 
 def train_model(evidence, labels):
