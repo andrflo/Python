@@ -65,6 +65,7 @@ def load_data(filename):
         reader = csv.DictReader(csvfile, delimiter=",")
         i = 0
         for row in reader:
+            month = -1
             match row["Month"].lower:
                 case "jan":
                     month = 0
