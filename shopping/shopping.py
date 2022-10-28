@@ -115,7 +115,8 @@ def evaluate(labels, predictions):
             num_positive_preds += 1
         else:
             num_negative_preds += 1
-        
+    
+    return (float(num_positive_preds/num_positive_labels), float(num_negative_preds/num_negative_labels))     
 
 
 
