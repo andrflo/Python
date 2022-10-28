@@ -104,15 +104,20 @@ def load_data(filename):
                 case "FALSE":
                     weekend = 0
                 case "TRUE":
-                    weekend = 1           
+                    weekend = 1       
 
-
+            revenue = -1
+            match row["Revenue"].lower:
+                case "FALSE":
+                    revenue = 0
+                case "TRUE":
+                    revenue = 1
 
             evidence[i] = [int(row["Administrative"]), float(row["Administrative_Duration"]), 
             int(row["Informational"]), float(row["Informational_Duration"]), int(row["ProductRelated"]),
             float(row["ProductRelated_Duration"]), float(row["BounceRates"]), float(row["ExitRates"]),
             float(row["PageValues"]), float(row["SpecialDay"]), month, int(row["OperatingSystems"]), 
-            int(row["Browser"]), int(row["Region"]), int(row["TrafficType"]), visitorType, weekend]
+            int(row["Browser"]), int(row["Region"]), int(row["TrafficType"]), returningVisitor, weekend]
             labels[i] = int(row["Revenue"])
             i += 1
     return (evidence, labels)        
