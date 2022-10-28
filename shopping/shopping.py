@@ -90,13 +90,21 @@ def load_data(filename):
                 case "nov":
                     month = 10
                 case "dec":
-                    month = 11                                       
+                    month = 11 
+
+            visitorType = -1
+            match row["VisitorType"].lower:
+                case "returning_visitor":
+                    visitorType = 1
+                case "new_visitor":
+                    visitorType = 0    
+
 
             evidence[i] = [int(row["Administrative"]), float(row["Administrative_Duration"]), 
             int(row["Informational"]), float(row["Informational_Duration"]), int(row["ProductRelated"]),
             float(row["ProductRelated_Duration"]), float(row["BounceRates"]), float(row["ExitRates"]),
             float(row["PageValues"]), float(row["SpecialDay"]), month, int(row["OperatingSystems"]), 
-            int(row["Browser"]), int(row["Region"]), int(row["TrafficType"]), int(row["VisitorType"]), int(row["Weekend"])]
+            int(row["Browser"]), int(row["Region"]), int(row["TrafficType"]), visitorType, int(row["Weekend"])]
             labels[i] = int(row["Revenue"])
             i += 1
     return (evidence, labels)        
