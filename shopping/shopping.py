@@ -162,7 +162,10 @@ def evaluate(labels, predictions):
         if predictions[p] == 1:
             num_positive_preds += 1
         else:
-            num_negative_preds += 1    
+            num_negative_preds += 1  
+
+    print("npp", num_positive_preds)
+    print("nnp", num_negative_preds)         
 
     if num_positive_preds == 0 and num_positive_labels == 0:
         sensitivity = 1
