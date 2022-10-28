@@ -97,7 +97,16 @@ def load_data(filename):
                 case "returning_visitor":
                     visitorType = 1
                 case "new_visitor":
-                    visitorType = 0    
+                    visitorType = 0  
+
+            weekend = -1
+            match row["Weekend"].lower:
+                case "FALSE":
+                    weekend = 0
+                case "TRUE":
+                    weekend = 1           
+
+
 
             evidence[i] = [int(row["Administrative"]), float(row["Administrative_Duration"]), 
             int(row["Informational"]), float(row["Informational_Duration"]), int(row["ProductRelated"]),
