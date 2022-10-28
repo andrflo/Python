@@ -151,7 +151,7 @@ def evaluate(labels, predictions):
     num_positive_labels = 0
     num_negative_labels = 0   
     num_positive_labels1 = np.sum(labels)
-    num_negative_labels1 = (len(labels)-np.sum(labels))
+    num_negative_labels1 = len(labels)-num_positive_labels1
 
     for l in labels:        
         if labels[l] == 1:
