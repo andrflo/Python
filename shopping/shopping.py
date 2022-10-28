@@ -148,41 +148,10 @@ def evaluate(labels, predictions):
     representing the "true negative rate": the proportion of
     actual negative labels that were accurately identified.
     """    
-    num_positive_labels = 0
-    num_negative_labels = 0   
-    prueba = [0, 1, 0, 0, 0, 0, 0]
-    print("prueba", np.sum(prueba))
-    num_positive_labels1 = np.sum(labels)
-    num_negative_labels1 = len(labels)-num_positive_labels1
-
-    for l in labels:   
-        #print(labels[l])     
-        if l == 1:
-            num_positive_labels += 1
-        else:
-            num_negative_labels += 1
-    print("len", len(labels))
-    if 1 in labels:
-        print("Hay un uon")
-    
-    print("npl", num_positive_labels)
-    print("npl1", num_positive_labels1)
-    print("nnl", num_negative_labels)
-    print("nnl1", num_negative_labels1)
-    num_positive_preds = 0
-    num_negative_preds = 0
-    num_positive_preds1 = np.sum(predictions)
-    num_negative_preds1 = len(predictions)-num_positive_preds1
-    for p in predictions:
-        if predictions[p] == 1:
-            num_positive_preds += 1
-        else:
-            num_negative_preds += 1  
-
-    print("npp", num_positive_preds)
-    print("npp1", num_positive_preds1)
-    print("nnp", num_negative_preds)  
-    print("nnp1", num_negative_preds1) 
+    num_positive_labels = np.sum(labels)
+    num_negative_labels = len(labels)-num_positive_labels   
+    num_positive_preds = np.sum(predictions)
+    num_negative_preds = len(predictions)-num_positive_preds    
          
 
     if num_positive_preds == 0 and num_positive_labels == 0:
