@@ -136,7 +136,10 @@ class NimAI():
         av_actions = Nim.available_actions(state)
         max_q = self.q[(state, av_actions.pop())]
         for a in av_actions:
-            
+            if self.q[(state, a)] > max_q:
+                max_q = self.q[(state, a)]
+        return max_q        
+
 
     def choose_action(self, state, epsilon=True):
         """
