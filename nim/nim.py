@@ -134,6 +134,8 @@ class NimAI():
         `state`, return 0.
         """
         av_actions = Nim.available_actions(state)
+        if len(av_actions) == 0:
+            return 0
         max_q = self.get_q_value(state, av_actions.pop())
         for a in av_actions:
             if self.get_q_value(state, a) > max_q:
