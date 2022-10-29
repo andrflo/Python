@@ -137,10 +137,11 @@ class NimAI():
         if len(av_actions) == 0:
             return 0
         max_q = self.get_q_value(state, av_actions.pop())
-        for a in av_actions:
-            if self.get_q_value(state, a) > max_q:
-                max_q = self.get_q_value(state, a)
-        return max_q        
+        if len(av_actions) > 0:
+            for a in av_actions:
+                if self.get_q_value(state, a) > max_q:
+                    max_q = self.get_q_value(state, a)
+            return max_q        
 
 
     def choose_action(self, state, epsilon=True):
