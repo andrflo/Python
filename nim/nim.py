@@ -134,6 +134,7 @@ class NimAI():
         `state`, return 0.
         """
         av_actions = Nim.available_actions(state)
+        max_q = 
 
     def choose_action(self, state, epsilon=True):
         """
