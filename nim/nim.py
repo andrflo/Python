@@ -133,7 +133,7 @@ class NimAI():
         Q-value in `self.q`. If there are no available actions in
         `state`, return 0.
         """
-        
+        Nim.available_actions
 
     def choose_action(self, state, epsilon=True):
         """
