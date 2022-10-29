@@ -162,7 +162,10 @@ class NimAI():
         av_actions = Nim.available_actions(state)
         
         if epsilon == True:
-            return random.choices(list(av_actions), [self.epsilon]*len(av_actions), k=1)
+            res = random.choices(list(av_actions), [self.epsilon]*len(av_actions), k=1)
+            print("res", res)
+            return res
+            #return random.choices(list(av_actions), [self.epsilon]*len(av_actions), k=1)
         else:            
             for a in av_actions:
                 if self.get_q_value(state, a) == self.best_future_reward(state):  
