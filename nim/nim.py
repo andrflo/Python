@@ -160,6 +160,7 @@ class NimAI():
         options is an acceptable return value.
         """
         av_actions = Nim.available_actions(state)
+        
         if epsilon == True:
             return random.choices(list(av_actions), [self.epsilon]*len(av_actions), k=1)
         else:            
