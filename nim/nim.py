@@ -193,6 +193,7 @@ def train(n):
             # Keep track of current state and action
             state = game.piles.copy()
             action = player.choose_action(game.piles)
+            print("act", action)
 
             # Keep track of last state and action
             last[game.player]["state"] = state
