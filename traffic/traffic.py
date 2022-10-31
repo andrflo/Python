@@ -60,8 +60,7 @@ def load_data(data_dir):
     """
     path_proj = os.path.abspath(os.getcwd())
     cats = os.listdir(data_dir)
-    cats.sort()       
-    data_files = []
+    cats.sort()      
     images = []
     cats_int = []
     for entry in cats: # entry: 0...42
