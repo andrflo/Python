@@ -85,6 +85,7 @@ def load_data(data_dir):
     for i in images:
         print(i.shape)
         print(len(i))
+        print(type(images))
         print(type(i))
     print(len(images), len(cats_int))
 
