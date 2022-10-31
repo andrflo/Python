@@ -96,7 +96,8 @@ def get_model():
         loss="binary_crossentropy",
         metrics=["accuracy"]
     )
-    model.fit(X_training, y_training, epochs=20)
+    
+    return model
 
 
 if __name__ == "__main__":
