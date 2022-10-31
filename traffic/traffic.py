@@ -89,7 +89,7 @@ def load_data(data_dir):
     print(len(images), len(cats_int))
 
 
-    return images, cats_int 
+    return (images, cats_int) 
 
 
 def get_model():
