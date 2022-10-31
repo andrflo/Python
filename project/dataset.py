@@ -124,11 +124,14 @@ class Dataset:
 
                     save_name = self.validate_file_name(save_name)
                     if param == "Wasser K. F.":
-                        plt.savefig(f"data/water_KF/{save_name}")
+                        #plt.savefig(f"data/water_KF/{save_name}")
+                        plt.savefig(os.path.join("data", "water_KF", save_name))
                     elif param == "Neutralisationszahl":
-                        plt.savefig(f"data/AN/{save_name}")
+                        #plt.savefig(f"data/AN/{save_name}")
+                        plt.savefig(os.path.join("data", "AN", save_name))
                     elif param == "Oxidation":
-                        plt.savefig(f"data/ox/{save_name}")
+                        #plt.savefig(f"data/ox/{save_name}")
+                        plt.savefig(os.path.join("data", "ox", save_name))
                     plt.close(fig)
                     # plt.show()
 
@@ -309,11 +312,14 @@ class Dataset:
 
                 save_name = self.validate_file_name(save_name)
                 if p == "Wasser K. F.":
-                    plt.savefig(f"data/water_KF/{save_name}")
+                    #plt.savefig(f"data/water_KF/{save_name}")
+                    plt.savefig(os.path.join("data", "water_KF", save_name))
                 elif p == "Neutralisationszahl":
-                    plt.savefig(f"data/AN/{save_name}")
+                    #plt.savefig(f"data/AN/{save_name}")
+                    plt.savefig(os.path.join("data", "AN", save_name))
                 elif p == "Oxidation":
-                    plt.savefig(f"data/ox/{save_name}")
+                    #plt.savefig(f"data/ox/{save_name}")
+                    plt.savefig(os.path.join("data", "ox", save_name))
                 plt.close(fig)
 
     def compute_days_in_service(self, date_sample, date_last_change):
@@ -1010,23 +1016,32 @@ class Dataset:
                         match paramy:
                             case "Wasser K. F.":
                                 # plt.savefig(f"{path_proj}/project/data/water_KF/ind_samples/{save_name}")
-                                plt.savefig(f"data/water_KF/ind_samples/{save_name}")
+                                #plt.savefig(f"data/water_KF/ind_samples/{save_name}")
+                                plt.savefig(os.path.join("data", "water_KF", "ind_samples", save_name))
                             case "Neutralisationszahl":
-                                plt.savefig(f"data/AN/ind_samples/{save_name}")
+                                #plt.savefig(f"data/AN/ind_samples/{save_name}")
+                                plt.savefig(os.path.join("data", "AN", "ind_samples", save_name))
                             case "Oxidation":
-                                plt.savefig(f"data/ox/ind_samples/{save_name}")
+                                #plt.savefig(f"data/ox/ind_samples/{save_name}")
+                                plt.savefig(os.path.join("data", "ox", "ind_samples", save_name))
                             case "Viskosität bei 40°C":
-                                plt.savefig(f"data/viscosity/40/{save_name}")
+                                #plt.savefig(f"data/viscosity/40/{save_name}")
+                                plt.savefig(os.path.join("data", "viscosity", "40", save_name))
                             case "Viskosität bei 100°C":
-                                plt.savefig(f"data/viscosity/100/{save_name}")
+                                #plt.savefig(f"data/viscosity/100/{save_name}")
+                                plt.savefig(os.path.join("data", "viscosity", "100", save_name))
                             case "FE":
-                                plt.savefig(f"data/elements/Fe/{save_name}")
+                                #plt.savefig(f"data/elements/Fe/{save_name}")
+                                plt.savefig(os.path.join("data", "elements", "Fe", save_name))
                             case "CU":
-                                plt.savefig(f"data/elements/Cu/{save_name}")    
+                                #plt.savefig(f"data/elements/Cu/{save_name}")  
+                                plt.savefig(os.path.join("data", "elements", "Cu", save_name))  
                             case "P":
-                                plt.savefig(f"data/elements/P/{save_name}")
+                                #plt.savefig(f"data/elements/P/{save_name}")
+                                plt.savefig(os.path.join("data", "elements", "P", save_name))
                             case "Ölmenge im System" | "Anlagengöße [kW]":
-                                plt.savefig(f"data/machine/{save_name}")
+                                #plt.savefig(f"data/machine/{save_name}")
+                                plt.savefig(os.path.join("data", "machine", save_name))
                         plt.close(fig)
 
                     # It kept going through the rows of data but it did not find more machines using that oil
@@ -1119,11 +1134,14 @@ class Dataset:
 
                         save_name = self.validate_file_name(save_name)
                         if param == "Wasser K. F.":
-                            plt.savefig(f"data/water_KF/gral_evaluation/{save_name}")
+                            #plt.savefig(f"data/water_KF/gral_evaluation/{save_name}")
+                            plt.savefig(os.path.join("data", "water_KF", "gral_evaluation", save_name))
                         elif param == "Neutralisationszahl":
-                            plt.savefig(f"data/AN/gral_evaluation/{save_name}")
+                            #plt.savefig(f"data/AN/gral_evaluation/{save_name}")
+                            plt.savefig(os.path.join("data", "AN", "gral_evaluation", save_name))
                         elif param == "Oxidation":
-                            plt.savefig(f"data/ox/gral_evaluation/{save_name}")
+                            #plt.savefig(f"data/ox/gral_evaluation/{save_name}")
+                            plt.savefig(os.path.join("data", "ox", "gral_evaluation", save_name))
                         plt.close(fig)
                         # plt.show()
 
@@ -1277,11 +1295,14 @@ class Dataset:
 
                 save_name = self.validate_file_name(save_name)
                 if p == "Wasser K. F.":
-                    plt.savefig(f"data/water_KF/gral_evaluation/{save_name}")
+                    #plt.savefig(f"data/water_KF/gral_evaluation/{save_name}")
+                    plt.savefig(os.path.join("data", "water_KF", "gral_evaluation", save_name))
                 elif p == "Neutralisationszahl":
-                    plt.savefig(f"data/AN/gral_evaluation/{save_name}")
+                    #plt.savefig(f"data/AN/gral_evaluation/{save_name}")
+                    plt.savefig(os.path.join("data", "AN", "gral_evaluation", save_name))
                 elif p == "Oxidation":
-                    plt.savefig(f"data/ox/gral_evaluation/{save_name}")
+                    #plt.savefig(f"data/ox/gral_evaluation/{save_name}")
+                    plt.savefig(os.path.join("data", "ox", "gral_evaluation", save_name))
                 plt.close(fig)            
 
 

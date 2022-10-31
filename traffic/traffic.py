@@ -58,7 +58,38 @@ def load_data(data_dir):
     be a list of integer labels, representing the categories for each of the
     corresponding `images`.
     """
-    raise NotImplementedError
+    path_proj = os.path.abspath(os.getcwd())
+    cats = os.listdir(data_dir)
+    cats.sort()
+    list_remove = []
+    data_dirs = []
+    data_files = []
+    images = []
+    for entry in cats: # entry: 0...42
+        if len(entry)>2: # to avoid including the ".DS_Store" file in Mac
+            list_remove.append(entry)
+        else:
+            data_dirs.append(os.path.join(path_proj, data_dir, entry))  
+            data_files = os.listdir(os.path.join(path_proj, data_dir, entry))
+            for filename in data_files:
+                if os.path.splitext(filename)[1] == ".ppm": # read just .ppm image files                    
+                    img = cv2.imread(os.path.join(path_proj, data_dir, entry, filename))  
+                    images.append(cv2.resize(img, (IMG_WIDTH, IMG_HEIGHT)))  
+                    #print('Image Dimensions :', img.shape)                  
+    for el in list_remove:
+        cats.remove(el)        
+    #print(cats)
+    #print(data_dirs)
+    cats_int = [int(x) for x in cats]
+
+    for i in images:
+        print(i.shape)
+        print(len(i))
+        print(type(i))
+    print(len(images), len(cats_int))
+
+
+    return images, cats_int 
 
 
 def get_model():
