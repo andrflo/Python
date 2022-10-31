@@ -90,6 +90,14 @@ def get_model():
     # Add output layer with NUM_CATEGORIES units, with sigmoid activation
     model.add(tf.keras.layers.Dense(NUM_CATEGORIES, activation="sigmoid"))
 
+    # Train neural network
+    model.compile(
+        optimizer="adam",
+        loss="binary_crossentropy",
+        metrics=["accuracy"]
+    )
+    model.fit(X_training, y_training, epochs=20)
+
 
 if __name__ == "__main__":
     main()
