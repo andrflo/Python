@@ -181,3 +181,5 @@
     Epoch 10/10
     500/500 [==============================] - 7s 13ms/step - loss: 3.5018 - accuracy: 0.0547
     333/333 - 1s - loss: 3.4931 - accuracy: 0.0570 - 1s/epoch - 4ms/step
+
+    filters back to 32, pool size: (3,3
