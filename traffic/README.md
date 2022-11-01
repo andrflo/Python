@@ -326,3 +326,26 @@
     500/500 [==============================] - 18s 36ms/step - loss: 3.4990 - accuracy: 0.0551
 
     addition of extra hidden layer of size 512, dropout 0.5 after max pooling
+
+    Epoch 1/10
+    500/500 [==============================] - 39s 75ms/step - loss: 4.6757 - accuracy: 0.0538 
+    Epoch 2/10
+    500/500 [==============================] - 37s 74ms/step - loss: 3.5864 - accuracy: 0.0537
+    Epoch 3/10
+    500/500 [==============================] - 37s 74ms/step - loss: 3.5378 - accuracy: 0.0536
+    Epoch 4/10
+    500/500 [==============================] - 37s 74ms/step - loss: 3.5154 - accuracy: 0.0550
+    Epoch 5/10
+    500/500 [==============================] - 46s 92ms/step - loss: 3.5050 - accuracy: 0.0562
+    Epoch 6/10
+    500/500 [==============================] - 39s 78ms/step - loss: 3.5001 - accuracy: 0.0554
+    Epoch 7/10
+    500/500 [==============================] - 43s 86ms/step - loss: 3.4977 - accuracy: 0.0552
+    Epoch 8/10
+    500/500 [==============================] - 39s 79ms/step - loss: 3.4965 - accuracy: 0.0547
+    Epoch 9/10
+    500/500 [==============================] - 49s 98ms/step - loss: 3.4959 - accuracy: 0.0539
+    Epoch 10/10
+    500/500 [==============================] - 48s 96ms/step - loss: 3.4956 - accuracy: 0.0551
+
+    back to just one hidden layer, size 128, dropout 0.5, this time before flattening
