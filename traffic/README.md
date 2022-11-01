@@ -42,6 +42,8 @@
     Epoch 10/10
     500/500 [==============================] - 8s 17ms/step - loss: 1.7356 - accuracy: 0.4489
     333/333 - 2s - loss: 1.0477 - accuracy: 0.6585 - 2s/epoch - 5ms/step
+
+    Changing droput to 0.8
     
 
 
