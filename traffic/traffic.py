@@ -73,7 +73,7 @@ def load_data(data_dir):
                     cats_int.append(int(entry))
                     #print('Image Dimensions :', img.shape)      
       
-    print(len(images), len(cats_int))
+    #print(len(images), len(cats_int))
     return (images, cats_int) 
 
 
