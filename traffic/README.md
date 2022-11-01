@@ -255,3 +255,27 @@
     333/333 - 2s - loss: 3.5073 - accuracy: 0.0516 - 2s/epoch - 7ms/step
 
     activation of hidden layer back to relu, addition of extra hidden layer of size 64 after hidden layer of size 128:
+
+    Epoch 1/10
+    500/500 [==============================] - 7s 13ms/step - loss: 4.5116 - accuracy: 0.0520
+    Epoch 2/10
+    500/500 [==============================] - 7s 13ms/step - loss: 3.5740 - accuracy: 0.0507
+    Epoch 3/10
+    500/500 [==============================] - 8s 15ms/step - loss: 3.5294 - accuracy: 0.0524
+    Epoch 4/10
+    500/500 [==============================] - 8s 16ms/step - loss: 3.5198 - accuracy: 0.0518
+    Epoch 5/10
+    500/500 [==============================] - 7s 13ms/step - loss: 3.5146 - accuracy: 0.0529
+    Epoch 6/10
+    500/500 [==============================] - 7s 14ms/step - loss: 3.5111 - accuracy: 0.0557
+    Epoch 7/10
+    500/500 [==============================] - 7s 14ms/step - loss: 3.5118 - accuracy: 0.0536
+    Epoch 8/10
+    500/500 [==============================] - 7s 14ms/step - loss: 3.5078 - accuracy: 0.0522
+    Epoch 9/10
+    500/500 [==============================] - 7s 14ms/step - loss: 3.5079 - accuracy: 0.0557
+    Epoch 10/10
+    500/500 [==============================] - 7s 14ms/step - loss: 3.5072 - accuracy: 0.0516
+    333/333 - 3s - loss: 3.4924 - accuracy: 0.0593 - 3s/epoch - 9ms/step
+
+    addition of extra hidden layer of size 128 after hidden layer of size 128:
