@@ -92,13 +92,13 @@ def get_model():
         ),
 
         # Max-pooling layer, using 2x2 pool size
-        tf.keras.layers.MaxPooling2D(pool_size=(4, 4)),
+        tf.keras.layers.MaxPooling2D(pool_size=(3, 3)),
 
         # Flatten units
         tf.keras.layers.Flatten(),
 
         # Add a hidden layer with dropout
-        tf.keras.layers.Dense(128, activation="relu"),
+        tf.keras.layers.Dense(128, activation="sigmoid"),
         tf.keras.layers.Dropout(0.5),
 
         # Add an output layer with NUM_CATEGORIES output units

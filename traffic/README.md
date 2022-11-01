@@ -230,4 +230,4 @@
     500/500 [==============================] - 7s 14ms/step - loss: 3.5052 - accuracy: 0.0575
     333/333 - 2s - loss: 3.4997 - accuracy: 0.0549 - 2s/epoch - 5ms/step
 
-    Pool size back to (3,3), 
+    Pool size back to (3,3), activation of hidden layer: sigmoid
