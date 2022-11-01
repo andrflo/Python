@@ -1,6 +1,26 @@
 # Visualization of large data sets of oil analyses
     #### Video Demo:  <https://1drv.ms/v/s!Ah49GwRcwWoNgYEXFxP2Rq8LWOsXjQ?e=jD1MFe>
     #### Description attempts:
+    model = tf.keras.models.Sequential([
+
+        # Convolutional layer. Learn 32 filters using a 3x3 kernel
+        tf.keras.layers.Conv2D(
+            32, (3, 3), activation="relu", input_shape=(IMG_WIDTH, IMG_HEIGHT, 3)
+        ),
+
+        # Max-pooling layer, using 2x2 pool size
+        tf.keras.layers.MaxPooling2D(pool_size=(2, 2)),
+
+        # Flatten units
+        tf.keras.layers.Flatten(),
+
+        # Add a hidden layer with dropout
+        tf.keras.layers.Dense(128, activation="relu"),
+        tf.keras.layers.Dropout(0.5),
+
+        # Add an output layer with NUM_CATEGORIES output units
+        tf.keras.layers.Dense(NUM_CATEGORIES, activation="softmax")
+    ])
     Epoch 1/10
     500/500 [==============================] - 9s 17ms/step - loss: 3.7011 - accuracy: 0.1212  
     Epoch 2/10
