@@ -15,7 +15,7 @@
         tf.keras.layers.Flatten(),
 
         # Add a hidden layer with dropout
-        tf.keras.layers.Dense(256, activation="relu"),
+        tf.keras.layers.Dense(128, activation="relu"),
         tf.keras.layers.Dropout(0.5),
 
         # Add an output layer with NUM_CATEGORIES output units
@@ -112,4 +112,25 @@
     Epoch 10/10
     500/500 [==============================] - 15s 29ms/step - loss: 3.4933 - accuracy: 0.0554
 
-    nodes in hidden layer: 64
+    nodes in hidden layer reduced to 64
+
+    Epoch 1/10
+    500/500 [==============================] - 8s 15ms/step - loss: 4.3928 - accuracy: 0.0544   
+    Epoch 2/10
+    500/500 [==============================] - 11s 22ms/step - loss: 3.5896 - accuracy: 0.0572
+    Epoch 3/10
+    500/500 [==============================] - 9s 19ms/step - loss: 3.5411 - accuracy: 0.0576
+    Epoch 4/10
+    500/500 [==============================] - 9s 18ms/step - loss: 3.5186 - accuracy: 0.0576
+    Epoch 5/10
+    500/500 [==============================] - 8s 16ms/step - loss: 3.5081 - accuracy: 0.0571
+    Epoch 6/10
+    500/500 [==============================] - 9s 19ms/step - loss: 3.5032 - accuracy: 0.0576
+    Epoch 7/10
+    500/500 [==============================] - 9s 19ms/step - loss: 3.5008 - accuracy: 0.0576
+    Epoch 8/10
+    500/500 [==============================] - 9s 18ms/step - loss: 3.4996 - accuracy: 0.0562
+    Epoch 9/10
+    500/500 [==============================] - 9s 18ms/step - loss: 3.4989 - accuracy: 0.0576
+    Epoch 10/10
+    500/500 [==============================] - 10s 19ms/step - loss: 3.4986 - accuracy: 0.0576
