@@ -70,7 +70,7 @@ def load_data(data_dir):
                 if os.path.splitext(filename)[1] == ".ppm": # read just .ppm image files                    
                     img = cv2.imread(os.path.join(path_proj, data_dir, entry, filename))  
                     images.append(cv2.resize(img, (IMG_WIDTH, IMG_HEIGHT)))  
-                    print('Image Dimensions:', images[-1].shape)  
+                    #print('Image Dimensions:', images[-1].shape)  
                     cats_int.append(int(entry))  
     
     return (images, cats_int) 
