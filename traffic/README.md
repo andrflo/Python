@@ -135,4 +135,4 @@
     Epoch 10/10
     500/500 [==============================] - 10s 19ms/step - loss: 3.4986 - accuracy: 0.0576
 
-    nodes in hidden layer back to 128
+    nodes in hidden layer back to 128, increasing filters to 64
