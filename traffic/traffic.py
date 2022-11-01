@@ -95,7 +95,7 @@ def get_model():
         tf.keras.layers.MaxPooling2D(pool_size=(3, 3)),
 
         # Add a hidden layer with dropout
-        tf.keras.layers.Dense(128, activation="relu"),
+        tf.keras.layers.Dense(512, activation="relu"),
         tf.keras.layers.Dropout(0.5),
 
         # Flatten units

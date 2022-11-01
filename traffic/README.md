@@ -303,3 +303,26 @@
     333/333 - 3s - loss: 3.5003 - accuracy: 0.0542 - 3s/epoch - 8ms/step
 
     addition of extra hidden layer of size 128, dropout 0.5 after max pooling
+
+    Epoch 1/10
+    500/500 [==============================] - 15s 28ms/step - loss: 4.2936 - accuracy: 0.0535 
+    Epoch 2/10
+    500/500 [==============================] - 16s 31ms/step - loss: 3.5909 - accuracy: 0.0542
+    Epoch 3/10
+    500/500 [==============================] - 14s 27ms/step - loss: 3.5410 - accuracy: 0.0542
+    Epoch 4/10
+    500/500 [==============================] - 14s 28ms/step - loss: 3.5186 - accuracy: 0.0538
+    Epoch 5/10
+    500/500 [==============================] - 14s 29ms/step - loss: 3.5084 - accuracy: 0.0546
+    Epoch 6/10
+    500/500 [==============================] - 15s 29ms/step - loss: 3.5035 - accuracy: 0.0546
+    Epoch 7/10
+    500/500 [==============================] - 15s 30ms/step - loss: 3.5012 - accuracy: 0.0540
+    Epoch 8/10
+    500/500 [==============================] - 15s 31ms/step - loss: 3.5000 - accuracy: 0.0543
+    Epoch 9/10
+    500/500 [==============================] - 15s 30ms/step - loss: 3.4994 - accuracy: 0.0519
+    Epoch 10/10
+    500/500 [==============================] - 18s 36ms/step - loss: 3.4990 - accuracy: 0.0551
+
+    addition of extra hidden layer of size 512, dropout 0.5 after max pooling
