@@ -92,7 +92,7 @@ def get_model():
         ),
 
         # Max-pooling layer, using 2x2 pool size
-        tf.keras.layers.MaxPooling2D(pool_size=(3, 3)),
+        tf.keras.layers.MaxPooling2D(pool_size=(4, 4)),
 
         # Flatten units
         tf.keras.layers.Flatten(),

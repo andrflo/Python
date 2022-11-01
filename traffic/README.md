@@ -182,4 +182,28 @@
     500/500 [==============================] - 7s 13ms/step - loss: 3.5018 - accuracy: 0.0547
     333/333 - 1s - loss: 3.4931 - accuracy: 0.0570 - 1s/epoch - 4ms/step
 
-    filters back to 32, pool size: (3,3
+    filters back to 32, pool size: (3,3)
+
+    Epoch 1/10
+    500/500 [==============================] - 8s 14ms/step - loss: 4.4413 - accuracy: 0.0594   
+    Epoch 2/10
+    500/500 [==============================] - 8s 15ms/step - loss: 3.5745 - accuracy: 0.0648
+    Epoch 3/10
+    500/500 [==============================] - 8s 16ms/step - loss: 3.3154 - accuracy: 0.1349
+    Epoch 4/10
+    500/500 [==============================] - 7s 14ms/step - loss: 2.9036 - accuracy: 0.2173
+    Epoch 5/10
+    500/500 [==============================] - 7s 13ms/step - loss: 2.4351 - accuracy: 0.3185
+    Epoch 6/10
+    500/500 [==============================] - 7s 13ms/step - loss: 2.0311 - accuracy: 0.3967
+    Epoch 7/10
+    500/500 [==============================] - 7s 14ms/step - loss: 1.7785 - accuracy: 0.4664
+    Epoch 8/10
+    500/500 [==============================] - 7s 14ms/step - loss: 1.6108 - accuracy: 0.5038
+    Epoch 9/10
+    500/500 [==============================] - 7s 14ms/step - loss: 1.4889 - accuracy: 0.5424
+    Epoch 10/10
+    500/500 [==============================] - 7s 14ms/step - loss: 1.3577 - accuracy: 0.5820
+    333/333 - 2s - loss: 0.7372 - accuracy: 0.7512 - 2s/epoch - 5ms/step
+
+    Pool size: (4,4)
