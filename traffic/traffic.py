@@ -101,7 +101,7 @@ def get_model():
         tf.keras.layers.Dense(128, activation="relu"),
         tf.keras.layers.Dropout(0.5),
 
-        # Add an output layer with output units for all 10 digits
+        # Add an output layer with NUM_CATEGORIES output units
         tf.keras.layers.Dense(NUM_CATEGORIES, activation="softmax")
     ])
 
