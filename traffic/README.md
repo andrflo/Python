@@ -231,3 +231,27 @@
     333/333 - 2s - loss: 3.4997 - accuracy: 0.0549 - 2s/epoch - 5ms/step
 
     Pool size back to (3,3), activation of hidden layer: sigmoid
+
+    Epoch 1/10
+    500/500 [==============================] - 8s 14ms/step - loss: 3.7898 - accuracy: 0.0438
+    Epoch 2/10
+    500/500 [==============================] - 7s 14ms/step - loss: 3.6482 - accuracy: 0.0487
+    Epoch 3/10
+    500/500 [==============================] - 9s 18ms/step - loss: 3.6011 - accuracy: 0.0492
+    Epoch 4/10
+    500/500 [==============================] - 7s 15ms/step - loss: 3.5664 - accuracy: 0.0514
+    Epoch 5/10
+    500/500 [==============================] - 7s 14ms/step - loss: 3.5494 - accuracy: 0.0501
+    Epoch 6/10
+    500/500 [==============================] - 7s 15ms/step - loss: 3.5420 - accuracy: 0.0544
+    Epoch 7/10
+    500/500 [==============================] - 10s 21ms/step - loss: 3.5385 - accuracy: 0.0541
+    Epoch 8/10
+    500/500 [==============================] - 10s 19ms/step - loss: 3.5353 - accuracy: 0.0564
+    Epoch 9/10
+    500/500 [==============================] - 8s 17ms/step - loss: 3.5301 - accuracy: 0.0522
+    Epoch 10/10
+    500/500 [==============================] - 8s 16ms/step - loss: 3.5279 - accuracy: 0.0536
+    333/333 - 2s - loss: 3.5073 - accuracy: 0.0516 - 2s/epoch - 7ms/step
+
+    activation of hidden layer back to relu
