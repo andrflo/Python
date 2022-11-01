@@ -91,4 +91,25 @@
         
     Dropout back to 0.5, nodes in hidden layer increased to 256
 
+    Epoch 1/10
+    500/500 [==============================] - 12s 22ms/step - loss: 5.4097 - accuracy: 0.0516
+    Epoch 2/10
+    500/500 [==============================] - 13s 26ms/step - loss: 3.5948 - accuracy: 0.0561
+    Epoch 3/10
+    500/500 [==============================] - 11s 22ms/step - loss: 3.5373 - accuracy: 0.0554
+    Epoch 4/10
+    500/500 [==============================] - 11s 22ms/step - loss: 3.5137 - accuracy: 0.0552
+    Epoch 5/10
+    500/500 [==============================] - 11s 22ms/step - loss: 3.5029 - accuracy: 0.0554
+    Epoch 6/10
+    500/500 [==============================] - 12s 23ms/step - loss: 3.4979 - accuracy: 0.0564
+    Epoch 7/10
+    500/500 [==============================] - 12s 25ms/step - loss: 3.4955 - accuracy: 0.0549
+    Epoch 8/10
+    500/500 [==============================] - 16s 33ms/step - loss: 3.4942 - accuracy: 0.0564
+    Epoch 9/10
+    500/500 [==============================] - 14s 29ms/step - loss: 3.4936 - accuracy: 0.0542
+    Epoch 10/10
+    500/500 [==============================] - 15s 29ms/step - loss: 3.4933 - accuracy: 0.0554
 
+    nodes in hidden layer: 64
