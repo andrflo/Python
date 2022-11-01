@@ -279,3 +279,25 @@
     333/333 - 3s - loss: 3.4924 - accuracy: 0.0593 - 3s/epoch - 9ms/step
 
     addition of extra hidden layer of size 128 after hidden layer of size 128:
+
+    Epoch 1/10
+    500/500 [==============================] - 7s 13ms/step - loss: 5.1496 - accuracy: 0.0449   
+    Epoch 2/10
+    500/500 [==============================] - 6s 13ms/step - loss: 3.5466 - accuracy: 0.0511
+    Epoch 3/10
+    500/500 [==============================] - 9s 17ms/step - loss: 3.5190 - accuracy: 0.0553
+    Epoch 4/10
+    500/500 [==============================] - 7s 14ms/step - loss: 3.5122 - accuracy: 0.0573
+    Epoch 5/10
+    500/500 [==============================] - 7s 14ms/step - loss: 3.5092 - accuracy: 0.0542
+    Epoch 6/10
+    500/500 [==============================] - 7s 14ms/step - loss: 3.5076 - accuracy: 0.0566
+    Epoch 7/10
+    500/500 [==============================] - 7s 15ms/step - loss: 3.5050 - accuracy: 0.0522
+    Epoch 8/10
+    500/500 [==============================] - 7s 14ms/step - loss: 3.5035 - accuracy: 0.0559
+    Epoch 9/10
+    500/500 [==============================] - 7s 14ms/step - loss: 3.5024 - accuracy: 0.0574
+    Epoch 10/10
+    500/500 [==============================] - 7s 15ms/step - loss: 3.5022 - accuracy: 0.0569
+    333/333 - 3s - loss: 3.5003 - accuracy: 0.0542 - 3s/epoch - 8ms/step
