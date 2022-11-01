@@ -254,7 +254,7 @@
     500/500 [==============================] - 8s 16ms/step - loss: 3.5279 - accuracy: 0.0536
     333/333 - 2s - loss: 3.5073 - accuracy: 0.0516 - 2s/epoch - 7ms/step
 
-    activation of hidden layer back to relu, addition of extra hidden layer of size 64 after hidden layer of size 128:
+    activation of hidden layer back to relu, addition of extra hidden layer of size 64, dropout 0.5 after hidden layer of size 128:
 
     Epoch 1/10
     500/500 [==============================] - 7s 13ms/step - loss: 4.5116 - accuracy: 0.0520
@@ -278,7 +278,7 @@
     500/500 [==============================] - 7s 14ms/step - loss: 3.5072 - accuracy: 0.0516
     333/333 - 3s - loss: 3.4924 - accuracy: 0.0593 - 3s/epoch - 9ms/step
 
-    addition of extra hidden layer of size 128 after hidden layer of size 128:
+    addition of extra hidden layer of size 128, dropout 0.5 after hidden layer of size 128:
 
     Epoch 1/10
     500/500 [==============================] - 7s 13ms/step - loss: 5.1496 - accuracy: 0.0449   
@@ -301,3 +301,5 @@
     Epoch 10/10
     500/500 [==============================] - 7s 15ms/step - loss: 3.5022 - accuracy: 0.0569
     333/333 - 3s - loss: 3.5003 - accuracy: 0.0542 - 3s/epoch - 8ms/step
+
+    addition of extra hidden layer of size 128, dropout 0.5 after max pooling
