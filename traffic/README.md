@@ -254,4 +254,4 @@
     500/500 [==============================] - 8s 16ms/step - loss: 3.5279 - accuracy: 0.0536
     333/333 - 2s - loss: 3.5073 - accuracy: 0.0516 - 2s/epoch - 7ms/step
 
-    activation of hidden layer back to relu
+    activation of hidden layer back to relu, addition of extra hidden layer of size 64 after hidden layer of size 128:
