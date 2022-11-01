@@ -89,6 +89,6 @@
     Epoch 10/10
     500/500 [==============================] - 9s 18ms/step - loss: 2.3795 - accuracy: 0.3365
         
-
+    Dropout back to 0.5, nodes in hidden layer increased to 256
 
 
