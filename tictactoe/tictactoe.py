@@ -152,7 +152,7 @@ def minimax(board):
 
 def minaction(board, aux):
     # invoked by player O
-
+    
     pos_actions = actions(board)
 
     minutility = 1
