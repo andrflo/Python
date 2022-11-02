@@ -5,8 +5,6 @@ Tic Tac Toe Player
 import math
 from copy import deepcopy
 
-from numpy import empty
-
 X = "X"
 O = "O"
 EMPTY = None
