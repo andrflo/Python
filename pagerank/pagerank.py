@@ -117,6 +117,7 @@ def iterate_pagerank(corpus, damping_factor):
     
     for pr in iterate_pr:
         iterate_pr[pr] = [1/n_pages]
+        sum[pr] = 0
 
     while not convergence:
         for pr in iterate_pr:        
