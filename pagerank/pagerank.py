@@ -116,23 +116,26 @@ def iterate_pagerank(corpus, damping_factor):
     convergence = False
     
     for pr in iterate_pr:
-        iterate_pr[pr] = [1/n_pages]
-        sum[pr] = 0
+        iterate_pr[pr] = [1/n_pages]        
 
     while not convergence:
         for pr in iterate_pr:        
-            sum = 0
+            #sum = 0
+            sum[pr] = 0
             for p in corpus:
                 if pr in corpus[p]:
                     if len(corpus[p]) > 0:
-                        sum += (iterate_pr[p])[-1]/len(corpus[p])
+                        #sum += (iterate_pr[p])[-1]/len(corpus[p])
+                        sum[pr] += (iterate_pr[p])[-1]/len(corpus[p])
                     # If the page does not have any links in the corpus    
                     else:
-                        sum += ((iterate_pr[p])[-1])/n_pages    
-            iterate_pr[pr].append(constant + damping_factor*sum)  
+                        #sum += ((iterate_pr[p])[-1])/n_pages 
+                        sum[pr] += ((iterate_pr[p])[-1])/n_pages     
+            #iterate_pr[pr].append(constant + damping_factor*sum)  
         convergence = True     
         for pr in iterate_pr: 
-            if (iterate_pr[pr])[-1] - (iterate_pr[pr])[len(iterate_pr[pr])-2] < 0.0001:
+            iterate_pr[pr].append(constant + damping_factor*sum[pr])
+            if (iterate_pr[pr])[-1] - (iterate_pr[pr])[len(iterate_pr[pr])-2] <= 0.001:
                 convergence = convergence and True
             else:
                 convergence = convergence and False   
