@@ -130,7 +130,7 @@ def iterate_pagerank(corpus, damping_factor):
             iterate_pr[pr].append(constant + damping_factor*sum)  
         convergence = True     
         for pr in iterate_pr: 
-            if (iterate_pr[pr])[-1] - (iterate_pr[pr])[len(iterate_pr[pr])-2] <= 0.001:
+            if (iterate_pr[pr])[-1] - (iterate_pr[pr])[len(iterate_pr[pr])-2] < 0.001:
                 convergence = convergence and True
             else:
                 convergence = convergence and False   
