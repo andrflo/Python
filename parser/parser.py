@@ -85,7 +85,7 @@ def np_chunk(tree):
     """
     print(tree.label())
     for s in tree.subtrees(lambda t: t.label() == "NP"):
-        print(s)
+        print(s.leaves())
     print(tree)
 
 if __name__ == "__main__":
