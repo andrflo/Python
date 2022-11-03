@@ -67,6 +67,7 @@ def preprocess(sentence):
     for w in listwords:
         if w.isalpha():
             response.append(w)
+    print(response)        
     return response
     
 
