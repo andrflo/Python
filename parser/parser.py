@@ -62,8 +62,13 @@ def preprocess(sentence):
     and removing any word that does not contain at least one alphabetic
     character.
     """    
-    return [x.lower() for x in nltk.tokenize.word_tokenize(sentence)]
-
+    listwords = [x.lower() for x in nltk.tokenize.word_tokenize(sentence)]
+    response = []
+    for w in listwords:
+        if w.isalpha():
+            response.append(w)
+    return response
+    
 
 def np_chunk(tree):
     """
