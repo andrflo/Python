@@ -92,10 +92,10 @@ def np_chunk(tree):
     
 
 def containNP(tree):
-    print(tree.height())
+    #print(tree.height())
     if tree.height() < 3: # Tree has only leaves or no children
         return False
-    print(tree)     
+    #print(tree)     
     for s in tree.subtrees(lambda t: t.label() == "NP"):
         if s != tree:
             return True
