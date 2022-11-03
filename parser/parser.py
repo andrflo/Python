@@ -97,8 +97,8 @@ def containNP(tree):
         return False
     print(tree)     
     for s in tree.subtrees(lambda t: t.label() == "NP"):
-        print(tree.leaves())
-        return True
+        if s != tree:
+            return True
        
     return False    
 
