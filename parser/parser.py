@@ -97,6 +97,7 @@ def containNP(tree):
         return False
     for s in tree.subtrees(lambda t: t.label() == "NP"):
         return True
+    return False    
 
 if __name__ == "__main__":
     main()
