@@ -84,7 +84,7 @@ def np_chunk(tree):
     noun phrases as subtrees.
     """
     print(tree.label())
-    for s in t.subtrees(lambda t: t.label() == "NP"):
+    for s in tree.subtrees(lambda t: t.label() == "NP"):
         print(s)
     print(tree)
 
