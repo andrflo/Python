@@ -95,8 +95,9 @@ def containNP(tree):
     print(tree.height())
     if tree.height() < 3: # Tree has only leaves or no children
         return False
-    print(tree.leaves())     
+    print(tree)     
     for s in tree.subtrees(lambda t: t.label() == "NP"):
+        print(tree.leaves())
         return True
        
     return False    
