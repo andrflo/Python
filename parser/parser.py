@@ -87,8 +87,8 @@ def np_chunk(tree):
     for s in tree.subtrees(lambda t: t.label() == "NP"):
         if not containNP(s):
             print(s.leaves())
-        else:
-            np_chunk(s)    
+        #else:
+            #np_chunk(s)    
     
 
 def containNP(tree):
