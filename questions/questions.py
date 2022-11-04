@@ -97,7 +97,8 @@ def compute_idfs(documents):
             if word in documents[doc]:
                 dictRes[word] += 1
     for word in dictRes:
-        dictRes[word] = numberDocs/dictRes[word]                
+        dictRes[word] = math.log(numberDocs/dictRes[word])
+                        
     print(dictRes)
 
 
