@@ -111,6 +111,14 @@ def top_files(query, files, idfs, n):
     listtopfiles = []
     listrankfiles = [(x, 0) for x in files]
     listrankfiles.sort(key=lambda t: t[0])
+    for word in query:
+        idf = idfs[word]
+        for el in listrankfiles:
+            c = files[el[0]].count(word)
+            
+
+
+
     print(listrankfiles)
 
 
