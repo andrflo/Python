@@ -85,10 +85,11 @@ def compute_idfs(documents):
     Any word that appears in at least one of the documents should be in the
     resulting dictionary.
     """
-    setwords = {}
     listwords = []
     for doc in documents:
         listwords.extend(documents[doc])
+    setwords = set(listwords) 
+       
     dictRes = {x for x in set()}
 
 
