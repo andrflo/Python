@@ -90,7 +90,11 @@ def compute_idfs(documents):
         listwords.extend(documents[doc])
     setwords = set(listwords) 
 
-    dictRes = {x: numberDocs for x in setwords}
+    dictRes = {x: 0 for x in setwords}
+    for word in dictRes:
+        for doc in documents:
+            if word in documents[doc]:
+                dictRes[word] += 1
     print(dictRes)
 
 
