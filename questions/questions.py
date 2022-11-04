@@ -1,6 +1,7 @@
 import nltk
 import sys
 import os
+import string
 
 FILE_MATCHES = 1
 SENTENCE_MATCHES = 1
@@ -68,6 +69,11 @@ def tokenize(document):
     punctuation or English stopwords.
     """
     listwords = [x.lower() for x in nltk.tokenize.word_tokenize(document)]
+    listfilteredwords = []
+    for w in listwords:
+        if not (w in string.punctuation or w in nltk.corpus.stopwords.words("english")):
+            listfilteredwords.append(w)
+    return listfilteredwords        
 
 
 def compute_idfs(documents):
