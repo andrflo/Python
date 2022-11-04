@@ -49,11 +49,12 @@ def load_files(directory):
     Given a directory name, return a dictionary mapping the filename of each
     `.txt` file inside that directory to the file's contents as a string.
     """
+    path_proj = os.path.abspath(os.getcwd())
     filenames = os.listdir(directory)
     dictfiles = {x: "" for x in filenames}
     for filename in filenames:
         with open(filename) as file:
-            dictfiles[filename] = file.read()
+            dictfiles[os.path.join(path_proj, directory, filename)] = file.read()
     print(dictfiles)
     return dictfiles        
 
