@@ -83,15 +83,12 @@ def np_chunk(tree):
     whose label is "NP" that does not itself contain any other
     noun phrases as subtrees.
     """
-    print(tree)
-    listsets = []
+    listNP = []
     for s in tree.subtrees(lambda t: t.label() == "NP"):
         #listsets.append(set(s.leaves()))
         if not containNP(s):
-            print(s.leaves())
-        #else:
-            #np_chunk(s)    
-    
+            listNP.append(s)
+    return listNP    
 
 def containNP(tree):
     #print(tree.height())
