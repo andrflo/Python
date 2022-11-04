@@ -72,8 +72,7 @@ def tokenize(document):
     listfilteredwords = []
     for w in listwords:
         if not (w in string.punctuation or w in nltk.corpus.stopwords.words("english")):
-            listfilteredwords.append(w)
-    print(listfilteredwords)       
+            listfilteredwords.append(w)          
     return listfilteredwords        
 
 
@@ -89,8 +88,9 @@ def compute_idfs(documents):
     for doc in documents:
         listwords.extend(documents[doc])
     setwords = set(listwords) 
-       
-    dictRes = {x for x in set()}
+
+    dictRes = {x: "" for x in setwords}
+    print(dictRes)
 
 
 def top_files(query, files, idfs, n):
