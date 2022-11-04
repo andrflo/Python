@@ -118,7 +118,7 @@ def top_files(query, files, idfs, n):
 
     listrankfiles.sort(key=lambda t: t[1], reverse = True)
 
-    print(listrankfiles[0:n])    
+    #print(listrankfiles[0:n])    
     return [x[0] for x in listrankfiles[0:n]]
 
 
@@ -141,7 +141,7 @@ def top_sentences(query, sentences, idfs, n):
 
     listranksen.sort(key=lambda t: ( t[1], t[2]/len(tokenize(t[0])) ), reverse = True)            
 
-    print(listranksen)    
+    #print(listranksen[0:n])    
     return [x[0] for x in listranksen[0:n]]
 
 
