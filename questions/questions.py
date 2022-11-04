@@ -109,7 +109,7 @@ def top_files(query, files, idfs, n):
     files that match the query, ranked according to tf-idf.
     """
     listtopfiles = []
-    listrankfiles = [(x, 0) for x in files]
+    listrankfiles = [[x, 0] for x in files]
     
     for word in query:
         idf = idfs[word]
