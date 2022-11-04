@@ -131,6 +131,13 @@ def top_sentences(query, sentences, idfs, n):
     be given to sentences that have a higher query term density.
     """
     listranksen = [[x, 0] for x in sentences]
+
+    for word in query:
+        idf = idfs[word]
+        for el in listranksen:
+            c = sentences[el[0]].count(word)
+            el[1] += c*idf 
+
     print(listranksen[0:n])    
     return [x[0] for x in listranksen[0:n]]
 
