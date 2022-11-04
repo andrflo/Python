@@ -51,7 +51,9 @@ def load_files(directory):
     """
     filenames = os.listdir(directory)
     dictfiles = {x: "" for x in filenames}
-    print(dictfiles)
+    for filename in filenames:
+        with open(filename) as file:
+            dictfiles[filename] = file.read()
 
 
 def tokenize(document):
