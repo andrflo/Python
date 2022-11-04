@@ -130,6 +130,7 @@ def top_sentences(query, sentences, idfs, n):
     the query, ranked according to idf. If there are ties, preference should
     be given to sentences that have a higher query term density.
     """
+    listranksen = [[x, 0] for x in sentences]
     print(listranksen[0:n])    
     return [x[0] for x in listranksen[0:n]]
 
