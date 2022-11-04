@@ -50,7 +50,8 @@ def load_files(directory):
     `.txt` file inside that directory to the file's contents as a string.
     """
     filenames = os.listdir(directory)
-    print(filenames)
+    dictfiles = dict(filenames)
+    print(dictfiles)
 
 
 def tokenize(document):
