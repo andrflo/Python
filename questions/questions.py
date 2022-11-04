@@ -111,7 +111,7 @@ def top_files(query, files, idfs, n):
     files that match the query, ranked according to tf-idf.
     """
     listtopfiles = []
-    
+    dictrankfiles = {x: 0 for x in files}
 
 
 def top_sentences(query, sentences, idfs, n):
