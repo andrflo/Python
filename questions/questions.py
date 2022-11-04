@@ -53,8 +53,8 @@ def load_files(directory):
     filenames = os.listdir(directory)
     dictfiles = {x: "" for x in filenames}
     for filename in filenames:
-        with open(filename) as file:
-            dictfiles[os.path.join(path_proj, directory, filename)] = file.read()
+        with open(os.path.join(path_proj, directory, filename)) as file:
+            dictfiles[filename] = file.read()
     print(dictfiles)
     return dictfiles        
 
