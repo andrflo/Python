@@ -134,9 +134,11 @@ def top_sentences(query, sentences, idfs, n):
 
     for word in query:
         idf = idfs[word]
-        for el in listranksen:
-            c = sentences[el[0]].count(word)
-            el[1] += c*idf 
+        for el in listranksen: 
+            if word in sentences[el[0]]:           
+                el[1] += idf 
+
+    listranksen.sort(key=lambda t: t[1], reverse = True)            
 
     print(listranksen[0:n])    
     return [x[0] for x in listranksen[0:n]]
