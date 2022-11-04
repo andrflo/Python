@@ -138,7 +138,7 @@ def top_sentences(query, sentences, idfs, n):
             if word in sentences[el[0]]:           
                 el[1] += idf 
 
-    listranksen.sort(key=lambda t: (t[1], t[0]), reverse = True)            
+    listranksen.sort(key=lambda t: ( t[1], len(tokenize(t[0])) ), reverse = True)            
 
     print(listranksen[0:n])    
     return [x[0] for x in listranksen[0:n]]
