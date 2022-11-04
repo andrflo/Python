@@ -119,9 +119,7 @@ def top_files(query, files, idfs, n):
 
     listrankfiles.sort(key=lambda t: t[1], reverse = True)
 
-
-    print(listrankfiles[0:n])
-    
+    print(listrankfiles[0:n])    
     return [x[0] for x in listrankfiles[0:n]]
 
 
