@@ -54,6 +54,8 @@ def load_files(directory):
     for filename in filenames:
         with open(filename) as file:
             dictfiles[filename] = file.read()
+    print(dictfiles)
+    return dictfiles        
 
 
 def tokenize(document):
