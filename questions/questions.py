@@ -97,9 +97,7 @@ def compute_idfs(documents):
             if word in documents[doc]:
                 dictRes[word] += 1
     for word in dictRes:
-        dictRes[word] = math.log(numberDocs/dictRes[word])
-
-    print(dictRes)
+        dictRes[word] = math.log(numberDocs/dictRes[word])    
     return dictRes
 
 
@@ -111,8 +109,9 @@ def top_files(query, files, idfs, n):
     files that match the query, ranked according to tf-idf.
     """
     listtopfiles = []
-    listrankfiles = [(x, idfs[x]) for x in files]
-    listrankfiles.sort(key=lambda t: t[1])
+    listrankfiles = [(x, 0) for x in files]
+    listrankfiles.sort(key=lambda t: t[0])
+    print(listrankfiles)
 
 
 def top_sentences(query, sentences, idfs, n):
