@@ -73,6 +73,7 @@ def tokenize(document):
     for w in listwords:
         if not (w in string.punctuation or w in nltk.corpus.stopwords.words("english")):
             listfilteredwords.append(w)
+    print(listfilteredwords)       
     return listfilteredwords        
 
 
