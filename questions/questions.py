@@ -85,7 +85,11 @@ def compute_idfs(documents):
     Any word that appears in at least one of the documents should be in the
     resulting dictionary.
     """
-    
+    setwords = {}
+    listwords = []
+    for doc in documents:
+        listwords.extend(documents[doc])
+    dictRes = {x for x in set()}
 
 
 def top_files(query, files, idfs, n):
