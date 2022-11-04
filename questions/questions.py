@@ -2,6 +2,7 @@ import nltk
 import sys
 import os
 import string
+import math
 
 FILE_MATCHES = 1
 SENTENCE_MATCHES = 1
@@ -95,6 +96,8 @@ def compute_idfs(documents):
         for doc in documents:
             if word in documents[doc]:
                 dictRes[word] += 1
+    for word in dictRes:
+        dictRes[word] = numberDocs/dictRes[word]                
     print(dictRes)
 
 
