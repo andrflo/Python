@@ -139,7 +139,7 @@ def top_sentences(query, sentences, idfs, n):
                 el[1] += idf 
                 el[2] += 1
 
-    listranksen.sort(key=lambda t: ( t[1], len(tokenize(t[0])) ), reverse = True)            
+    listranksen.sort(key=lambda t: ( t[1], t[2]/len(tokenize(t[0])) ), reverse = True)            
 
     print(listranksen[0:n])    
     return [x[0] for x in listranksen[0:n]]
