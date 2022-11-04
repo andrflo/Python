@@ -121,8 +121,8 @@ def top_files(query, files, idfs, n):
 
 
     print(listrankfiles[0:n])
-    print(listrankfiles[0:n])
-    return listrankfiles[0:n]
+    
+    return [x[0] for x in listrankfiles[0:n]]
 
 
 def top_sentences(query, sentences, idfs, n):
