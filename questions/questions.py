@@ -55,7 +55,7 @@ def load_files(directory):
     for filename in filenames:
         with open(os.path.join(path_proj, directory, filename)) as file:
             dictfiles[filename] = file.read()
-    print(dictfiles)
+    
     return dictfiles        
 
 
