@@ -98,8 +98,9 @@ def compute_idfs(documents):
                 dictRes[word] += 1
     for word in dictRes:
         dictRes[word] = math.log(numberDocs/dictRes[word])
-                        
+
     print(dictRes)
+    return dictRes
 
 
 def top_files(query, files, idfs, n):
