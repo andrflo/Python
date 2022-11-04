@@ -107,8 +107,7 @@ def top_files(query, files, idfs, n):
     files to a list of their words), and `idfs` (a dictionary mapping words
     to their IDF values), return a list of the filenames of the the `n` top
     files that match the query, ranked according to tf-idf.
-    """
-    listtopfiles = []
+    """    
     listrankfiles = [[x, 0] for x in files]
     
     for word in query:
@@ -131,7 +130,8 @@ def top_sentences(query, sentences, idfs, n):
     the query, ranked according to idf. If there are ties, preference should
     be given to sentences that have a higher query term density.
     """
-    raise NotImplementedError
+    print(listranksen[0:n])    
+    return [x[0] for x in listranksen[0:n]]
 
 
 if __name__ == "__main__":
