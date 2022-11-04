@@ -120,7 +120,9 @@ def top_files(query, files, idfs, n):
     listrankfiles.sort(key=lambda t: t[1])
 
 
-    print(listrankfiles)
+    print(listrankfiles[0:n-1])
+    print(listrankfiles[0:n-1])
+    return listrankfiles[0:n-1]
 
 
 def top_sentences(query, sentences, idfs, n):
