@@ -141,6 +141,7 @@ def identifyWindTurbineOil(dataset, dataoil):
             oil_names = dataset.set_of_oils(
                 "wind", "all seasons", "P"
             )  # set of wind turbine oils
+            print(oil_names)
             oil_name_int = dict(zip(sorted(list(oil_names)), [x for x in range(len(oil_names))]))
             print(oil_name_int)
             
