@@ -191,8 +191,8 @@ def get_model_idOil(numOils):
     model = tf.keras.models.Sequential([        
 
         # Add a hidden layer with dropout
-        tf.keras.layers.Dense(256, activation="relu"),
-        tf.keras.layers.Dropout(0.5),
+        tf.keras.layers.Dense(512, activation="relu"),
+        #tf.keras.layers.Dropout(0.5),
 
         # Flatten units
         tf.keras.layers.Flatten(),      
