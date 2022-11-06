@@ -334,20 +334,20 @@ def trafficLightIndication(dataset, dataoil):
                     and row["NI"].isnumeric()
                     and row["CU"].isnumeric()
                     and row["PB"].isnumeric()
-                    #and row["SI"].isnumeric()
-                    #and row["K"].isnumeric()
-                    #and row["NA"].isnumeric()
-                    #and row["Viskosität bei 40°C"] != ""
-                    #and row["Viskosität bei 100°C"] != ""
-                    #and row["Oxidation"].isnumeric()
-                    #and row["CA"].isnumeric()
-                    #and row["MG"].isnumeric()
+                    and row["SI"].isnumeric()
+                    and row["K"].isnumeric()
+                    and row["NA"].isnumeric()
+                    and row["Viskosität bei 40°C"] != ""
+                    and row["Viskosität bei 100°C"] != ""
+                    and row["Oxidation"].isnumeric()
+                    and row["CA"].isnumeric()
+                    and row["MG"].isnumeric()
                     and row["B"].isnumeric()
                     and row["ZN"].isnumeric()
                     and row["MO"].isnumeric()
                     and row["P"].isnumeric()
                     and row["BA"].isnumeric()
-                    #and row["Schwefelgehalt"].isnumeric()
+                    and row["Schwefelgehalt"].isnumeric()
                     and row["Ölbezeichnung"] != ""
                     and row["Datum Probenentnahme"] != ""
                     and row["Neutralisationszahl"] != ""
@@ -381,7 +381,7 @@ def trafficLightIndication(dataset, dataoil):
                             int(row["P"]),
                             int(row["BA"]),
                             int(row["Schwefelgehalt"]),
-                            int(row["Neutralisationszahl"]),
+                            int(round(float(row["Neutralisationszahl"]), 0)),
                             int(row[">4µm (ISO)"]),
                             int(row[">6µm (ISO)"]),
                             int(row[">14µm (ISO)"]),
@@ -470,7 +470,7 @@ def trafficLightIndication(dataset, dataoil):
                     and row["P"].isnumeric()
                     and row["BA"].isnumeric()
                     and row["Schwefelgehalt"].isnumeric()
-                    and row["Neutralisationszahl"].isnumeric()
+                    and row["Neutralisationszahl"] != ""
                     and row[">4µm (ISO)"].isnumeric()
                     and row[">6µm (ISO)"].isnumeric()
                     and row[">14µm (ISO)"].isnumeric()
@@ -501,7 +501,7 @@ def trafficLightIndication(dataset, dataoil):
                             int(row["P"]),
                             int(row["BA"]),
                             int(row["Schwefelgehalt"]),
-                            int(row["Neutralisationszahl"]),
+                            int(round(float(row["Neutralisationszahl"]), 0)),
                             int(row[">4µm (ISO)"]),
                             int(row[">6µm (ISO)"]),
                             int(row[">14µm (ISO)"]),
