@@ -512,6 +512,7 @@ def trafficLightIndication(dataset, dataoil):
     print(label_array_ds)
     # Split data into training and testing sets
     label_array_ds = tf.keras.utils.to_categorical(label_array_ds)
+    print(label_array_ds)
     x_train, x_test, y_train, y_test = train_test_split(
         np.array(param_array_ds), np.array(label_array_ds), test_size=TEST_SIZE
     )
