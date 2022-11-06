@@ -131,7 +131,7 @@ def identifyWindTurbineOil(dataset, dataoil):
     # data oil specifies the content of Ca, Mg, B, Zn, P, Ba, S in the oil sample
     # data set has information of the element content of multiple oils
     el_array_ds = []
-    oil_name_int = []
+    oil_name_int = dict()
     label_array_ds = []
     with open(dataset.filename) as csvfile:
         reader = csv.DictReader(csvfile, delimiter=";")
@@ -141,7 +141,8 @@ def identifyWindTurbineOil(dataset, dataoil):
             oil_names = dataset.set_of_oils(
                 "wind", "all seasons", "P"
             )  # set of wind turbine oils
-            oil_name_int = [sorted(list(oil_names)), [x for x in range(len(oil_names))]]
+            oil_name_int = dict(zip(sorted(list(oil_names)), [x for x in range(len(oil_names))]))
+             
             if row["Ölbezeichnung"] in oil_names:
                 for row in reader:
                     el_array_ds.append(
@@ -155,7 +156,7 @@ def identifyWindTurbineOil(dataset, dataoil):
                             int(row["Schwefelgehalt"]),
                         ]
                     )
-                    label_array_ds.append(row["Ölbezeichnung"])
+                    label_array_ds.append(x for x in oil_name_int if row["Ölbezeichnung"]==x)
 
 
 if __name__ == "__main__":
