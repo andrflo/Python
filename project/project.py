@@ -459,8 +459,8 @@ def trafficLightIndication(dataset, dataoil):
                     and row["SI"].isnumeric()
                     and row["K"].isnumeric()
                     and row["NA"].isnumeric()
-                    and row["Viskosität bei 40°C"].isnumeric()
-                    and row["Viskosität bei 100°C"].isnumeric()
+                    and row["Viskosität bei 40°C"] != ""
+                    and row["Viskosität bei 100°C"] != ""
                     and row["Oxidation"].isnumeric()
                     and row["CA"].isnumeric()
                     and row["MG"].isnumeric()
@@ -490,8 +490,8 @@ def trafficLightIndication(dataset, dataoil):
                             int(row["SI"]),
                             int(row["K"]),
                             int(row["NA"]),
-                            int(row["Viskosität bei 40°C"]),
-                            int(row["Viskosität bei 100°C"]),
+                            int(round(float(row["Viskosität bei 40°C"]), 0)),
+                            int(round(float(row["Viskosität bei 100°C"]), 0)),
                             int(row["Oxidation"]),
                             int(row["CA"]),
                             int(row["MG"]),
