@@ -332,6 +332,7 @@ def trafficLightIndication(dataset, dataoil):
                     and row[">14µm (ISO)"].isnumeric()
                     and row["Wasser K.F."].isnumeric()
                 ):
+                    oil_name = row["Ölbezeichnung"]
                     el_array_datapoint.append(
                         [
                             int(row["CA"]),
