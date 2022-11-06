@@ -520,10 +520,10 @@ def trafficLightIndication(dataset, dataoil):
     model = get_model_traffic_light(numstates)
 
     # Fit model on training data
-    model.fit(x_train, y_train, epochs=EPOCHS)
+    #model.fit(x_train, y_train, epochs=EPOCHS)
 
     # Evaluate neural network performance
-    model.evaluate(x_test, y_test, verbose=2)
+    #model.evaluate(x_test, y_test, verbose=2)
     
 def get_model_traffic_light(numstates):
     # Create a neural network
