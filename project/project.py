@@ -519,6 +519,8 @@ def trafficLightIndication(dataset, dataoil):
     # Get a compiled neural network
     model = get_model_traffic_light(numstates)
 
+    print(len(x_train), len(y_train))
+
     # Fit model on training data
     model.fit(x_train, y_train, epochs=EPOCHS)
 
