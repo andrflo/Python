@@ -297,6 +297,7 @@ def trafficLightIndication(dataset, dataoil):
             ">4µm (ISO)",
             ">6µm (ISO)",
             ">14µm (ISO)",
+            "Wasser K.F."
         ):
             oil_names = dataset.set_of_oils(
                 "wind", "all seasons", "P"
