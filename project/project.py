@@ -1,14 +1,24 @@
 import os
-from dataset import Dataset
+import csv
+from dataset import Dataset 
 from pdf import PDF
+import tensorflow as tf
+
+from sklearn.model_selection import train_test_split
+
+EPOCHS = 10
+TEST_SIZE = 0.4
+
 
 path_proj = os.path.abspath(os.getcwd())
 fn1 = os.path.join(path_proj, "dataset1.csv")
 fn2 = os.path.join(path_proj, "dataset2.csv")
 #fn3 = f"{path_proj}/project/dataset3.csv"
-fn3 = "dataset3.csv"
+fn3 = os.path.join(path_proj, "dataset3.csv")
+fn4 = os.path.join(path_proj, "dataset4.csv") # dataset3 without the data poin of dataset5
+fn5 = os.path.join(path_proj, "dataset5.csv") # dataset4 + dataset5 = dataset3
 
-fn_list = [fn3]
+fn_list = [fn4, fn5]
 
 def main():
     ds_list = []
@@ -28,10 +38,11 @@ def main():
         #ds.plot_data_machine("time", "FE")
         #ds.plot_data_machine("time", "P")
         #ds.plot_data_machine("FE", "Neutralisationszahl")
-        ds.plot_data_machine("CU", "Neutralisationszahl")
+        #ds.plot_data_machine("CU", "Neutralisationszahl")
         #ds.plot_data_machine("Neutralisationszahl")
         #ds.plot_data_machine("Anlagengöße [kW]", "Ölmenge im System")
 
+    identifyOil(ds[0], ds[1])
 
     p1 = "H2O_vs_days_all"
     p2 = "AN_vs_days_all"
@@ -108,6 +119,17 @@ def generate_header(p):
             return "Acid number in mgkOH/gOil, oil samples from wind turbines, all seasons"
         case "Ox_vs_days_all":
             return "Oxidation in A/cm, oil samples from wind turbines, all seasons"
+
+def identifyOil(dataset, dataoil):
+    # returns the oil name given data oil and dataset
+    # data oil specifies the content of Ca, Mg, B, Zn, P, Ba, S in the oil sample
+    # data set has information of the element content of multiple oils
+    el_array_ds = []
+    label_array_ds = []
+    with open(dataset.filename) as csvfile:
+        reader = csv.DictReader(csvfile, delimiter=";")
+        for row in reader:
+            el_array_ds.append([row["CA"], row["MG"], row["B"], row["ZN"], row["P"], row["BA"], row["Schwefelgehalt"]])
 
 
 if __name__ == "__main__":
