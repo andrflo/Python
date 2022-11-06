@@ -217,8 +217,12 @@ def identifyWindTurbineOil(dataset, dataoil):
 
     
     y_pred = np.argmax(model.predict(el_array_datapoint), axis=-1)
-    print(oil_name_int)
-    print(y_pred)
+    #print(oil_name_int)
+    response = "?"
+    for o in oil_name_int:
+        if oil_name_int[o] == y_pred[0]:
+            response = o
+    print("The oil is most likely", response)
 
 
 def get_model_idOil(numOils):
