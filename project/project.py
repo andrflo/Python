@@ -143,8 +143,9 @@ def identifyWindTurbineOil(dataset, dataoil):
             )  # set of wind turbine oils
             oil_name_int = dict(zip(sorted(list(oil_names)), [x for x in range(len(oil_names))]))
             print(oil_name_int)
-            if row["Ölbezeichnung"] in oil_names:
-                for row in reader:
+            
+            for row in reader:
+                if row["Ölbezeichnung"] in oil_names:    
                     el_array_ds.append(
                         [
                             int(row["CA"]),
