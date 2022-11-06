@@ -398,7 +398,9 @@ class Dataset:
             reader = csv.DictReader(csvfile, delimiter=";")
             for row in reader:
                 if "wind" in source.lower():
-                    print(len(row[param]))
+                    print(self.origin_sample(
+                            row["Probe aus"], "wind", "wea", "wka", "éolienne"
+                        ))
                     if (
                         row["Ölbezeichnung"] != ""
                         and self.origin_sample(
