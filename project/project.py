@@ -191,7 +191,7 @@ def get_model_idOil(numOils):
     model = tf.keras.models.Sequential([        
 
         # Add a hidden layer with dropout
-        tf.keras.layers.Dense(7, activation="relu"),
+        tf.keras.layers.Dense(64, activation="relu"),
         #tf.keras.layers.Dropout(0.5),        
         
         # Add an output layer with NUM_CATEGORIES output units
