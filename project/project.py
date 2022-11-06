@@ -146,7 +146,7 @@ def identifyWindTurbineOil(dataset, dataoil):
                 zip(sorted(list(oil_names)), [x for x in range(len(oil_names))])
             )
             print(oil_name_int)
-            print("".isnumeric())
+            
             for row in reader:
                 if (
                     row["Ölbezeichnung"] in oil_names
