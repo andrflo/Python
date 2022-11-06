@@ -348,13 +348,13 @@ def trafficLightIndication(dataset, dataoil):
                     and row["P"].isnumeric()
                     and row["BA"].isnumeric()
                     and row["Schwefelgehalt"].isnumeric()
-                    and row["Ölbezeichnung"] != ""
-                    and row["Datum Probenentnahme"] != ""
-                    and row["Neutralisationszahl"].isnumeric()
-                    and row[">4µm (ISO)"].isnumeric()
-                    and row[">6µm (ISO)"].isnumeric()
-                    and row[">14µm (ISO)"].isnumeric()
-                    and row["Wasser K. F."].isnumeric()
+                    #and row["Ölbezeichnung"] != ""
+                    #and row["Datum Probenentnahme"] != ""
+                    #and row["Neutralisationszahl"].isnumeric()
+                    #and row[">4µm (ISO)"].isnumeric()
+                    #and row[">6µm (ISO)"].isnumeric()
+                    #and row[">14µm (ISO)"].isnumeric()
+                    #and row["Wasser K. F."].isnumeric()
                 ):
                     print("Days of service:", days_service) 
                     oil_name = row["Ölbezeichnung"]
