@@ -146,18 +146,17 @@ def identifyWindTurbineOil(dataset, dataoil):
                 zip(sorted(list(oil_names)), [x for x in range(len(oil_names))])
             )
             print(oil_name_int)
-
+            print("".isnumeric())
             for row in reader:
                 if (
                     row["Ölbezeichnung"] in oil_names
-                    and row["CA"].isnumeric
-                    and row["MG"].isnumeric
-                    and row["B"].isnumeric
-                    and row["ZN"].isnumeric
-                    and row["P"].isnumeric
-                    and row["BA"].isnumeric
-                    and row["Schwefelgehalt"].isnumeric 
-                    and row["Schwefelgehalt"]!="" 
+                    and row["CA"].isnumeric()
+                    and row["MG"].isnumeric()
+                    and row["B"].isnumeric()
+                    and row["ZN"].isnumeric()
+                    and row["P"].isnumeric()
+                    and row["BA"].isnumeric()
+                    and row["Schwefelgehalt"].isnumeric()                     
                 ):
                     el_array_ds.append(
                         [
