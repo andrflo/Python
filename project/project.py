@@ -133,7 +133,7 @@ def identifyWindTurbineOil(dataset, dataoil):
     el_array_ds = []
     oil_name_int = dict()
     label_array_ds = []
-    
+
     with open(dataset.filename) as csvfile:
         reader = csv.DictReader(csvfile, delimiter=";")
         if dataset.keys_exist(
@@ -141,12 +141,23 @@ def identifyWindTurbineOil(dataset, dataoil):
         ):
             oil_names = dataset.set_of_oils(
                 "wind", "all seasons", "P"
-            )  # set of wind turbine oils            
-            oil_name_int = dict(zip(sorted(list(oil_names)), [x for x in range(len(oil_names))]))
+            )  # set of wind turbine oils
+            oil_name_int = dict(
+                zip(sorted(list(oil_names)), [x for x in range(len(oil_names))])
+            )
             print(oil_name_int)
-            
+
             for row in reader:
-                if row["Ölbezeichnung"] in oil_names:    
+                if (
+                    row["Ölbezeichnung"] in oil_names
+                    and row["CA"].isnumeric
+                    and row["MG"].isnumeric
+                    and row["B"].isnumeric
+                    and row["ZN"].isnumeric
+                    and row["P"].isnumeric
+                    and row["BA"].isnumeric
+                    and row["Schwefelgehalt"].isnumeric 
+                ):
                     el_array_ds.append(
                         [
                             int(row["CA"]),
@@ -155,7 +166,7 @@ def identifyWindTurbineOil(dataset, dataoil):
                             int(row["ZN"]),
                             int(row["P"]),
                             int(row["BA"]),
-                            int(row["Schwefelgehalt"]),
+                            int(row["Schwefelgehalt"])
                         ]
                     )
                     label_array_ds.append(oil_name_int[row["Ölbezeichnung"]])
