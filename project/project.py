@@ -333,8 +333,21 @@ def trafficLightIndication(dataset, dataoil):
                     and row["Wasser K.F."].isnumeric()
                 ):
                     oil_name = row["Ölbezeichnung"]
-                    el_array_datapoint.append(
+                    param_array_datapoint.append(
                         [
+                            int(row["FE"]),
+                            int(row["CR"]),
+                            int(row["SN"]),
+                            int(row["AL"]),
+                            int(row["NI"]),
+                            int(row["CU"]),
+                            int(row["PB"]),
+                            int(row["SI"]),
+                            int(row["K"]),
+                            int(row["NA"]),
+                            int(row["Viskosität bei 40°C"]),
+                            int(row["Viskosität bei 100°C"]),
+                            int(row["Oxidation"]),
                             int(row["CA"]),
                             int(row["MG"]),
                             int(row["B"]),
@@ -343,6 +356,11 @@ def trafficLightIndication(dataset, dataoil):
                             int(row["P"]),
                             int(row["BA"]),
                             int(row["Schwefelgehalt"]),
+                            int(row["Neutralisationszahl"]),
+                            int(row[">4µm (ISO)"]),
+                            int(row[">6µm (ISO)"]),
+                            int(row[">14µm (ISO)"]),
+                            int(row["Wasser K.F."]),
                         ]
                     )
 
