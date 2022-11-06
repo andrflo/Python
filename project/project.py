@@ -45,7 +45,7 @@ def main():
         # ds.plot_data_machine("Neutralisationszahl")
         # ds.plot_data_machine("Anlagengöße [kW]", "Ölmenge im System")
 
-    identifyWindTurbineOil(ds[0], ds[1])
+    identifyWindTurbineOil(ds_list[0], ds_list[1])
 
     p1 = "H2O_vs_days_all"
     p2 = "AN_vs_days_all"
