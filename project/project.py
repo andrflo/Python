@@ -266,15 +266,14 @@ def trafficLightIndication(dataset, dataoil):
     # Fe, Cr, Sn, Al, Ni, Cu, Pb, Mo, Si, K, Na, Viskosität bei 40°C, Viskosität bei 100°C, Oxidation, 
     # Ca, Mg, B, Zn, P, Ba, Schwefelgehalt, Neutralisationszahl, >4µm (ISO), >6µm (ISO), >14µm (ISO), Wasser K.F.
 
-    el_array_ds = []
-    oil_name_int = dict()
+    el_array_ds = []    
     label_array_ds = []
-    numoils = 0
+    numstates = 3
 
     with open(dataset.filename) as csvfile:
         reader = csv.DictReader(csvfile, delimiter=";")
         if dataset.keys_exist(
-            "CA", "MG", "B", "ZN", "MO", "P", "BA", "Schwefelgehalt", "Ölbezeichnung"
+            "FE", "CR", "SN", "AL", "NI", "CU", "PB", "SI", "K", "NA", "Viskosität bei 40°C", "Viskosität bei 100°C", "Oxidation", "CA", "MG", "B", "ZN", "MO", "P", "BA", "Schwefelgehalt", "Ölbezeichnung", "Neutralisationszahl", ">4µm (ISO)", ">6µm (ISO)", ">14µm (ISO)"
         ):
             oil_names = dataset.set_of_oils(
                 "wind", "all seasons", "P"
