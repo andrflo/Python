@@ -192,7 +192,7 @@ def get_model_idOil(numOils):
 
         # Add a hidden layer with dropout
         tf.keras.layers.Dense(128, activation="relu"),
-        tf.keras.layers.Dropout(0.3),        
+        tf.keras.layers.Dropout(0.1),        
         
         # Flatten units
         tf.keras.layers.Flatten(),      
