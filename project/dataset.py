@@ -364,6 +364,23 @@ class Dataset:
         except ValueError:
             return False
 
+    def num_season(self, sample_date):  
+        try:
+            sd = date.fromisoformat(sample_date)            
+            match season.lower():
+                case "summer":
+                    return True if 6 <= sd.month <= 8 else False
+                case "fall":
+                    return True if 9 <= sd.month <= 11 else False
+                case "winter":
+                    return True if 0 <= sd.month % 12 <= 2 else False
+                case "spring":
+                    return True if 3 <= sd.month <= 5 else False
+                case _:
+                    return True
+        except ValueError:
+            return 0      
+
     def keys_exist(*arg):
         for t in range(len(arg) - 1):
             if not (arg[t + 1] in arg[0].keys):
