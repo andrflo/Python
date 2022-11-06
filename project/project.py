@@ -166,7 +166,7 @@ def identifyWindTurbineOil(dataset, dataoil):
                             int(row["ZN"]),
                             int(row["P"]),
                             int(row["BA"]),
-                            float(row["Schwefelgehalt"])
+                            int(row["Schwefelgehalt"])
                         ]
                     )
                     label_array_ds.append(oil_name_int[row["Ölbezeichnung"]])
