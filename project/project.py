@@ -259,6 +259,7 @@ def get_model_idOil(numOils):
 def trafficLightIndication(dataset, dataoil):
     # returns traffic light indication according to oil condition parameters of sample (dataoil)
     # Dataset contains oil condition parameters of several oil samples and the corresponding traffic light indication
+    # 1: good condition, 3: bad condition
     # The training of the model is performed only with oils of the same type (known)
     # The traffic light indication is based on the following parameters:
     # Fe, Cr, Sn, Al, Ni, Cu, Pb, Mo, Si, K, Na, Viskosität bei 40°C, Viskosität bei 100°C, Oxidation,
