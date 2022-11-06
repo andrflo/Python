@@ -348,6 +348,7 @@ class Dataset:
         return fn
 
     def validate_season(self, sample_date, season):
+        print(season)
         try:
             sd = date.fromisoformat(sample_date)
             print(season)
@@ -397,10 +398,7 @@ class Dataset:
         with open(self.filename) as csvfile:
             reader = csv.DictReader(csvfile, delimiter=";")
             for row in reader:
-                if "wind" in source.lower():
-                    print(self.origin_sample(
-                            row["Probe aus"], "wind", "wea", "wka", "éolienne"
-                        ))
+                if "wind" in source.lower():                    
                     if (
                         row["Ölbezeichnung"] != ""
                         and self.origin_sample(
@@ -409,7 +407,7 @@ class Dataset:
                         and len(row[param]) > 0
                         and self.validate_season(row["Datum Probenentnahme"], season)
                     ):
-                        oil_names.add(row["Ölbezeichnung"])
+                        oil_names.add(row["Ölbezeichnung"])                        
         return oil_names
 
     def plot_data_machine(self, paramx, paramy):
