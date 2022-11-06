@@ -355,8 +355,7 @@ def trafficLightIndication(dataset, dataoil):
                     and row[">6µm (ISO)"].isnumeric()
                     and row[">14µm (ISO)"].isnumeric()
                     and row["Wasser K. F."].isnumeric()
-                ):
-                    print("Days of service:", days_service) 
+                ):                    
                     oil_name = row["Ölbezeichnung"]
                     param_array_datapoint.append(
                         [
@@ -391,7 +390,7 @@ def trafficLightIndication(dataset, dataoil):
                         ]
                     )
                     print(oil_name)
-                    print(len(param_array_datapoint))
+                    print(len(param_array_datapoint[0]))
 
     with open(dataset.filename) as csvfile:
         reader = csv.DictReader(csvfile, delimiter=";")
