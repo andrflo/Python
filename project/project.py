@@ -459,7 +459,7 @@ def trafficLightIndication(dataset, dataoil):
                         ]
                     )
                     label_array_ds.append(row["Gesamtbewertung"])
-   
+    print(len(label_array_ds))
 
 
 if __name__ == "__main__":
