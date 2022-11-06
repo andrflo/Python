@@ -198,7 +198,6 @@ def get_model_idOil(numOils):
 
         # Add a hidden layer 
         tf.keras.layers.Dense(64, activation="sigmoid"),  
-
             
         # Add an output layer with NUM_CATEGORIES output units
         tf.keras.layers.Dense(numOils, activation="softmax")
