@@ -528,7 +528,7 @@ def trafficLightIndication(dataset, dataoil):
 
     y_pred = np.argmax(model.predict(param_array_datapoint), axis=-1)
       
-    print("Traffic light indication: ", y_pred)
+    print("Traffic light indication: ", y_pred[0]+1)
     
 def get_model_traffic_light(numstates):
     # Create a neural network
