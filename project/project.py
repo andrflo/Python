@@ -192,7 +192,7 @@ def get_model_idOil(numOils):
 
         # Add a hidden layer with x units, with ReLU activation
         tf.keras.layers.Dense(1024, input_shape=(7,), activation="sigmoid"), 
-           
+        tf.keras.layers.Dropout(0.5),    
 
         # Add a hidden layer 
         tf.keras.layers.Dense(128, activation="sigmoid"),
