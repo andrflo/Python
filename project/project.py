@@ -267,6 +267,7 @@ def trafficLightIndication(dataset, dataoil):
     param_array_ds = []
     label_array_ds = []
     numstates = 3
+    oil_name = ""
 
     param_array_datapoint = []
 
@@ -303,7 +304,20 @@ def trafficLightIndication(dataset, dataoil):
         ):
             for row in reader:
                 if (
-                    row["CA"].isnumeric()
+                    row["FE"].isnumeric()
+                    and row["CR"].isnumeric()
+                    and row["SN"].isnumeric()
+                    and row["AL"].isnumeric()
+                    and row["NI"].isnumeric()
+                    and row["CU"].isnumeric()
+                    and row["PB"].isnumeric()
+                    and row["SI"].isnumeric()
+                    and row["K"].isnumeric()
+                    and row["NA"].isnumeric()
+                    and row["Viskosität bei 40°C"].isnumeric()
+                    and row["Viskosität bei 100°C"].isnumeric()
+                    and row["Oxidation"].isnumeric()
+                    and row["CA"].isnumeric()
                     and row["MG"].isnumeric()
                     and row["B"].isnumeric()
                     and row["ZN"].isnumeric()
@@ -311,6 +325,12 @@ def trafficLightIndication(dataset, dataoil):
                     and row["P"].isnumeric()
                     and row["BA"].isnumeric()
                     and row["Schwefelgehalt"].isnumeric()
+                    and row["Ölbezeichnung"] != ""
+                    and row["Neutralisationszahl"].isnumeric()
+                    and row[">4µm (ISO)"].isnumeric()
+                    and row[">6µm (ISO)"].isnumeric()
+                    and row[">14µm (ISO)"].isnumeric()
+                    and row["Wasser K.F."].isnumeric()
                 ):
                     el_array_datapoint.append(
                         [
