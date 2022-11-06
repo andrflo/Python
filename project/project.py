@@ -426,6 +426,7 @@ def trafficLightIndication(dataset, dataoil):
                     and row[">6µm (ISO)"].isnumeric()
                     and row[">14µm (ISO)"].isnumeric()
                     and row["Wasser K.F."].isnumeric()  
+                    and row["Gesamtbewertung"].isnumeric() 
                 ):
                     param_array_ds.append(
                         [
@@ -457,31 +458,8 @@ def trafficLightIndication(dataset, dataoil):
                             int(row["Wasser K.F."]),
                         ]
                     )
-                    label_array_ds.append(oil_name_int[row["Ölbezeichnung"]])
-    # Split data into training and testing sets
-    label_array_ds = tf.keras.utils.to_categorical(label_array_ds)
-    x_train, x_test, y_train, y_test = train_test_split(
-        np.array(el_array_ds), np.array(label_array_ds), test_size=TEST_SIZE
-    )
-
-    # Get a compiled neural network
-    model = get_model_idOil(numoils)
-
-    # Fit model on training data
-    model.fit(x_train, y_train, epochs=EPOCHS)
-
-    # Evaluate neural network performance
-    model.evaluate(x_test, y_test, verbose=2)
-
-    
-
-    y_pred = np.argmax(model.predict(el_array_datapoint), axis=-1)
-    # print(oil_name_int)
-    response = "?"
-    for o in oil_name_int:
-        if oil_name_int[o] == y_pred[0]:
-            response = o
-    print("The oil is most likely", response)
+                    label_array_ds.append(row["Gesamtbewertung"])
+   
 
 
 if __name__ == "__main__":
