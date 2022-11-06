@@ -16,7 +16,9 @@ fn1 = os.path.join(path_proj, "dataset1.csv")
 fn2 = os.path.join(path_proj, "dataset2.csv")
 # fn3 = f"{path_proj}/project/dataset3.csv"
 fn3 = os.path.join(path_proj, "dataset3.csv")
-fn4 = os.path.join(path_proj, "dataset4.csv")  # dataset3 without the data poin of dataset5
+fn4 = os.path.join(
+    path_proj, "dataset4.csv"
+)  # dataset3 without the data poin of dataset5
 fn5 = os.path.join(path_proj, "dataset5.csv")  # dataset4 + dataset5 = dataset3
 fn6 = os.path.join(path_proj, "dataset6.csv")
 fn7 = os.path.join(path_proj, "dataset7.csv")
@@ -151,7 +153,7 @@ def identifyWindTurbineOil(dataset, dataoil):
             numoils = len(oil_names)
             oil_name_int = dict(
                 zip(sorted(list(oil_names)), [x for x in range(len(oil_names))])
-            )           
+            )
             for row in reader:
                 if (
                     row["Ölbezeichnung"] in oil_names
@@ -162,7 +164,7 @@ def identifyWindTurbineOil(dataset, dataoil):
                     and row["MO"].isnumeric()
                     and row["P"].isnumeric()
                     and row["BA"].isnumeric()
-                    and row["Schwefelgehalt"].isnumeric()                     
+                    and row["Schwefelgehalt"].isnumeric()
                 ):
                     el_array_ds.append(
                         [
@@ -173,12 +175,12 @@ def identifyWindTurbineOil(dataset, dataoil):
                             int(row["MO"]),
                             int(row["P"]),
                             int(row["BA"]),
-                            int(row["Schwefelgehalt"])
+                            int(row["Schwefelgehalt"]),
                         ]
                     )
                     label_array_ds.append(oil_name_int[row["Ölbezeichnung"]])
-    # Split data into training and testing sets                
-    label_array_ds = tf.keras.utils.to_categorical(label_array_ds)  
+    # Split data into training and testing sets
+    label_array_ds = tf.keras.utils.to_categorical(label_array_ds)
     x_train, x_test, y_train, y_test = train_test_split(
         np.array(el_array_ds), np.array(label_array_ds), test_size=TEST_SIZE
     )
@@ -190,7 +192,7 @@ def identifyWindTurbineOil(dataset, dataoil):
     model.fit(x_train, y_train, epochs=EPOCHS)
 
     # Evaluate neural network performance
-    model.evaluate(x_test,  y_test, verbose=2)
+    model.evaluate(x_test, y_test, verbose=2)
 
     el_array_datapoint = []
 
@@ -198,9 +200,9 @@ def identifyWindTurbineOil(dataset, dataoil):
         reader = csv.DictReader(csvfile, delimiter=";")
         if dataoil.keys_exist(
             "CA", "MG", "B", "ZN", "MO", "P", "BA", "Schwefelgehalt", "Ölbezeichnung"
-        ):                    
+        ):
             for row in reader:
-                if (                    
+                if (
                     row["CA"].isnumeric()
                     and row["MG"].isnumeric()
                     and row["B"].isnumeric()
@@ -208,7 +210,7 @@ def identifyWindTurbineOil(dataset, dataoil):
                     and row["MO"].isnumeric()
                     and row["P"].isnumeric()
                     and row["BA"].isnumeric()
-                    and row["Schwefelgehalt"].isnumeric()                     
+                    and row["Schwefelgehalt"].isnumeric()
                 ):
                     el_array_datapoint.append(
                         [
@@ -219,13 +221,12 @@ def identifyWindTurbineOil(dataset, dataoil):
                             int(row["MO"]),
                             int(row["P"]),
                             int(row["BA"]),
-                            int(row["Schwefelgehalt"])
+                            int(row["Schwefelgehalt"]),
                         ]
                     )
 
-    
     y_pred = np.argmax(model.predict(el_array_datapoint), axis=-1)
-    #print(oil_name_int)
+    # print(oil_name_int)
     response = "?"
     for o in oil_name_int:
         if oil_name_int[o] == y_pred[0]:
@@ -235,45 +236,67 @@ def identifyWindTurbineOil(dataset, dataoil):
 
 def get_model_idOil(numOils):
     # Create a neural network
-    model = tf.keras.models.Sequential([   
-
-        # Add a hidden layer with x units, with ReLU activation
-        tf.keras.layers.Dense(256, input_shape=(8,), activation="sigmoid"),           
-
-        # Add a hidden layer 
-        tf.keras.layers.Dense(64, activation="sigmoid"),  
-
-        # Add a hidden layer 
-        tf.keras.layers.Dense(64, activation="sigmoid"),  
-            
-        # Add an output layer with NUM_CATEGORIES output units
-        tf.keras.layers.Dense(numOils, activation="softmax")
-    ])
+    model = tf.keras.models.Sequential(
+        [
+            # Add a hidden layer with x units, with ReLU activation
+            tf.keras.layers.Dense(256, input_shape=(8,), activation="sigmoid"),
+            # Add a hidden layer
+            tf.keras.layers.Dense(64, activation="sigmoid"),
+            # Add a hidden layer
+            tf.keras.layers.Dense(64, activation="sigmoid"),
+            # Add an output layer with NUM_CATEGORIES output units
+            tf.keras.layers.Dense(numOils, activation="softmax"),
+        ]
+    )
 
     # Train neural network
     model.compile(
-    optimizer="adam",
-    loss="categorical_crossentropy",
-    metrics=["accuracy"]
+        optimizer="adam", loss="categorical_crossentropy", metrics=["accuracy"]
     )
     return model
 
-def trafficLightIndication(dataset, dataoil):    
+
+def trafficLightIndication(dataset, dataoil):
     # returns traffic light indication according to oil condition parameters of sample (dataoil)
     # Dataset contains oil condition parameters of several oil samples and the corresponding traffic light indication
     # The training of the model is performed only with oils of the same type (known)
     # The traffic light indication is based on the following parameters:
-    # Fe, Cr, Sn, Al, Ni, Cu, Pb, Mo, Si, K, Na, Viskosität bei 40°C, Viskosität bei 100°C, Oxidation, 
+    # Fe, Cr, Sn, Al, Ni, Cu, Pb, Mo, Si, K, Na, Viskosität bei 40°C, Viskosität bei 100°C, Oxidation,
     # Ca, Mg, B, Zn, P, Ba, Schwefelgehalt, Neutralisationszahl, >4µm (ISO), >6µm (ISO), >14µm (ISO), Wasser K.F.
 
-    el_array_ds = []    
+    el_array_ds = []
     label_array_ds = []
     numstates = 3
 
     with open(dataset.filename) as csvfile:
         reader = csv.DictReader(csvfile, delimiter=";")
         if dataset.keys_exist(
-            "FE", "CR", "SN", "AL", "NI", "CU", "PB", "SI", "K", "NA", "Viskosität bei 40°C", "Viskosität bei 100°C", "Oxidation", "CA", "MG", "B", "ZN", "MO", "P", "BA", "Schwefelgehalt", "Ölbezeichnung", "Neutralisationszahl", ">4µm (ISO)", ">6µm (ISO)", ">14µm (ISO)"
+            "FE",
+            "CR",
+            "SN",
+            "AL",
+            "NI",
+            "CU",
+            "PB",
+            "SI",
+            "K",
+            "NA",
+            "Viskosität bei 40°C",
+            "Viskosität bei 100°C",
+            "Oxidation",
+            "CA",
+            "MG",
+            "B",
+            "ZN",
+            "MO",
+            "P",
+            "BA",
+            "Schwefelgehalt",
+            "Ölbezeichnung",
+            "Neutralisationszahl",
+            ">4µm (ISO)",
+            ">6µm (ISO)",
+            ">14µm (ISO)",
         ):
             oil_names = dataset.set_of_oils(
                 "wind", "all seasons", "P"
@@ -281,7 +304,7 @@ def trafficLightIndication(dataset, dataoil):
             numoils = len(oil_names)
             oil_name_int = dict(
                 zip(sorted(list(oil_names)), [x for x in range(len(oil_names))])
-            )           
+            )
             for row in reader:
                 if (
                     row["Ölbezeichnung"] in oil_names
@@ -292,7 +315,7 @@ def trafficLightIndication(dataset, dataoil):
                     and row["MO"].isnumeric()
                     and row["P"].isnumeric()
                     and row["BA"].isnumeric()
-                    and row["Schwefelgehalt"].isnumeric()                     
+                    and row["Schwefelgehalt"].isnumeric()
                 ):
                     el_array_ds.append(
                         [
@@ -303,12 +326,12 @@ def trafficLightIndication(dataset, dataoil):
                             int(row["MO"]),
                             int(row["P"]),
                             int(row["BA"]),
-                            int(row["Schwefelgehalt"])
+                            int(row["Schwefelgehalt"]),
                         ]
                     )
                     label_array_ds.append(oil_name_int[row["Ölbezeichnung"]])
-    # Split data into training and testing sets                
-    label_array_ds = tf.keras.utils.to_categorical(label_array_ds)  
+    # Split data into training and testing sets
+    label_array_ds = tf.keras.utils.to_categorical(label_array_ds)
     x_train, x_test, y_train, y_test = train_test_split(
         np.array(el_array_ds), np.array(label_array_ds), test_size=TEST_SIZE
     )
@@ -320,7 +343,7 @@ def trafficLightIndication(dataset, dataoil):
     model.fit(x_train, y_train, epochs=EPOCHS)
 
     # Evaluate neural network performance
-    model.evaluate(x_test,  y_test, verbose=2)
+    model.evaluate(x_test, y_test, verbose=2)
 
     el_array_datapoint = []
 
@@ -328,9 +351,9 @@ def trafficLightIndication(dataset, dataoil):
         reader = csv.DictReader(csvfile, delimiter=";")
         if dataoil.keys_exist(
             "CA", "MG", "B", "ZN", "MO", "P", "BA", "Schwefelgehalt", "Ölbezeichnung"
-        ):                    
+        ):
             for row in reader:
-                if (                    
+                if (
                     row["CA"].isnumeric()
                     and row["MG"].isnumeric()
                     and row["B"].isnumeric()
@@ -338,7 +361,7 @@ def trafficLightIndication(dataset, dataoil):
                     and row["MO"].isnumeric()
                     and row["P"].isnumeric()
                     and row["BA"].isnumeric()
-                    and row["Schwefelgehalt"].isnumeric()                     
+                    and row["Schwefelgehalt"].isnumeric()
                 ):
                     el_array_datapoint.append(
                         [
@@ -349,19 +372,17 @@ def trafficLightIndication(dataset, dataoil):
                             int(row["MO"]),
                             int(row["P"]),
                             int(row["BA"]),
-                            int(row["Schwefelgehalt"])
+                            int(row["Schwefelgehalt"]),
                         ]
                     )
 
-    
     y_pred = np.argmax(model.predict(el_array_datapoint), axis=-1)
-    #print(oil_name_int)
+    # print(oil_name_int)
     response = "?"
     for o in oil_name_int:
         if oil_name_int[o] == y_pred[0]:
             response = o
     print("The oil is most likely", response)
-
 
 
 if __name__ == "__main__":
