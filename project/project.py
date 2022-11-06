@@ -308,11 +308,9 @@ def trafficLightIndication(dataset, dataoil):
         ) and (
             dataoil.keys_exist("Datum letzter Ölwechsel", "Datum Probenentnahme")
             or dataoil.keys_exist("Einfülltage")
-        ):
-            print("keys exist", dataoil.filename)
+        ):            
             for row in reader:
-                days_service = 0
-                print("Days of service:", days_service) 
+                days_service = 0                
                 if dataoil.keys_exist("Einfülltage"):
                     if len(row["Einfülltage"]) > 0:
                         days_service = int(row["Einfülltage"])
@@ -327,7 +325,7 @@ def trafficLightIndication(dataset, dataoil):
                             row["Datum Probenentnahme"],
                             row["Datum letzter Ölwechsel"],
                         )
-                       
+                print("Days of service:", days_service)        
                 if (
                     days_service > 0
                     and row["FE"].isnumeric()
