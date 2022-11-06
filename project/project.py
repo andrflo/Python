@@ -508,6 +508,20 @@ def trafficLightIndication(dataset, dataoil):
                         ]
                     )
                     label_array_ds.append(int(row["Gesamtbewertung"]))
+    # Split data into training and testing sets
+    label_array_ds = tf.keras.utils.to_categorical(label_array_ds)
+    x_train, x_test, y_train, y_test = train_test_split(
+        np.array(param_array_ds), np.array(label_array_ds), test_size=TEST_SIZE
+    )
+
+    # Get a compiled neural network
+    model = get_model_idOil(numstates)
+
+    # Fit model on training data
+    model.fit(x_train, y_train, epochs=EPOCHS)
+
+    # Evaluate neural network performance
+    model.evaluate(x_test, y_test, verbose=2)
     
 
 
