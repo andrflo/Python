@@ -508,6 +508,8 @@ def trafficLightIndication(dataset, dataoil):
                         ]
                     )
                     label_array_ds.append(int(row["Gesamtbewertung"]))
+                    print(len(param_array_ds))
+                    print(len(label_array_ds))
     # Split data into training and testing sets
     label_array_ds = tf.keras.utils.to_categorical(label_array_ds)
     x_train, x_test, y_train, y_test = train_test_split(
