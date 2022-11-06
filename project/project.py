@@ -378,6 +378,7 @@ def trafficLightIndication(dataset, dataoil):
                             int(row[">14µm (ISO)"]),
                             int(row["Wasser K.F."]),
                             days_service,
+                            dataoil.num_season(row["Datum Probenentnahme"]),
                         ]
                     )
 
@@ -489,6 +490,7 @@ def trafficLightIndication(dataset, dataoil):
                             int(row[">14µm (ISO)"]),
                             int(row["Wasser K.F."]),
                             days_service,
+                            dataset.num_season(row["Datum Probenentnahme"]),
                         ]
                     )
                     label_array_ds.append(row["Gesamtbewertung"])
