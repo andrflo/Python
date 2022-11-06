@@ -8,7 +8,7 @@ import tensorflow as tf
 from sklearn.model_selection import train_test_split
 
 EPOCHS = 10
-TEST_SIZE = 0.4
+TEST_SIZE = 0.1
 
 
 path_proj = os.path.abspath(os.getcwd())
