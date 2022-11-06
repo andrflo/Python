@@ -16,11 +16,10 @@ fn1 = os.path.join(path_proj, "dataset1.csv")
 fn2 = os.path.join(path_proj, "dataset2.csv")
 # fn3 = f"{path_proj}/project/dataset3.csv"
 fn3 = os.path.join(path_proj, "dataset3.csv")
-fn4 = os.path.join(
-    path_proj, "dataset4.csv"
-)  # dataset3 without the data poin of dataset5
+fn4 = os.path.join(path_proj, "dataset4.csv")  # dataset3 without the data poin of dataset5
 fn5 = os.path.join(path_proj, "dataset5.csv")  # dataset4 + dataset5 = dataset3
-
+fn6 = os.path.join(path_proj, "dataset6.csv")
+fn7 = os.path.join(path_proj, "dataset7.csv")
 fn_list = [fn6, fn7]
 
 
