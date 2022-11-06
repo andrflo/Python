@@ -20,7 +20,11 @@ fn4 = os.path.join(path_proj, "dataset4.csv")  # dataset3 without the data poin 
 fn5 = os.path.join(path_proj, "dataset5.csv")  # dataset4 + dataset5 = dataset3
 fn6 = os.path.join(path_proj, "dataset6.csv")
 fn7 = os.path.join(path_proj, "dataset7.csv")
-fn_list = [fn6, fn7]
+fn8 = os.path.join(path_proj, "dataset8.csv")
+fn9 = os.path.join(path_proj, "dataset9.csv")
+
+
+fn_list = [fn8, fn9]
 
 
 def main():
