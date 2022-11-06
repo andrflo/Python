@@ -303,7 +303,9 @@ def trafficLightIndication(dataset, dataoil):
             ">14µm (ISO)",
             "Wasser K.F.",
             "Gesamtbewertung",
-        ):
+        ) and (dataoil.keys_exist(
+            "Datum letzter Ölwechsel", "Datum Probenentnahme"
+        ) or dataoil.keys_exist("Einfülltage")):
             for row in reader:
                 if (
                     row["FE"].isnumeric()
