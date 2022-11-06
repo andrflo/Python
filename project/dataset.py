@@ -369,18 +369,18 @@ class Dataset:
             sd = date.fromisoformat(sample_date) 
             # summer: 1    
             if 6 <= sd.month <= 8:
-
-            match season.lower():
-                case "summer":
-                    return True if 6 <= sd.month <= 8 else False
-                case "fall":
-                    return True if 9 <= sd.month <= 11 else False
-                case "winter":
-                    return True if 0 <= sd.month % 12 <= 2 else False
-                case "spring":
-                    return True if 3 <= sd.month <= 5 else False
-                case _:
-                    return True
+                return 1
+            # fall: 2    
+            elif 9 <= sd.month <= 11:
+                return 2
+            # winter: 3
+            elif 0 <= sd.month % 12 <= 2:
+                return 3
+            # spring: 4          
+            elif 3 <= sd.month <= 5:
+                return 4     
+            else:
+                return 0                
         except ValueError:
             return 0      
 
