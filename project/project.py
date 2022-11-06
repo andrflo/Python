@@ -258,6 +258,111 @@ def get_model_idOil(numOils):
     )
     return model
 
+def trafficLightIndication(dataset, dataoil):    
+    # returns traffic light indication according to oil condition parameters of sample (dataoil)
+    # Dataset contains oil condition parameters of several oil samples and the corresponding traffic light indication
+    # The training of the model is performed only with oils of the same type (known)
+    # The traffic light indication is based on the following parameters:
+    # Fe, Cr, Sn, Al, Ni, Cu, Pb, Mo, Si, K, Na, Viskosität bei 40°C, Viskosität bei 100°C, Oxidation, 
+    # Ca, Mg, B, Zn, P, Ba, Schwefelgehalt, Neutralisationszahl, >4µm (ISO), >6µm (ISO), >14µm (ISO), Wasser K.F.
+
+    el_array_ds = []
+    oil_name_int = dict()
+    label_array_ds = []
+    numoils = 0
+
+    with open(dataset.filename) as csvfile:
+        reader = csv.DictReader(csvfile, delimiter=";")
+        if dataset.keys_exist(
+            "CA", "MG", "B", "ZN", "MO", "P", "BA", "Schwefelgehalt", "Ölbezeichnung"
+        ):
+            oil_names = dataset.set_of_oils(
+                "wind", "all seasons", "P"
+            )  # set of wind turbine oils
+            numoils = len(oil_names)
+            oil_name_int = dict(
+                zip(sorted(list(oil_names)), [x for x in range(len(oil_names))])
+            )           
+            for row in reader:
+                if (
+                    row["Ölbezeichnung"] in oil_names
+                    and row["CA"].isnumeric()
+                    and row["MG"].isnumeric()
+                    and row["B"].isnumeric()
+                    and row["ZN"].isnumeric()
+                    and row["MO"].isnumeric()
+                    and row["P"].isnumeric()
+                    and row["BA"].isnumeric()
+                    and row["Schwefelgehalt"].isnumeric()                     
+                ):
+                    el_array_ds.append(
+                        [
+                            int(row["CA"]),
+                            int(row["MG"]),
+                            int(row["B"]),
+                            int(row["ZN"]),
+                            int(row["MO"]),
+                            int(row["P"]),
+                            int(row["BA"]),
+                            int(row["Schwefelgehalt"])
+                        ]
+                    )
+                    label_array_ds.append(oil_name_int[row["Ölbezeichnung"]])
+    # Split data into training and testing sets                
+    label_array_ds = tf.keras.utils.to_categorical(label_array_ds)  
+    x_train, x_test, y_train, y_test = train_test_split(
+        np.array(el_array_ds), np.array(label_array_ds), test_size=TEST_SIZE
+    )
+
+    # Get a compiled neural network
+    model = get_model_idOil(numoils)
+
+    # Fit model on training data
+    model.fit(x_train, y_train, epochs=EPOCHS)
+
+    # Evaluate neural network performance
+    model.evaluate(x_test,  y_test, verbose=2)
+
+    el_array_datapoint = []
+
+    with open(dataoil.filename) as csvfile:
+        reader = csv.DictReader(csvfile, delimiter=";")
+        if dataoil.keys_exist(
+            "CA", "MG", "B", "ZN", "MO", "P", "BA", "Schwefelgehalt", "Ölbezeichnung"
+        ):                    
+            for row in reader:
+                if (                    
+                    row["CA"].isnumeric()
+                    and row["MG"].isnumeric()
+                    and row["B"].isnumeric()
+                    and row["ZN"].isnumeric()
+                    and row["MO"].isnumeric()
+                    and row["P"].isnumeric()
+                    and row["BA"].isnumeric()
+                    and row["Schwefelgehalt"].isnumeric()                     
+                ):
+                    el_array_datapoint.append(
+                        [
+                            int(row["CA"]),
+                            int(row["MG"]),
+                            int(row["B"]),
+                            int(row["ZN"]),
+                            int(row["MO"]),
+                            int(row["P"]),
+                            int(row["BA"]),
+                            int(row["Schwefelgehalt"])
+                        ]
+                    )
+
+    
+    y_pred = np.argmax(model.predict(el_array_datapoint), axis=-1)
+    #print(oil_name_int)
+    response = "?"
+    for o in oil_name_int:
+        if oil_name_int[o] == y_pred[0]:
+            response = o
+    print("The oil is most likely", response)
+
 
 
 if __name__ == "__main__":
