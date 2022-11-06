@@ -25,7 +25,7 @@ fn9 = os.path.join(path_proj, "dataset9.csv")
 fn10 = os.path.join(path_proj, "dataset10.csv")
 
 
-fn_list = [fn8, fn9]
+fn_list = [fn8, fn10]
 
 
 def main():
