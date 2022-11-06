@@ -263,7 +263,7 @@ def trafficLightIndication(dataset, dataoil):
     # The training of the model is performed only with oils of the same type (known)
     # The traffic light indication is based on the following parameters:
     # Fe, Cr, Sn, Al, Ni, Cu, Pb, Mo, Si, K, Na, Viskosität bei 40°C, Viskosität bei 100°C, Oxidation,
-    # Ca, Mg, B, Zn, P, Ba, Schwefelgehalt, Neutralisationszahl, >4µm (ISO), >6µm (ISO), >14µm (ISO), Wasser K.F.
+    # Ca, Mg, B, Zn, P, Ba, Schwefelgehalt, Neutralisationszahl, >4µm (ISO), >6µm (ISO), >14µm (ISO), Wasser K.F., time in service
 
     param_array_ds = []
     label_array_ds = []
