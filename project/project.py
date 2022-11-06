@@ -137,7 +137,9 @@ def identifyWindTurbineOil(dataset, dataoil):
         if dataset.keys_exist(
             "CA", "MG", "B", "ZN", "P", "BA", "Schwefelgehalt", "Ölbezeichnung"
         ):
-            oil_names = dataset.set_of_oils("wind", "all seasons", "P")
+            oil_names = dataset.set_of_oils(
+                "wind", "all seasons", "P"
+            )  # set of wind turbine oils
             if row["Ölbezeichnung"] in oil_names:
                 for row in reader:
                     el_array_ds.append(
