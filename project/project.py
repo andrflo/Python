@@ -197,7 +197,7 @@ def get_model_idOil(numOils):
         #tf.keras.layers.Dense(1024, activation="sigmoid"),         
         
         # Add an output layer with NUM_CATEGORIES output units
-        tf.keras.layers.Dense(numOils, activation="sigmoid")
+        tf.keras.layers.Dense(numOils, activation="relu")
     ])
 
     # Train neural network
