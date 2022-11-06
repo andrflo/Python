@@ -188,19 +188,13 @@ def identifyWindTurbineOil(dataset, dataoil):
 
 def get_model_idOil(numOils):
     # Create a neural network
-    model = tf.keras.models.Sequential([        
+    model = tf.keras.models.Sequential([   
 
-        # Add a hidden layer with dropout
-        tf.keras.layers.Dense(1024, activation="sigmoid"),
-        #tf.keras.layers.Dropout(0.5), 
-        
-        # Add a hidden layer with dropout
-        tf.keras.layers.Dense(1024, activation="sigmoid"),
-        #tf.keras.layers.Dropout(0.5), 
+        # Add a hidden layer with 128 units, with ReLU activation
+        model.add(tf.keras.layers.Dense(128, input_shape=(7,), activation="relu")),     
 
-        # Add a hidden layer with dropout
-        tf.keras.layers.Dense(1024, activation="sigmoid"),
-        #tf.keras.layers.Dropout(0.5), 
+        # Add a hidden layer 
+        tf.keras.layers.Dense(1024, activation="sigmoid"),     
            
         
         # Add an output layer with NUM_CATEGORIES output units
