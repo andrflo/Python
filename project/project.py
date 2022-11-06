@@ -337,24 +337,24 @@ def trafficLightIndication(dataset, dataoil):
                     and row["SI"].isnumeric()
                     and row["K"].isnumeric()
                     and row["NA"].isnumeric()
-                    #and row["Viskosität bei 40°C"].isnumeric()
-                    #and row["Viskosität bei 100°C"].isnumeric()
-                    #and row["Oxidation"].isnumeric()
+                    and row["Viskosität bei 40°C"] != ""
+                    and row["Viskosität bei 100°C"] != ""
+                    and row["Oxidation"].isnumeric()
                     and row["CA"].isnumeric()
                     and row["MG"].isnumeric()
                     and row["B"].isnumeric()
                     and row["ZN"].isnumeric()
                     and row["MO"].isnumeric()
-                    #and row["P"].isnumeric()
-                    #and row["BA"].isnumeric()
-                    #and row["Schwefelgehalt"].isnumeric()
-                    #and row["Ölbezeichnung"] != ""
-                    #and row["Datum Probenentnahme"] != ""
-                    #and row["Neutralisationszahl"].isnumeric()
-                    #and row[">4µm (ISO)"].isnumeric()
-                    #and row[">6µm (ISO)"].isnumeric()
-                    #and row[">14µm (ISO)"].isnumeric()
-                    #and row["Wasser K. F."].isnumeric()
+                    and row["P"].isnumeric()
+                    and row["BA"].isnumeric()
+                    and row["Schwefelgehalt"].isnumeric()
+                    and row["Ölbezeichnung"] != ""
+                    and row["Datum Probenentnahme"] != ""
+                    and row["Neutralisationszahl"].isnumeric()
+                    and row[">4µm (ISO)"].isnumeric()
+                    and row[">6µm (ISO)"].isnumeric()
+                    and row[">14µm (ISO)"].isnumeric()
+                    and row["Wasser K. F."].isnumeric()
                 ):
                     print("Days of service:", days_service) 
                     oil_name = row["Ölbezeichnung"]
