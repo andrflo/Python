@@ -507,7 +507,7 @@ def trafficLightIndication(dataset, dataoil):
                             dataset.num_season(row["Datum Probenentnahme"]),
                         ]
                     )
-                    label_array_ds.append(int(row["Gesamtbewertung"]))
+                    label_array_ds.append(int(row["Gesamtbewertung"])-1)
                     
     print(label_array_ds)
     # Split data into training and testing sets
