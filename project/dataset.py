@@ -350,6 +350,7 @@ class Dataset:
     def validate_season(self, sample_date, season):
         try:
             sd = date.fromisoformat(sample_date)
+            print(season)
             match season.lower():
                 case "summer":
                     return True if 6 <= sd.month <= 8 else False
