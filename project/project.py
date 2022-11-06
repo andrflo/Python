@@ -1,5 +1,6 @@
 import os
 import csv
+import numpy as np
 from dataset import Dataset
 from pdf import PDF
 import tensorflow as tf
@@ -168,8 +169,11 @@ def identifyWindTurbineOil(dataset, dataoil):
                         ]
                     )
                     label_array_ds.append(oil_name_int[row["Ölbezeichnung"]])
-    label_array_ds = tf.keras.utils.to_categorical(label_array_ds)
-    
+    # Split data into training and testing sets                
+    label_array_ds = tf.keras.utils.to_categorical(label_array_ds)  
+    x_train, x_test, y_train, y_test = train_test_split(
+        np.array(images), np.array(labels), test_size=TEST_SIZE
+    )
 
 
 if __name__ == "__main__":
