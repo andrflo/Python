@@ -169,6 +169,7 @@ def identifyWindTurbineOil(dataset, dataoil):
                     )
                     label_array_ds.append(oil_name_int[row["Ölbezeichnung"]])
     print(len(label_array_ds))
+    print(len(el_array_ds))
 
 
 if __name__ == "__main__":
