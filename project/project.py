@@ -525,6 +525,10 @@ def trafficLightIndication(dataset, dataoil):
 
     # Evaluate neural network performance
     model.evaluate(x_test, y_test, verbose=2)
+
+    y_pred = np.argmax(model.predict(param_array_datapoint), axis=-1)
+      
+    print("Traffic light indication: ", y_pred)
     
 def get_model_traffic_light(numstates):
     # Create a neural network
