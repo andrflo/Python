@@ -129,6 +129,7 @@ def identifyOil(dataset, dataoil):
     with open(dataset.filename) as csvfile:
         reader = csv.DictReader(csvfile, delimiter=";")
         if dataset.keys_exist("CA", "MG", "B", "ZN", "P", "BA", "Schwefelgehalt"):
+            soo = dataset.set_of_oils("wind", "all seasons", "P")
             for row in reader:                
                 el_array_ds.append([int(row["CA"]), int(row["MG"]), int(row["B"]), int(row["ZN"]), int(row["P"]), int(row["BA"]), int(row["Schwefelgehalt"])])
                 label_array_ds.append(row["Ölbezeichnung"])
