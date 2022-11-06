@@ -142,7 +142,7 @@ def identifyWindTurbineOil(dataset, dataoil):
                 "wind", "all seasons", "P"
             )  # set of wind turbine oils
             oil_name_int = dict(zip(sorted(list(oil_names)), [x for x in range(len(oil_names))]))
-             
+            print(oil_name_int)
             if row["Ölbezeichnung"] in oil_names:
                 for row in reader:
                     el_array_ds.append(
@@ -156,7 +156,7 @@ def identifyWindTurbineOil(dataset, dataoil):
                             int(row["Schwefelgehalt"]),
                         ]
                     )
-                    label_array_ds.append(x for x in oil_name_int if row["Ölbezeichnung"]==x)
+                    label_array_ds.append(oil_name_int[row["Ölbezeichnung"]])
 
 
 if __name__ == "__main__":
