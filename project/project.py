@@ -133,7 +133,7 @@ def generate_header(p):
 
 def identifyWindTurbineOil(dataset, dataoil):
     # returns the oil name given data oil and dataset
-    # data oil specifies the content of Ca, Mg, B, Zn, P, Ba, S in the oil sample
+    # data oil specifies the content of Ca, Mg, B, Zn, Mo, P, Ba, S in the oil sample
     # data set has information of the element content of multiple oils
     el_array_ds = []
     oil_name_int = dict()
@@ -143,7 +143,7 @@ def identifyWindTurbineOil(dataset, dataoil):
     with open(dataset.filename) as csvfile:
         reader = csv.DictReader(csvfile, delimiter=";")
         if dataset.keys_exist(
-            "CA", "MG", "B", "ZN", "P", "BA", "Schwefelgehalt", "Ölbezeichnung"
+            "CA", "MG", "B", "ZN", "MO", "P", "BA", "Schwefelgehalt", "Ölbezeichnung"
         ):
             oil_names = dataset.set_of_oils(
                 "wind", "all seasons", "P"
@@ -159,6 +159,7 @@ def identifyWindTurbineOil(dataset, dataoil):
                     and row["MG"].isnumeric()
                     and row["B"].isnumeric()
                     and row["ZN"].isnumeric()
+                    and row["MO"].isnumeric()
                     and row["P"].isnumeric()
                     and row["BA"].isnumeric()
                     and row["Schwefelgehalt"].isnumeric()                     
@@ -169,6 +170,7 @@ def identifyWindTurbineOil(dataset, dataoil):
                             int(row["MG"]),
                             int(row["B"]),
                             int(row["ZN"]),
+                            int(row["MO"]),
                             int(row["P"]),
                             int(row["BA"]),
                             int(row["Schwefelgehalt"])
