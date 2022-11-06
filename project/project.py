@@ -186,6 +186,40 @@ def identifyWindTurbineOil(dataset, dataoil):
     # Evaluate neural network performance
     model.evaluate(x_test,  y_test, verbose=2)
 
+    el_array_datapoint = []
+
+    with open(dataoil.filename) as csvfile:
+        reader = csv.DictReader(csvfile, delimiter=";")
+        if dataoil.keys_exist(
+            "CA", "MG", "B", "ZN", "P", "BA", "Schwefelgehalt", "Ölbezeichnung"
+        ):                    
+            for row in reader:
+                if (                    
+                    row["CA"].isnumeric()
+                    and row["MG"].isnumeric()
+                    and row["B"].isnumeric()
+                    and row["ZN"].isnumeric()
+                    and row["P"].isnumeric()
+                    and row["BA"].isnumeric()
+                    and row["Schwefelgehalt"].isnumeric()                     
+                ):
+                    el_array_datapoint.append(
+                        [
+                            int(row["CA"]),
+                            int(row["MG"]),
+                            int(row["B"]),
+                            int(row["ZN"]),
+                            int(row["P"]),
+                            int(row["BA"]),
+                            int(row["Schwefelgehalt"])
+                        ]
+                    )
+
+    y_pred = model.predict_classes(el_array_datapoint)
+    print(oil_name_int)
+    print(y_pred)
+
+
 def get_model_idOil(numOils):
     # Create a neural network
     model = tf.keras.models.Sequential([   
