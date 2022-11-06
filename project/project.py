@@ -52,7 +52,8 @@ def main():
         # ds.plot_data_machine("Neutralisationszahl")
         # ds.plot_data_machine("Anlagengöße [kW]", "Ölmenge im System")
 
-    identifyWindTurbineOil(ds_list[0], ds_list[1])
+    # identifyWindTurbineOil(ds_list[0], ds_list[1])
+    trafficLightIndication(ds_list[0], ds_list[1])
 
     p1 = "H2O_vs_days_all"
     p2 = "AN_vs_days_all"
@@ -301,22 +302,28 @@ def trafficLightIndication(dataset, dataoil):
             ">4µm (ISO)",
             ">6µm (ISO)",
             ">14µm (ISO)",
-            "Wasser K.F.",            
+            "Wasser K.F.",
             "Datum Probenentnahme",
-        ) and (dataoil.keys_exist(
-            "Datum letzter Ölwechsel", "Datum Probenentnahme"
-        ) or dataoil.keys_exist("Einfülltage")):
+        ) and (
+            dataoil.keys_exist("Datum letzter Ölwechsel", "Datum Probenentnahme")
+            or dataoil.keys_exist("Einfülltage")
+        ):
             for row in reader:
                 days_service = 0
-                if (dataoil.keys_exist("Einfülltage")):
-                    if (len(row["Einfülltage"]) > 0):
+                if dataoil.keys_exist("Einfülltage"):
+                    if len(row["Einfülltage"]) > 0:
                         days_service = int(row["Einfülltage"])
-                if days_service == 0 and dataoil.keys_exist("Datum letzter Ölwechsel", "Datum Probenentnahme"):
-                    if len(row["Datum letzter Ölwechsel"]) > 0 and len(row["Datum Probenentnahme"]) > 0:
+                if days_service == 0 and dataoil.keys_exist(
+                    "Datum letzter Ölwechsel", "Datum Probenentnahme"
+                ):
+                    if (
+                        len(row["Datum letzter Ölwechsel"]) > 0
+                        and len(row["Datum Probenentnahme"]) > 0
+                    ):
                         days_service = dataoil.compute_days_in_service(
-                                    row["Datum Probenentnahme"],
-                                    row["Datum letzter Ölwechsel"],
-                                )   
+                            row["Datum Probenentnahme"],
+                            row["Datum letzter Ölwechsel"],
+                        )
                 if (
                     days_service > 0
                     and row["FE"].isnumeric()
@@ -341,12 +348,12 @@ def trafficLightIndication(dataset, dataoil):
                     and row["BA"].isnumeric()
                     and row["Schwefelgehalt"].isnumeric()
                     and row["Ölbezeichnung"] != ""
-                    and row["Datum Probenentnahme"] != ""                    
+                    and row["Datum Probenentnahme"] != ""
                     and row["Neutralisationszahl"].isnumeric()
                     and row[">4µm (ISO)"].isnumeric()
                     and row[">6µm (ISO)"].isnumeric()
                     and row[">14µm (ISO)"].isnumeric()
-                    and row["Wasser K.F."].isnumeric()                    
+                    and row["Wasser K.F."].isnumeric()
                 ):
                     oil_name = row["Ölbezeichnung"]
                     param_array_datapoint.append(
@@ -411,24 +418,30 @@ def trafficLightIndication(dataset, dataoil):
             ">4µm (ISO)",
             ">6µm (ISO)",
             ">14µm (ISO)",
-            "Wasser K.F.", 
+            "Wasser K.F.",
             "Gesamtbewertung",
             "Datum Probenentnahme",
-        )and (dataset.keys_exist(
-            "Datum letzter Ölwechsel", "Datum Probenentnahme"
-        ) or dataset.keys_exist("Einfülltage")):
-            
+        ) and (
+            dataset.keys_exist("Datum letzter Ölwechsel", "Datum Probenentnahme")
+            or dataset.keys_exist("Einfülltage")
+        ):
+
             for row in reader:
                 days_service = 0
-                if (dataset.keys_exist("Einfülltage")):
-                    if (len(row["Einfülltage"]) > 0):
+                if dataset.keys_exist("Einfülltage"):
+                    if len(row["Einfülltage"]) > 0:
                         days_service = int(row["Einfülltage"])
-                if days_service == 0 and dataset.keys_exist("Datum letzter Ölwechsel", "Datum Probenentnahme"):
-                    if len(row["Datum letzter Ölwechsel"]) > 0 and len(row["Datum Probenentnahme"]) > 0:
+                if days_service == 0 and dataset.keys_exist(
+                    "Datum letzter Ölwechsel", "Datum Probenentnahme"
+                ):
+                    if (
+                        len(row["Datum letzter Ölwechsel"]) > 0
+                        and len(row["Datum Probenentnahme"]) > 0
+                    ):
                         days_service = dataset.compute_days_in_service(
-                                    row["Datum Probenentnahme"],
-                                    row["Datum letzter Ölwechsel"],
-                                )         
+                            row["Datum Probenentnahme"],
+                            row["Datum letzter Ölwechsel"],
+                        )
                 if (
                     days_service > 0
                     and row["Ölbezeichnung"] == oil_name
@@ -452,13 +465,13 @@ def trafficLightIndication(dataset, dataoil):
                     and row["MO"].isnumeric()
                     and row["P"].isnumeric()
                     and row["BA"].isnumeric()
-                    and row["Schwefelgehalt"].isnumeric()                    
+                    and row["Schwefelgehalt"].isnumeric()
                     and row["Neutralisationszahl"].isnumeric()
                     and row[">4µm (ISO)"].isnumeric()
                     and row[">6µm (ISO)"].isnumeric()
                     and row[">14µm (ISO)"].isnumeric()
-                    and row["Wasser K.F."].isnumeric()  
-                    and row["Gesamtbewertung"].isnumeric() 
+                    and row["Wasser K.F."].isnumeric()
+                    and row["Gesamtbewertung"].isnumeric()
                     and row["Datum Probenentnahme"] != ""
                 ):
                     param_array_ds.append(
