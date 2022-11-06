@@ -175,6 +175,13 @@ def identifyWindTurbineOil(dataset, dataoil):
         np.array(el_array_ds), np.array(label_array_ds), test_size=TEST_SIZE
     )
 
+    # Get a compiled neural network
+    model = get_model_idOil()
+
+def get_model_idOil():
+    ...
+
+
 
 if __name__ == "__main__":
     main()
