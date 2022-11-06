@@ -409,7 +409,8 @@ def trafficLightIndication(dataset, dataoil):
             ">4µm (ISO)",
             ">6µm (ISO)",
             ">14µm (ISO)",
-            "Wasser K.F."
+            "Wasser K.F.", 
+            "Datum Probenentnahme",
         )and (dataset.keys_exist(
             "Datum letzter Ölwechsel", "Datum Probenentnahme"
         ) or dataset.keys_exist("Einfülltage")):
