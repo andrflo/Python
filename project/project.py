@@ -183,6 +183,9 @@ def identifyWindTurbineOil(dataset, dataoil):
     # Fit model on training data
     model.fit(x_train, y_train, epochs=EPOCHS)
 
+    # Evaluate neural network performance
+    model.evaluate(x_test,  y_test, verbose=2)
+
 def get_model_idOil(numOils):
     # Create a neural network
     model = tf.keras.models.Sequential([        
