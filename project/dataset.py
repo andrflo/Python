@@ -366,7 +366,10 @@ class Dataset:
 
     def num_season(self, sample_date):  
         try:
-            sd = date.fromisoformat(sample_date)            
+            sd = date.fromisoformat(sample_date) 
+            # summer: 1    
+            if 6 <= sd.month <= 8:
+
             match season.lower():
                 case "summer":
                     return True if 6 <= sd.month <= 8 else False
