@@ -299,13 +299,7 @@ def trafficLightIndication(dataset, dataoil):
             ">14µm (ISO)",
             "Wasser K.F."
         ):
-            oil_names = dataset.set_of_oils(
-                "wind", "all seasons", "P"
-            )  # set of wind turbine oils
-            numoils = len(oil_names)
-            oil_name_int = dict(
-                zip(sorted(list(oil_names)), [x for x in range(len(oil_names))])
-            )
+            
             for row in reader:
                 if (
                     row["Ölbezeichnung"] in oil_names
