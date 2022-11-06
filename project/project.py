@@ -264,9 +264,40 @@ def trafficLightIndication(dataset, dataoil):
     # Fe, Cr, Sn, Al, Ni, Cu, Pb, Mo, Si, K, Na, Viskosität bei 40°C, Viskosität bei 100°C, Oxidation,
     # Ca, Mg, B, Zn, P, Ba, Schwefelgehalt, Neutralisationszahl, >4µm (ISO), >6µm (ISO), >14µm (ISO), Wasser K.F.
 
-    el_array_ds = []
+    param_array_ds = []
     label_array_ds = []
     numstates = 3
+
+    param_array_datapoint = []
+
+    with open(dataoil.filename) as csvfile:
+        reader = csv.DictReader(csvfile, delimiter=";")
+        if dataoil.keys_exist(
+            "CA", "MG", "B", "ZN", "MO", "P", "BA", "Schwefelgehalt", "Ölbezeichnung"
+        ):
+            for row in reader:
+                if (
+                    row["CA"].isnumeric()
+                    and row["MG"].isnumeric()
+                    and row["B"].isnumeric()
+                    and row["ZN"].isnumeric()
+                    and row["MO"].isnumeric()
+                    and row["P"].isnumeric()
+                    and row["BA"].isnumeric()
+                    and row["Schwefelgehalt"].isnumeric()
+                ):
+                    el_array_datapoint.append(
+                        [
+                            int(row["CA"]),
+                            int(row["MG"]),
+                            int(row["B"]),
+                            int(row["ZN"]),
+                            int(row["MO"]),
+                            int(row["P"]),
+                            int(row["BA"]),
+                            int(row["Schwefelgehalt"]),
+                        ]
+                    )
 
     with open(dataset.filename) as csvfile:
         reader = csv.DictReader(csvfile, delimiter=";")
@@ -340,36 +371,7 @@ def trafficLightIndication(dataset, dataoil):
     # Evaluate neural network performance
     model.evaluate(x_test, y_test, verbose=2)
 
-    el_array_datapoint = []
-
-    with open(dataoil.filename) as csvfile:
-        reader = csv.DictReader(csvfile, delimiter=";")
-        if dataoil.keys_exist(
-            "CA", "MG", "B", "ZN", "MO", "P", "BA", "Schwefelgehalt", "Ölbezeichnung"
-        ):
-            for row in reader:
-                if (
-                    row["CA"].isnumeric()
-                    and row["MG"].isnumeric()
-                    and row["B"].isnumeric()
-                    and row["ZN"].isnumeric()
-                    and row["MO"].isnumeric()
-                    and row["P"].isnumeric()
-                    and row["BA"].isnumeric()
-                    and row["Schwefelgehalt"].isnumeric()
-                ):
-                    el_array_datapoint.append(
-                        [
-                            int(row["CA"]),
-                            int(row["MG"]),
-                            int(row["B"]),
-                            int(row["ZN"]),
-                            int(row["MO"]),
-                            int(row["P"]),
-                            int(row["BA"]),
-                            int(row["Schwefelgehalt"]),
-                        ]
-                    )
+    
 
     y_pred = np.argmax(model.predict(el_array_datapoint), axis=-1)
     # print(oil_name_int)
