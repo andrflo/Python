@@ -388,9 +388,7 @@ def trafficLightIndication(dataset, dataoil):
                             days_service,
                             dataoil.num_season(row["Datum Probenentnahme"]),
                         ]
-                    )
-                    print(oil_name)
-                    print(len(param_array_datapoint[0]))
+                    )                    
 
     with open(dataset.filename) as csvfile:
         reader = csv.DictReader(csvfile, delimiter=";")
