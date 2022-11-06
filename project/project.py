@@ -215,7 +215,8 @@ def identifyWindTurbineOil(dataset, dataoil):
                         ]
                     )
 
-    y_pred = model.predict_classes(el_array_datapoint)
+    
+    y_pred = np.argmax(model.predict(el_array_datapoint), axis=-1)
     print(oil_name_int)
     print(y_pred)
 
