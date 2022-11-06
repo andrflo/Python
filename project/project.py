@@ -157,6 +157,7 @@ def identifyWindTurbineOil(dataset, dataoil):
                     and row["P"].isnumeric
                     and row["BA"].isnumeric
                     and row["Schwefelgehalt"].isnumeric 
+                    and row["Schwefelgehalt"]!="" 
                 ):
                     el_array_ds.append(
                         [
