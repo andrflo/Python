@@ -273,7 +273,33 @@ def trafficLightIndication(dataset, dataoil):
     with open(dataoil.filename) as csvfile:
         reader = csv.DictReader(csvfile, delimiter=";")
         if dataoil.keys_exist(
-            "CA", "MG", "B", "ZN", "MO", "P", "BA", "Schwefelgehalt", "Ölbezeichnung"
+            "FE",
+            "CR",
+            "SN",
+            "AL",
+            "NI",
+            "CU",
+            "PB",
+            "SI",
+            "K",
+            "NA",
+            "Viskosität bei 40°C",
+            "Viskosität bei 100°C",
+            "Oxidation",
+            "CA",
+            "MG",
+            "B",
+            "ZN",
+            "MO",
+            "P",
+            "BA",
+            "Schwefelgehalt",
+            "Ölbezeichnung",
+            "Neutralisationszahl",
+            ">4µm (ISO)",
+            ">6µm (ISO)",
+            ">14µm (ISO)",
+            "Wasser K.F."
         ):
             for row in reader:
                 if (
