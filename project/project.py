@@ -523,7 +523,26 @@ def trafficLightIndication(dataset, dataoil):
     # Evaluate neural network performance
     model.evaluate(x_test, y_test, verbose=2)
     
+def get_model_idOil(numOils):
+    # Create a neural network
+    model = tf.keras.models.Sequential(
+        [
+            # Add a hidden layer with x units, with ReLU activation
+            tf.keras.layers.Dense(256, input_shape=(8,), activation="sigmoid"),
+            # Add a hidden layer
+            tf.keras.layers.Dense(64, activation="sigmoid"),
+            # Add a hidden layer
+            tf.keras.layers.Dense(64, activation="sigmoid"),
+            # Add an output layer with NUM_CATEGORIES output units
+            tf.keras.layers.Dense(numOils, activation="softmax"),
+        ]
+    )
 
+    # Train neural network
+    model.compile(
+        optimizer="adam", loss="categorical_crossentropy", metrics=["accuracy"]
+    )
+    return model
 
 if __name__ == "__main__":
     main()
