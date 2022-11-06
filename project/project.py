@@ -191,7 +191,7 @@ def get_model_idOil(numOils):
     model = tf.keras.models.Sequential([   
 
         # Add a hidden layer with 128 units, with ReLU activation
-        model.add(tf.keras.layers.Dense(128, input_shape=(7,), activation="relu")),     
+        tf.keras.layers.Dense(128, input_shape=(7,), activation="relu"),     
 
         # Add a hidden layer 
         #tf.keras.layers.Dense(1024, activation="sigmoid"),         
