@@ -409,9 +409,13 @@ def trafficLightIndication(dataset, dataoil):
                         days_service = int(row["Einfülltage"])
                 elif dataset.keys_exist("Datum letzter Ölwechsel", "Datum Probenentnahme"):
                     if len(row["Datum letzter Ölwechsel"]) > 0 and len(row["Datum Probenentnahme"]) > 0:
-                                 
+                        days_service = dataset.compute_days_in_service(
+                                    row["Datum Probenentnahme"],
+                                    row["Datum letzter Ölwechsel"],
+                                )         
                 if (
-                    row["Ölbezeichnung"] == oil_name
+                    days_service > 0
+                    and row["Ölbezeichnung"] == oil_name
                     and row["FE"].isnumeric()
                     and row["CR"].isnumeric()
                     and row["SN"].isnumeric()
