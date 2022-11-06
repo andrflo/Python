@@ -134,6 +134,7 @@ def identifyWindTurbineOil(dataset, dataoil):
     el_array_ds = []
     oil_name_int = dict()
     label_array_ds = []
+    numoils = 0
 
     with open(dataset.filename) as csvfile:
         reader = csv.DictReader(csvfile, delimiter=";")
@@ -143,6 +144,7 @@ def identifyWindTurbineOil(dataset, dataoil):
             oil_names = dataset.set_of_oils(
                 "wind", "all seasons", "P"
             )  # set of wind turbine oils
+            numoils = len(oil_names)
             oil_name_int = dict(
                 zip(sorted(list(oil_names)), [x for x in range(len(oil_names))])
             )           
@@ -176,19 +178,11 @@ def identifyWindTurbineOil(dataset, dataoil):
     )
 
     # Get a compiled neural network
-    model = get_model_idOil()
+    model = get_model_idOil(numoils)
 
-def get_model_idOil():
-    # Create a convolutional neural network
-    model = tf.keras.models.Sequential([
-
-        # Convolutional layer. Learn 32 filters using a 3x3 kernel
-        tf.keras.layers.Conv2D(
-            32, (3, 3), activation="relu", input_shape=(1, 7)
-        ),
-
-        # Max-pooling layer, using 2x2 pool size
-        tf.keras.layers.MaxPooling2D(pool_size=(3, 3)),
+def get_model_idOil(numOils):
+    # Create a neural network
+    model = tf.keras.models.Sequential([        
 
         # Add a hidden layer with dropout
         tf.keras.layers.Dense(128, activation="relu"),
@@ -198,7 +192,7 @@ def get_model_idOil():
         tf.keras.layers.Flatten(),      
 
         # Add an output layer with NUM_CATEGORIES output units
-        tf.keras.layers.Dense(NUM_CATEGORIES, activation="softmax")
+        tf.keras.layers.Dense(numOils, activation="softmax")
     ])
 
     # Train neural network
@@ -206,7 +200,7 @@ def get_model_idOil():
     optimizer="adam",
     loss="categorical_crossentropy",
     metrics=["accuracy"]
-)
+    )
     return model
 
 
