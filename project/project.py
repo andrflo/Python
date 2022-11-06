@@ -195,7 +195,7 @@ def get_model_idOil(numOils):
         #tf.keras.layers.Dropout(0.5), 
         
         # Add a hidden layer with dropout
-        tf.keras.layers.Dense(16, activation="sigmoid"),
+        tf.keras.layers.Dense(128, activation="sigmoid"),
         #tf.keras.layers.Dropout(0.5), 
            
         
