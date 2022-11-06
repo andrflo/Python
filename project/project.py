@@ -197,7 +197,7 @@ def identifyWindTurbineOil(dataset, dataoil):
     with open(dataoil.filename) as csvfile:
         reader = csv.DictReader(csvfile, delimiter=";")
         if dataoil.keys_exist(
-            "CA", "MG", "B", "ZN", "P", "BA", "Schwefelgehalt", "Ölbezeichnung"
+            "CA", "MG", "B", "ZN", "MO", "P", "BA", "Schwefelgehalt", "Ölbezeichnung"
         ):                    
             for row in reader:
                 if (                    
@@ -205,6 +205,7 @@ def identifyWindTurbineOil(dataset, dataoil):
                     and row["MG"].isnumeric()
                     and row["B"].isnumeric()
                     and row["ZN"].isnumeric()
+                    and row["MO"].isnumeric()
                     and row["P"].isnumeric()
                     and row["BA"].isnumeric()
                     and row["Schwefelgehalt"].isnumeric()                     
@@ -215,6 +216,7 @@ def identifyWindTurbineOil(dataset, dataoil):
                             int(row["MG"]),
                             int(row["B"]),
                             int(row["ZN"]),
+                            int(row["MO"]),
                             int(row["P"]),
                             int(row["BA"]),
                             int(row["Schwefelgehalt"])
