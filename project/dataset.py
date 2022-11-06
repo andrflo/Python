@@ -347,8 +347,7 @@ class Dataset:
             fn = fn.replace(" ", "_")
         return fn
 
-    def validate_season(self, sample_date, season):
-        print(season)
+    def validate_season(self, sample_date, season):        
         try:
             sd = date.fromisoformat(sample_date)
             print(season)
