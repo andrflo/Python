@@ -309,6 +309,7 @@ def trafficLightIndication(dataset, dataoil):
             dataoil.keys_exist("Datum letzter Ölwechsel", "Datum Probenentnahme")
             or dataoil.keys_exist("Einfülltage")
         ):
+            print("keys exist", dataoil.filename)
             for row in reader:
                 days_service = 0
                 print("Days of service:", days_service) 
