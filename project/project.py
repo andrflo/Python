@@ -324,8 +324,7 @@ def trafficLightIndication(dataset, dataoil):
                         days_service = dataoil.compute_days_in_service(
                             row["Datum Probenentnahme"],
                             row["Datum letzter Ölwechsel"],
-                        )
-                print("Days of service:", days_service)        
+                        )                       
                 if (
                     days_service > 0
                     and row["FE"].isnumeric()
@@ -357,6 +356,7 @@ def trafficLightIndication(dataset, dataoil):
                     and row[">14µm (ISO)"].isnumeric()
                     and row["Wasser K. F."].isnumeric()
                 ):
+                    print("Days of service:", days_service) 
                     oil_name = row["Ölbezeichnung"]
                     param_array_datapoint.append(
                         [
