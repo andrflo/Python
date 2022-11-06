@@ -133,7 +133,7 @@ def identifyWindTurbineOil(dataset, dataoil):
     el_array_ds = []
     oil_name_int = dict()
     label_array_ds = []
-    print(dataset.filename)
+    
     with open(dataset.filename) as csvfile:
         reader = csv.DictReader(csvfile, delimiter=";")
         if dataset.keys_exist(
