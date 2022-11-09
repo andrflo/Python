@@ -30,7 +30,7 @@ fn12 = os.path.join(path_proj, "dataset12.csv")
 fn13 = os.path.join(path_proj, "dataset13.csv")
 fn14 = os.path.join(path_proj, "dataset14.csv")
 
-fn_list = [fn13, fn14]
+fn_list = [fn11, fn12]
 
 
 def main():
@@ -183,6 +183,7 @@ def identifyWindTurbineOil(dataset, dataoil):
                         ]
                     )
                     label_array_ds.append(oil_name_int[row["Ölbezeichnung"]])
+                   
     # Split data into training and testing sets
     label_array_ds = tf.keras.utils.to_categorical(label_array_ds)
     x_train, x_test, y_train, y_test = train_test_split(
@@ -311,6 +312,7 @@ def trafficLightIndication(dataset, dataoil):
             dataoil.keys_exist("Datum letzter Ölwechsel", "Datum Probenentnahme")
             or dataoil.keys_exist("Einfülltage")
         ):            
+            
             for row in reader:
                 days_service = 0                
                 if dataoil.keys_exist("Einfülltage"):
@@ -327,6 +329,7 @@ def trafficLightIndication(dataset, dataoil):
                             row["Datum Probenentnahme"],
                             row["Datum letzter Ölwechsel"],
                         )                       
+                print("days service", days_service)
                 if (
                     days_service > 0
                     and row["FE"].isnumeric()
@@ -391,7 +394,7 @@ def trafficLightIndication(dataset, dataoil):
                             dataoil.num_season(row["Datum Probenentnahme"]),
                         ]
                     )                    
-
+    print(len(param_array_datapoint))
     with open(dataset.filename) as csvfile:
         reader = csv.DictReader(csvfile, delimiter=";")
         if dataset.keys_exist(
@@ -510,7 +513,21 @@ def trafficLightIndication(dataset, dataoil):
                         ]
                     )
                     label_array_ds.append(int(row["Gesamtbewertung"])-1)
-                    
+    
+    count1= 0
+    count2= 0
+    count3= 0  
+    for l in label_array_ds:
+        if l==0:
+            count1 += 1
+        elif l==1:
+            count2 += 1
+        elif l==2:
+            count3 += 1   
+    print("count1", count1)
+    print("count2", count2)
+    print("count3", count3)
+
     # Split data into training and testing sets
     label_array_ds = tf.keras.utils.to_categorical(label_array_ds)
     x_train, x_test, y_train, y_test = train_test_split(
