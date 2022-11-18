@@ -120,7 +120,7 @@ def load_data(filename):
             float(row["PageValues"]), float(row["SpecialDay"]), month, int(row["OperatingSystems"]), 
             int(row["Browser"]), int(row["Region"]), int(row["TrafficType"]), returningVisitor, weekend])
             labels.append(revenue)    
-            print(evidence[0])       
+                 
     return (evidence, labels)        
 
 
