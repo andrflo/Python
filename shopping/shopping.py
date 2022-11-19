@@ -102,6 +102,8 @@ def load_data(filename):
                     returningVisitor = 1
                 case "new_visitor":
                     returningVisitor = 0  
+                case "other":
+                    returningVisitor = 0        
 
             weekend = -1
             match row["Weekend"].lower():
