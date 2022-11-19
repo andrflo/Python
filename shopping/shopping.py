@@ -66,7 +66,7 @@ def load_data(filename):
     path_proj = os.path.abspath(os.getcwd())
     filename = os.path.join(path_proj, filename)
     with open(filename) as csvfile:
-        reader = csv.DictReader(csvfile, delimiter=",")        
+        reader = csv.DictReader(csvfile)        
         for row in reader:
             
             month = -1
