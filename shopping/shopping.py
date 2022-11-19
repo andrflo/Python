@@ -124,7 +124,14 @@ def load_data(filename):
             int(row["Browser"]), int(row["Region"]), int(row["TrafficType"]), returningVisitor, weekend])
             labels.append(revenue)    
             if month == -1:
-                print("month -1")     
+                print("month -1")   
+            if returningVisitor == -1:    
+                print("rv -1")  
+            if weekend == -1:
+                print("weekend -1") 
+            if revenue == -1:
+                print("rev -1") 
+
     return (evidence, labels)        
 
 
