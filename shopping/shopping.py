@@ -127,6 +127,7 @@ def load_data(filename):
                 print("month -1")   
             if returningVisitor == -1:    
                 print("rv -1")  
+                print(row["VisitorType"])
             if weekend == -1:
                 print("weekend -1") 
             if revenue == -1:
