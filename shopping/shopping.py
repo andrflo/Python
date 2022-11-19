@@ -81,7 +81,7 @@ def load_data(filename):
                     month = 3
                 case "may":
                     month = 4    
-                case "jun":
+                case "june":
                     month = 5    
                 case "jul":
                     month = 6   
