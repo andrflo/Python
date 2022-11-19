@@ -1,5 +1,6 @@
 import csv
 import sys
+import os
 import numpy as np
 
 from sklearn.model_selection import train_test_split
@@ -62,6 +63,8 @@ def load_data(filename):
     """
     evidence = []
     labels = []
+    path_proj = os.path.abspath(os.getcwd())
+    filename = os.path.join(path_proj, filename)
     with open(filename) as csvfile:
         reader = csv.DictReader(csvfile, delimiter=",")        
         for row in reader:
