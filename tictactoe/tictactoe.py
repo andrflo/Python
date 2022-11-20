@@ -139,7 +139,12 @@ def minimax(board):
         list_val_act = []
         for a in actions(board):
             list_val_act.append([min_v(result(board, a)), a])
-        return sorted(list_val_act, reversed = True)[0]    
+        return sorted(list_val_act)[-1][1]
+    elif player(board) == O:
+        list_val_act = []
+        for a in actions(board):
+            list_val_act.append([max_v(result(board, a)), a])
+        return sorted(list_val_act)[0][1]     
 
 
 
