@@ -146,10 +146,6 @@ def minimax(board):
             list_val_act.append([max_v(result(board, a)), a])
         return sorted(list_val_act)[0][1]     
 
-
-
-
-
 def max_v(board):
     u = -math.inf    
     if (terminal(board)):
