@@ -134,6 +134,7 @@ def minimax(board):
     Returns the optimal action for the current player on the board.
     """
     """
+    # A different version
     if (terminal(board)):
         return None
     list_val_act = []
