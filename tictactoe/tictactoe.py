@@ -153,6 +153,7 @@ def minaction(board, aux):
     for action in pos_actions:
         if minaction_var == None:
             minaction_var = action
+            break
 
     for action in pos_actions:
         nboard = result(board, action)
