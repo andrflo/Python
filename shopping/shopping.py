@@ -100,10 +100,8 @@ def load_data(filename):
             match row["VisitorType"].lower():
                 case "returning_visitor":
                     returningVisitor = 1
-                case "new_visitor":
-                    returningVisitor = 0  
-                case "other":
-                    returningVisitor = 0        
+                case "new_visitor" | "other":
+                    returningVisitor = 0                        
 
             weekend = -1
             match row["Weekend"].lower():
@@ -125,16 +123,7 @@ def load_data(filename):
             float(row["PageValues"]), float(row["SpecialDay"]), month, int(row["OperatingSystems"]), 
             int(row["Browser"]), int(row["Region"]), int(row["TrafficType"]), returningVisitor, weekend])
             labels.append(revenue)    
-            if month == -1:
-                print("month -1")   
-            if returningVisitor == -1:    
-                print("rv -1")  
-                print(row["VisitorType"])
-            if weekend == -1:
-                print("weekend -1") 
-            if revenue == -1:
-                print("rev -1") 
-
+            
     return (evidence, labels)        
 
 
