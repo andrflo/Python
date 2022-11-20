@@ -139,7 +139,7 @@ def minimax(board):
         list_val_act = []
         for a in actions(board):
             list_val_act.append([min_v(result(board, a)), a])
-        return sorted()    
+        return sorted(list_val_act, reversed = True)[0]    
 
 
 
