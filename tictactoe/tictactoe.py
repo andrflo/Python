@@ -31,11 +31,7 @@ def player(board):
         return X
     else:
         count = countboard(board)
-        if count % 2 == 0:
-            return X
-        else:
-            return O
-
+        return X if count % 2 == 0 else O           
 
 def actions(board):
     """
