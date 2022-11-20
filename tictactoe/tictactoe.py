@@ -23,11 +23,7 @@ def player(board):
     """
     Returns player who has the next turn on a board.
     """
-    if board == [
-        [EMPTY, EMPTY, EMPTY],
-        [EMPTY, EMPTY, EMPTY],
-        [EMPTY, EMPTY, EMPTY],
-    ] or terminal(board):
+    if board == initial_state() or terminal(board):
         return X
     else:
         count = countboard(board)
