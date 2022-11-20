@@ -133,7 +133,38 @@ def minimax(board):
     """
     Returns the optimal action for the current player on the board.
     """
-    if terminal(board):
+    if (terminal(board)):
+        return None
+    elif player(board) == X:
+        list_val_act = []
+        for a in actions(board):
+            list_val_act.append([min_v(result(board, a)), a])
+        return sorted()    
+
+
+
+
+
+def max_v(board):
+    u = -math.inf    
+    if (terminal(board)):
+        return utility(board)
+
+    for a in actions(board):
+        u = max(u, min_v(result(board, a)))    
+    return u   
+
+def min_v(board):
+    u = math.inf    
+    if (terminal(board)):
+        return utility(board)
+
+    for a in actions(board):
+        u = min(u, max_v(result(board, a)))    
+    return u    
+
+
+    """if terminal(board):
         return None
     else:
         if player(board) == X:
@@ -225,7 +256,7 @@ def maxaction(board, aux):
                 maxaction_var = action
 
     return maxaction_var, maxutility
-
+"""
 
 def countboard(board):
     count = 0
