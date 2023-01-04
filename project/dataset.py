@@ -455,8 +455,7 @@ class Dataset:
 
             ok = True
             while i < len(data) and ok:
-                machine_id = (data[i])[a]
-                print(machine_id)
+                machine_id = (data[i])[a]                
                 oil_n = (data[i])["Ölbezeichnung"]
                 j = i
                 k = 0
