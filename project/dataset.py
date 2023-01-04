@@ -423,10 +423,9 @@ class Dataset:
                             row["Probe aus"], "wind", "wea", "wka", "éolienne"
                         )
                         and len(row[param]) > 0
-                        #and self.validate_season(row["Datum Probenentnahme"], season)
+                        and self.validate_season(row["Datum Probenentnahme"], season) #In case of problems verify ISO format of date
                     ):
-                        oil_names.add(row["Ölbezeichnung"])   
-        print(oil_names)                                           
+                        oil_names.add(row["Ölbezeichnung"])                                                    
         return oil_names
 
     def plot_data_machine(self, paramx, paramy):
