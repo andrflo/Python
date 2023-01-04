@@ -434,6 +434,7 @@ class Dataset:
             if not self.keys_exist(paramx):
                 raise Exception("paramx does not exist")
             oil_names = self.set_of_oils("wind turbine", "all_seasons", paramy)
+            print(oil_names)
 
             if self.keys_exist("Anlagennummer"):
                 a = "Anlagennummer"
@@ -446,8 +447,6 @@ class Dataset:
             set_of_ids = set()
             for row in data:
                 set_of_ids.add(row[a])
-
-            print(set_of_ids)    
 
             # Number of samples for each machine
             n_el = []
