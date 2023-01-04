@@ -447,6 +447,8 @@ class Dataset:
             for row in data:
                 set_of_ids.add(row[a])
 
+            print(set_of_ids)    
+
             # Number of samples for each machine
             n_el = []
             # List of machine ids
