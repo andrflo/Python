@@ -30,7 +30,7 @@ fn12 = os.path.join(path_proj, "dataset12.csv")
 fn13 = os.path.join(path_proj, "dataset13.csv")
 fn14 = os.path.join(path_proj, "dataset14.csv")
 
-fn_list = [fn11, fn12]
+fn_list = [fn3]
 
 
 def main():
@@ -56,7 +56,7 @@ def main():
         # ds.plot_data_machine("Anlagengöße [kW]", "Ölmenge im System")
 
     # identifyWindTurbineOil(ds_list[0], ds_list[1])
-    trafficLightIndication(ds_list[0], ds_list[1])
+    # trafficLightIndication(ds_list[0], ds_list[1])
 
     p1 = "H2O_vs_days_all"
     p2 = "AN_vs_days_all"
