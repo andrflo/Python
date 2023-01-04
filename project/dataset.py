@@ -419,11 +419,11 @@ class Dataset:
                 if "wind" in source.lower():                                      
                     if (
                         row["Ölbezeichnung"] != ""
-                        #and self.origin_sample(
-                         #   row["Probe aus"], "wind", "wea", "wka", "éolienne"
-                        #)
+                        and self.origin_sample(
+                            row["Probe aus"], "wind", "wea", "wka", "éolienne"
+                        )
                         and len(row[param]) > 0
-                        and self.validate_season(row["Datum Probenentnahme"], season)
+                        #and self.validate_season(row["Datum Probenentnahme"], season)
                     ):
                         oil_names.add(row["Ölbezeichnung"])   
         print(oil_names)                                           
