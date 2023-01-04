@@ -433,8 +433,7 @@ class Dataset:
         if self.keys_exist(paramy):
             if not self.keys_exist(paramx):
                 raise Exception("paramx does not exist")
-            oil_names = self.set_of_oils("wind turbine", "all_seasons", paramy)
-            print(oil_names)
+            oil_names = self.set_of_oils("wind turbine", "all_seasons", paramy)            
 
             if self.keys_exist("Anlagennummer"):
                 a = "Anlagennummer"
