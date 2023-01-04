@@ -50,6 +50,7 @@ def main():
         # ds.plot_data_machine("time", "Viskosität bei 100°C")
         # ds.plot_data_machine("time", "FE")
         # ds.plot_data_machine("time", "P")
+        ds.plot_data_machine("time", "ZN")
         # ds.plot_data_machine("FE", "Neutralisationszahl")
         # ds.plot_data_machine("CU", "Neutralisationszahl")
         # ds.plot_data_machine("Neutralisationszahl")
