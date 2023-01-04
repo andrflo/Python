@@ -415,9 +415,9 @@ class Dataset:
         oil_names = set()
         with open(self.filename) as csvfile:
             reader = csv.DictReader(csvfile, delimiter=";")
-            for row in reader:
-                print(row[param])
-                if "wind" in source.lower():                    
+            for row in reader:                
+                if "wind" in source.lower():   
+                    print(row[param])                 
                     if (
                         row["Ölbezeichnung"] != ""
                         and self.origin_sample(
