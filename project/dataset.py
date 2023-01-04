@@ -416,6 +416,7 @@ class Dataset:
         with open(self.filename) as csvfile:
             reader = csv.DictReader(csvfile, delimiter=";")
             for row in reader:
+                print(row[param])
                 if "wind" in source.lower():                    
                     if (
                         row["Ölbezeichnung"] != ""
