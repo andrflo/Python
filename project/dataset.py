@@ -1076,6 +1076,8 @@ class Dataset:
                             case "P":
                                 #plt.savefig(f"data/elements/P/{save_name}")
                                 plt.savefig(os.path.join("data", "elements", "P", save_name))
+                            case "ZN":                                
+                                plt.savefig(os.path.join("data", "elements", "ZN", save_name))    
                             case "Ölmenge im System" | "Anlagengöße [kW]":
                                 #plt.savefig(f"data/machine/{save_name}")
                                 plt.savefig(os.path.join("data", "machine", save_name))
