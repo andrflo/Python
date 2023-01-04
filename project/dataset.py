@@ -892,6 +892,13 @@ class Dataset:
                                     binwidthx = 5
                                 else:
                                     binwidthx = 10
+                            case "ZN":
+                                xlabelstr = "Zn content in ppm"
+                                ax.set_xlim(0, 3000)
+                                if len(x1) > 150:
+                                    binwidthx = 5
+                                else:
+                                    binwidthx = 10        
                             case "Ölmenge im System":
                                 xlabelstr = "Oil volume in L"
                                 ax.set_xlim(0, 500)
@@ -971,6 +978,16 @@ class Dataset:
                                     binwidthy = 5
                                 else:
                                     binwidthy = 10
+                            case "ZN":
+                                ylabelstr = "Zn content in ppm"
+                                ax.set_ylim(0, 3000)
+                                save_name = (
+                                    f"Zn_vs_{xax}_{machine_id1}_{machine_id2}_{oil_name}.png"
+                                )
+                                if len(x1) > 150:
+                                    binwidthy = 5
+                                else:
+                                    binwidthy = 10        
                             case "Ölmenge im System":
                                 ylabelstr = "Oil volume in L"
                                 ax.set_ylim(0, 500)
