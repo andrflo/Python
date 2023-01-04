@@ -425,8 +425,7 @@ class Dataset:
                         and len(row[param]) > 0
                         and self.validate_season(row["Datum Probenentnahme"], season)
                     ):
-                        oil_names.add(row["Ölbezeichnung"])  
-                        print(row["Ölbezeichnung"])                      
+                        oil_names.add(row["Ölbezeichnung"])                                              
         return oil_names
 
     def plot_data_machine(self, paramx, paramy):
