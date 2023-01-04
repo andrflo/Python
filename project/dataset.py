@@ -430,6 +430,8 @@ class Dataset:
 
     def plot_data_machine(self, paramx, paramy):
 
+        print("paramx ", paramx, "paramy ", paramy)
+
         if self.keys_exist(paramy):
             if not self.keys_exist(paramx):
                 raise Exception("paramx does not exist")
